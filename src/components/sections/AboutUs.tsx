@@ -36,23 +36,32 @@ const AboutUs = () => {
         {/* Statistics Cards */}
         <div className="grid md:grid-cols-3 gap-8 relative z-20">
           <div className="text-center text-white relative z-20">
-            <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg p-8 transform hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl font-bold mb-4">+10</div>
-              <div className="text-lg font-medium">Years of experience</div>
+            <div 
+              className="p-8 bg-no-repeat bg-center bg-contain"
+              style={{ backgroundImage: "url('/forme/para1.png')" }}
+            >
+              <div className="text-5xl font-bold mb-4 relative z-10">+10</div>
+              <div className="text-lg -ml-16 font-medium relative z-10">Years of experience</div>
             </div>
           </div>
           
           <div className="text-center text-white relative z-20">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-8 transform hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl font-bold mb-4">100%</div>
-              <div className="text-lg font-medium">Product quality</div>
+            <div 
+              className="p-8 bg-no-repeat bg-center bg-contain"
+              style={{ backgroundImage: "url('/forme/para2.png')" }}
+            >
+              <div className="text-5xl font-bold mb-4 relative z-10">100%</div>
+              <div className="text-lg -ml-16 font-medium relative z-10">Product quality</div>
             </div>
           </div>
           
           <div className="text-center text-white relative z-20">
-            <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-lg p-8 transform hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl font-bold mb-4">24/7</div>
-              <div className="text-lg font-medium">Technical support</div>
+            <div 
+              className="p-8 bg-no-repeat bg-center bg-contain"
+              style={{ backgroundImage: "url('/forme/para3.png')" }}
+            >
+              <div className="text-5xl font-bold mb-4 relative z-10">24/7</div>
+              <div className="text-lg -ml-16 font-medium relative z-10">Technical support</div>
             </div>
           </div>
         </div>
