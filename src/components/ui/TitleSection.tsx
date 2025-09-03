@@ -29,7 +29,7 @@ const TitleHome = ({
       )}
       
       <div className="container relative z-10 flex items-end min-h-[150px] lg:min-h-[250px]">
-        <div className="text-left pb-8 pl-4 lg:pl-8 text-lg md:text-2xl lg:text-4xl">
+        <div className="text-left pb-8 ml-18  text-lg md:text-2xl lg:text-4xl">
           {topText && (
             <div className=" font-medium text-white leading-tight">
               {topText}

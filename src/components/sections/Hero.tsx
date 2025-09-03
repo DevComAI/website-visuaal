@@ -27,7 +27,7 @@ const Hero = ({
       <div className="absolute inset-0 bg-black/30"></div>
 
       <div className="container relative z-10 mx-auto px-4">
-        <div className="flex items-start pt-62 pl-18 h-full">
+        <div className="flex items-start mt-62 ml-18 h-full">
           <div>
             <h1 className="font-semibold text-white mb-4 leading-none" style={{fontSize: '96px'}}>
               {title}

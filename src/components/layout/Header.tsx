@@ -94,7 +94,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <GradientButton href="/contact" text="Contact" className="w-[150px] h-[50px]" />
+            <GradientButton href="/contact" text="Contact" className="w-[140px] h-[39px] text-[16px]" />
           </div>
 
           <button

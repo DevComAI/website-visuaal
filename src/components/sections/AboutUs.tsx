@@ -5,12 +5,12 @@ import GradientButton from '@/components/ui/GradientButton'
 
 const AboutUs = () => {
   return (
-    <section className="relative py-20 overflow-hidden" style={{backgroundColor: '#2D2436'}}>
+    <section className="relative overflow-hidden" style={{backgroundColor: '#2D2436'}}>
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-end -mt-80 mb-20 relative z-10">
           {/* Left side - Text and Button */}
-          <div className="text-white space-y-8 relative z-10">
-            <div className="space-y-16 max-w-[582px] text-[20px]">
+          <div className="text-white space-y-8 ml-18 relative z-10 mb-8">
+            <div className="space-y-18 max-w-[582px] text-[20px]">
          
               <p className="">
               In a world where digital engagement defines brand success, VISUAAL offers a complete suite of high-impact solutions designed to captivate, connect, and convert. Based in Dubai, Paris and Shenzhen, VISUAAL brings together a team of experts who are reshaping the digital landscape.
@@ -20,7 +20,7 @@ const AboutUs = () => {
               VISUAAL is it the meeting of entrepreneurs from different backgrounds who bring their expertise in experience creation, advertising, and digital transformation to serve brands and publishers around immersive and innovative experiences.              </p>
             </div>
             
-            <GradientButton href="/about" text="Read more" />
+            <GradientButton href="/about" text="Read more" className="text-[16px] h-[49px] w-[194px]"/>
           </div>
 
           {/* Right side - Spline Viewer */}
