@@ -155,7 +155,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12">
-          <GradientLine width={1522} padding="pb-4" />
+          <GradientLine width={"80%"} padding="pb-4" />
           <div className="text-center">
             <p className="text-gray-400">
               &copy; {new Date().getFullYear()} Visuaal. All rights reserved.

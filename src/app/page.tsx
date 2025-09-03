@@ -8,6 +8,7 @@ import TitleHome from '@/components/ui/TitleSection'
 import Working from '@/components/sections/Working'
 import SupportCarousel from '@/components/sections/SupportCarousel'
 import { organizationSchema, websiteSchema } from '@/lib/schema'
+import GradientLine from '@/components/ui/GradientLine'
 
 export default function Home() {
   const jsonLd = {
@@ -61,7 +62,9 @@ export default function Home() {
 
       <SupportCarousel />
       
-      <Contact />
+      <div className="pb-60"> </div>
+      <GradientLine width={"90%"} padding="pb-[1px]" />
+
     </>
   );
 }
