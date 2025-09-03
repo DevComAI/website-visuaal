@@ -59,7 +59,7 @@ export default function Home() {
         backgroundImage="support.png"
       />
 
-      <div className="py-20 bg-black">
+      <div className="py-20">
         <div className="container mx-auto px-4">
           <ImageCarousel
             images={[
