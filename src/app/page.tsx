@@ -5,6 +5,7 @@ import AboutUs from '@/components/sections/AboutUs'
 import Contact from '@/components/sections/Contact'
 import CTASection from '@/components/ui/CTASection'
 import TitleHome from '@/components/ui/TitleSection'
+import Working from '@/components/sections/Working'
 import { organizationSchema, websiteSchema } from '@/lib/schema'
 
 export default function Home() {
@@ -45,15 +46,19 @@ export default function Home() {
         bottomText="DIGITAL SIGNAGE"
         backgroundImage="working.png"
       />
+
+      <div className="pb-40"> </div>
       
-    
-      <About />
+      <Working />
+  
       
       <TitleHome
         topText="END-TO-END DIGITAL SIGNAGE"
         bottomText="SOLUTIONS"
         backgroundImage="support.png"
       />
+      
+ 
       
       <Contact />
     </>

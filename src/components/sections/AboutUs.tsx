@@ -2,6 +2,7 @@
 
 import Spline from '@splinetool/react-spline'
 import GradientButton from '@/components/ui/GradientButton'
+import GradientLine from '@/components/ui/GradientLine'
 
 const AboutUs = () => {
   return (
@@ -35,6 +36,7 @@ const AboutUs = () => {
 
         {/* Statistics Cards */}
         <div className="grid md:grid-cols-3 gap-8 relative z-20">
+        
           <div className="text-center text-white relative z-20">
             <div 
               className="p-8 bg-no-repeat bg-center bg-contain"
@@ -64,7 +66,11 @@ const AboutUs = () => {
               <div className="text-lg -ml-16 font-medium relative z-10">Technical support</div>
             </div>
           </div>
+
         </div>
+        <GradientLine width="100%" padding="py-8" className="-mt-20 pb-20" />
+
+   
       </div>
     </section>
   )
