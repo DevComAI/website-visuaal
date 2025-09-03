@@ -21,7 +21,12 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <Hero />
+      <Hero 
+        backgroundImage="/img/home/hero-home.png"
+        title="VISUAAL"
+        subtitle="Innovative visual solutions to capture attention and elevate your brand."
+        description="At VISUAAL, we design tailor-made visual experiences that combine creativity, technology, and performance."
+      />
       <Services />
       <CTASection 
         title="Découvrez toutes nos solutions"

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Monitor, MapPin, BarChart, Settings, Clock, Shield } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import Hero from '@/components/sections/Hero'
 
 export const metadata: Metadata = {
   title: 'DOOH - Digital Out Of Home | Visuaal',
@@ -72,52 +73,14 @@ const DOOHPage = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-primary">Accueil</Link>
-            <span>/</span>
-            <Link href="/products" className="hover:text-primary">Produits</Link>
-            <span>/</span>
-            <span className="text-gray-900">DOOH</span>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen">
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Link href="/products" className="inline-flex items-center text-primary hover:text-primary-dark mb-6">
-                <ArrowLeft size={20} className="mr-2" />
-                Retour aux produits
-              </Link>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                DOOH - Digital Out Of Home
-              </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Révolutionnez votre communication extérieure avec nos solutions d&apos;affichage 
-                numérique haute performance. Captez l&apos;attention de votre audience avec des 
-                contenus dynamiques et impactants.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg">
-                  Demander un devis
-                </Button>
-                <Button variant="outline" size="lg">
-                  Voir une démo
-                </Button>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-primary/10 to-purple-100 rounded-2xl p-8 h-96 flex items-center justify-center">
-              <Monitor size={120} className="text-primary" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero 
+        backgroundImage="/img/home/product-dooh.png"
+        title="DOOH"
+        subtitle="Catch the eye, stay in mind, DOOH is reinventing advertising."
+        showScrollIndicator={false}
+      />
 
       {/* Features Section */}
       <section className="py-20 bg-white">

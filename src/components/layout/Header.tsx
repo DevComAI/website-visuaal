@@ -20,7 +20,6 @@ const Header = () => {
         { name: 'DOOH', href: '/products/dooh' },
         { name: 'Interactive Screens', href: '/products/screen' },
         { name: 'Holograms', href: '/products/holo' },
-        { name: 'Creative Studio', href: '/studio' },
       ]
     },
     { name: 'Experience', href: '/studio' },

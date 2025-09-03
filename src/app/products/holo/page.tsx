@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Zap, Eye, Sparkles, Layers, Rotate3D, Settings } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import Hero from '@/components/sections/Hero'
 
 export const metadata: Metadata = {
   title: 'Hologrammes | Visuaal',
@@ -98,56 +99,14 @@ const HoloPage = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-primary">Accueil</Link>
-            <span>/</span>
-            <Link href="/products" className="hover:text-primary">Produits</Link>
-            <span>/</span>
-            <span className="text-gray-900">Hologrammes</span>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen">
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Link href="/products" className="inline-flex items-center text-primary hover:text-primary-dark mb-6">
-                <ArrowLeft size={20} className="mr-2" />
-                Retour aux produits
-              </Link>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Hologrammes
-                <span className="block text-transparent bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text">
-                  Spectaculaires
-                </span>
-              </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Plongez dans l&apos;avenir avec nos technologies holographiques révolutionnaires. 
-                Créez des expériences inoubliables qui marquent les esprits et transforment 
-                vos présentations en véritables spectacles visuels.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg">
-                  Voir une démonstration
-                </Button>
-                <Button variant="outline" size="lg">
-                  Demander un devis
-                </Button>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl p-8 h-96 flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-radial from-transparent to-purple-200/30"></div>
-              <Zap size={120} className="text-purple-600 relative z-10 animate-pulse" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero 
+        backgroundImage="/img/humanbox/hero.png"
+        title="HUMAN BOX"
+        subtitle="An immersive cabin creating a 3D holographic effect"
+        showScrollIndicator={false}
+      />
 
       {/* Features Section */}
       <section className="py-20 bg-white">

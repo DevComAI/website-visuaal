@@ -117,19 +117,7 @@ const StudioPage = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-primary">Accueil</Link>
-            <span>/</span>
-            <Link href="/products" className="hover:text-primary">Produits</Link>
-            <span>/</span>
-            <span className="text-gray-900">Studio de Création</span>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen">
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
