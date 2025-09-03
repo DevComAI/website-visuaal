@@ -6,7 +6,7 @@ import GradientLine from '@/components/ui/GradientLine'
 
 const AboutUs = () => {
   return (
-    <section className="relative overflow-hidden" style={{backgroundColor: '#2D2436'}}>
+    <section className="relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12  mb-20 relative z-10">
           {/* Left side - Text and Button */}

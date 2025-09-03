@@ -12,7 +12,7 @@ const TitleHome = ({
   className = "" 
 }: TitleHomeProps) => {
   return (
-    <section className={`relative py-20 ${className}`} style={{backgroundColor: '#2D2436'}}>
+    <section className={`relative py-20 ${className}`}>
       {/* Background image */}
       {backgroundImage && (
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden px-4">

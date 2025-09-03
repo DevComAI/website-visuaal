@@ -1,5 +1,6 @@
 interface HeroProps {
-  backgroundImage: string;
+  backgroundImage?: string;
+  backgroundVideo?: string;
   title: string;
   subtitle?: string;
   description?: string;
@@ -8,6 +9,7 @@ interface HeroProps {
 
 const Hero = ({ 
   backgroundImage, 
+  backgroundVideo,
   title, 
   subtitle, 
   description, 
@@ -17,14 +19,31 @@ const Hero = ({
     <section 
       id="hero" 
       className="relative h-screen flex items-center justify-center overflow-hidden"
-      style={{
+      style={backgroundImage ? {
         backgroundImage: `url('${backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
-      }}
+      } : {}}
     >
-      <div className="absolute inset-0 bg-black/30"></div>
+      {backgroundVideo && (
+        <>
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src={backgroundVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}></div>
+        </>
+      )}
+      
+      {!backgroundVideo && (
+        <div className="absolute inset-0 bg-black/30"></div>
+      )}
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="flex items-start mt-62 ml-18 h-full">

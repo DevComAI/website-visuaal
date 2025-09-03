@@ -4,8 +4,8 @@ import Spline from '@splinetool/react-spline'
 
 export default function Working() {
   return (
-    <section className="">
-      <div className=" mx-auto px-12 grid md:grid-cols-3 gap-8">
+    <section className="py-20 ">
+      <div className="container mx-auto px-12 grid md:grid-cols-3 gap-8">
    
           
           {/* INFORM Column */}

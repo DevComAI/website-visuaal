@@ -12,7 +12,7 @@ const GradientButton = ({ href, text, className = "" }: GradientButtonProps) => 
       background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
       backgroundSize: '100% 100%'
     }}>
-      <Link href={href} className="w-full h-full px-8 py-4 rounded-full text-white  transition-colors duration-300 relative z-10 flex items-center justify-center" style={{backgroundColor: '#2D2436'}}>
+      <Link href={href} className="w-full h-full px-8 py-4 rounded-full text-white bg-background transition-colors duration-300 relative z-10 flex items-center justify-center">
         {text}
       </Link>
     </div>

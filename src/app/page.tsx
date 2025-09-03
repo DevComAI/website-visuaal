@@ -25,7 +25,7 @@ export default function Home() {
       />
       
       <Hero 
-        backgroundImage="/img/home/hero-home.png"
+        backgroundVideo="/img/home/hero-home.mp4"
         title="VISUAAL"
         subtitle="Innovative visual solutions to capture attention and elevate your brand."
         description="At VISUAAL, we design tailor-made visual experiences that combine creativity, technology, and performance."
@@ -40,14 +40,14 @@ export default function Home() {
 
       
       <AboutUs />
-      
+      <div className="pb-80"> </div>
+
       <TitleHome
         topText="THE BENEFITS OF USING OUR"
         bottomText="DIGITAL SIGNAGE"
         backgroundImage="working.png"
       />
 
-      <div className="pb-40"> </div>
       
       <Working />
   
