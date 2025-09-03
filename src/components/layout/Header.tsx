@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import GradientButton from '@/components/ui/GradientButton'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -93,11 +94,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/contact">
-              <Button variant="outline" size="sm">
-                Contact
-              </Button>
-            </Link>
+            <GradientButton href="/contact" text="Contact" className="w-[150px] h-[50px]" />
           </div>
 
           <button

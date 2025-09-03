@@ -1,0 +1,64 @@
+'use client'
+
+import Spline from '@splinetool/react-spline'
+import GradientButton from '@/components/ui/GradientButton'
+
+const AboutUs = () => {
+  return (
+    <section className="relative py-20 overflow-hidden" style={{backgroundColor: '#2D2436'}}>
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20 relative z-10">
+          {/* Left side - Text and Button */}
+          <div className="text-white space-y-8 relative z-10">
+            <div className="space-y-16 max-w-[582px] text-[20px]">
+         
+              <p className="">
+              In a world where digital engagement defines brand success, VISUAAL offers a complete suite of high-impact solutions designed to captivate, connect, and convert. Based in Dubai, Paris and Shenzhen, VISUAAL brings together a team of experts who are reshaping the digital landscape.
+              </p>
+
+              <p className="">
+              VISUAAL is it the meeting of entrepreneurs from different backgrounds who bring their expertise in experience creation, advertising, and digital transformation to serve brands and publishers around immersive and innovative experiences.              </p>
+            </div>
+            
+            <GradientButton href="/about" text="Read more" />
+          </div>
+
+          {/* Right side - Spline Viewer */}
+          <div className="h-[800px] relative z-50">
+            <Spline
+              scene="https://prod.spline.design/Sj5w2qinD5unnyvb/scene.splinecode"
+              className="w-full h-full relative z-50"
+              style={{ zIndex: 50 }}
+            />
+          </div>
+        </div>
+
+        {/* Statistics Cards */}
+        <div className="grid md:grid-cols-3 gap-8 relative z-20">
+          <div className="text-center text-white relative z-20">
+            <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg p-8 transform hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-bold mb-4">+10</div>
+              <div className="text-lg font-medium">Years of experience</div>
+            </div>
+          </div>
+          
+          <div className="text-center text-white relative z-20">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-8 transform hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-bold mb-4">100%</div>
+              <div className="text-lg font-medium">Product quality</div>
+            </div>
+          </div>
+          
+          <div className="text-center text-white relative z-20">
+            <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-lg p-8 transform hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-bold mb-4">24/7</div>
+              <div className="text-lg font-medium">Technical support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default AboutUs
