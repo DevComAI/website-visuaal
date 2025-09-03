@@ -41,7 +41,7 @@ const ProductsPage = () => {
       description: 'Service complet de création de contenu visuel adapté à tous vos supports.',
       icon: <Video size={48} />,
       features: ['Production vidéo', 'Animation 3D', 'Design graphique', 'Post-production'],
-      href: '/products/studio'
+      href: '/studio'
     }
   ]
 

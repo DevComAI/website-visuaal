@@ -2,80 +2,107 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const navigation = [
-    { name: 'Accueil', href: '/' },
+    { name: 'Home', href: '/' },
     { 
-      name: 'Produits', 
+      name: 'Products', 
       href: '/products',
       subMenu: [
         { name: 'DOOH', href: '/products/dooh' },
-        { name: 'Écrans Interactifs', href: '/products/screen' },
-        { name: 'Hologrammes', href: '/products/holo' },
-        { name: 'Studio de Création', href: '/products/studio' },
+        { name: 'Interactive Screens', href: '/products/screen' },
+        { name: 'Holograms', href: '/products/holo' },
+        { name: 'Creative Studio', href: '/studio' },
       ]
     },
-    { name: 'À Propos', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Experience', href: '/studio' },
+    { name: 'About', href: '/about' },
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+    <header 
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm"
+      style={{
+        background: `radial-gradient(circle, rgba(33, 24, 36, 0.9) 0%, rgba(20, 15, 22, 0.9) 100%)`
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" className="text-2xl font-bold text-primary">
-            Visuaal
+          <Link href="/" className="block">
+            <Image
+              src="/logo/logo-v.svg"
+              alt="Visuaal Logo"
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+            />
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <div key={item.name} className="relative group">
-                <Link
-                  href={item.href}
-                  className="text-gray-700 hover:text-primary transition-colors duration-200 flex items-center"
-                >
-                  {item.name}
+            {navigation.map((item) => {
+              const isActive = pathname === item.href || (item.subMenu && item.subMenu.some(sub => pathname === sub.href) && item.href !== '/products')
+              return (
+                <div key={item.name} className="relative group">
+                  <Link
+                    href={item.href}
+                    className={`hover:text-gray-300 transition-colors duration-200 flex items-center relative ${
+                      isActive ? 'text-white font-semibold' : 'text-white'
+                    }`}
+                  >
+                    {item.name}
+                    {item.subMenu && (
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    )}
+                    {isActive && (
+                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full"></div>
+                    )}
+                  </Link>
+                  
                   {item.subMenu && (
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  )}
-                </Link>
-                
-                {item.subMenu && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    <div className="py-2">
-                      {item.subMenu.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          href={subItem.href}
-                          className="block px-4 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors"
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
+                    <div 
+                      className="absolute top-full left-0 mt-2 w-56 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+                      style={{
+                        background: `radial-gradient(circle, rgba(33, 24, 36, 0.95) 0%, rgba(20, 15, 22, 0.95) 100%)`
+                      }}
+                    >
+                      <div className="py-2">
+                        {item.subMenu.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-4 py-2 text-white hover:text-gray-300 hover:bg-white/10 transition-colors"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              )
+            })}
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
             <Link href="/contact">
               <Button variant="outline" size="sm">
-                Devis Gratuit
+                Contact
               </Button>
             </Link>
           </div>
 
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -84,13 +111,13 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-white/20">
             <nav className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-700 hover:text-primary transition-colors duration-200 block"
+                    className="text-white hover:text-gray-300 transition-colors duration-200 block"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -101,7 +128,7 @@ const Header = () => {
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="text-gray-600 hover:text-primary transition-colors text-sm block"
+                          className="text-gray-300 hover:text-gray-300 transition-colors text-sm block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {subItem.name}
@@ -113,7 +140,7 @@ const Header = () => {
               ))}
               <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
                 <Button variant="primary" size="sm" className="mt-4">
-                  Devis Gratuit
+                  Contact
                 </Button>
               </Link>
             </nav>
