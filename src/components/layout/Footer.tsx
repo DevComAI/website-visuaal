@@ -1,10 +1,19 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import GradientLine from '@/components/ui/GradientLine'
 
 const Footer = () => {
   return (
-    <footer className="text-white" style={{backgroundColor: '#140F16'}}>
-      <div className="container mx-auto px-4 py-12 ">
+    <footer className="text-white relative overflow-hidden" style={{backgroundColor: '#140F16'}}>
+      {/* Spline Animation Background */}
+      <div className="absolute inset-0 w-full h-full z-0 flex items-center justify-center">
+        <spline-viewer 
+          url="https://prod.spline.design/2pGj4e2pJIQVw8CK/scene.splinecode"
+          className="w-full h-full opacity-30"
+        ></spline-viewer>
+      </div>
+      
+      <div className="container mx-auto px-4 py-12 relative z-10">
         {/* Newsletter Section */}
         <div className="text-center mb-20 relative">
           <div 
@@ -119,7 +128,7 @@ const Footer = () => {
             <div className="space-y-[48px] font-chillax text-base font-normal leading-none text-gray-300">
               <p>contact@visual.ae</p>
               <p>+0123456789</p>
-              <p>Blue Tower,  <br />
+              <p className="leading-6">Blue Tower,  <br />
                 Block A&B Office number 110,<br />
               Sheikh Zayed Road, Dubaï</p>
             </div>
@@ -145,7 +154,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 py-4">
+        <div className="mt-12">
+          <GradientLine width={1522} padding="pb-4" />
           <div className="text-center">
             <p className="text-gray-400">
               &copy; {new Date().getFullYear()} Visuaal. All rights reserved.
