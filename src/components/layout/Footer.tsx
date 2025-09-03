@@ -5,7 +5,47 @@ const Footer = () => {
   return (
     <footer className="text-white" style={{backgroundColor: '#140F16'}}>
       <div className="container mx-auto px-4 py-12 ">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 py-20">
+        {/* Newsletter Section */}
+        <div className="text-center mb-20 relative">
+          <div 
+            className="bg-cover bg-center bg-no-repeat pt-16 px-8 "
+       
+          >
+            <h2 className="font-chillax text-4xl font-medium mb-4">
+              <span 
+                className="inline-block"
+                style={{
+                  backgroundImage: "url('/img/background-text.jpg')",
+                  backgroundSize: 'cover',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  backgroundPosition: 'center',
+
+                }}
+              >
+                JOIN OUR NEWSLETTER
+           
+              </span>
+            </h2>
+            <div className="max-w-md  mx-auto">
+              <div className="relative  p-1 rounded-lg" style={{
+                background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
+                backgroundSize: '400% 400%',
+                animation: 'gradient 3s ease infinite'
+              }}>
+                <input
+                  type="email"
+                  placeholder="e-mail"
+                  className="w-full px-6 h-[37px] rounded-lg text-white placeholder-gray-300 font-chillax text-lg focus:outline-none"
+                  style={{backgroundColor: '#140F16'}}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 pb-20">
           {/* Logo Column */}
           <div className="text-center">
             <Link href="/" className="block mb-4">
@@ -90,16 +130,16 @@ const Footer = () => {
             <h3 className="font-chillax text-2xl leading-none mb-4">Follow us on the networks</h3>
             <div className="flex space-x-3 justify-center">
               <Link href="#" className="hover:opacity-80 transition-opacity" aria-label="Facebook">
-                <Image src="/icons/facebook.png" alt="Facebook" width={24} height={24} />
+                <Image src="/icons/facebook.png" alt="Facebook" width={40} height={40} />
               </Link>
               <Link href="#" className="hover:opacity-80 transition-opacity" aria-label="X (Twitter)">
-                <Image src="/icons/x.png" alt="X" width={24} height={24} />
+                <Image src="/icons/x.png" alt="X" width={40} height={40} />
               </Link>
               <Link href="#" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
-                <Image src="/icons/instagram.png" alt="Instagram" width={24} height={24} />
+                <Image src="/icons/instagram.png" alt="Instagram" width={40} height={40} />
               </Link>
               <Link href="#" className="hover:opacity-80 transition-opacity" aria-label="YouTube">
-                <Image src="/icons/youtube.png" alt="YouTube" width={24} height={24} />
+                <Image src="/icons/youtube.png" alt="YouTube" width={40} height={40} />
               </Link>
             </div>
           </div>
