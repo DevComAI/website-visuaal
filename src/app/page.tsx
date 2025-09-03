@@ -6,7 +6,7 @@ import Contact from '@/components/sections/Contact'
 import CTASection from '@/components/ui/CTASection'
 import TitleHome from '@/components/ui/TitleSection'
 import Working from '@/components/sections/Working'
-import ImageCarousel from '@/components/ui/ImageCarousel'
+import SupportCarousel from '@/components/sections/SupportCarousel'
 import { organizationSchema, websiteSchema } from '@/lib/schema'
 
 export default function Home() {
@@ -51,7 +51,7 @@ export default function Home() {
 
       
       <Working />
-  
+      <div className="pb-60"> </div>
       
       <TitleHome
         topText="END-TO-END DIGITAL SIGNAGE"
@@ -59,20 +59,7 @@ export default function Home() {
         backgroundImage="support.png"
       />
 
-      <div className="py-20">
-        <div className="container mx-auto px-4">
-          <ImageCarousel
-            images={[
-              '/img/home/support-1.png',
-              '/img/home/support-2.png',
-              '/img/home/support-3.png',
-              '/img/home/support-4.png'
-            ]}
-            autoPlay={true}
-            interval={4000}
-          />
-        </div>
-      </div>
+      <SupportCarousel />
       
       <Contact />
     </>

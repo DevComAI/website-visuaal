@@ -106,8 +106,8 @@ const ImageCarousel = ({
               }}
             >
               <Image
-                src={infiniteImages[item.index % infiniteImages.length]}
-                alt={`Support image ${(item.index % images.length) + 1}`}
+                src={infiniteImages[Math.abs(item.index) % infiniteImages.length] || images[0]}
+                alt={`Support image ${(Math.abs(item.index) % images.length) + 1}`}
                 width={600}
                 height={337}
                 className="w-full h-full object-cover"
