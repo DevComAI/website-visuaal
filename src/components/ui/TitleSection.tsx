@@ -1,6 +1,6 @@
 interface TitleHomeProps {
-  topText?: string;
-  bottomText: string;
+  topText?: string | React.ReactNode;
+  bottomText: string | React.ReactNode;
   backgroundImage?: string;
   className?: string;
 }

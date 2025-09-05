@@ -35,7 +35,7 @@ export default function Home() {
       />
       
       <TitleHome
-        topText="EXPERTS IN IMMERSIVE EXPERIENCES"
+        topText={<><GradientText>EXPERTS</GradientText> IN IMMERSIVE EXPERIENCES</>}
         bottomText="AND DIGITAL TRANSFORMATION"
         backgroundImage="ABOUT US.png"
       />
@@ -47,7 +47,7 @@ export default function Home() {
 
       <TitleHome
         topText="THE BENEFITS OF USING OUR"
-        bottomText="DIGITAL SIGNAGE"
+        bottomText={<><GradientText>DIGITAL SIGNAGE</GradientText></>}
         backgroundImage="working.png"
       />
 
@@ -56,7 +56,7 @@ export default function Home() {
       <div className="pb-60"> </div>
       
       <TitleHome
-        topText="END-TO-END DIGITAL SIGNAGE"
+        topText={<><GradientText>END-TO-END</GradientText> DIGITAL SIGNAGE</>}
         bottomText="SOLUTIONS"
         backgroundImage="support.png"
       />
