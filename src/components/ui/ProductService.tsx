@@ -1,34 +1,38 @@
 interface ServiceCard {
-  title: string;
+  title: string | React.ReactNode;
   image: string;
   description: string;
   bulletPoints: string[];
 }
 
 interface ProductServiceProps {
-  title: string;
-  paragraph: string;
+  title: string | React.ReactNode;
+  paragraphs: string[];
   services: ServiceCard[];
   className?: string;
 }
 
 const ProductService = ({ 
   title, 
-  paragraph, 
+  paragraphs, 
   services,
   className = "" 
 }: ProductServiceProps) => {
   return (
-    <section className={`py-20 ${className}`}>
-      <div className="container max-w-[1650px] mx-auto px-4">
+    <section className={`py-20 flex justify-center ${className}`}>
+      <div className=" px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-[40px] font-medium text-white mb-8 uppercase">
+        <div className="text-center mb-50">
+          <h2 className="text-[40px]  font-medium text-white mb-32 uppercase">
             {title}
           </h2>
-          <p className="text-[20px] text-white font-normal leading-relaxed max-w-4xl mx-auto">
-            {paragraph}
-          </p>
+          <div className="space-y-6 max-w-[1500px] mx-auto">
+            {paragraphs.map((paragraph, index) => (
+              <p key={index} className="text-[32px] text-white font-normal leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
 
         {/* Services Grid */}

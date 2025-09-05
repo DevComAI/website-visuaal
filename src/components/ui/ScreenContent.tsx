@@ -1,5 +1,5 @@
 interface ScreenContentProps {
-  title: string;
+  title: string | React.ReactNode;
   paragraph: string;
   imageUrl: string;
   className?: string;
