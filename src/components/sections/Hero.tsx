@@ -2,7 +2,7 @@ interface HeroProps {
   backgroundImage?: string;
   backgroundVideo?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: string | React.ReactNode;
   description?: string;
   showScrollIndicator?: boolean;
 }

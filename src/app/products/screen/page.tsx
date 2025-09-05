@@ -148,20 +148,20 @@ backgroundImage="SCREEN.png"
 
       {/* Custom LED Screens Section */}
       <section className="py-20 flex justify-center">
-        <div className="max-w-[1500px] px-4">
-          <div className="text-left">
+        <div className=" px-4">
+          <div className="text-left max-w-[1500px] mx-auto">
             {/* Title */}
             <h2 className="text-[40px] font-medium text-white mb-12 uppercase text-center">
               <GradientText>CUSTOM</GradientText> LED SCREENS
             </h2>
 
             {/* Main Description */}
-            <p className="text-[32px] text-white font-normal leading-relaxed mb-12">
+            <p className="text-[32px] text-white font-medium leading-relaxed mb-12">
               Because every project is unique, we design customized LED solutions that perfectly suit your needs. Whether you want a giant screen for a shopping mall, an LED column for a showroom, or original shapes for an architectural project, we bring your ideas to life.
             </p>
 
             {/* Bullet Points */}
-            <ul className="space-y-4 mb-12">
+            <ul className="space-y-4 mb-12 font-regular ml-8">
               <li className="text-[32px] text-white leading-relaxed flex items-start">
                 <span className="text-blue-400 mr-3 mt-1">•</span>
                 100% customizable dimensions and formats
@@ -181,12 +181,12 @@ backgroundImage="SCREEN.png"
             </ul>
 
             {/* Bottom Description */}
-            <p className="text-[32px] font-bolt text-white leading-relaxed mb-16">
+            <p className="text-[32px] font-medium text-white leading-relaxed mb-16">
               These custom LED screens are the ideal solution to stand out and offer your audience an unforgettable visual experience.
             </p>
 
             {/* CTA Button */}
-            <div className="text-center">
+            <div className="flex justify-center">
               <GradientButton 
                 href="/contact"
                 text="I want this"
@@ -196,7 +196,7 @@ backgroundImage="SCREEN.png"
           </div>
         </div>
       </section>
-
+      <div className="pb-60"> </div>
       
     </div>
   )

@@ -9,6 +9,7 @@ import Working from '@/components/sections/Working'
 import SupportCarousel from '@/components/sections/SupportCarousel'
 import { organizationSchema, websiteSchema } from '@/lib/schema'
 import GradientLine from '@/components/ui/GradientLine'
+import GradientText from '@/components/ui/GradientText'
 
 export default function Home() {
   const jsonLd = {
@@ -29,7 +30,7 @@ export default function Home() {
       <Hero 
         backgroundVideo="/img/home/hero-home.mp4"
         title="VISUAAL"
-        subtitle="Innovative visual solutions to capture attention and elevate your brand."
+        subtitle={<><GradientText>Innovative visual solutions</GradientText> to capture attention and <GradientText>elevate your brand</GradientText>.</>}
         description="At VISUAAL, we design tailor-made visual experiences that combine creativity, technology, and performance."
       />
       
