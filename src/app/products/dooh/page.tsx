@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Hero from '@/components/sections/Hero'
 import TitlePage from '@/components/ui/TitlePageSection'
+import GradientText from '@/components/ui/GradientText'
 
 export const metadata: Metadata = {
   title: 'DOOH - Digital Out Of Home | Visuaal',
@@ -17,7 +18,7 @@ const DOOHPage = () => {
       <Hero 
         backgroundImage="/img/home/product-dooh.png"
         title="DOOH"
-        subtitle="Catch the eye, stay in mind, DOOH is reinventing advertising."
+        subtitle={<><GradientText>Catch</GradientText> the eye, <GradientText>stay</GradientText> in mind, DOOH is <GradientText>reinventing advertising</GradientText>.</>}
         showScrollIndicator={false}
       />
 

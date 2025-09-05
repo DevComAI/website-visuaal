@@ -69,7 +69,7 @@ const ScreenPage = () => {
       <Hero 
         backgroundImage="/img/screen/hero.png"
         title="SCREEN LED"
-        subtitle="LED solutions designed for enhance your brand image with high-visibility."
+        subtitle={<>LED <GradientText>solutions</GradientText> designed for <GradientText>enhance</GradientText> your brand image with <GradientText>high-visibility</GradientText>.</>}
         showScrollIndicator={false}
       />
 <TitlePage

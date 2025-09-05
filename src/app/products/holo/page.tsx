@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import Hero from '@/components/sections/Hero'
 import TitlePage from '@/components/ui/TitlePageSection'
+import GradientText from '@/components/ui/GradientText'
 
 export const metadata: Metadata = {
   title: 'Hologrammes | Visuaal',
@@ -18,7 +19,7 @@ const HoloPage = () => {
       <Hero 
         backgroundImage="/img/humanbox/hero.png"
         title="HUMAN BOX"
-        subtitle="An immersive cabin creating a 3D holographic effect"
+        subtitle={<>An <GradientText>immersive cabin</GradientText> creating a <GradientText>3D holographic</GradientText> effect</>}
         showScrollIndicator={false}
       />
 
