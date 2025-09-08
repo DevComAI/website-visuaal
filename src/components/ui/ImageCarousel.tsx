@@ -16,142 +16,208 @@ const ImageCarousel = ({
   interval = 4000 
 }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
-
-  // Créer un tableau infini en dupliquant les images
-  const infiniteImages = [...images, ...images, ...images]
-  const startIndex = images.length
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => prevIndex - 1)
+    if (isTransitioning) return
+    
+    setIsTransitioning(true)
+    setCurrentIndex(prev => prev === 0 ? images.length - 1 : prev - 1)
+    
+    setTimeout(() => setIsTransitioning(false), 800)
   }
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => prevIndex + 1)
+    if (isTransitioning) return
+    
+    setIsTransitioning(true)
+    setCurrentIndex(prev => (prev + 1) % images.length)
+    
+    setTimeout(() => setIsTransitioning(false), 800)
   }
 
   const goToSlide = (index: number) => {
-    setCurrentIndex(startIndex + index)
+    if (isTransitioning || index === currentIndex) return
+    
+    setIsTransitioning(true)
+    setCurrentIndex(index)
+    
+    setTimeout(() => setIsTransitioning(false), 800)
   }
 
-  // Gérer le défilement infini
-  useEffect(() => {
-    if (currentIndex >= images.length * 2) {
-      setTimeout(() => setCurrentIndex(startIndex), 300)
-    } else if (currentIndex < 0) {
-      setTimeout(() => setCurrentIndex(startIndex + images.length - 1), 300)
-    }
-  }, [currentIndex, images.length, startIndex])
-
+  // Auto-play functionality
   useEffect(() => {
     if (!autoPlay) return
 
     const intervalId = setInterval(() => {
-      goToNext()
+      if (!isTransitioning) {
+        goToNext()
+      }
     }, interval)
 
     return () => clearInterval(intervalId)
-  }, [autoPlay, interval])
+  }, [autoPlay, interval, isTransitioning])
 
-  // Calculer les indices des images visibles
-  const getVisibleImages = () => {
-    const prevIndex = currentIndex - 1
-    const nextIndex = currentIndex + 1
+  // Calculate image positions for visible images
+  const getImageStyle = (imageIndex: number) => {
+    const distance = imageIndex - currentIndex
+    const absDistance = Math.abs(distance)
     
-    return [
-      { index: prevIndex, position: 'left' },
-      { index: currentIndex, position: 'center' },
-      { index: nextIndex, position: 'right' }
-    ]
+    // Show 3 images: prev, current, next (handle wrapping)
+    let adjustedDistance = distance
+    
+    // Handle wrap-around for previous image
+    if (distance > images.length / 2) {
+      adjustedDistance = distance - images.length
+    } else if (distance < -images.length / 2) {
+      adjustedDistance = distance + images.length
+    }
+    
+    // Only show images that are within 1 position of current
+    if (Math.abs(adjustedDistance) > 1) {
+      return { display: 'none' }
+    }
+
+    let translateX = 0
+    let scale = 1
+    let opacity = 1
+    let zIndex = 1
+
+    if (adjustedDistance === 0) {
+      // Current image (center)
+      translateX = 0
+      scale = 1.1
+      zIndex = 10
+      opacity = 1
+    } else if (adjustedDistance === 1) {
+      // Next image (right)
+      translateX = 70  // Reduced from 100% to show more of the image
+      scale = 0.9
+      opacity = 0.7
+      zIndex = 5
+    } else if (adjustedDistance === -1) {
+      // Previous image (left)
+      translateX = -70  // Reduced from -100% to show more of the image
+      scale = 0.9
+      opacity = 0.7
+      zIndex = 5
+    }
+
+    return {
+      transform: `translateX(${translateX}%) scale(${scale}) translateZ(0)`,
+      opacity,
+      zIndex,
+      transition: isTransitioning 
+        ? 'all 800ms cubic-bezier(0.25, 0.8, 0.25, 1)' 
+        : 'all 400ms ease-out',
+      willChange: 'transform, opacity'
+    }
   }
 
-  const visibleImages = getVisibleImages()
-
   return (
-    <div className="relative w-full mx-auto">
+    <div className="relative w-full mx-auto overflow-hidden">
       {/* Bouton navigation gauche */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-black p-3 rounded-full transition-colors duration-200"
+        disabled={isTransitioning}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed text-black p-3 rounded-full transition-all duration-300 ease-out hover:scale-110 shadow-lg"
+        style={{
+          transform: 'translateY(-50%) translateZ(0)',
+          backfaceVisibility: 'hidden'
+        }}
         aria-label="Previous image"
       >
-        <ChevronLeft className="w-8 h-8" />
+        <ChevronLeft className="w-6 h-6" />
       </button>
 
-      {/* Container des images */}
-      <div className="flex items-center justify-center gap-4 px-16" style={{height: '400px'}}>
-        {visibleImages.map((item, idx) => (
-          <div
-            key={idx}
-            className={`relative transition-all duration-300 ease-in-out rounded-lg ${
-              item.position === 'center'
-                ? 'scale-110 z-10'
-                : 'scale-90 opacity-70'
-            }`}
-            style={{
-              background: item.position === 'center' 
-                ? 'linear-gradient(45deg, #1691B0, #59186A)'
-                : item.position === 'left'
-                  ? 'linear-gradient(to right, #211824 20%, transparent 100%)'
-                  : 'linear-gradient(to left, #211824 20%, transparent 100%)',
-              width: '602px',
-              height: '339px',
-              padding: '1px'
-            }}
-          >
-            <div 
-              className="w-full h-full rounded-lg overflow-hidden relative"
+      {/* Container principal des images */}
+      <div className="relative h-[400px] flex items-center justify-center px-8">
+        {images.map((image, index) => {
+          const style = getImageStyle(index)
+          if (style.display === 'none') return null
+          
+          return (
+            <div
+              key={index}
+              className="absolute flex items-center justify-center"
               style={{
+                ...style,
                 width: '600px',
-                height: '337px'
+                height: '337px',
+                left: '50%',
+                top: '50%',
+                marginLeft: '-300px',
+                marginTop: '-168.5px'
               }}
             >
-              <Image
-                src={infiniteImages[Math.abs(item.index) % infiniteImages.length] || images[0]}
-                alt={`Support image ${(Math.abs(item.index) % images.length) + 1}`}
-                width={600}
-                height={337}
-                className="w-full h-full object-cover"
-                sizes="600px"
-              />
-              {item.position !== 'center' && (
-                <div 
-                  className="absolute inset-0"
+            {/* Container pour l'image */}
+            <div 
+              className="relative rounded-lg overflow-hidden w-full h-full bg-black"
+            >
+                <Image
+                  src={image}
+                  alt={`Support image ${index + 1}`}
+                  width={600}
+                  height={337}
+                  className="w-full h-full object-cover"
                   style={{
-                    background: item.position === 'left' 
-                      ? 'linear-gradient(to right,  #211824 20%, transparent 100%)'
-                      : 'linear-gradient(to left, #211824 20%, transparent 100%)'
+                    transform: 'translateZ(0)',
+                    backfaceVisibility: 'hidden'
                   }}
+                  priority={index === currentIndex}
+                  sizes="600px"
                 />
-              )}
+                
+                {/* Overlay pour les images non centrales */}
+                {index !== currentIndex && (
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-r from-[#211824]/60 via-transparent to-[#211824]/60"
+                    style={{
+                      transition: 'opacity 800ms cubic-bezier(0.25, 0.8, 0.25, 1)'
+                    }}
+                  />
+                )}
             </div>
-          </div>
-        ))}
+            </div>
+          )
+        })}
       </div>
 
       {/* Bouton navigation droite */}
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-black p-3 rounded-full transition-colors duration-200"
+        disabled={isTransitioning}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed text-black p-3 rounded-full transition-all duration-300 ease-out hover:scale-110 shadow-lg"
+        style={{
+          transform: 'translateY(-50%) translateZ(0)',
+          backfaceVisibility: 'hidden'
+        }}
         aria-label="Next image"
       >
-        <ChevronRight className="w-8 h-8" />
+        <ChevronRight className="w-6 h-6" />
       </button>
 
       {/* Indicateurs */}
-      <div className="flex justify-center mt-6 space-x-2">
+      <div className="flex justify-center mt-6 space-x-3">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-              (currentIndex - startIndex + images.length) % images.length === index 
-                ? 'bg-white' 
-                : 'bg-white/40'
+            disabled={isTransitioning}
+            className={`w-3 h-3 rounded-full transition-all duration-500 ease-out disabled:cursor-not-allowed ${
+              currentIndex === index 
+                ? 'bg-white scale-125 shadow-md' 
+                : 'bg-white/40 hover:bg-white/70 hover:scale-110'
             }`}
+            style={{
+              transform: 'translateZ(0)',
+              backfaceVisibility: 'hidden'
+            }}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
+
     </div>
   )
 }

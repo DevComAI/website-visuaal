@@ -58,3 +58,29 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+/* Logo Carousel Animation */
+@keyframes infinite-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 45s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+.animate-infinite-scroll img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

@@ -51,12 +51,12 @@ export default function LogoCarousel() {
             {PARTNER_LOGOS.map((logo, index) => (
               <div
                 key={`logo-${index}`}
-                className="mx-8 flex items-center justify-center h-32 w-64 grayscale hover:grayscale-0 transition-all duration-300"
+                className="mx-8 flex items-center justify-center h-32 w-64 grayscale hover:grayscale-0 transition-all duration-500 ease-out"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-full max-w-full object-contain mix-blend-lighten"
+                  className="max-h-full max-w-full object-contain mix-blend-lighten transition-transform duration-300 ease-out hover:scale-105"
                 />
               </div>
             ))}
@@ -67,12 +67,28 @@ export default function LogoCarousel() {
             {PARTNER_LOGOS.map((logo, index) => (
               <div
                 key={`logo-duplicate-${index}`}
-                className="mx-8 flex items-center justify-center h-32 w-64 grayscale hover:grayscale-0 transition-all duration-300"
+                className="mx-8 flex items-center justify-center h-32 w-64 grayscale hover:grayscale-0 transition-all duration-500 ease-out"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-full max-w-full object-contain mix-blend-lighten"
+                  className="max-h-full max-w-full object-contain mix-blend-lighten transition-transform duration-300 ease-out hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* Third set for extra smoothness */}
+          <div className="flex items-center justify-center min-w-max">
+            {PARTNER_LOGOS.map((logo, index) => (
+              <div
+                key={`logo-triple-${index}`}
+                className="mx-8 flex items-center justify-center h-32 w-64 grayscale hover:grayscale-0 transition-all duration-500 ease-out"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-h-full max-w-full object-contain mix-blend-lighten transition-transform duration-300 ease-out hover:scale-105"
                 />
               </div>
             ))}
@@ -80,24 +96,6 @@ export default function LogoCarousel() {
         </div>
       </div>
       
-      <style jsx>{`
-        @keyframes infinite-scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        
-        .animate-infinite-scroll {
-          animation: infinite-scroll 30s linear infinite;
-        }
-        
-        .animate-infinite-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   )
 }
