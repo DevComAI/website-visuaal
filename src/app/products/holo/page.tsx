@@ -36,6 +36,30 @@ paragraphs={[
 backgroundImage="HOLO.png"
 />
 
+
+
+
+<section className="py-20 relative">
+        <div className="container">
+          <div className="flex justify-center relative">
+          <div 
+            className="p-1 rounded-3xl relative z-10 w-full h-[1200px]"
+
+          >
+          <h2 className="text-[40px] font-medium text-white text-center uppercase absolute top-40 left-0 right-0 z-20">LED SCREEN BY <><GradientText>VISUAAL</GradientText> </></h2>
+
+
+            <div className="w-full h-full rounded-3xl overflow-hidden" style={{ backgroundColor: '#211824' }}>
+              <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
+              <spline-viewer url="https://prod.spline.design/63D-bD0D4e6xHPvT/scene.splinecode" style={{ width: '100%', height: '100%' }}></spline-viewer>
+            </div>
+          </div>
+          </div>
+        </div> 
+      </section>
+
+
+
     </div>
   )
 }
