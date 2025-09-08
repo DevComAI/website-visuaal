@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { ReactNode } from 'react'
 
 interface FeatureItem {
   icon: string
@@ -7,7 +8,7 @@ interface FeatureItem {
 }
 
 interface HoloFeaturesProps {
-  title: string
+  title: ReactNode
   description: string
   mainImage: string
   features: FeatureItem[]
@@ -24,26 +25,27 @@ export default function HoloFeatures({
   return (
     <section className="py-20">
       <div className="container mx-auto px-6">
-      <div className="flex justify-center">
-        <div className="flex flex-col max-w-[1600px]">
+      <div className="flex justify-start">
+        <div className="flex flex-col  mx-28">
           <h1 className="text-white text-3xl md:text-4xl font-medium mb-6 uppercase text-left">
             {title}
           </h1>
-          <p className="text-gray-300 text-lg leading-relaxed mb-8 text-left">
+          <p className="text-gray-300 text-lg leading-relaxed mb-8 text-left whitespace-pre-line">
             {description}
           </p>
         </div>
       </div>
-        <div className={`flex items-center gap-16 ${reverse ? 'flex-row-reverse' : 'flex-row'}`}>
-          
-          {/* Text Content */}
-          <div className="flex-1">
+        <div className="flex justify-center">
+          <div className={`flex items-center gap-16 mx-28 ${reverse ? 'flex-row-reverse' : 'flex-row -mt-40'}`}>
             
-            
-            {/* Features List */}
-            <div className="space-y-6">
-              {features.map((feature, index) => (
-                <div key={index} className={`flex items-start gap-16 ${!reverse ? 'flex-row-reverse' : 'flex-row'}`}>
+            {/* Text Content */}
+            <div className="w-2/3">
+              
+              
+              {/* Features List */}
+              <div className="space-y-6 ">
+                {features.map((feature, index) => (
+                  <div key={index} className={`flex items-start gap-16 max-w-5xl ${!reverse ? 'flex-row-reverse' : 'flex-row'}`}>
                   <div className="text-center text-white relative z-20">
                     <div 
                       className="w-[210px] h-[140px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
@@ -57,25 +59,26 @@ export default function HoloFeatures({
                     </div>
                   </div>
                   <div>
-                    <p className=" text-[32px] leading-relaxed">
+                    <p className=" text-[30px] leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
                 </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-          
-          {/* Image */}
-          <div className="flex-1 flex justify-center">
-            <div className="relative ">
-              <Image
-                src={mainImage}
-                alt="Holographic display"
-                width={400}
-                height={500}
-                className="w-full h-full object-contain mix-blend-screen"
-              />
+            
+            {/* Image */}
+            <div className="w-2/5 flex justify-center">
+              <div className="relative ">
+                <Image
+                  src={mainImage}
+                  alt="Holographic display"
+                  width={reverse ? 850 : 540}
+                   height={reverse ? 1350 : 960}
+                  className={`h-full w-full object-contain mix-blend-screen ${reverse ? '' : 'mt-20'}`}
+                />
+              </div>
             </div>
           </div>
         </div>

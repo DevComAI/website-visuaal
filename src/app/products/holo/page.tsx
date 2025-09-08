@@ -60,25 +60,14 @@ backgroundImage="HOLO.png"
         </div> 
       </section>
 
-      <SupportCarousel 
-        images={[
-          '/img/humanbox/carousel1/project1.png',
-          '/img/humanbox/carousel1/project2.png',
-          '/img/humanbox/carousel1/project3.png'
-        ]}
-      />
 
-      <SupportCarousel 
-        images={[
-          '/img/humanbox/carousel2/project1.png',
-          '/img/humanbox/carousel2/project2.png',
-          '/img/humanbox/carousel2/project3.png'
-        ]}
-      />
 
       <HoloFeatures
-        title="Human Box"
-        description="From real-time streaming to live recorded content, the Holobox delivers versatile performance with seamless WiFi and Bluetooth connectivity. Whether it's showcasing products, welcoming guests with a holographic host, enabling remote consultations, delivering lectures, or acting as a dynamic display, the Holobox adapts to every use case. Easily manage and customize your content — our technology is designed to meet your needs with efficiency and impact."
+        title={<><GradientText>Human Box</GradientText></>}
+        description={`From real-time streaming to live recorded content, the Holobox delivers versatile performance with seamless WiFi and Bluetooth connectivity. Whether it's showcasing products, welcoming guests with a holographic host, enabling remote consultations, delivering lectures, or acting as a dynamic display, 
+          the Holobox adapts to every use case.
+
+Easily manage and customize your content — our technology is designed to meet your needs with efficiency and impact.`}
         mainImage="/img/humanbox/humanbox1.png"
         features={[
           {
@@ -99,10 +88,23 @@ backgroundImage="HOLO.png"
         ]}
         reverse={true}
       />
+      <SupportCarousel 
+        images={[
+          '/img/humanbox/carousel1/project1.png',
+          '/img/humanbox/carousel1/project2.png',
+          '/img/humanbox/carousel1/project3.png'
+        ]}
+      />
+      <div className="pb-60"> </div>
 
+   
       <HoloFeatures
-        title="Human Box"
-        description="The Holobox Mini is our compact tabletop model, ideal for product placement, feature highlights, or adding a cutting-edge tech touch. Affordable and versatile, it's a smart solution for businesses of all sizes looking to leverage high-quality holographic displays. Its vivid holograms enhance visibility, engagement, and memorability, offering a new level of interactivity."
+        title={<><GradientText>Human Box</GradientText></>}
+        description={`The Holobox Mini is our compact tabletop model, ideal for product placement, feature highlights, 
+        or adding a cutting-edge tech touch.
+         Affordable and versatile, it's a smart solution for businesses of all sizes looking to leverage high-quality holographic displays. 
+         
+         Its vivid holograms enhance visibility, engagement, and memorability, offering a new level of interactivity.`}
         mainImage="/img/humanbox/humanbox2.png"
         features={[
           {
@@ -123,6 +125,15 @@ backgroundImage="HOLO.png"
         ]}
 
       />
+
+<SupportCarousel 
+        images={[
+          '/img/humanbox/carousel2/project1.png',
+          '/img/humanbox/carousel2/project2.png',
+          '/img/humanbox/carousel2/project3.png'
+        ]}
+      />
+      <div className="pb-60"> </div>
 
     </div>
   )
