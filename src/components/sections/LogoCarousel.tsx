@@ -56,7 +56,7 @@ export default function LogoCarousel() {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-full max-w-full object-contain"
+                  className="max-h-full max-w-full object-contain mix-blend-lighten"
                 />
               </div>
             ))}
@@ -72,7 +72,7 @@ export default function LogoCarousel() {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-full max-w-full object-contain"
+                  className="max-h-full max-w-full object-contain mix-blend-lighten"
                 />
               </div>
             ))}

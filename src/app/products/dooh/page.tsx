@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero'
 import TitlePage from '@/components/ui/TitlePageSection'
 import GradientText from '@/components/ui/GradientText'
 import DoohContent from '@/components/sections/DoohContent'
+import DoohTestimonial from '@/components/sections/DoohTestimonial'
 
 export const metadata: Metadata = {
   title: 'DOOH - Digital Out Of Home | Visuaal',
@@ -58,6 +59,9 @@ const DOOHPage = () => {
       </section>
 
       <DoohContent />
+
+      <DoohTestimonial />
+      <div className="pb-40"> </div>
 
     </div>
   )

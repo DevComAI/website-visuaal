@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/Button'
 import Hero from '@/components/sections/Hero'
 import TitlePage from '@/components/ui/TitlePageSection'
 import GradientText from '@/components/ui/GradientText'
+import SupportCarousel from '@/components/sections/SupportCarousel'
+import HoloFeatures from '@/components/sections/HoloFeatures'
 
 export const metadata: Metadata = {
   title: 'Hologrammes | Visuaal',
@@ -58,7 +60,69 @@ backgroundImage="HOLO.png"
         </div> 
       </section>
 
+      <SupportCarousel 
+        images={[
+          '/img/humanbox/carousel1/project1.png',
+          '/img/humanbox/carousel1/project2.png',
+          '/img/humanbox/carousel1/project3.png'
+        ]}
+      />
 
+      <SupportCarousel 
+        images={[
+          '/img/humanbox/carousel2/project1.png',
+          '/img/humanbox/carousel2/project2.png',
+          '/img/humanbox/carousel2/project3.png'
+        ]}
+      />
+
+      <HoloFeatures
+        title="Human Box"
+        description="From real-time streaming to live recorded content, the Holobox delivers versatile performance with seamless WiFi and Bluetooth connectivity. Whether it's showcasing products, welcoming guests with a holographic host, enabling remote consultations, delivering lectures, or acting as a dynamic display, the Holobox adapts to every use case. Easily manage and customize your content — our technology is designed to meet your needs with efficiency and impact."
+        mainImage="/img/humanbox/humanbox1.png"
+        features={[
+          {
+            icon: '86"',
+            title: 'Large Display',
+            description: 'Transparent LCD screen for life size and 3D holographic images.'
+          },
+          {
+            icon: 'ANTI-GLARE GLASS',
+            title: 'High Quality Display',
+            description: 'High-resolution image brightness in daylight or low-light conditions.'
+          },
+          {
+            icon: 'TOUCH SCREEN',
+            title: 'Interactive Control',
+            description: 'Offers 20-point IR Control or optional hand-held remote control.'
+          }
+        ]}
+        reverse={true}
+      />
+
+      <HoloFeatures
+        title="Human Box"
+        description="The Holobox Mini is our compact tabletop model, ideal for product placement, feature highlights, or adding a cutting-edge tech touch. Affordable and versatile, it's a smart solution for businesses of all sizes looking to leverage high-quality holographic displays. Its vivid holograms enhance visibility, engagement, and memorability, offering a new level of interactivity."
+        mainImage="/img/humanbox/humanbox2.png"
+        features={[
+          {
+            icon: '21.5"',
+            title: 'Compact Size',
+            description: 'Enjoy stunning holograms, even in compact spaces. Making it perfect for smaller spaces.'
+          },
+          {
+            icon: 'SMALL',
+            title: 'Perfect Size',
+            description: 'Perfect for small objects, this technology brings the enchantment of holography to a new level.'
+          },
+          {
+            icon: '31LBS',
+            title: 'Lightweight',
+            description: 'Enjoy the futuristic charm in any setting with this easily transportable and interconnected holographic solution.'
+          }
+        ]}
+
+      />
 
     </div>
   )
