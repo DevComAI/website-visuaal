@@ -9,6 +9,9 @@ interface HeroSplineProps {
   splineUrl: string
   showScrollIndicator?: boolean
   textPosition?: 'center' | 'right' | 'left'
+  splinePosition?: 'fullscreen' | 'right'
+  titleSize?: string
+  subtitleSize?: string
 }
 
 const HeroSpline = ({ 
@@ -16,7 +19,10 @@ const HeroSpline = ({
   subtitle,
   splineUrl,
   showScrollIndicator = false,
-  textPosition = 'center'
+  textPosition = 'center',
+  splinePosition = 'fullscreen',
+  titleSize = '48px',
+  subtitleSize = '32px'
 }: HeroSplineProps) => {
   return (
     <section 
@@ -24,7 +30,11 @@ const HeroSpline = ({
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Spline Background - Interactive */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className={
+        splinePosition === 'right' 
+          ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3" 
+          : "absolute inset-0 w-full h-full"
+      }>
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
         <spline-viewer 
           url={splineUrl}
@@ -45,14 +55,14 @@ const HeroSpline = ({
             <>
               {/* Center Layout */}
               <div className="flex-1 flex items-center justify-center mt-40">
-                <h1 className="font-semibold text-white leading-tight max-w-4xl" style={{fontSize: '48px'}}>
+                <h1 className="font-semibold text-white leading-tight max-w-4xl" style={{fontSize: titleSize}}>
                   {title}
                 </h1>
               </div>
               
               {subtitle && (
                 <div className="flex-1 flex items-start justify-center pt-64">
-                  <h2 className="font-semibold text-white leading-tight max-w-2xl" style={{fontSize: '32px'}}>
+                  <h2 className="font-semibold text-white leading-tight max-w-2xl" style={{fontSize: subtitleSize}}>
                     {subtitle}
                   </h2>
                 </div>
@@ -61,13 +71,13 @@ const HeroSpline = ({
           ) : (
             <>
               {/* Right/Left Layout */}
-              <div className="space-y-8 max-w-2xl">
-                <h1 className="font-semibold text-white leading-tight" style={{fontSize: '48px'}}>
+              <div className="space-y-8 max-w-6xl">
+                <h1 className="font-semibold text-white leading-tight" style={{fontSize: titleSize}}>
                   {title}
                 </h1>
                 
                 {subtitle && (
-                  <h2 className="font-semibold text-white leading-tight" style={{fontSize: '32px'}}>
+                  <h2 className="font-semibold text-white leading-tight" style={{fontSize: subtitleSize}}>
                     {subtitle}
                   </h2>
                 )}
