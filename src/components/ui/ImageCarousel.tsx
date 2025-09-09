@@ -91,13 +91,13 @@ const ImageCarousel = ({
       opacity = 1
     } else if (adjustedDistance === 1) {
       // Next image (right)
-      translateX = 70  // Reduced from 100% to show more of the image
+      translateX = 105  // Increased spacing between images
       scale = 0.9
       opacity = 0.7
       zIndex = 5
     } else if (adjustedDistance === -1) {
       // Previous image (left)
-      translateX = -70  // Reduced from -100% to show more of the image
+      translateX = -105  // Increased spacing between images
       scale = 0.9
       opacity = 0.7
       zIndex = 5
