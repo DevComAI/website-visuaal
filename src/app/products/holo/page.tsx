@@ -43,16 +43,42 @@ backgroundImage="HOLO.png"
 
 
 
-<section className="py-20 relative">
+      <section className="py-20 relative">
         <div className="container">
           <div className="flex justify-center relative">
           <div 
             className="p-1 rounded-3xl relative z-10 w-full h-[1200px]"
 
           >
-          <h2 className="text-[40px] font-medium text-white text-center uppercase absolute top-40 left-0 right-0 z-20">LED SCREEN BY <><GradientText>VISUAAL</GradientText> </></h2>
+              {/* PRE-RECORDED section - top right */}
+              <div className="absolute top-10 right-8  z-30" >
+                <h3 className="text-[40px] mb-4">
+                  
+                  <><GradientText>PRE-RECORDED</GradientText> </>
+                </h3>
 
 
+                <p className="text-white text-[32px] font-regular leading-tight w-[730px] h-[370px] p-6 rounded-lg backdrop-blur-[20px]" style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}>
+                  Pre-recorded content lets you control your holographic message with precision. 
+                  Record in our studio or on location, with autocue support for smooth delivery. 
+                  Showcase people or products (3D or physical), and enhance the experience with text, 
+                  QR codes, or visuals, ideal for events and advertising.
+                </p>
+              </div>
+
+              {/* 4K LIVE section - bottom left */}
+              <div className="absolute bottom-10 left-8 z-30 ">
+                <h3 className="text-[40px] mb-4" >
+                                   <><GradientText> 4K LIVE</GradientText> </>
+
+                </h3>
+                <p className="text-white text-[32px] font-regular leading-tight w-[730px] h-[370px] p-6 rounded-lg backdrop-blur-[20px]" style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}>
+                With our 4K live connection, stream directly to a local Holobox in real time, 
+                  all you need is a stable internet connection. Recordings can be done in our studio or on-site.
+                  <br /><br />
+                  Perfect for live performances, digital hosts, education, telehealth, keynote talks, and more.
+                </p>
+              </div>
             <div className="w-full h-full rounded-3xl overflow-hidden" style={{ backgroundColor: '#211824' }}>
               <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
               <spline-viewer url="https://prod.spline.design/63D-bD0D4e6xHPvT/scene.splinecode" style={{ width: '100%', height: '100%' }}></spline-viewer>
