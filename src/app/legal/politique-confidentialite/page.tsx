@@ -35,10 +35,11 @@ const PolitiqueConfidentialitePage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Responsable du traitement</h2>
               <div className="bg-gray-50 p-6 rounded-lg">
-                <p className="text-gray-600 mb-2"><strong>Société :</strong> Visuaal</p>
-                <p className="text-gray-600 mb-2"><strong>Adresse :</strong> 123 Rue de la Digital, 75001 Paris, France</p>
-                <p className="text-gray-600 mb-2"><strong>Email :</strong> contact@visuaal.com</p>
-                <p className="text-gray-600"><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+                <p className="text-gray-600 mb-2"><strong>Société :</strong> Visuaal SAS</p>
+                <p className="text-gray-600 mb-2"><strong>Adresse :</strong> [Adresse à compléter]</p>
+                <p className="text-gray-600 mb-2"><strong>Email :</strong> [email à compléter]</p>
+                <p className="text-gray-600"><strong>Téléphone :</strong> [téléphone à compléter]</p>
+                <p className="text-gray-600"><strong>DPO (Délégué à la Protection des Données) :</strong> [contact DPO à compléter]</p>
               </div>
             </section>
 

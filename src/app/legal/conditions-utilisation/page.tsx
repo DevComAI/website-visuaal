@@ -228,11 +228,12 @@ const ConditionsUtilisationPage = () => {
                 veuillez nous contacter à :
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="font-semibold text-gray-900">Visuaal</p>
-                <p className="text-gray-600">123 Rue de la Digital</p>
-                <p className="text-gray-600">75001 Paris, France</p>
-                <p className="text-gray-600">Email : contact@visuaal.com</p>
-                <p className="text-gray-600">Téléphone : +33 1 23 45 67 89</p>
+                <p className="font-semibold text-gray-900">Visuaal SAS</p>
+                <p className="text-gray-600">[Adresse à compléter]</p>
+                <p className="text-gray-600">[Code postal] [Ville], France</p>
+                <p className="text-gray-600">Email : [email à compléter]</p>
+                <p className="text-gray-600">Téléphone : [téléphone à compléter]</p>
+                <p className="text-gray-600">Service juridique : [email juridique à compléter]</p>
               </div>
             </section>
           </div>

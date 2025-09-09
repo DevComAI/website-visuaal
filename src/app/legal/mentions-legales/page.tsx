@@ -23,16 +23,16 @@ const MentionsLegalesPage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Éditeur du site</h2>
               <div className="bg-gray-50 p-6 rounded-lg">
-                <p className="text-gray-600 mb-2"><strong>Raison sociale :</strong> Visuaal</p>
+                <p className="text-gray-600 mb-2"><strong>Raison sociale :</strong> Visuaal SAS</p>
                 <p className="text-gray-600 mb-2"><strong>Forme juridique :</strong> SAS (Société par Actions Simplifiée)</p>
-                <p className="text-gray-600 mb-2"><strong>Capital social :</strong> 50 000 €</p>
-                <p className="text-gray-600 mb-2"><strong>SIRET :</strong> 123 456 789 00012</p>
-                <p className="text-gray-600 mb-2"><strong>Code APE :</strong> 6201Z</p>
-                <p className="text-gray-600 mb-2"><strong>TVA Intracommunautaire :</strong> FR12345678901</p>
-                <p className="text-gray-600 mb-2"><strong>Adresse :</strong> 123 Rue de la Digital, 75001 Paris, France</p>
-                <p className="text-gray-600 mb-2"><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
-                <p className="text-gray-600 mb-2"><strong>Email :</strong> contact@visuaal.com</p>
-                <p className="text-gray-600"><strong>Représentant légal :</strong> Marie Dubois, Présidente</p>
+                <p className="text-gray-600 mb-2"><strong>Capital social :</strong> [montant à compléter] €</p>
+                <p className="text-gray-600 mb-2"><strong>SIRET :</strong> [numéro SIRET à compléter]</p>
+                <p className="text-gray-600 mb-2"><strong>Code APE :</strong> [code APE à compléter]</p>
+                <p className="text-gray-600 mb-2"><strong>TVA Intracommunautaire :</strong> [numéro TVA à compléter]</p>
+                <p className="text-gray-600 mb-2"><strong>Adresse du siège social :</strong> [adresse à compléter]</p>
+                <p className="text-gray-600 mb-2"><strong>Téléphone :</strong> [téléphone à compléter]</p>
+                <p className="text-gray-600 mb-2"><strong>Email :</strong> [email à compléter]</p>
+                <p className="text-gray-600"><strong>Directeur de la publication :</strong> [nom du directeur à compléter]</p>
               </div>
             </section>
 
@@ -126,7 +126,7 @@ const MentionsLegalesPage = () => {
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Médiation</h2>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 Conformément aux dispositions du Code de la consommation concernant le règlement 
                 amiable des litiges, Visuaal adhère au Service du Médiateur du e-commerce de la FEVAD 
                 (Fédération du e-commerce et de la vente à distance) dont les coordonnées sont les suivantes :
@@ -136,6 +136,10 @@ const MentionsLegalesPage = () => {
                 <p className="text-gray-600">60 rue de la Boétie, 75008 Paris</p>
                 <p className="text-gray-600">https://www.mediateurfevad.fr</p>
               </div>
+              <p className="text-gray-600 leading-relaxed mt-4">
+                Après démarche préalable écrite des consommateurs vis-à-vis de Visuaal, le Service du médiateur 
+                peut être saisi pour tout litige de consommation dont le règlement n&apos;aurait pas abouti.
+              </p>
             </section>
 
             <section>
@@ -144,11 +148,11 @@ const MentionsLegalesPage = () => {
                 Pour toute question concernant ces mentions légales, vous pouvez nous contacter :
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mt-4">
-                <p className="font-semibold text-gray-900">Visuaal</p>
-                <p className="text-gray-600">123 Rue de la Digital</p>
-                <p className="text-gray-600">75001 Paris, France</p>
-                <p className="text-gray-600">Email : contact@visuaal.com</p>
-                <p className="text-gray-600">Téléphone : +33 1 23 45 67 89</p>
+                <p className="font-semibold text-gray-900">Visuaal SAS</p>
+                <p className="text-gray-600">[Adresse à compléter]</p>
+                <p className="text-gray-600">[Code postal] [Ville], France</p>
+                <p className="text-gray-600">Email : [email à compléter]</p>
+                <p className="text-gray-600">Téléphone : [téléphone à compléter]</p>
               </div>
             </section>
           </div>

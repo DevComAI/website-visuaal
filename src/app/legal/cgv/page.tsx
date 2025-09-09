@@ -25,10 +25,16 @@ const CGVPage = () => {
               <p className="text-gray-600 leading-relaxed mb-4">
                 Les présentes conditions générales de vente (CGV) s&apos;appliquent à toutes les prestations 
                 de services proposées par Visuaal, société spécialisée dans les solutions de communication 
-                visuelle et technologies d&apos;affichage.
+                visuelle et technologies d&apos;affichage innovantes.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Ces CGV régissent l&apos;ensemble des relations commerciales entre Visuaal et ses clients professionnels 
+                et particuliers, qu&apos;il s&apos;agisse de vente de matériel, de location, de prestations de services 
+                ou de solutions sur mesure.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Toute commande implique l&apos;acceptation sans réserve des présentes CGV par le client.
+                Toute commande implique l&apos;acceptation sans réserve des présentes CGV par le client. Aucune condition 
+                particulière ne peut, sauf acceptation formelle et écrite de Visuaal, prévaloir contre les présentes CGV.
               </p>
             </section>
 
@@ -49,9 +55,17 @@ const CGVPage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Commandes et devis</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Toute commande fait l&apos;objet d&apos;un devis préalable détaillé. Le devis est valable 
+                Toute commande fait l&apos;objet d&apos;un devis préalable détaillé gratuit. Le devis est valable 
                 30 jours à compter de sa date d&apos;émission. La commande n&apos;est ferme et définitive 
-                qu&apos;après acceptation écrite du devis par le client.
+                qu&apos;après acceptation écrite du devis par le client et versement de l&apos;acompte prévu.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Les modifications de commande demandées par le client ne seront prises en compte que dans la limite 
+                de nos possibilités et feront l&apos;objet d&apos;un avenant au devis initial.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                En cas d&apos;annulation de commande par le client, l&apos;acompte versé restera acquis à Visuaal 
+                à titre d&apos;indemnité forfaitaire, sans préjudice de toute autre action.
               </p>
             </section>
 
@@ -85,11 +99,20 @@ const CGVPage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Garanties</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Nos équipements bénéficient d&apos;une garantie constructeur. Les prestations de service 
-                sont garanties selon les termes du contrat de maintenance.
+                Nos équipements bénéficient d&apos;une garantie constructeur standard de 24 mois. Les prestations de service 
+                sont garanties selon les termes du contrat de maintenance souscrit.
               </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                La garantie couvre les défauts de fabrication et les vices cachés. Elle ne couvre pas :
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li>Les dommages résultant d&apos;un usage non conforme ou de négligence</li>
+                <li>L&apos;usure normale des équipements</li>
+                <li>Les dommages causés par des tiers ou cas de force majeure</li>
+                <li>Les modifications non autorisées du matériel</li>
+              </ul>
               <p className="text-gray-600 leading-relaxed">
-                La garantie ne couvre pas les dommages résultant d&apos;un usage non conforme ou de négligence.
+                Pour bénéficier de la garantie, le client doit notifier le défaut dans les 48 heures de sa découverte.
               </p>
             </section>
 
@@ -132,11 +155,13 @@ const CGVPage = () => {
                 Pour toute question concernant ces conditions générales de vente :
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mt-4">
-                <p className="font-semibold text-gray-900">Visuaal</p>
-                <p className="text-gray-600">123 Rue de la Digital</p>
-                <p className="text-gray-600">75001 Paris, France</p>
-                <p className="text-gray-600">Email : contact@visuaal.com</p>
-                <p className="text-gray-600">Téléphone : +33 1 23 45 67 89</p>
+                <p className="font-semibold text-gray-900">Visuaal SAS</p>
+                <p className="text-gray-600">[Adresse à compléter]</p>
+                <p className="text-gray-600">[Code postal] [Ville], France</p>
+                <p className="text-gray-600">Email : [email à compléter]</p>
+                <p className="text-gray-600">Téléphone : [téléphone à compléter]</p>
+                <p className="text-gray-600">SIRET : [numéro à compléter]</p>
+                <p className="text-gray-600">TVA : [numéro à compléter]</p>
               </div>
             </section>
           </div>
