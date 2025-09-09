@@ -117,18 +117,28 @@ const ImageCarousel = ({
   return (
     <div className="relative w-full mx-auto overflow-hidden py-4">
       {/* Bouton navigation gauche */}
-      <button
-        onClick={goToPrevious}
-        disabled={isTransitioning}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed text-black p-3 rounded-full transition-all duration-300 ease-out hover:scale-110 shadow-lg"
-        style={{
-          transform: 'translateY(-50%) translateZ(0)',
-          backfaceVisibility: 'hidden'
-        }}
-        aria-label="Previous image"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20">
+        <div 
+          className="relative p-[1px] rounded-full w-12 h-12 transition-transform duration-300 ease-out hover:scale-110"
+          style={{
+            background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
+            backgroundSize: '100% 100%'
+          }}
+        >
+          <button
+            onClick={goToPrevious}
+            disabled={isTransitioning}
+            className="w-full h-full rounded-full bg-[#372F39] text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg"
+            style={{
+              transform: 'translateZ(0)',
+              backfaceVisibility: 'hidden'
+            }}
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
 
       {/* Container principal des images */}
       <div className="relative h-[400px] flex items-center justify-center px-8">
@@ -223,18 +233,28 @@ const ImageCarousel = ({
       </div>
 
       {/* Bouton navigation droite */}
-      <button
-        onClick={goToNext}
-        disabled={isTransitioning}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed text-black p-3 rounded-full transition-all duration-300 ease-out hover:scale-110 shadow-lg"
-        style={{
-          transform: 'translateY(-50%) translateZ(0)',
-          backfaceVisibility: 'hidden'
-        }}
-        aria-label="Next image"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 z-20">
+        <div 
+          className="relative p-[1px] rounded-full w-12 h-12 transition-transform duration-300 ease-out hover:scale-110"
+          style={{
+            background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
+            backgroundSize: '100% 100%'
+          }}
+        >
+          <button
+            onClick={goToNext}
+            disabled={isTransitioning}
+            className="w-full h-full rounded-full bg-[#372F39] text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg"
+            style={{
+              transform: 'translateZ(0)',
+              backfaceVisibility: 'hidden'
+            }}
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
 
       {/* Indicateurs */}
       <div className="flex justify-center mt-6 space-x-3">
