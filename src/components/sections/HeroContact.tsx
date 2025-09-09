@@ -43,7 +43,7 @@ const HeroContact = () => {
       ></div>
       <div className="absolute inset-0 bg-black/30"></div>
       
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="w-[1700px] relative z-10 mx-auto px-4">
         <div className="flex items-center justify-between h-full">
         
         
@@ -101,7 +101,7 @@ const HeroContact = () => {
         
         
           {/* Right side - Contact form */}
-          <div className="w-1/2 flex justify-end">
+          <div className="w-1/2 flex justify-end pt-20">
             <div className="w-full max-w-md">
               <div className="backdrop-blur-sm bg-white/10 p-8 rounded-lg border border-white/20">
                 <h2 className="text-2xl font-semibold mb-6">
@@ -171,13 +171,13 @@ const HeroContact = () => {
                 </form>
               </div>
                {/* Social media icons at bottom */}
-      <div className="flex flex-row items-center justify-center gap-4">
+      <div className="flex flex-row items-center justify-center gap-8 pt-4">
         <p className="text-white/60 text-sm">Follow us on the networks</p>
   
-        <div className='flex flex-row'>      
-          <GradientLine width={"100%"} padding="pb-4" />
-          <SocialIcons iconSize={40} spacing="space-x-3" />
-          </div>
+          
+          <GradientLine width={"50px"} padding="py-0 ml-8" />
+          <SocialIcons iconSize={30} spacing="space-x-3" />
+        
         
       </div>
             </div>
