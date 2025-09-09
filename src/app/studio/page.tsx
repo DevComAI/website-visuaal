@@ -2,6 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, Video, Camera, Palette, Film, Headphones, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import HeroSpline from '@/components/sections/HeroSpline'
+import GradientText from '@/components/ui/GradientText'
+import AnimatedVisionText from '@/components/ui/AnimatedVisionText'
 
 export const metadata: Metadata = {
   title: 'Studio de Création | Visuaal',
@@ -119,41 +122,13 @@ const StudioPage = () => {
   return (
     <div className="min-h-screen">
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Link href="/products" className="inline-flex items-center text-primary hover:text-primary-dark mb-6">
-                <ArrowLeft size={20} className="mr-2" />
-                Retour aux produits
-              </Link>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Studio de
-                <span className="block text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
-                  Création
-                </span>
-              </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Donnez vie à vos idées avec notre studio de création complet. De la conception 
-                à la réalisation, nos experts transforment vos projets en contenus visuels 
-                d&apos;exception qui marquent les esprits.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg">
-                  Découvrir nos réalisations
-                </Button>
-                <Button variant="outline" size="lg">
-                  Demander un devis
-                </Button>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-primary/10 to-purple-100 rounded-2xl p-8 h-96 flex items-center justify-center">
-              <Video size={120} className="text-primary" />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Spline Section */}
+      <HeroSpline
+        title={<>From <GradientText>bold concepts</GradientText> to unforgettable <GradientText>immersive visuals</GradientText>.</>}
+        subtitle={<AnimatedVisionText />}
+        splineUrl="https://prod.spline.design/XihlwxPitjwHnwb9/scene.splinecode"
+        textPosition="left"
+      />
 
       {/* Services Section */}
       <section className="py-20 bg-white">

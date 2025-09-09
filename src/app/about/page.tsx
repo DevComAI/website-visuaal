@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import { Award, Users, Target, Heart, Clock, Globe } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import HeroSpline from '@/components/sections/HeroSpline'
+import GradientText from '@/components/ui/GradientText'
 
 export const metadata: Metadata = {
   title: 'À Propos de Visuaal',
@@ -73,20 +75,13 @@ const AboutPage = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            À Propos de{' '}
-            <span className="text-primary">Visuaal</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Depuis 2016, nous révolutionnons l&apos;univers de la communication visuelle avec 
-            des technologies innovantes et un accompagnement personnalisé.
-          </p>
-        </div>
-      </section>
+    <div className="min-h-screen">
+      {/* Hero Spline Section */}
+      <HeroSpline
+        title={<>Our <GradientText>dedicated team</GradientText> of creatives is bursting with <GradientText>talent, experience</GradientText> and <GradientText>passion</GradientText> for what we do.</>}
+        subtitle={<>Go behind the scenes of <GradientText>VISUAAL</GradientText></>}
+        splineUrl="https://prod.spline.design/X07icIhhYxWFwhO1/scene.splinecode"
+      />
 
       {/* Story Section */}
       <section className="py-20 bg-white">
