@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import GradientLine from '@/components/ui/GradientLine'
+import SocialIcons from '@/components/ui/SocialIcons'
 
 const Footer = () => {
   return (
@@ -137,20 +138,7 @@ const Footer = () => {
           {/* Social Media Column */}
           <div className="text-center pt-20">
             <h3 className="font-chillax text-2xl leading-none mb-4">Follow us on the networks</h3>
-            <div className="flex space-x-3 justify-center">
-              <Link href="#" className="hover:opacity-80 transition-opacity" aria-label="Facebook">
-                <Image src="/icons/facebook.png" alt="Facebook" width={40} height={40} />
-              </Link>
-              <Link href="#" className="hover:opacity-80 transition-opacity" aria-label="X (Twitter)">
-                <Image src="/icons/x.png" alt="X" width={40} height={40} />
-              </Link>
-              <Link href="#" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
-                <Image src="/icons/instagram.png" alt="Instagram" width={40} height={40} />
-              </Link>
-              <Link href="#" className="hover:opacity-80 transition-opacity" aria-label="YouTube">
-                <Image src="/icons/youtube.png" alt="YouTube" width={40} height={40} />
-              </Link>
-            </div>
+            <SocialIcons iconSize={40} spacing="space-x-3" />
           </div>
         </div>
 
