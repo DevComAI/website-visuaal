@@ -135,7 +135,7 @@ Easily manage and customize your content — our technology is designed to meet 
           '/img/humanbox/carousel2/project3.png'
         ]}
       />
-      <div className="pb-60"> </div>
+      <div className="pb-40"> </div>
 
 
 
@@ -149,37 +149,37 @@ Easily manage and customize your content — our technology is designed to meet 
 
 
 
-      <section className="py-20">
+      <section>
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-12">
             {/* Image à gauche - 1/3 */}
-            <div className="w-1/3">
+            <div className="w-1/2">
               <div className="flex justify-center">
                 <Image 
                   src="/img/humanbox/humanbox1.png" 
                   alt="Human Box device" 
                   width={300}
                   height={400}
-                  className="w-full max-w-[400px] h-auto"
+                  className="w-full max-w-[400px] h-auto mix-blend-screen mt-20"
                 />
               </div>
             </div>
             
             {/* Contenu à droite - 2/3 */}
-            <div className="w-2/3">
+            <div className="w-1/2 -ml-40">
               {/* Titre */}
-              <h2 className="text-white text-2xl font-semibold mb-8">
+              <h2 className="text-white text-[32px] font-semibold mb-20">
                 We have several other box sizes available :
               </h2>
               
               {/* Grille des tailles - 2 lignes de 5 */}
-              <div className="space-y-4 mb-8">
+              <div className="space-y-1 mb-8">
                 {/* Première ligne */}
-                <div className="flex ">
-                  {['21.5”', '32”', '43”', '49”', '55”'].map((size, index) => (
+                <div className="flex ml-14">
+                  {['21.5"', '32"', '43"', '49"', '55"'].map((size, index) => (
                     <div 
                       key={index}
-                      className="w-[200px] h-[80px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
+                      className="w-[180px] -ml-6 h-[80px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
                       style={{ backgroundImage: "url('/forme/para3.png')" }}
                     >
                       <div className="text-[30px] font-semibold relative -ml-2 z-10 px-2 text-center leading-tight">
@@ -190,11 +190,11 @@ Easily manage and customize your content — our technology is designed to meet 
                 </div>
                 
                 {/* Deuxième ligne */}
-                <div className="flex">
-                  {['65”', '75”', '86”', '98”', '+'].map((size, index) => (
+                <div className="flex ">
+                  {['65"', '75"', '86"', '98"', '+'].map((size, index) => (
                     <div 
                       key={index}
-                      className="w-[210px] h-[80px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
+                      className="w-[180px] -ml-6 h-[80px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
                       style={{ backgroundImage: "url('/forme/para3.png')" }}
                     >
                       <div className="text-[30px] font-semibold relative -ml-2 z-10 px-2 text-center leading-tight">
@@ -206,7 +206,7 @@ Easily manage and customize your content — our technology is designed to meet 
               </div>
               
               {/* Phrase descriptive */}
-              <p className="text-white text-lg mb-8">
+              <p className="text-white text-[32px]  mt-20">
                 Contact us for a quote for a custom size.
               </p>
               
@@ -225,6 +225,7 @@ Easily manage and customize your content — our technology is designed to meet 
               />
             </div>
       </section>
+      <div className="pb-60"> </div>
 
     </div>
   )

@@ -27,15 +27,15 @@ export default function HoloFeatures({
       <div className="container mx-auto px-6">
       <div className="flex justify-start">
         <div className="flex flex-col  mx-28">
-          <h1 className="text-white text-3xl md:text-4xl font-medium mb-6 uppercase text-left">
+          <h1 className="text-white text-[40px]  font-medium mb-6 uppercase text-left">
             {title}
           </h1>
-          <p className="text-gray-300 text-lg leading-relaxed mb-8 text-left whitespace-pre-line">
+          <p className="text-[32px] font-regular leading-relaxed mb-8 text-left whitespace-pre-line">
             {description}
           </p>
         </div>
       </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <div className={`flex items-center gap-16 mx-28 ${reverse ? 'flex-row-reverse' : 'flex-row -mt-40'}`}>
             
             {/* Text Content */}
@@ -69,7 +69,7 @@ export default function HoloFeatures({
             </div>
             
             {/* Image */}
-            <div className="w-2/5 flex justify-center">
+            <div className="w-2/5 flex justify-center ">
               <div className="relative ">
                 <Image
                   src={mainImage}
