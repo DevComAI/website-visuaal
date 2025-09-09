@@ -51,7 +51,7 @@ backgroundImage="HOLO.png"
 
           >
               {/* PRE-RECORDED section - top right */}
-              <div className="absolute top-10 right-8  z-30" >
+              <div className="absolute top-10 right-8 z-30 pointer-events-none" >
                 <h3 className="text-[40px] mb-4">
                   
                   <><GradientText>PRE-RECORDED</GradientText> </>
@@ -67,7 +67,7 @@ backgroundImage="HOLO.png"
               </div>
 
               {/* 4K LIVE section - bottom left */}
-              <div className="absolute bottom-10 left-8 z-30 ">
+              <div className="absolute bottom-10 left-8 z-30 pointer-events-none">
                 <h3 className="text-[40px] mb-4" >
                                    <><GradientText> 4K LIVE</GradientText> </>
 
