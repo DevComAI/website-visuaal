@@ -97,6 +97,7 @@ const AboutPage = () => {
           />
 
       <AboutContent />
+      <div className="pb-60"> </div>
 
     </div>
   )
