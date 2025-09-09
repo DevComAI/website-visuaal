@@ -115,7 +115,7 @@ const ImageCarousel = ({
   }
 
   return (
-    <div className="relative w-full mx-auto overflow-hidden">
+    <div className="relative w-full mx-auto overflow-hidden py-4">
       {/* Bouton navigation gauche */}
       <button
         onClick={goToPrevious}
@@ -170,12 +170,51 @@ const ImageCarousel = ({
                 
                 {/* Overlay pour les images non centrales */}
                 {index !== currentIndex && (
-                  <div 
-                    className="absolute inset-0 bg-gradient-to-r from-[#211824]/60 via-transparent to-[#211824]/60"
-                    style={{
-                      transition: 'opacity 800ms cubic-bezier(0.25, 0.8, 0.25, 1)'
-                    }}
-                  />
+                  <>
+                    {/* Calculer la position relative pour les dégradés */}
+                    {(() => {
+                      const distance = index - currentIndex
+                      let adjustedDistance = distance
+                      
+                      // Handle wrap-around
+                      if (distance > images.length / 2) {
+                        adjustedDistance = distance - images.length
+                      } else if (distance < -images.length / 2) {
+                        adjustedDistance = distance + images.length
+                      }
+                      
+                      if (adjustedDistance === -1) {
+                        // Image de gauche : dégradé de gauche vers transparent
+                        return (
+                          <div 
+                            className="absolute inset-0 bg-gradient-to-r from-[#211824] to-transparent"
+                            style={{
+                              transition: 'opacity 800ms cubic-bezier(0.25, 0.8, 0.25, 1)'
+                            }}
+                          />
+                        )
+                      } else if (adjustedDistance === 1) {
+                        // Image de droite : dégradé de droite vers transparent
+                        return (
+                          <div 
+                            className="absolute inset-0 bg-gradient-to-l from-[#211824] to-transparent"
+                            style={{
+                              transition: 'opacity 800ms cubic-bezier(0.25, 0.8, 0.25, 1)'
+                            }}
+                          />
+                        )
+                      }
+                      return null
+                    })()}
+                    
+                    {/* Overlay général pour assombrir légèrement */}
+                    <div 
+                      className="absolute inset-0 bg-[#211824]/20"
+                      style={{
+                        transition: 'opacity 800ms cubic-bezier(0.25, 0.8, 0.25, 1)'
+                      }}
+                    />
+                  </>
                 )}
             </div>
             </div>
