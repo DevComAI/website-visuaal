@@ -26,7 +26,8 @@ const DOOHPage = () => {
 
 <TitlePage
 
-    title="WHAT IS DOOH ?"
+    title={<>WHAT IS <GradientText>DOOH</GradientText> ?</>}
+
     paragraphs={[
       "DOOH (Digital Out Of Home) is the new generation of outdoor advertising. More than just a screen, it's a dynamic, high-impact media channel that grabs attention in the heart of the city, on streets, in shop windows, malls, and high-traffic areas.",
       "With animated and programmable content, DOOH lets brands deliver the right message, at the right time, in the right place.",

@@ -74,7 +74,8 @@ const ScreenPage = () => {
       />
 <TitlePage
 
-title="WHAT IS les screens for ?"
+title={<>What are <GradientText>led screens</GradientText> for ?</>}
+
 paragraphs={[
   "LED displays are a powerful visual medium that brings content to life, bright, vibrant, and impossible to ignore. Whether used indoors or outdoors, for retail, events, or corporate spaces, LED screens offer unmatched flexibility in size, shape, and impact.",
   "From immersive brand storytelling to high-visibility messaging, they deliver stunning visuals in any environment.",

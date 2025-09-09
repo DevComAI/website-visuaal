@@ -1,5 +1,7 @@
+import { ReactNode } from 'react'
+
 interface TitlePageProps {
-  title: string;
+  title: string | ReactNode;
   paragraphs: string[];
   backgroundImage?: string;
   className?: string;

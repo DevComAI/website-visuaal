@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/Button'
 import HeroSpline from '@/components/sections/HeroSpline'
 import GradientText from '@/components/ui/GradientText'
 import AnimatedVisionText from '@/components/ui/AnimatedVisionText'
+import TitlePage from '@/components/ui/TitlePageSection'
+import Timeline from '@/components/sections/Timeline'
 
 export const metadata: Metadata = {
   title: 'Studio de Création | Visuaal',
@@ -133,173 +135,50 @@ const StudioPage = () => {
         subtitleSize="64px"
       />
 
-      {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Nos Services Créatifs
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Une palette complète de services pour tous vos besoins en création de contenu visuel.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {service.description}
-                </p>
-                <ul className="space-y-1">
-                  {service.details.map((detail, detailIndex) => (
-                    <li key={detailIndex} className="flex items-center text-sm text-gray-500">
-                      <div className="w-1 h-1 bg-primary rounded-full mr-2"></div>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+<TitlePage
+title={<>our <GradientText>tools</GradientText></>}
 
-      {/* Process Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Notre Processus Créatif
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Une méthodologie éprouvée pour garantir la réussite de vos projets créatifs.
-            </p>
-          </div>
-          
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform -translate-x-1/2"></div>
-            
-            <div className="space-y-12">
-              {process.map((phase, index) => (
-                <div key={index} className={`flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                  <div className="flex-1 bg-white rounded-xl p-8 shadow-sm">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">
-                        {phase.step}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900">{phase.title}</h3>
-                        <div className="text-sm text-primary font-medium">{phase.duration}</div>
-                      </div>
-                    </div>
-                    <p className="text-gray-600 leading-relaxed">
-                      {phase.description}
-                    </p>
-                  </div>
-                  <div className="w-4 h-4 bg-primary rounded-full lg:relative lg:z-10"></div>
-                  <div className="flex-1 hidden lg:block"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+paragraphs={[
+  "At VISUAAL, we create much more than images. We create exceptional visual worlds, at the crossroads of art, technology and storytelling.",
+]}
+backgroundImage="studio.png"
+/>
 
-      {/* Equipment Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Équipements Professionnels
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Studio équipé des dernières technologies pour une qualité de production optimale.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {equipment.map((category, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">
-                  {category.category}
-                </h3>
-                <ul className="space-y-2">
-                  {category.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="text-sm text-gray-600 flex items-center">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+<Timeline 
+  items={[
+    {
+      title: "A full-stack visual studio",
+      description: "We bring all our expertise in-house: Art direction, concept design, storyboarding, modeling, rigging, animation, lighting, shooting, texturing, compositing, rendering, real-time integration. Each project is tailor-made to sublimate your vision.",
+      image: "/img/studio/content1.png"
+    },
+    {
+      title: "Real-time & pre-calculated 3D creation", 
+      description: "We work on the two main areas of visual creation: (Unreal Engine, Unity, WebGL) for interactive experiences, immersive web, holography, metavers, XR.",
+      image: "/img/studio/content2.png"
+    },
+    {
+      title: "Premium aesthetics, exacting technical standards",
+      description: "Our creations aim for immediate impact. We know how to combine artistic direction with cutting-edge technology in a fluid process that adapts to all formats: film, projection, giant screen, DOOH display, immersive experience, showroom, shop window, web.",
+      image: "/img/studio/content3.png"
+    },
+    {
+      title: "Technologies & pipelines",
+      description: "Unreal Engine / Unity / Blender / Houdini / Cinema 4D / Maya WebGL / Three.js / TouchDesigner Render engines: Octane, Redshift, V-Ray Generative AI for ideation, design and animation",
+      image: "/img/studio/content4.png"
+    },
+    {
+      title: "A studio for brands that want to go further",
+      description: "Designers, luxury homes, agencies, architects: let's work together to transform your ideas into unforgettable visual experiences. Our mission: to bring to life images that impress, surprise and captivate.",
+      image: "/img/studio/content5.png"
+    },
+    {
+      title: "Precalculated high-end",
+      description: "For luxury goods, advertising, animated films or event content.",
+      image: "/img/studio/content6.png"
+    }
+  ]} 
+/>
 
-      {/* Portfolio Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Nos Réalisations
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Découvrez quelques-unes de nos créations les plus marquantes.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {portfolio.map((project, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                    {project.type}
-                  </span>
-                  <span className="text-gray-500 text-sm">{project.client}</span>
-                </div>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="bg-green-50 text-green-700 px-3 py-2 rounded-lg text-sm font-medium">
-                  📈 {project.metrics}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Créons ensemble votre prochain chef-d&apos;œuvre
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Notre équipe créative est prête à transformer vos idées les plus ambitieuses 
-            en réalité. Parlons de votre projet dès aujourd&apos;hui.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button variant="outline" size="lg" className="bg-white text-primary hover:bg-gray-100">
-                Commencer un projet
-              </Button>
-            </Link>
-            <Button variant="ghost" size="lg" className="text-white border-white hover:bg-white/10">
-              Visiter notre studio
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

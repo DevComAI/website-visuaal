@@ -30,8 +30,8 @@ const HoloPage = () => {
 
 
           <TitlePage
+          title={<>WHAT IS <GradientText>hologram</GradientText> ?</>}
 
-          title="WHAT IS hologram ?"
           paragraphs={[
             "Holographic boxes offer a spectacular way to showcase your content in 3D, floating in space, no headset or glasses required. Available in three size, from compact units for counters and displays, to life-size formats for full-scale experiences, these devices instantly grab attention.",
             "Perfect for retail, events, or product launches, they combine cutting-edge technology with immersive storytelling.",

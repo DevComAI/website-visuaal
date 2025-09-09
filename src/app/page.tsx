@@ -43,7 +43,7 @@ export default function Home() {
       <TitleHome
         topText={<><GradientText>EXPERTS</GradientText> IN IMMERSIVE EXPERIENCES</>}
         bottomText="AND DIGITAL TRANSFORMATION"
-        backgroundImage="ABOUT US.png"
+        backgroundImage="aboutus.png"
       />
       
 
