@@ -1,11 +1,13 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import Hero from '@/components/sections/Hero'
 import TitlePage from '@/components/ui/TitlePageSection'
 import GradientText from '@/components/ui/GradientText'
 import SupportCarousel from '@/components/sections/SupportCarousel'
 import HoloFeatures from '@/components/sections/HoloFeatures'
+import GradientButton from '@/components/ui/GradientButton'
 
 export const metadata: Metadata = {
   title: 'Hologrammes | Visuaal',
@@ -134,6 +136,95 @@ Easily manage and customize your content — our technology is designed to meet 
         ]}
       />
       <div className="pb-60"> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center gap-12">
+            {/* Image à gauche - 1/3 */}
+            <div className="w-1/3">
+              <div className="flex justify-center">
+                <Image 
+                  src="/img/humanbox/humanbox1.png" 
+                  alt="Human Box device" 
+                  width={300}
+                  height={400}
+                  className="w-full max-w-[400px] h-auto"
+                />
+              </div>
+            </div>
+            
+            {/* Contenu à droite - 2/3 */}
+            <div className="w-2/3">
+              {/* Titre */}
+              <h2 className="text-white text-2xl font-semibold mb-8">
+                We have several other box sizes available :
+              </h2>
+              
+              {/* Grille des tailles - 2 lignes de 5 */}
+              <div className="space-y-4 mb-8">
+                {/* Première ligne */}
+                <div className="flex ">
+                  {['21.5”', '32”', '43”', '49”', '55”'].map((size, index) => (
+                    <div 
+                      key={index}
+                      className="w-[200px] h-[80px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
+                      style={{ backgroundImage: "url('/forme/para3.png')" }}
+                    >
+                      <div className="text-[30px] font-semibold relative -ml-2 z-10 px-2 text-center leading-tight">
+                        {size}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Deuxième ligne */}
+                <div className="flex">
+                  {['65”', '75”', '86”', '98”', '+'].map((size, index) => (
+                    <div 
+                      key={index}
+                      className="w-[210px] h-[80px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
+                      style={{ backgroundImage: "url('/forme/para3.png')" }}
+                    >
+                      <div className="text-[30px] font-semibold relative -ml-2 z-10 px-2 text-center leading-tight">
+                        {size}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Phrase descriptive */}
+              <p className="text-white text-lg mb-8">
+                Contact us for a quote for a custom size.
+              </p>
+              
+             
+            </div>
+          </div>
+
+         
+        </div>
+          {/* CTA Button */}
+          <div className="flex justify-center">
+              <GradientButton  
+                href="/contact"
+                text="I want this"
+                className="w-[150px] h-[50px]"
+              />
+            </div>
+      </section>
 
     </div>
   )
