@@ -6,7 +6,7 @@ import GradientLine from '@/components/ui/GradientLine'
 
 const AboutUs = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden ">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12  mb-20 relative z-10">
           {/* Left side - Text and Button */}
@@ -25,7 +25,7 @@ const AboutUs = () => {
           </div>
 
           {/* Right side - Spline Viewer */}
-          <div className="h-[800px] -mt-20 relative z-50">
+          <div className="h-[800px] -mt-20 relative z-50 ">
             <Spline
               scene="https://prod.spline.design/Sj5w2qinD5unnyvb/scene.splinecode"
               className="w-full h-full relative z-50"

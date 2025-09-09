@@ -14,7 +14,7 @@ interface TimelineProps {
 
 const Timeline = ({ items }: TimelineProps) => {
   return (
-    <section className="py-20 bg-[#1a1625] text-white">
+    <section className="py-20 text-white">
       <div className="container mx-auto px-4">
         <div className="relative pt-20 pb-20">
           {/* Timeline line */}
