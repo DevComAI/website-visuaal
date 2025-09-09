@@ -30,11 +30,13 @@ const HeroSpline = ({
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Spline Background - Interactive */}
-      <div className={
-        splinePosition === 'right' 
-          ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3" 
-          : "absolute inset-0 w-full h-full"
-      }>
+      <div 
+        className={
+          splinePosition === 'right' 
+            ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0" 
+            : "absolute inset-0 w-full h-full z-0"
+        }
+      >
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
         <spline-viewer 
           url={splineUrl}
@@ -43,7 +45,7 @@ const HeroSpline = ({
       </div>
       
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 pointer-events-none">
+      <div className="container relative z-20 mx-auto px-4 pointer-events-none">
         <div className={`flex flex-col h-full ${
           textPosition === 'right' 
             ? 'items-end justify-center text-right pr-16' 

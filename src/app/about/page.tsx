@@ -3,6 +3,8 @@ import { Award, Users, Target, Heart, Clock, Globe } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import HeroSpline from '@/components/sections/HeroSpline'
 import GradientText from '@/components/ui/GradientText'
+import AboutContent from '@/components/sections/AboutContent'
+import TitlePage from '@/components/ui/TitlePageSection'
 
 export const metadata: Metadata = {
   title: 'À Propos de Visuaal',
@@ -83,132 +85,18 @@ const AboutPage = () => {
         splineUrl="https://prod.spline.design/X07icIhhYxWFwhO1/scene.splinecode"
       />
 
-      {/* Story Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Notre Histoire
-              </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  Fondée en 2016 par une équipe de passionnés de technologie et de design, 
-                  Visuaal est née d&apos;une vision simple : démocratiser l&apos;accès aux technologies 
-                  visuelles les plus avancées pour toutes les entreprises.
-                </p>
-                <p>
-                  Aujourd&apos;hui, nous sommes fiers d&apos;accompagner plus de 150 clients dans leurs 
-                  projets de communication visuelle, des startups innovantes aux grands groupes 
-                  internationaux.
-                </p>
-                <p>
-                  Notre expertise couvre l&apos;ensemble de la chaîne de valeur : de la conception 
-                  à l&apos;installation, en passant par la maintenance et l&apos;optimisation des performances.
-                </p>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8">
-              <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<TitlePage
 
-      {/* Values Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Nos Valeurs
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ces valeurs guident chacune de nos actions et définissent notre approche 
-              unique du service client.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+title="Who we are ?"
+paragraphs={[
+  "In a world where digital engagement defines brand success,VISUAAL offers a complete suite ofhigh-impact solutions designed to captivate, connect, and convert. Based inDubai, Paris and Shenzhen, VISUAAL brings together a team of experts who are reshaping the digitallandscape.",
+  "VISUAAL It is the meeting of entrepreneurs from different backgroundswho bring their expertise in experience creation, advertising, and digitaltransformation to serve brands and publishers around immersive and innovative experiences.",
+]}
+backgroundImage="aboutus.png"
+/>
 
-      {/* Team Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Notre Équipe
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Une équipe d&apos;experts passionnés, chacun spécialisé dans son domaine 
-              pour vous offrir le meilleur service.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Users size={32} className="text-primary" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {member.name}
-                </h3>
-                <div className="text-primary font-medium mb-3">
-                  {member.role}
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {member.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AboutContent />
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Rejoignez l&apos;aventure Visuaal
-          </h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Découvrez comment nos solutions peuvent transformer votre communication 
-            et propulser votre entreprise vers de nouveaux sommets.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" size="lg" className="bg-white text-primary hover:bg-gray-100">
-              Découvrir nos produits
-            </Button>
-            <Button variant="ghost" size="lg" className="text-white border-white hover:bg-white/10">
-              Nous contacter
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
