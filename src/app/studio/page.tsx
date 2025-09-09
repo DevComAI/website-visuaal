@@ -7,6 +7,7 @@ import GradientText from '@/components/ui/GradientText'
 import AnimatedVisionText from '@/components/ui/AnimatedVisionText'
 import TitlePage from '@/components/ui/TitlePageSection'
 import Timeline from '@/components/sections/Timeline'
+import GradientButton from '@/components/ui/GradientButton'
 
 export const metadata: Metadata = {
   title: 'Studio de Création | Visuaal',
@@ -179,6 +180,42 @@ backgroundImage="studio.png"
   ]} 
 />
 
+
+<div className="pt-40 flex justify-center">
+
+          <div className="text-left max-w-[1500px] mx-auto">
+
+
+            {/* Main Description */}
+            <p className="text-[32px] text-center leading-relaxed mb-12">
+            Every project is unique, that’s why we adapt to your needs, ambitions, and challenges. 
+            Let’s talk, and find the visual solution that truly fits you.
+            </p>
+
+  
+
+            {/* CTA Button */}
+            <div className="flex justify-center pt-20">
+              <GradientButton 
+                href="/contact"
+                text="Talking about your project"
+                className="w-[350px] h-[50px]"
+              />
+            </div>
+          </div>
+ 
+
+
+      </div>
+
+
+   
+
+        <div className=''>
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
+          <spline-viewer url="https://prod.spline.design/VhnOlUUBXyLXytif/scene.splinecode"></spline-viewer>
+        </div>
+   
     </div>
   )
 }

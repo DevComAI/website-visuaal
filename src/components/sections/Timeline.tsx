@@ -20,7 +20,7 @@ const Timeline = ({ items }: TimelineProps) => {
           {/* Timeline line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-[5px] bg-[#363986] transform -translate-x-1/2"></div>
           
-          <div className="space-y-20">
+          <div className="-space-y-32">
             {items.map((item, index) => (
               <div key={index} className="relative flex justify-center">
                 {/* Content Container */}
