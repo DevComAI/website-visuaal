@@ -85,16 +85,16 @@ const AboutPage = () => {
         splineUrl="https://prod.spline.design/X07icIhhYxWFwhO1/scene.splinecode"
       />
 
-<TitlePage
+          <TitlePage
 
-title={<><GradientText>Who</GradientText> Who we are ?</>}
+          title={<><GradientText>Who</GradientText> Who we are ?</>}
 
-paragraphs={[
-  "In a world where digital engagement defines brand success,VISUAAL offers a complete suite ofhigh-impact solutions designed to captivate, connect, and convert. Based inDubai, Paris and Shenzhen, VISUAAL brings together a team of experts who are reshaping the digitallandscape.",
-  "VISUAAL It is the meeting of entrepreneurs from different backgroundswho bring their expertise in experience creation, advertising, and digitaltransformation to serve brands and publishers around immersive and innovative experiences.",
-]}
-backgroundImage="aboutus.png"
-/>
+          paragraphs={[
+            "In a world where digital engagement defines brand success,VISUAAL offers a complete suite ofhigh-impact solutions designed to captivate, connect, and convert. Based inDubai, Paris and Shenzhen, VISUAAL brings together a team of experts who are reshaping the digitallandscape.",
+            "VISUAAL It is the meeting of entrepreneurs from different backgroundswho bring their expertise in experience creation, advertising, and digitaltransformation to serve brands and publishers around immersive and innovative experiences.",
+          ]}
+          backgroundImage="aboutus.png"
+          />
 
       <AboutContent />
 

@@ -5,7 +5,7 @@ import GradientText from '@/components/ui/GradientText'
 
 const AboutContent = () => {
   return (
-    <section className="py-20 bg-[#1a1625] text-white">
+    <section className="py-20  text-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -54,7 +54,7 @@ const AboutContent = () => {
           </div>
 
           {/* Spline */}
-          <div className="relative h-96 lg:h-[500px]">
+          <div className="relative h-96 lg:h-[500px] mix-blend-lighten">
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
             <spline-viewer 
               url="https://prod.spline.design/b5QNjdMLUJW-blFk/scene.splinecode"

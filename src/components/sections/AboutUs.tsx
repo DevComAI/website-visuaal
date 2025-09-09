@@ -26,11 +26,8 @@ const AboutUs = () => {
 
           {/* Right side - Spline Viewer */}
           <div className="h-[800px] -mt-20 relative z-50 ">
-            <Spline
-              scene="https://prod.spline.design/Sj5w2qinD5unnyvb/scene.splinecode"
-              className="w-full h-full relative z-50"
-              style={{ zIndex: 50 }}
-            />
+          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
+          <spline-viewer url="https://prod.spline.design/Sj5w2qinD5unnyvb/scene.splinecode"></spline-viewer>
           </div>
         </div>
 
