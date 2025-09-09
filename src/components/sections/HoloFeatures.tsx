@@ -43,27 +43,30 @@ export default function HoloFeatures({
               
               
               {/* Features List */}
-              <div className="space-y-6 ">
+              <div className="space-y-6 relative">
+                {/* Trait vertical derrière les parallélépipèdes */}
+                <div className={`absolute ${reverse ? 'left-[105px]' : 'right-[105px]'} -top-10 -bottom-10 w-px bg-gradient-to-b from-transparent via-white to-transparent z-0`} />
+                
                 {features.map((feature, index) => (
                   <div key={index} className={`flex items-start gap-16 max-w-5xl ${!reverse ? 'flex-row-reverse' : 'flex-row'}`}>
-                  <div className="text-center text-white relative z-20">
-                    <div 
-                      className="w-[210px] h-[140px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
-                      style={{ backgroundImage: "url('/forme/para3.png')" }}
-                    >
-                      <div className={`${feature.icon.split(' ').length === 1 ? 'text-[30px]' : 'text-[20px]'} font-semibold relative -ml-2 z-10 px-2 text-center leading-tight`}>
-                        {feature.icon.split(' ').map((word, wordIndex) => (
-                          <div key={wordIndex}>{word}</div>
-                        ))}
+                    <div className="text-center text-white relative z-20">
+                      <div 
+                        className="w-[210px] h-[140px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
+                        style={{ backgroundImage: "url('/forme/para3.png')" }}
+                      >
+                        <div className={`${feature.icon.split(' ').length === 1 ? 'text-[30px]' : 'text-[20px]'} font-semibold relative -ml-2 z-10 px-2 text-center leading-tight`}>
+                          {feature.icon.split(' ').map((word, wordIndex) => (
+                            <div key={wordIndex}>{word}</div>
+                          ))}
+                        </div>
                       </div>
                     </div>
+                    <div>
+                      <p className=" text-[30px] leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className=" text-[30px] leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
                 ))}
               </div>
             </div>
