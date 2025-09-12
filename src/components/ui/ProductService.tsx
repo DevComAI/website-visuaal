@@ -48,7 +48,7 @@ const ProductService = ({
               <div className="mb-6 text-left">
                 <img 
                   src={service.image}
-                  alt={service.title}
+                  alt={typeof service.title === 'string' ? service.title : 'Service image'}
                   className="h-auto object-contain"
                   style={{ maxHeight: '400px', width: 'auto' }}
                 />

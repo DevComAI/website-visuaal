@@ -33,7 +33,7 @@ const ScreenContent = ({
           >
             <img 
                 src={imageUrl}
-                alt={title}
+                alt={typeof title === 'string' ? title : 'Screen content'}
                 className="w-full h-auto object-cover"
                 style={{ maxWidth: '851px' }}
               />

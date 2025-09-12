@@ -63,7 +63,7 @@ const HeroContact = () => {
               {/* Let's talk section */}
               <div>
                 <h3 className=" text-[24px] font-medium mb-8">
-                  Let's talk
+                  Let&apos;s talk
                 </h3>
                 <div className="space-y-2 text-[16px]">
                   <p className=" text-lg">contact@visuaal.ae</p>

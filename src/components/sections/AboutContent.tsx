@@ -17,7 +17,7 @@ const AboutContent = () => {
                 OUR <GradientText>MISSIONS</GradientText>
               </h2>
               <p className="text-[20px] leading-relaxed">
-                At VISUAAL, we bring LED screens to life! Our mission is to transform spaces into dynamic digital experiences, offering cutting-edge content, expert consulting, seamless installation, and smart monetisation strategies. From 3D and holographic storytelling to tailored solutions, we make digital signage more than just a screen—it's an immersive journey.
+                At VISUAAL, we bring LED screens to life! Our mission is to transform spaces into dynamic digital experiences, offering cutting-edge content, expert consulting, seamless installation, and smart monetisation strategies. From 3D and holographic storytelling to tailored solutions, we make digital signage more than just a screen—it&apos;s an immersive journey.
               </p>
             </div>
 
@@ -38,7 +38,7 @@ const AboutContent = () => {
             WHY <GradientText>US</GradientText>
               </h2>
               <p className="text-[20px] leading-relaxed">
-                Because we don't just sell screens—we create unforgettable experiences! With expertise at every step, next-gen content, and a commitment to innovation, we're your partners in transformative digital signage success. Plus, we make monetisation work for you. More impact, more engagement, more ROI. Let me know if you'd like any tweaks!
+                Because we don&apos;t just sell screens—we create unforgettable experiences! With expertise at every step, next-gen content, and a commitment to innovation, we&apos;re your partners in transformative digital signage success. Plus, we make monetisation work for you. More impact, more engagement, more ROI. Let me know if you&apos;d like any tweaks!
               </p>
             </div>
 

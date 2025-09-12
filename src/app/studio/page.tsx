@@ -1,7 +1,5 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
-import { ArrowLeft, Video, Camera, Palette, Film, Headphones, Sparkles } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
+import { Video, Camera, Palette, Film, Headphones, Sparkles } from 'lucide-react'
 import HeroSpline from '@/components/sections/HeroSpline'
 import GradientText from '@/components/ui/GradientText'
 import AnimatedVisionText from '@/components/ui/AnimatedVisionText'
@@ -187,8 +185,8 @@ backgroundImage="studio.png"
   <div className="text-left max-w-[1500px] mx-auto">
     {/* Main Description */}
     <p className="text-[32px] text-center leading-relaxed mb-12">
-      Every project is unique, that's why we adapt to your needs, ambitions, and challenges. 
-      Let's talk, and find the visual solution that truly fits you.
+      Every project is unique, that&apos;s why we adapt to your needs, ambitions, and challenges. 
+      Let&apos;s talk, and find the visual solution that truly fits you.
     </p>
 
     {/* CTA Button */}

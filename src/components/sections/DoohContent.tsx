@@ -78,7 +78,7 @@ export default function DoohContent() {
           </div>
           <div className="relative z-10 ml-30 text-[32px] ">
             <h1 className="text-white font-medium  mb-3">
-              Visuaal's Technological Edge Innovation & Performance at the Core
+              Visuaal&apos;s Technological Edge Innovation & Performance at the Core
             </h1>
             <p className=" leading-relaxed max-w-[1440px] mb-12">
               Our DOOH solutions leverage the latest technology to boost campaign effectiveness :
@@ -160,7 +160,7 @@ export default function DoohContent() {
           <p className="text-gray-300 leading-relaxed mb-6">
             Based in the heart of the UAE, Visuaal Dubai brings together global know-how and local 
             insight. We support brands from initial design to DOOH strategy — from creative conception 
-            to campaign analysis — ensuring maximum visibility in one of the world's most dynamic 
+            to campaign analysis — ensuring maximum visibility in one of the world&apos;s most dynamic 
             markets.
           </p>
           <p className="text-gray-300 leading-relaxed">
