@@ -3,16 +3,17 @@ import Image from 'next/image'
 import GradientLine from '@/components/ui/GradientLine'
 import SocialIcons from '@/components/ui/SocialIcons'
 import GradientText from '@/components/ui/GradientText'
+import SplineViewer from '@/components/ui/SplineViewer'
 
 const Footer = () => {
   return (
     <footer className="text-white relative overflow-hidden" style={{backgroundColor: '#140F16'}}>
       {/* Spline Animation Background */}
       <div className="absolute inset-0 w-full h-full z-0 flex items-center justify-center">
-        <spline-viewer 
-          url="https://prod.spline.design/2pGj4e2pJIQVw8CK/scene.splinecode"
+        <SplineViewer 
+          scene="https://prod.spline.design/2pGj4e2pJIQVw8CK/scene.splinecode"
           className="w-full h-full opacity-30"
-        ></spline-viewer>
+        />
       </div>
       
       <div className="container mx-auto px-4 py-12 relative z-10">

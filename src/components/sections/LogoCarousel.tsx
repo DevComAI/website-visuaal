@@ -3,15 +3,21 @@
 import GradientText from '@/components/ui/GradientText'
 
 const PARTNER_LOGOS = [
-  { name: 'Partner 1', src: '/logo/caroussel/image 3.svg', alt: 'Partner Logo' },
-  { name: 'Partner 2', src: '/logo/caroussel/image 3-1.svg', alt: 'Partner Logo' },
-  { name: 'Partner 3', src: '/logo/caroussel/image 4.svg', alt: 'Partner Logo' },
-  { name: 'Partner 4', src: '/logo/caroussel/image 5.svg', alt: 'Partner Logo' },
-  { name: 'Partner 5', src: '/logo/caroussel/image 6.svg', alt: 'Partner Logo' },
-  { name: 'Partner 6', src: '/logo/caroussel/image 7.svg', alt: 'Partner Logo' },
-  { name: 'Partner 7', src: '/logo/caroussel/image 8.svg', alt: 'Partner Logo' },
-  { name: 'Partner 8', src: '/logo/caroussel/image 9.svg', alt: 'Partner Logo' },
-  { name: 'Partner 9', src: '/logo/caroussel/image 10.svg', alt: 'Partner Logo' },
+  { name: 'Client 1', src: '/clients/logo0.svg', alt: 'Client Logo' },
+  { name: 'Client 2', src: '/clients/logo1.svg', alt: 'Client Logo' },
+  { name: 'Client 3', src: '/clients/logo2.svg', alt: 'Client Logo' },
+  { name: 'Client 4', src: '/clients/logo3.svg', alt: 'Client Logo' },
+  { name: 'Client 5', src: '/clients/logo4.svg', alt: 'Client Logo' },
+  { name: 'Client 6', src: '/clients/logo5.svg', alt: 'Client Logo' },
+  { name: 'Client 7', src: '/clients/logo6.svg', alt: 'Client Logo' },
+  { name: 'Client 8', src: '/clients/logo7.svg', alt: 'Client Logo' },
+  { name: 'Client 9', src: '/clients/logo8.svg', alt: 'Client Logo' },
+  { name: 'Client 10', src: '/clients/logo9.svg', alt: 'Client Logo' },
+  { name: 'Client 11', src: '/clients/logo10.svg', alt: 'Client Logo' },
+  { name: 'Client 12', src: '/clients/logo11.svg', alt: 'Client Logo' },
+  { name: 'Client 13', src: '/clients/logo12.svg', alt: 'Client Logo' },
+  { name: 'Client 14', src: '/clients/logo13.svg', alt: 'Client Logo' },
+  { name: 'Client 15', src: '/clients/logo14.svg', alt: 'Client Logo' },
 ] as const
 
 export default function LogoCarousel() {

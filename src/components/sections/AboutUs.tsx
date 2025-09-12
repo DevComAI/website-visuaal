@@ -1,6 +1,6 @@
 'use client'
 
-import Spline from '@splinetool/react-spline'
+import SplineViewer from '@/components/ui/SplineViewer'
 import GradientButton from '@/components/ui/GradientButton'
 import GradientLine from '@/components/ui/GradientLine'
 
@@ -26,8 +26,11 @@ const AboutUs = () => {
 
           {/* Right side - Spline Viewer */}
           <div className="h-[800px] -mt-20 relative z-50 ">
-          <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
-          <spline-viewer url="https://prod.spline.design/Sj5w2qinD5unnyvb/scene.splinecode"></spline-viewer>
+            <SplineViewer 
+              scene="https://prod.spline.design/Sj5w2qinD5unnyvb/scene.splinecode"
+              style={{ width: '100%', height: '100%' }}
+              interactive={true}
+            />
           </div>
         </div>
 

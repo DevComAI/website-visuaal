@@ -70,15 +70,12 @@ body {
 }
 
 .animate-infinite-scroll {
-  animation: infinite-scroll 45s linear infinite;
+  animation: infinite-scroll 25s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
   perspective: 1000px;
 }
 
-.animate-infinite-scroll:hover {
-  animation-play-state: paused;
-}
 
 .animate-infinite-scroll img {
   transform: translateZ(0);
