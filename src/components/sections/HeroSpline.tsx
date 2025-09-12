@@ -1,7 +1,6 @@
 'use client'
 
 import { ReactNode } from 'react'
-import GradientText from '@/components/ui/GradientText'
 import SplineViewer from '@/components/ui/SplineViewer'
 
 interface HeroSplineProps {

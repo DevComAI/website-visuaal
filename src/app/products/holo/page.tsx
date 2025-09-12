@@ -1,7 +1,5 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
-import { Button } from '@/components/ui/Button'
 import Hero from '@/components/sections/Hero'
 import TitlePage from '@/components/ui/TitlePageSection'
 import GradientText from '@/components/ui/GradientText'

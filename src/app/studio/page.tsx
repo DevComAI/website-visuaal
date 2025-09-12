@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import { Video, Camera, Palette, Film, Headphones, Sparkles } from 'lucide-react'
 import HeroSpline from '@/components/sections/HeroSpline'
 import GradientText from '@/components/ui/GradientText'
 import AnimatedVisionText from '@/components/ui/AnimatedVisionText'
@@ -15,111 +14,6 @@ export const metadata: Metadata = {
 }
 
 const StudioPage = () => {
-  const services = [
-    {
-      icon: <Video size={32} />,
-      title: 'Production Vidéo',
-      description: 'De la conception au tournage, création de vidéos corporate, publicitaires et événementielles.',
-      details: ['Pré-production complète', 'Tournage professionnel', 'Équipe expérimentée', 'Matériel haute gamme']
-    },
-    {
-      icon: <Sparkles size={32} />,
-      title: 'Animation 3D',
-      description: 'Modélisation, animation et rendu 3D pour vos présentations produits et architecturales.',
-      details: ['Modélisation précise', 'Animation réaliste', 'Rendu photoréaliste', 'Optimisation multi-supports']
-    },
-    {
-      icon: <Palette size={32} />,
-      title: 'Design Graphique',
-      description: 'Création d&apos;identités visuelles, supports print et digitaux adaptés à votre marque.',
-      details: ['Identité visuelle', 'Supports print', 'Assets digitaux', 'Charte graphique']
-    },
-    {
-      icon: <Film size={32} />,
-      title: 'Post-Production',
-      description: 'Montage, étalonnage, effets spéciaux et sound design pour sublimer vos contenus.',
-      details: ['Montage professionnel', 'Étalonnage colorimétrique', 'Effets visuels', 'Mixage audio']
-    },
-    {
-      icon: <Camera size={32} />,
-      title: 'Photographie',
-      description: 'Shooting produits, corporate et événementiel avec retouche professionnelle.',
-      details: ['Studio équipé', 'Shooting extérieur', 'Retouche experte', 'Formats multiples']
-    },
-    {
-      icon: <Headphones size={32} />,
-      title: 'Audio & Sound Design',
-      description: 'Enregistrement, mixage et création sonore pour vos projets multimedia.',
-      details: ['Studio d&apos;enregistrement', 'Mixage professionnel', 'Sound design', 'Voix off']
-    }
-  ]
-
-  const process = [
-    {
-      step: '01',
-      title: 'Brief & Stratégie',
-      description: 'Analyse de vos objectifs, définition du concept créatif et planning de production.',
-      duration: '2-3 jours'
-    },
-    {
-      step: '02',
-      title: 'Pré-Production',
-      description: 'Scénarisation, storyboard, casting, repérages et préparation technique.',
-      duration: '1-2 semaines'
-    },
-    {
-      step: '03',
-      title: 'Production',
-      description: 'Réalisation, tournage, enregistrement selon le planning établi.',
-      duration: '1-5 jours'
-    },
-    {
-      step: '04',
-      title: 'Post-Production',
-      description: 'Montage, effets, étalonnage et finalisation selon vos directives.',
-      duration: '1-3 semaines'
-    },
-    {
-      step: '05',
-      title: 'Livraison',
-      description: 'Validation finale, exports dans tous les formats requis et archivage.',
-      duration: '2-3 jours'
-    }
-  ]
-
-  const equipment = [
-    { category: 'Caméras', items: ['RED Cinema Camera', 'Sony FX9', 'Canon C300 Mark III', 'DJI Ronin 4D'] },
-    { category: 'Éclairage', items: ['ARRI SkyPanel', 'Aputure Light Storm', 'Kino Flo', 'LED Panel Kit'] },
-    { category: 'Audio', items: ['Microphones Sennheiser', 'Enregistreur Sound Devices', 'Perche et accessoires', 'Studio monitoring'] },
-    { category: 'Post-Production', items: ['Suite Adobe Creative', 'DaVinci Resolve Studio', 'Cinema 4D', 'Stations haute performance'] }
-  ]
-
-  const portfolio = [
-    {
-      type: 'Vidéo Corporate',
-      client: 'Tech Startup',
-      description: 'Présentation d&apos;entreprise innovante avec interviews dirigeants et démonstrations produit.',
-      metrics: '+300% engagement social'
-    },
-    {
-      type: 'Animation 3D',
-      client: 'Promoteur Immobilier',
-      description: 'Visite virtuelle architecturale avec animations et présentation des espaces.',
-      metrics: '+40% conversion vente'
-    },
-    {
-      type: 'Publicité Digitale',
-      client: 'Marque Retail',
-      description: 'Campagne multi-supports avec déclinaisons pour réseaux sociaux et web.',
-      metrics: '+250% trafic site web'
-    },
-    {
-      type: 'Événementiel',
-      client: 'Salon Professionnel',
-      description: 'Captation live, interviews et contenus promotionnels pour réseaux sociaux.',
-      metrics: '+180% portée médias'
-    }
-  ]
 
   return (
     <div className="min-h-screen">

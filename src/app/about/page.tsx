@@ -1,6 +1,4 @@
 import { Metadata } from 'next'
-import { Award, Users, Target, Heart, Clock, Globe } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
 import HeroSpline from '@/components/sections/HeroSpline'
 import GradientText from '@/components/ui/GradientText'
 import AboutContent from '@/components/sections/AboutContent'
@@ -13,68 +11,6 @@ export const metadata: Metadata = {
 }
 
 const AboutPage = () => {
-  const values = [
-    {
-      icon: <Award size={32} />,
-      title: "Excellence",
-      description: "Nous visons l'excellence dans chaque projet, en livrant des solutions de qualité supérieure qui dépassent les attentes de nos clients."
-    },
-    {
-      icon: <Users size={32} />,
-      title: "Collaboration",
-      description: "Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins et créer des solutions sur mesure."
-    },
-    {
-      icon: <Target size={32} />,
-      title: "Résultats",
-      description: "Notre focus est sur les résultats concrets et mesurables pour votre business, avec un ROI démontré."
-    },
-    {
-      icon: <Heart size={32} />,
-      title: "Passion",
-      description: "Nous sommes passionnés par le digital et l'innovation, et nous mettons cette passion au service de vos projets."
-    },
-    {
-      icon: <Clock size={32} />,
-      title: "Réactivité",
-      description: "Notre équipe réactive vous accompagne avec des délais de réponse courts et un service client personnalisé."
-    },
-    {
-      icon: <Globe size={32} />,
-      title: "Innovation",
-      description: "Nous restons à la pointe des dernières technologies pour vous proposer des solutions innovantes."
-    }
-  ]
-
-  const stats = [
-    { value: '500+', label: 'Projets réalisés' },
-    { value: '150+', label: 'Clients satisfaits' },
-    { value: '8 ans', label: 'D&apos;expérience' },
-    { value: '24/7', label: 'Support client' },
-  ]
-
-  const team = [
-    {
-      name: 'Marie Dubois',
-      role: 'Directrice Générale',
-      description: 'Experte en stratégie digitale avec 15 ans d&apos;expérience dans l&apos;innovation technologique.'
-    },
-    {
-      name: 'Thomas Martin',
-      role: 'Directeur Technique',
-      description: 'Spécialiste des technologies visuelles avancées et de l&apos;intégration de solutions complexes.'
-    },
-    {
-      name: 'Sophie Laurent',
-      role: 'Directrice Créative',
-      description: 'Designer passionnée par l&apos;expérience utilisateur et les interfaces innovantes.'
-    },
-    {
-      name: 'Alexandre Petit',
-      role: 'Responsable Commercial',
-      description: 'Expert en développement commercial et en accompagnement client dans leurs projets.'
-    }
-  ]
 
   return (
     <div className="min-h-screen">

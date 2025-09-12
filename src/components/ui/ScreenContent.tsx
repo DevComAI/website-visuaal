@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface ScreenContentProps {
   title: string | React.ReactNode;
   paragraph: string;
@@ -31,9 +33,11 @@ const ScreenContent = ({
               width: 'fit-content'
             }}
           >
-            <img 
+            <Image 
                 src={imageUrl}
                 alt={typeof title === 'string' ? title : 'Screen content'}
+                width={851}
+                height={600}
                 className="w-full h-auto object-cover"
                 style={{ maxWidth: '851px' }}
               />

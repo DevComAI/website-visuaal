@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -27,14 +27,14 @@ const ImageCarousel = ({
     setTimeout(() => setIsTransitioning(false), 800)
   }
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     if (isTransitioning) return
     
     setIsTransitioning(true)
     setCurrentIndex(prev => (prev + 1) % images.length)
     
     setTimeout(() => setIsTransitioning(false), 800)
-  }
+  }, [isTransitioning, images.length])
 
   const goToSlide = (index: number) => {
     if (isTransitioning || index === currentIndex) return
@@ -56,12 +56,12 @@ const ImageCarousel = ({
     }, interval)
 
     return () => clearInterval(intervalId)
-  }, [autoPlay, interval, isTransitioning])
+  }, [autoPlay, interval, isTransitioning, goToNext])
 
   // Calculate image positions for visible images
   const getImageStyle = (imageIndex: number) => {
     const distance = imageIndex - currentIndex
-    const absDistance = Math.abs(distance)
+    // const absDistance = Math.abs(distance) // Removed unused variable
     
     // Show 3 images: prev, current, next (handle wrapping)
     let adjustedDistance = distance

@@ -18,7 +18,7 @@ const AnimatedVisionText = () => {
     }, 2000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [visionTexts.length])
 
   return (
     <div className="transition-opacity duration-300">

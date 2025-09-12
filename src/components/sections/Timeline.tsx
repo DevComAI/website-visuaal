@@ -1,6 +1,6 @@
 'use client'
 
-import GradientText from '@/components/ui/GradientText'
+import Image from 'next/image'
 
 interface TimelineItem {
   title: string
@@ -48,9 +48,11 @@ const Timeline = ({ items }: TimelineProps) => {
                       
                       {/* Image */}
                       <div className="relative">
-                        <img 
+                        <Image 
                           src={item.image} 
                           alt={item.title}
+                          width={600}
+                          height={337}
                           className="w-[600px] h-[337px] object-cover rounded-lg"
                         />
                       </div>

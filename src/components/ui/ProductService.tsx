@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface ServiceCard {
   title: string | React.ReactNode;
   image: string;
@@ -46,9 +48,11 @@ const ProductService = ({
 
               {/* Service Image */}
               <div className="mb-6 text-left">
-                <img 
+                <Image 
                   src={service.image}
                   alt={typeof service.title === 'string' ? service.title : 'Service image'}
+                  width={800}
+                  height={400}
                   className="h-auto object-contain"
                   style={{ maxHeight: '400px', width: 'auto' }}
                 />

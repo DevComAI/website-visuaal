@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import GradientText from '@/components/ui/GradientText'
 
 const PARTNER_LOGOS = [
@@ -59,9 +60,11 @@ export default function LogoCarousel() {
                 key={`logo-${index}`}
                 className="mx-8 flex items-center justify-center h-32 w-64 grayscale hover:grayscale-0 transition-all duration-500 ease-out"
               >
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.alt}
+                  width={256}
+                  height={128}
                   className="max-h-full max-w-full object-contain mix-blend-lighten transition-transform duration-300 ease-out hover:scale-105"
                 />
               </div>
@@ -75,9 +78,11 @@ export default function LogoCarousel() {
                 key={`logo-duplicate-${index}`}
                 className="mx-8 flex items-center justify-center h-32 w-64 grayscale hover:grayscale-0 transition-all duration-500 ease-out"
               >
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.alt}
+                  width={256}
+                  height={128}
                   className="max-h-full max-w-full object-contain mix-blend-lighten transition-transform duration-300 ease-out hover:scale-105"
                 />
               </div>
@@ -91,9 +96,11 @@ export default function LogoCarousel() {
                 key={`logo-triple-${index}`}
                 className="mx-8 flex items-center justify-center h-32 w-64 grayscale hover:grayscale-0 transition-all duration-500 ease-out"
               >
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.alt}
+                  width={256}
+                  height={128}
                   className="max-h-full max-w-full object-contain mix-blend-lighten transition-transform duration-300 ease-out hover:scale-105"
                 />
               </div>
