@@ -8,6 +8,7 @@ import GradientText from '@/components/ui/GradientText'
 import SupportCarousel from '@/components/sections/SupportCarousel'
 import HoloFeatures from '@/components/sections/HoloFeatures'
 import GradientButton from '@/components/ui/GradientButton'
+import SplineViewer from '@/components/ui/SplineViewer'
 
 export const metadata: Metadata = {
   title: 'Hologrammes | Visuaal',
@@ -80,8 +81,10 @@ const HoloPage = () => {
                 </p>
               </div>
             <div className="w-full h-full rounded-3xl overflow-hidden" style={{ backgroundColor: '#211824' }}>
-              <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
-              <spline-viewer url="https://prod.spline.design/63D-bD0D4e6xHPvT/scene.splinecode" style={{ width: '100%', height: '100%' }}></spline-viewer>
+              <SplineViewer 
+                scene="https://prod.spline.design/63D-bD0D4e6xHPvT/scene.splinecode"
+                style={{ width: '100%', height: '100%' }}
+              />
             </div>
           </div>
           </div>

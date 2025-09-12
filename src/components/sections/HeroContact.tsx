@@ -55,7 +55,8 @@ const HeroContact = () => {
          {/* Left side - Contact info */}
           <div className="w-1/2 mt-80 ml-20">
             <h1 className="font-semibold mb-12  leading-none text-[64px]">
-              CONTACT US
+              
+              <><GradientText>CONTACT US</GradientText> </>
             </h1>
             
             <div className="flex gap-64">

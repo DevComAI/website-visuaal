@@ -8,6 +8,7 @@ import AnimatedVisionText from '@/components/ui/AnimatedVisionText'
 import TitlePage from '@/components/ui/TitlePageSection'
 import Timeline from '@/components/sections/Timeline'
 import GradientButton from '@/components/ui/GradientButton'
+import SplineViewer from '@/components/ui/SplineViewer'
 
 export const metadata: Metadata = {
   title: 'Studio de Création | Visuaal',
@@ -204,11 +205,11 @@ backgroundImage="studio.png"
 
    {/* Spline Component */}
 <div className='h-screen -mt-40 mix-blend-screen'>
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
-  <spline-viewer 
-    url="https://prod.spline.design/VhnOlUUBXyLXytif/scene.splinecode"
+  <SplineViewer 
+    scene="https://prod.spline.design/VhnOlUUBXyLXytif/scene.splinecode"
     style={{ width: '100%', height: '100%' }}
-  ></spline-viewer>
+    interactive={true}
+  />
 </div>
     </div>
   )

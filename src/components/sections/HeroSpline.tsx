@@ -2,6 +2,7 @@
 
 import { ReactNode } from 'react'
 import GradientText from '@/components/ui/GradientText'
+import SplineViewer from '@/components/ui/SplineViewer'
 
 interface HeroSplineProps {
   title: string | ReactNode
@@ -33,15 +34,15 @@ const HeroSpline = ({
       <div 
         className={
           splinePosition === 'right' 
-            ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0" 
-            : "absolute inset-0 w-full h-full z-0"
+            ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0 mix-blend-plus-lighter" 
+            : "absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter"
         }
       >
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
-        <spline-viewer 
-          url={splineUrl}
+        <SplineViewer 
+          scene={splineUrl}
           style={{ width: '100%', height: '100%' }}
-        ></spline-viewer>
+          interactive={true}
+        />
       </div>
       
       {/* Content */}

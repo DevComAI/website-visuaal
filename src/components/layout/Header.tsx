@@ -16,7 +16,7 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { 
       name: 'Products', 
-      href: '/products',
+      href: '/products/dooh',
       subMenu: [
         { name: 'DOOH', href: '/products/dooh' },
         { name: 'SCREEN LED', href: '/products/screen' },

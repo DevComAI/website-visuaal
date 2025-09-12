@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import GradientLine from '@/components/ui/GradientLine'
 import SocialIcons from '@/components/ui/SocialIcons'
+import GradientText from '@/components/ui/GradientText'
 
 const Footer = () => {
   return (
@@ -22,21 +23,10 @@ const Footer = () => {
        
           >
             <h2 className="font-chillax text-4xl font-medium mb-4">
-              <span 
-                className="inline-block"
-                style={{
-                  backgroundImage: "url('/img/background-text.jpg')",
-                  backgroundSize: 'cover',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                  backgroundPosition: 'center',
-
-                }}
-              >
-                JOIN OUR NEWSLETTER
+            <><GradientText>JOIN OUR NEWSLETTER</GradientText> </>
+                
            
-              </span>
+      
             </h2>
             <div className="max-w-md  mx-auto">
               <div className="relative  p-1 rounded-lg" style={{

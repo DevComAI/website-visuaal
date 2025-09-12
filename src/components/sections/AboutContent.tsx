@@ -2,6 +2,7 @@
 
 import GradientButton from '@/components/ui/GradientButton'
 import GradientText from '@/components/ui/GradientText'
+import SplineViewer from '@/components/ui/SplineViewer'
 
 const AboutContent = () => {
   return (
@@ -46,11 +47,11 @@ const AboutContent = () => {
 
           {/* Spline */}
           <div className="relative h-96 lg:h-[500px] mix-blend-lighten">
-            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
-            <spline-viewer 
-              url="https://prod.spline.design/b5QNjdMLUJW-blFk/scene.splinecode"
+            <SplineViewer 
+              scene="https://prod.spline.design/b5QNjdMLUJW-blFk/scene.splinecode"
               style={{ width: '100%', height: '100%' }}
-            ></spline-viewer>
+              interactive={true}
+            />
             
             {/* Gradient overlays for smooth fade effect */}
             <div className="absolute inset-0 pointer-events-none">
