@@ -37,20 +37,7 @@ export default function LogoCarousel() {
       {/* Scrolling Logos */}
       <div className="relative my-20">
         {/* Left gradient overlay */}
-        <div 
-          className="absolute left-0 top-0 w-64 h-full z-10 pointer-events-none"
-          style={{
-            background: 'linear-gradient(to right, #211824 40%, transparent 100%)'
-          }}
-        />
-        
-        {/* Right gradient overlay */}
-        <div 
-          className="absolute right-0 top-0 w-64 h-full z-10 pointer-events-none"
-          style={{
-            background: 'linear-gradient(to left, #211824 40%, transparent 100%)'
-          }}
-        />
+
         
         <div className="flex animate-infinite-scroll">
           {/* First set of logos */}

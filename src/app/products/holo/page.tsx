@@ -78,10 +78,11 @@ const HoloPage = () => {
                   Perfect for live performances, digital hosts, education, telehealth, keynote talks, and more.
                 </p>
               </div>
-            <div className="w-full h-full rounded-3xl overflow-hidden" style={{ backgroundColor: '#211824' }}>
+            <div className="w-full h-full rounded-3xl overflow-hidden relative z-20 " >
               <SplineViewer 
                 scene="https://prod.spline.design/63D-bD0D4e6xHPvT/scene.splinecode"
                 style={{ width: '100%', height: '100%' }}
+                interactive={true}
               />
             </div>
           </div>
