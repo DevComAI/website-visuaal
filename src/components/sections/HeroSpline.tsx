@@ -34,8 +34,12 @@ const HeroSpline = ({
         className={
           splinePosition === 'right'
             ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0 mix-blend-plus-lighter"
-            : "absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter"
+            : "absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden"
         }
+        style={{
+          transform: splinePosition === 'fullscreen' ? 'scale(1.5)' : undefined,
+          transformOrigin: 'center center'
+        }}
       >
         <SplineViewer
           scene={splineUrl}
@@ -43,9 +47,11 @@ const HeroSpline = ({
             width: '100%',
             height: '100%',
             minHeight: '100vh',
+            minWidth: '100vw',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            objectFit: 'cover'
           }}
           interactive={true}
         />
