@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}/visuaal-production
+  IMAGE_NAME: visuaal-production
 
 jobs:
   test:
@@ -65,11 +65,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Get repository name in lowercase
+        id: repo
+        run: echo "lowercase=${GITHUB_REPOSITORY_OWNER,,}" >> $GITHUB_OUTPUT
+
       - name: Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ steps.repo.outputs.lowercase }}/${{ env.IMAGE_NAME }}
           tags: |
             type=ref,event=branch
             type=sha,prefix={{branch}}-
@@ -100,7 +104,7 @@ jobs:
             docker rm visuaal-production || true
 
             # Pull latest image
-            docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+            docker pull ${{ env.REGISTRY }}/${{ steps.repo.outputs.lowercase }}/${{ env.IMAGE_NAME }}:latest
 
             # Run new container with health check
             docker run -d \
@@ -111,7 +115,7 @@ jobs:
               --health-interval=30s \
               --health-timeout=10s \
               --health-retries=3 \
-              ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+              ${{ env.REGISTRY }}/${{ steps.repo.outputs.lowercase }}/${{ env.IMAGE_NAME }}:latest
 
             # Wait for health check
             sleep 30

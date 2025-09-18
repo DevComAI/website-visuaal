@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}/visuaal-staging
+  IMAGE_NAME: visuaal-staging
 
 jobs:
   test:
@@ -55,15 +55,23 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Get repository name in lowercase
+        id: repo
+        run: echo "lowercase=${GITHUB_REPOSITORY_OWNER,,}" >> $GITHUB_OUTPUT
+
       - name: Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ steps.repo.outputs.lowercase }}/${{ env.IMAGE_NAME }}
           tags: |
             type=ref,event=branch
             type=sha,prefix={{branch}}-
             latest
+          flavor: |
+            latest=auto
+            prefix=
+            suffix=
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -85,14 +93,14 @@ jobs:
             docker rm visuaal-staging || true
 
             # Pull latest image
-            docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+            docker pull ${{ env.REGISTRY }}/${{ steps.repo.outputs.lowercase }}/${{ env.IMAGE_NAME }}:latest
 
             # Run new container
             docker run -d \
               --name visuaal-staging \
               --restart unless-stopped \
               -p 3000:3000 \
-              ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+              ${{ env.REGISTRY }}/${{ steps.repo.outputs.lowercase }}/${{ env.IMAGE_NAME }}:latest
 
             # Clean up old images
             docker image prune -f
