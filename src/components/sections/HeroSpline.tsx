@@ -34,10 +34,9 @@ const HeroSpline = ({
         className={
           splinePosition === 'right'
             ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0 mix-blend-plus-lighter"
-            : "absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden"
+            : "absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden spline-responsive-scale"
         }
         style={{
-          transform: splinePosition === 'fullscreen' ? 'scale(1.5)' : undefined,
           transformOrigin: 'center center'
         }}
       >

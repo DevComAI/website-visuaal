@@ -81,3 +81,36 @@ body {
   transform: translateZ(0);
   backface-visibility: hidden;
 }
+
+/* Spline Responsive Scaling for different screen resolutions */
+.spline-responsive-scale {
+  transform: scale(1.1); /* Default for HD screens */
+}
+
+/* 2K screens (1440p and similar) */
+@media (min-width: 2048px) and (max-width: 3839px) {
+  .spline-responsive-scale {
+    transform: scale(1.5);
+  }
+}
+
+/* 4K screens (2160p and above) */
+@media (min-width: 3840px) {
+  .spline-responsive-scale {
+    transform: scale(2.0);
+  }
+}
+
+/* Ultra-wide screens adjustment */
+@media (min-aspect-ratio: 21/9) {
+  .spline-responsive-scale {
+    transform: scale(1.8);
+  }
+}
+
+/* 4K Ultra-wide screens */
+@media (min-width: 3840px) and (min-aspect-ratio: 21/9) {
+  .spline-responsive-scale {
+    transform: scale(2.5);
+  }
+}
