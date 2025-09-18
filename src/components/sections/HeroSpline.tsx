@@ -43,7 +43,9 @@ const HeroSpline = ({
             width: '100%',
             height: '100%',
             minHeight: '100vh',
-            objectFit: 'cover'
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
           }}
           interactive={true}
         />
@@ -61,19 +63,17 @@ const HeroSpline = ({
           {textPosition === 'center' ? (
             <>
               {/* Center Layout */}
-              <div className="flex-1 flex items-center justify-center mt-16 md:mt-20 lg:mt-24 xl:mt-32 2xl:mt-40">
-                <h1 className="font-semibold text-white leading-tight max-w-4xl 2xl:max-w-6xl" style={{fontSize: titleSize}}>
+              <div className="flex flex-col items-center justify-center space-y-8 md:space-y-12 min-h-screen">
+                <h1 className="font-semibold text-white leading-tight max-w-4xl 2xl:max-w-6xl text-center" style={{fontSize: titleSize}}>
                   {title}
                 </h1>
-              </div>
 
-              {subtitle && (
-                <div className="flex-1 flex items-start justify-center pt-32 md:pt-40 lg:pt-48 xl:pt-56 2xl:pt-64">
-                  <h2 className="font-semibold text-white leading-tight max-w-2xl 2xl:max-w-4xl" style={{fontSize: subtitleSize}}>
+                {subtitle && (
+                  <h2 className="font-semibold text-white leading-tight max-w-2xl 2xl:max-w-4xl text-center" style={{fontSize: subtitleSize}}>
                     {subtitle}
                   </h2>
-                </div>
-              )}
+                )}
+              </div>
             </>
           ) : (
             <>

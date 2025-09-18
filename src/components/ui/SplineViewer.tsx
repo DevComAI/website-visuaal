@@ -72,7 +72,7 @@ export default function SplineViewer({ scene, className, style, interactive = fa
   }, [interactive])
 
   return (
-    <div data-spline-container className="w-full h-full">
+    <div data-spline-container className="w-full h-full flex items-center justify-center">
       <Spline
         scene={scene}
         className={className}
