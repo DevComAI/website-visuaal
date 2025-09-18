@@ -30,16 +30,28 @@ const HeroSpline = ({
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Spline Background - Interactive */}
-      <div 
+      <div
         className={
-          splinePosition === 'right' 
-            ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0 mix-blend-plus-lighter" 
-            : "absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter"
+          splinePosition === 'right'
+            ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0 mix-blend-plus-lighter"
+            : "absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden spline-responsive-scale"
         }
+        style={{
+          transformOrigin: 'center center'
+        }}
       >
-        <SplineViewer 
+        <SplineViewer
           scene={splineUrl}
-          style={{ width: '100%', height: '100%' }}
+          style={{
+            width: '100%',
+            height: '100%',
+            minHeight: '100vh',
+            minWidth: '100vw',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            objectFit: 'cover'
+          }}
           interactive={true}
         />
       </div>
@@ -47,8 +59,8 @@ const HeroSpline = ({
       {/* Content */}
       <div className="container relative z-20 mx-auto px-4 pointer-events-none">
         <div className={`flex flex-col h-full ${
-          textPosition === 'right' 
-            ? 'items-end justify-center text-right pr-16' 
+          textPosition === 'right'
+            ? 'items-end justify-center text-right pr-16'
             : textPosition === 'left'
             ? 'items-start justify-center text-left pl-16'
             : 'items-center justify-center text-center'
@@ -56,28 +68,26 @@ const HeroSpline = ({
           {textPosition === 'center' ? (
             <>
               {/* Center Layout */}
-              <div className="flex-1 flex items-center justify-center mt-40">
-                <h1 className="font-semibold text-white leading-tight max-w-4xl" style={{fontSize: titleSize}}>
+              <div className="flex flex-col items-center justify-center space-y-8 md:space-y-12 min-h-screen">
+                <h1 className="font-semibold text-white leading-tight max-w-4xl 2xl:max-w-6xl text-center" style={{fontSize: titleSize}}>
                   {title}
                 </h1>
-              </div>
-              
-              {subtitle && (
-                <div className="flex-1 flex items-start justify-center pt-64">
-                  <h2 className="font-semibold text-white leading-tight max-w-2xl" style={{fontSize: subtitleSize}}>
+
+                {subtitle && (
+                  <h2 className="font-semibold text-white leading-tight max-w-2xl 2xl:max-w-4xl text-center" style={{fontSize: subtitleSize}}>
                     {subtitle}
                   </h2>
-                </div>
-              )}
+                )}
+              </div>
             </>
           ) : (
             <>
               {/* Right/Left Layout */}
-              <div className="space-y-8 max-w-6xl">
+              <div className="space-y-8 max-w-6xl 2xl:max-w-8xl">
                 <h1 className="font-semibold text-white leading-tight" style={{fontSize: titleSize}}>
                   {title}
                 </h1>
-                
+
                 {subtitle && (
                   <h2 className="font-semibold text-white leading-tight" style={{fontSize: subtitleSize}}>
                     {subtitle}

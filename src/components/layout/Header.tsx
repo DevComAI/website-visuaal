@@ -51,22 +51,40 @@ const Header = () => {
               const isActive = pathname === item.href || (item.subMenu && item.subMenu.some(sub => pathname === sub.href) && item.href !== '/products')
               return (
                 <div key={item.name} className="relative group">
-                  <Link
-                    href={item.href}
-                    className={`hover:text-gray-300 transition-colors duration-200 flex items-center relative ${
-                      isActive ? 'text-white font-semibold' : 'text-white'
-                    }`}
-                  >
-                    {item.name}
-                    {item.subMenu && (
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    )}
-                    {isActive && (
-                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full"></div>
-                    )}
-                  </Link>
+                  {item.subMenu ? (
+                    <span
+                      className={`hover:text-gray-300 transition-colors duration-200 flex items-center relative cursor-pointer ${
+                        isActive ? 'text-white font-semibold' : 'text-white'
+                      }`}
+                    >
+                      {item.name}
+                      {item.subMenu && (
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      )}
+                      {isActive && (
+                        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full"></div>
+                      )}
+                    </span>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`hover:text-gray-300 transition-colors duration-200 flex items-center relative ${
+                        isActive ? 'text-white font-semibold' : 'text-white'
+                      }`}
+                    >
+                      {item.name}
+                      {item.subMenu && (
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      )}
+                      {isActive && (
+                        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full"></div>
+                      )}
+                    </Link>
+                  )}
                   
                   {item.subMenu && (
                     <div 

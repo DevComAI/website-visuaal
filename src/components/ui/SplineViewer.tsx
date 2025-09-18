@@ -72,14 +72,16 @@ export default function SplineViewer({ scene, className, style, interactive = fa
   }, [interactive])
 
   return (
-    <Spline 
-      scene={scene}
-      className={className}
-      style={{ 
-        ...style, 
-        pointerEvents: isInteractive ? 'auto' : 'none',
-        transition: 'all 0.1s ease'
-      }}
-    />
+    <div data-spline-container className="w-full h-full flex items-center justify-center">
+      <Spline
+        scene={scene}
+        className={className}
+        style={{
+          ...style,
+          pointerEvents: isInteractive ? 'auto' : 'none',
+          transition: 'all 0.1s ease'
+        }}
+      />
+    </div>
   )
 }
