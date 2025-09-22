@@ -25,8 +25,6 @@ const StudioPage = () => {
         splineUrl="https://prod.spline.design/XihlwxPitjwHnwb9/scene.splinecode"
         textPosition="left"
         splinePosition="right"
-        titleSize="64px"
-        subtitleSize="64px"
       />
 
 <TitlePage

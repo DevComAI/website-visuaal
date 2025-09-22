@@ -38,34 +38,32 @@ const DOOHPage = () => {
   />
 
 
-<section className="py-20 relative">
-        <div className="container">
+<section className="py-12 lg:py-20 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center relative">
-          <div 
-            className="p-1 rounded-3xl relative z-10"
-            style={{ 
+          <div
+            className="p-1 rounded-2xl lg:rounded-3xl relative z-10 w-full max-w-sm sm:max-w-lg lg:max-w-6xl xl:max-w-7xl"
+            style={{
               background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
-              width: '1441.43px', 
-              height: '709.46px' 
+              aspectRatio: '2/1'
             }}
           >
 
-
-            <div className="w-full h-full rounded-3xl overflow-hidden" style={{ backgroundColor: '#211824' }}>
-              <SplineViewer 
+            <div className="w-full h-full rounded-2xl lg:rounded-3xl overflow-hidden" style={{ backgroundColor: '#211824' }}>
+              <SplineViewer
                 scene="https://prod.spline.design/K3MXxwuzrEPrTBi4/scene.splinecode"
                 style={{ width: '100%', height: '100%' }}
               />
             </div>
           </div>
           </div>
-        </div> 
+        </div>
       </section>
 
       <DoohContent />
 
       <DoohTestimonial />
-      <div className="pb-40"> </div>
+      <div className="pb-12 sm:pb-20 lg:pb-40"> </div>
 
     </div>
   )

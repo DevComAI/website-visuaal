@@ -43,9 +43,9 @@ export default function Home() {
       />
       
 
-      
+
       <AboutUs />
-      <div className="pb-80"> </div>
+      <div className="pb-20 sm:pb-40 lg:pb-80"> </div>
 
       <TitleHome
         topText="THE BENEFITS OF USING OUR"
@@ -53,9 +53,8 @@ export default function Home() {
         backgroundImage="working.png"
       />
 
-      
       <Working />
-      <div className="pb-60"> </div>
+      <div className="pb-16 sm:pb-32 lg:pb-60"> </div>
       
       <TitleHome
         topText={<><GradientText>END-TO-END</GradientText> DIGITAL SIGNAGE</>}
@@ -74,8 +73,7 @@ export default function Home() {
       />
       
       <ProductsSection />
-      
-      <div className="pb-60"> </div>
+      <div className="pb-16 sm:pb-32 lg:pb-60"> </div>
       <GradientLine width={"90%"} padding="pb-[1px]" />
 
     </>

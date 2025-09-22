@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 
 const CGVPage = () => {
   return (
-    <div className="min-h-screen py-40" style={{backgroundColor: '#140F16'}}>
-      <div className="container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto rounded-xl p-8 lg:p-12" style={{
+    <div className="min-h-screen py-20 sm:py-28 lg:py-40" style={{backgroundColor: '#140F16'}}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-20">
+        <div className="max-w-4xl mx-auto rounded-xl p-6 sm:p-8 lg:p-12" style={{
           background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.1) 0%, rgba(149, 18, 182, 0.1) 100%)',
           border: '1px solid rgba(71, 63, 185, 0.2)',
           backdropFilter: 'blur(10px)'
         }}>
-          <h1 className="text-4xl font-bold text-white mb-8">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 lg:mb-8">
             Conditions Générales de Vente
           </h1>
           
@@ -24,8 +24,8 @@ const CGVPage = () => {
               Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
             </p>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">1. Objet et champ d&apos;application</h2>
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">1. Objet et champ d&apos;application</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Les présentes conditions générales de vente (CGV) s&apos;appliquent à toutes les prestations 
                 de services proposées par Visuaal, société spécialisée dans les solutions de communication 
@@ -42,8 +42,8 @@ const CGVPage = () => {
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">2. Services proposés</h2>
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">2. Services proposés</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Visuaal propose les services suivants :
               </p>
@@ -56,8 +56,8 @@ const CGVPage = () => {
               </ul>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">3. Commandes et devis</h2>
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">3. Commandes et devis</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Toute commande fait l&apos;objet d&apos;un devis préalable détaillé gratuit. Le devis est valable 
                 30 jours à compter de sa date d&apos;émission. La commande n&apos;est ferme et définitive 
@@ -73,8 +73,8 @@ const CGVPage = () => {
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">4. Prix et modalités de paiement</h2>
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">4. Prix et modalités de paiement</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Les prix sont indiqués hors taxes. Le paiement s&apos;effectue selon les modalités suivantes :
               </p>
@@ -88,8 +88,8 @@ const CGVPage = () => {
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">5. Livraison et installation</h2>
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">5. Livraison et installation</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Les délais de livraison sont donnés à titre indicatif. Un retard de livraison ne peut 
                 donner lieu à annulation de commande ou indemnité, sauf accord contraire.
@@ -100,8 +100,8 @@ const CGVPage = () => {
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">6. Garanties</h2>
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">6. Garanties</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Nos équipements bénéficient d&apos;une garantie constructeur standard de 24 mois. Les prestations de service 
                 sont garanties selon les termes du contrat de maintenance souscrit.
@@ -120,32 +120,32 @@ const CGVPage = () => {
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">7. Responsabilité</h2>
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">7. Responsabilité</h2>
               <p className="text-gray-300 leading-relaxed">
                 La responsabilité de Visuaal ne peut excéder le montant de la prestation en cause. 
                 Visuaal ne saurait être tenue responsable des dommages indirects.
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">8. Propriété intellectuelle</h2>
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">8. Propriété intellectuelle</h2>
               <p className="text-gray-300 leading-relaxed">
                 Tous les contenus créés par Visuaal restent sa propriété intellectuelle sauf accord 
                 contraire. Le client s&apos;engage à respecter les droits de propriété intellectuelle.
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">9. Protection des données</h2>
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">9. Protection des données</h2>
               <p className="text-gray-300 leading-relaxed">
                 Visuaal s&apos;engage à respecter la réglementation en vigueur concernant la protection 
                 des données personnelles, notamment le RGPD.
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">10. Droit applicable</h2>
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">10. Droit applicable</h2>
               <p className="text-gray-300 leading-relaxed">
                 Les présentes CGV sont soumises au droit français. En cas de litige, les parties 
                 s&apos;efforcent de trouver une solution amiable. À défaut, les tribunaux français 
@@ -154,7 +154,7 @@ const CGVPage = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4">Contact</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">Contact</h2>
               <p className="text-gray-300 leading-relaxed">
                 Pour toute question concernant ces conditions générales de vente :
               </p>
