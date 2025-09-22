@@ -37,14 +37,15 @@ export default function DoohContent() {
         </div>
 
         <div className="flex justify-center mb-8 lg:mb-12">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 xl:gap-32 items-center w-full max-w-7xl">
-            <div className="w-full lg:flex-1 max-w-md lg:max-w-none">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch w-full max-w-7xl">
+            <div className="w-full lg:flex-[1.5] max-w-md lg:max-w-none">
               <Image
                 src="/img/dooh/content1-1.png"
                 alt="DOOH Airport Display"
                 width={851}
                 height={478}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
+                style={{ minHeight: '300px' }}
               />
             </div>
             <div className="w-full lg:flex-1 max-w-md lg:max-w-none">
@@ -53,7 +54,8 @@ export default function DoohContent() {
                 alt="DOOH Street Display"
                 width={591}
                 height={478}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
+                style={{ minHeight: '300px' }}
               />
             </div>
           </div>
@@ -89,14 +91,15 @@ export default function DoohContent() {
         </div>
 
         <div className="flex justify-center mb-8 lg:mb-12">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 xl:gap-32 items-center w-full max-w-7xl">
-            <div className="w-full lg:flex-1 max-w-md lg:max-w-none">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch w-full max-w-7xl">
+            <div className="w-full lg:flex-[1.5] max-w-md lg:max-w-none">
               <Image
                 src="/img/dooh/content2-1.png"
                 alt="DOOH Technology Display"
                 width={851}
                 height={478}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
+                style={{ minHeight: '300px' }}
               />
             </div>
             <div className="w-full lg:flex-1 max-w-md lg:max-w-none">
@@ -105,7 +108,8 @@ export default function DoohContent() {
                 alt="DOOH Interactive Display"
                 width={591}
                 height={478}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
+                style={{ minHeight: '300px' }}
               />
             </div>
           </div>
@@ -140,14 +144,15 @@ export default function DoohContent() {
         </div>
 
         <div className="flex justify-center mb-8 lg:mb-12">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 xl:gap-32 items-center w-full max-w-7xl">
-            <div className="w-full lg:flex-1 max-w-md lg:max-w-none">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16   items-stretch w-full max-w-7xl">
+            <div className="w-full lg:flex-[1.5] max-w-md lg:max-w-none">
               <Image
                 src="/img/dooh/content3-1.png"
                 alt="Dubai DOOH Display"
                 width={851}
                 height={478}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
+                style={{ minHeight: '300px' }}
               />
             </div>
             <div className="w-full lg:flex-1 max-w-md lg:max-w-none">
@@ -156,7 +161,8 @@ export default function DoohContent() {
                 alt="Dubai Street Display"
                 width={591}
                 height={478}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
+                style={{ minHeight: '300px' }}
               />
             </div>
           </div>
