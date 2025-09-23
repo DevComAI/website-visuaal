@@ -42,7 +42,7 @@ const HoloPage = () => {
 
 
 
-      <section className="py-10 md:py-20 relative">
+      <section className="py-10 md:py-20 relative hidden md:block">
         <div className="container">
           <div className="flex justify-center relative">
           <div
