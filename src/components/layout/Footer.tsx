@@ -4,6 +4,7 @@ import GradientLine from '@/components/ui/GradientLine'
 import SocialIcons from '@/components/ui/SocialIcons'
 import GradientText from '@/components/ui/GradientText'
 import SplineViewer from '@/components/ui/SplineViewer'
+import Newsletter from '@/components/ui/Newsletter'
 
 const Footer = () => {
   return (
@@ -25,23 +26,14 @@ const Footer = () => {
           >
             <h2 className="font-chillax text-2xl sm:text-3xl lg:text-4xl font-medium mb-6 lg:mb-4">
             <><GradientText>JOIN OUR NEWSLETTER</GradientText> </>
-
-
-
             </h2>
             <div className="max-w-md mx-auto">
-              <div className="relative p-1 rounded-lg" style={{
-                background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
-                backgroundSize: '400% 400%',
-                animation: 'gradient 3s ease infinite'
-              }}>
-                <input
-                  type="email"
-                  placeholder="e-mail"
-                  className="w-full px-4 lg:px-6 h-[37px] rounded-lg text-white placeholder-gray-300 font-chillax text-base lg:text-lg focus:outline-none"
-                  style={{backgroundColor: '#140F16'}}
-                />
-              </div>
+              <Newsletter
+                placeholder="e-mail"
+                buttonText="Subscribe"
+                className="max-w-none"
+                footerStyle={true}
+              />
             </div>
           </div>
         </div>

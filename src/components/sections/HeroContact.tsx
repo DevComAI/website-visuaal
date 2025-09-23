@@ -13,10 +13,54 @@ const HeroContact = () => {
     message: ''
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' })
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitStatus({ type: null, message: '' })
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.'
+        })
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        })
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: result.error || 'Failed to send message. Please try again.'
+        })
+      }
+    } catch {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Network error. Please check your connection and try again.'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -140,16 +184,37 @@ const HeroContact = () => {
                     />
                   </div>
 
+                  {/* Status Message */}
+                  {submitStatus.type && (
+                    <div className={`mt-4 p-3 rounded-lg text-center text-sm ${
+                      submitStatus.type === 'success'
+                        ? 'bg-green-500/20 border border-green-500/30 text-green-300'
+                        : 'bg-red-500/20 border border-red-500/30 text-red-300'
+                    }`}>
+                      {submitStatus.message}
+                    </div>
+                  )}
+
                   <div className="mt-4 sm:mt-6 lg:mt-8 flex justify-center">
-                    <div className="relative p-[1px] rounded-full w-[90px] sm:w-[100px] lg:w-[115px] h-[32px] sm:h-[35px] lg:h-[39px]" style={{
+                    <div className={`relative p-[1px] rounded-full w-[90px] sm:w-[100px] lg:w-[115px] h-[32px] sm:h-[35px] lg:h-[39px] ${
+                      isSubmitting ? 'opacity-75' : ''
+                    }`} style={{
                       background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
                       backgroundSize: '100% 100%'
                     }}>
                       <button
                         type="submit"
-                        className="w-full h-full px-3 sm:px-4 rounded-full text-white bg-[#211824] transition-colors duration-300 relative z-10 flex items-center justify-center hover:bg-[#372F39] text-xs sm:text-sm lg:text-base"
+                        disabled={isSubmitting}
+                        className="w-full h-full px-3 sm:px-4 rounded-full text-white bg-[#211824] transition-colors duration-300 relative z-10 flex items-center justify-center hover:bg-[#372F39] disabled:hover:bg-[#211824] disabled:cursor-not-allowed text-xs sm:text-sm lg:text-base"
                       >
-                        Send
+                        {isSubmitting ? (
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 border border-white border-t-transparent rounded-full animate-spin"></div>
+                            <span>Sending...</span>
+                          </div>
+                        ) : (
+                          'Send'
+                        )}
                       </button>
                     </div>
                   </div>
