@@ -167,7 +167,7 @@ export default function Home() {
     return (
       <section className={`relative py-8 sm:py-12 ${className}`}>
         {backgroundImage && (
-          <div className="absolute inset-0 flex items-center justify-center overflow-hidden px-4">
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden px-1">
             <div
               className="w-full h-full bg-no-repeat bg-center opacity-10 pointer-events-none"
               style={{
@@ -180,7 +180,7 @@ export default function Home() {
         )}
 
         <div className="container relative z-10 flex items-end min-h-[80px] sm:min-h-[120px] px-4 sm:px-6">
-          <div className="text-center w-full pb-4 sm:pb-6 text-lg sm:text-xl md:text-2xl">
+          <div className="text-center w-full pb-4 sm:pb-6 text-sm sm:text-lg md:text-xl lg:text-2xl">
             {topText && (
               <div className="font-medium text-white leading-tight mb-2">
                 {topText}
@@ -314,8 +314,8 @@ export default function Home() {
         <div className="pb-12"></div>
 
         <MobileTitleHome
-          topText="THE BENEFITS OF USING OUR"
-          bottomText={<><MobileGradientText>DIGITAL SIGNAGE</MobileGradientText></>}
+          topText={<>THE BENEFITS OF USING OUR <MobileGradientText>DIGITAL SIGNAGE</MobileGradientText></>}
+          bottomText=""
           backgroundImage="working.png"
         />
 
@@ -360,16 +360,16 @@ export default function Home() {
         <div className="pb-12"></div>
 
         <MobileTitleHome
-          topText={<><MobileGradientText>END-TO-END</MobileGradientText> DIGITAL SIGNAGE</>}
-          bottomText="SOLUTIONS"
+          topText={<><MobileGradientText>END-TO-END</MobileGradientText> DIGITAL SIGNAGE SOLUTIONS</>}
+          bottomText=""
           backgroundImage="support.png"
         />
 
         <SupportCarousel />
 
         <MobileTitleHome
-          topText={<><MobileGradientText>OUR</MobileGradientText> PRODUCTS</>}
-          bottomText="PORTFOLIO"
+          topText={<><MobileGradientText>OUR</MobileGradientText> PRODUCTS PORTFOLIO</>}
+          bottomText=""
           backgroundImage="product.png"
         />
 
