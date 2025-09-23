@@ -360,13 +360,7 @@ export default function Home() {
           backgroundImage="support.png"
         />
 
-        <section className="py-8">
-          <div className="container mx-auto px-4">
-            <div className="text-center text-white">
-              <div className="text-sm text-gray-300">Support Services Available</div>
-            </div>
-          </div>
-        </section>
+        <SupportCarousel />
 
         <MobileTitleHome
           topText={<><MobileGradientText>OUR</MobileGradientText> PRODUCTS</>}
@@ -374,28 +368,7 @@ export default function Home() {
           backgroundImage="product.png"
         />
 
-        <section className="py-8">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-gray-800/30 p-6 rounded-lg text-center">
-                <h3 className="text-white text-lg font-semibold mb-2">DOOH</h3>
-                <p className="text-gray-300 text-sm">Digital Out-of-Home Solutions</p>
-              </div>
-              <div className="bg-gray-800/30 p-6 rounded-lg text-center">
-                <h3 className="text-white text-lg font-semibold mb-2">HOLO</h3>
-                <p className="text-gray-300 text-sm">Holographic Displays</p>
-              </div>
-              <div className="bg-gray-800/30 p-6 rounded-lg text-center">
-                <h3 className="text-white text-lg font-semibold mb-2">STUDIO</h3>
-                <p className="text-gray-300 text-sm">Content Creation Studio</p>
-              </div>
-              <div className="bg-gray-800/30 p-6 rounded-lg text-center">
-                <h3 className="text-white text-lg font-semibold mb-2">SCREEN</h3>
-                <p className="text-gray-300 text-sm">Interactive Screens</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ProductsSection />
 
         <div className="pb-12"></div>
         <MobileGradientLine width={"90%"} padding="pb-[1px]" />
