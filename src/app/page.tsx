@@ -134,8 +134,19 @@ export default function Home() {
     )
   }
 
-  const MobileGradientLine = ({ width = "100%", padding = "py-4", className = "" }: { width?: string | number; padding?: string; className?: string }) => {
+  const MobileGradientLine = ({ width = "100%", padding = "py-4", className = "", vertical = false }: { width?: string | number; padding?: string; className?: string; vertical?: boolean }) => {
     const widthStyle = typeof width === 'number' ? `${width}px` : width;
+
+    if (vertical) {
+      return (
+        <div className={`relative ${padding} ${className}`}>
+          <div
+            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px bg-gradient-to-b from-transparent via-white to-transparent"
+            style={{ height: widthStyle }}
+          ></div>
+        </div>
+      );
+    }
 
     return (
       <div className={`relative ${padding} ${className}`}>
@@ -271,38 +282,39 @@ export default function Home() {
             </div>
 
             {/* Statistics Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 relative z-20">
+
               <div className="text-center text-white relative z-20">
                 <div
-                  className="p-6 bg-no-repeat bg-center bg-contain"
+                  className="p-6 lg:p-8 bg-no-repeat bg-center bg-contain"
                   style={{ backgroundImage: "url('/forme/para1.png')" }}
                 >
-                  <div className="text-3xl font-bold mb-2 relative z-10">+10</div>
-                  <div className="text-sm font-medium relative z-10">Years of experience</div>
+                  <div className="text-3xl lg:text-5xl font-bold mb-2 lg:mb-4 relative z-10">+10</div>
+                  <div className="text-sm lg:text-lg -ml-8 lg:-ml-16 font-medium relative z-10">Years of experience</div>
                 </div>
               </div>
 
               <div className="text-center text-white relative z-20">
                 <div
-                  className="p-6 bg-no-repeat bg-center bg-contain"
+                  className="p-6 lg:p-8 bg-no-repeat bg-center bg-contain"
                   style={{ backgroundImage: "url('/forme/para2.png')" }}
                 >
-                  <div className="text-3xl font-bold mb-2 relative z-10">100%</div>
-                  <div className="text-sm font-medium relative z-10">Product quality</div>
+                  <div className="text-3xl lg:text-5xl font-bold mb-2 lg:mb-4 relative z-10">100%</div>
+                  <div className="text-sm lg:text-lg -ml-8 lg:-ml-16 font-medium relative z-10">Product quality</div>
                 </div>
               </div>
 
-              <div className="text-center text-white relative z-20">
+              <div className="text-center text-white relative z-20 sm:col-span-2 md:col-span-1">
                 <div
-                  className="p-6 bg-no-repeat bg-center bg-contain"
+                  className="p-6 lg:p-8 bg-no-repeat bg-center bg-contain"
                   style={{ backgroundImage: "url('/forme/para3.png')" }}
                 >
-                  <div className="text-3xl font-bold mb-2 relative z-10">24/7</div>
-                  <div className="text-sm font-medium relative z-10">Technical support</div>
+                  <div className="text-3xl lg:text-5xl font-bold mb-2 lg:mb-4 relative z-10">24/7</div>
+                  <div className="text-sm lg:text-lg -ml-8 lg:-ml-16 font-medium relative z-10">Technical support</div>
                 </div>
               </div>
+
             </div>
-            <MobileGradientLine width="100%" padding="py-4" className="-mt-8 pb-12" />
           </div>
         </section>
 
@@ -371,7 +383,7 @@ export default function Home() {
         <ProductsSection />
 
         <div className="pb-12"></div>
-        <MobileGradientLine width={"90%"} padding="pb-[1px]" />
+        <MobileGradientLine width={"60px"} padding="pb-[1px]" vertical={true} />
       </>
     );
   }

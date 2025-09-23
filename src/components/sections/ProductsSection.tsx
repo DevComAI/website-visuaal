@@ -36,14 +36,14 @@ const products: ProductCard[] = [
 
 export default function ProductsSection() {
   return (
-    <section className="py-30 px-20">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <section className="py-8 sm:py-16 lg:py-30 px-4 sm:px-8 lg:px-20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {products.map((product) => (
             <div key={product.id} className="cursor-pointer">
               <Link href={product.href}>
                 <div>
-                  <div className="relative mb-6">
+                  <div className="relative mb-4 sm:mb-6">
                     <Image
                       src={product.image}
                       alt={product.title}
@@ -53,10 +53,10 @@ export default function ProductsSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-white text-[24px] mb-3 tracking-wide">
+                    <h3 className="text-white text-lg sm:text-xl lg:text-[24px] mb-2 sm:mb-3 tracking-wide">
                       {product.title}
                     </h3>
-                    <p className="text-gray-300 text-[20px] leading-relaxed">
+                    <p className="text-gray-300 text-sm sm:text-base lg:text-[20px] leading-relaxed">
                       {product.description}
                     </p>
                   </div>
@@ -65,9 +65,9 @@ export default function ProductsSection() {
             </div>
           ))}
         </div>
-        
+
         <div className="flex justify-center">
-          <GradientButton href="/contact" text="Talking about your project"   className="text-[16px] h-[49px] w-[350px]"/>
+          <GradientButton href="/contact" text="Talking about your project" className="text-sm sm:text-base lg:text-[16px] h-[40px] sm:h-[45px] lg:h-[49px] w-[280px] sm:w-[320px] lg:w-[350px]"/>
         </div>
       </div>
     </section>
