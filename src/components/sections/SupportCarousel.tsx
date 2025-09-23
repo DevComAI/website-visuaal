@@ -11,7 +11,8 @@ const SupportCarousel = ({
     '/img/home/support-1.png',
     '/img/home/support-2.png',
     '/img/home/support-3.png',
-    '/img/home/support-4.png'
+    '/img/home/support-4.png',
+    '/img/home/support-5.png'
   ],
   autoPlay = true,
   interval = 4000

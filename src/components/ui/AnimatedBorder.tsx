@@ -51,7 +51,7 @@ const AnimatedBorder = ({
         <div style={{
           borderRadius: `calc(${borderRadius} - ${borderWidth})`,
           overflow: 'hidden',
-          height: '100%'
+          height: '100%',
         }}>
           {children}
         </div>

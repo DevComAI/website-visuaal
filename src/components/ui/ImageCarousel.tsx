@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import AnimatedBorder from '@/components/ui/AnimatedBorder'
 
 interface ImageCarouselProps {
   images: string[]
@@ -161,15 +162,13 @@ const ImageCarousel = ({
               }}
             >
             {/* Container pour l'image */}
-            <div 
-              className="relative rounded-lg overflow-hidden w-full h-full bg-black"
-            >
+            <AnimatedBorder className="w-full h-full" borderRadius="0.5rem">
                 <Image
                   src={image}
                   alt={`Support image ${index + 1}`}
                   width={600}
                   height={337}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-lg"
                   style={{
                     transform: 'translateZ(0)',
                     backfaceVisibility: 'hidden'
@@ -226,7 +225,7 @@ const ImageCarousel = ({
                     />
                   </>
                 )}
-            </div>
+            </AnimatedBorder>
             </div>
           )
         })}

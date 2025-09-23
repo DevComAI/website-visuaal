@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { ReactNode } from 'react'
+import AnimatedBorder from '@/components/ui/AnimatedBorder'
 
 interface FeatureItem {
   icon: string
@@ -73,15 +74,15 @@ export default function HoloFeatures({
             
             {/* Image */}
             <div className="w-2/5 flex justify-center ">
-              <div className="relative ">
-                <Image
-                  src={mainImage}
-                  alt="Holographic display"
-                  width={reverse ? 850 : 540}
-                   height={reverse ? 1350 : 960}
-                  className={`h-full w-full object-contain mix-blend-screen ${reverse ? '' : 'mt-20'}`}
-                />
-              </div>
+                <div className="bg-transparent">
+                  <Image
+                    src={mainImage}
+                    alt="Holographic display"
+                    width={reverse ? 850 : 540}
+                    height={reverse ? 1350 : 960}
+                    className={`h-full w-full object-contain mix-blend-screen ${reverse ? '' : 'mt-20'}`}
+                  />
+                </div>
             </div>
           </div>
         </div>

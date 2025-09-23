@@ -5,6 +5,7 @@ import GradientText from '@/components/ui/GradientText'
 import DoohContent from '@/components/sections/DoohContent'
 import DoohTestimonial from '@/components/sections/DoohTestimonial'
 import SplineViewer from '@/components/ui/SplineViewer'
+import AnimatedBorder from '@/components/ui/AnimatedBorder'
 
 export const metadata: Metadata = {
   title: 'DOOH - Digital Out Of Home | Visuaal',
@@ -41,21 +42,18 @@ const DOOHPage = () => {
 <section className="py-12 lg:py-20 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center relative">
-          <div
-            className="p-1 rounded-2xl lg:rounded-3xl relative z-10 w-full max-w-sm sm:max-w-lg lg:max-w-6xl xl:max-w-7xl"
-            style={{
-              background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
-              aspectRatio: '2/1'
-            }}
-          >
-
-            <div className="w-full h-full rounded-2xl lg:rounded-3xl overflow-hidden" style={{ backgroundColor: '#211824' }}>
-              <SplineViewer
-                scene="https://prod.spline.design/K3MXxwuzrEPrTBi4/scene.splinecode"
-                style={{ width: '100%', height: '100%' }}
-              />
-            </div>
-          </div>
+            <AnimatedBorder
+              className="w-full max-w-sm sm:max-w-lg lg:max-w-6xl xl:max-w-7xl"
+              borderRadius="1rem"
+              borderWidth="2px"
+            >
+              <div className="w-full" style={{ backgroundColor: '#211824', aspectRatio: '2/1' }}>
+                <SplineViewer
+                  scene="https://prod.spline.design/K3MXxwuzrEPrTBi4/scene.splinecode"
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </div>
+            </AnimatedBorder>
           </div>
         </div>
       </section>

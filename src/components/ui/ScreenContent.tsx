@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import AnimatedBorder from '@/components/ui/AnimatedBorder'
 
 interface ScreenContentProps {
   title: string | React.ReactNode;
@@ -25,23 +26,17 @@ const ScreenContent = ({
           </p>
         </div>
         
-        <div className="flex justify-start4">
-          <div 
-            className="p-1 "
-            style={{ 
-  
-              width: 'fit-content'
-            }}
-          >
-            <Image 
+        <div className="flex justify-start">
+          <AnimatedBorder className="w-fit" borderRadius="0.5rem">
+            <Image
                 src={imageUrl}
                 alt={typeof title === 'string' ? title : 'Screen content'}
                 width={851}
                 height={600}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded-lg"
                 style={{ maxWidth: '851px' }}
               />
-          </div>
+          </AnimatedBorder>
         </div>
       </div>
     </section>
