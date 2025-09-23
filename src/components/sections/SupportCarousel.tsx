@@ -6,7 +6,7 @@ interface SupportCarouselProps {
   interval?: number
 }
 
-const SupportCarousel = ({ 
+const SupportCarousel = ({
   images = [
     '/img/home/support-1.png',
     '/img/home/support-2.png',
@@ -18,7 +18,7 @@ const SupportCarousel = ({
   interval = 4000
 }: SupportCarouselProps) => {
   return (
-    <div className="py-20">
+    <div className="py-10 md:py-16 lg:py-20">
       <div className="container mx-auto px-4">
         <ImageCarousel
           images={images}
