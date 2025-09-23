@@ -152,12 +152,10 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <div className="pt-4 border-t border-white/10">
-                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="primary" size="sm" className="w-full">
-                    Contact
-                  </Button>
-                </Link>
+              <div className="pt-4 border-t border-white/10 flex justify-center">
+                <div onClick={() => setIsMenuOpen(false)}>
+                  <GradientButton href="/contact" text="Contact" className="w-[140px] h-[39px] text-[16px]" />
+                </div>
               </div>
             </nav>
           </div>
