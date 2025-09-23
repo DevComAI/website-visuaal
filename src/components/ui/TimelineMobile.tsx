@@ -24,7 +24,7 @@ const TimelineMobile = ({ items }: TimelineMobileProps) => {
           {items.map((item, index) => (
             <div key={index} className="relative pl-12">
               {/* Timeline dot */}
-              <div className="absolute left-4 top-6 w-4 h-4 bg-[#363986] rounded-full transform -translate-x-1/2 border-4 border-[#211824]"></div>
+              <div className="absolute left-4 top-6 w-4 h-4 bg-[#211824] rounded-full transform -translate-x-1/2 border-2 border-[#363986]"></div>
 
               {/* Content */}
               <div className="bg-[#2A1F2E]/50 backdrop-blur-sm rounded-lg p-4 border border-white/10">
@@ -37,7 +37,7 @@ const TimelineMobile = ({ items }: TimelineMobileProps) => {
                 </p>
 
                 {/* Image */}
-                <AnimatedBorder className="inline-block w-full" borderRadius="0.5rem">
+                <AnimatedBorder className="inline-block w-full" borderRadius="0.5rem" borderWidth="2px">
                   <Image
                     src={item.image}
                     alt={item.title}
