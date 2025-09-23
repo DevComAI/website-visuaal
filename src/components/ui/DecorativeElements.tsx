@@ -8,33 +8,71 @@ export default function DecorativeElements() {
   useEffect(() => {
     const generateElements = () => {
       const newElements: React.ReactElement[] = [];
-      const baseSpacing = 800; // base pixels between elements
+
+      // Responsive values based on screen width
+      const screenWidth = window.innerWidth;
+      const isMobile = screenWidth < 640;
+      const isTablet = screenWidth >= 640 && screenWidth < 1024;
+
+      // Responsive spacing and dimensions
+      let baseSpacing: number;
+      let elementWidth: string;
+      let elementHeight: string;
+      let leftOffset: string;
+      let rightOffset: string;
+      let blurClass: string;
+
+      if (isMobile) {
+        baseSpacing = 400;
+        elementWidth = '300px';
+        elementHeight = '180px';
+        leftOffset = '-left-32';
+        rightOffset = '-right-32';
+        blurClass = 'blur-2xl';
+      } else if (isTablet) {
+        baseSpacing = 600;
+        elementWidth = '600px';
+        elementHeight = '300px';
+        leftOffset = '-left-60';
+        rightOffset = '-right-60';
+        blurClass = 'blur-3xl';
+      } else {
+        baseSpacing = 800;
+        elementWidth = '1150px';
+        elementHeight = '560px';
+        leftOffset = '-left-120';
+        rightOffset = '-right-120';
+        blurClass = 'blur-3xl';
+      }
+
       const documentHeight = document.documentElement.scrollHeight;
       let currentPosition = 0;
 
       while (currentPosition < documentHeight + 500) {
         const isLeft = newElements.length % 2 === 0;
-        
+
         // Add random variation of ±20% to spacing
         const variation = 0.8 + Math.random() * 0.4; // 0.8 to 1.2
         const spacing = baseSpacing * variation;
-        
+
         newElements.push(
           <div
             key={newElements.length}
-            className={`absolute ${isLeft ? '-left-120' : '-right-120'} w-[1150px] h-[560px] rounded-full blur-3xl`}
+            className={`absolute ${isLeft ? leftOffset : rightOffset} rounded-full ${blurClass}`}
             style={{
               top: `${currentPosition}px`,
-              background: isLeft 
+              width: elementWidth,
+              height: elementHeight,
+              background: isLeft
                 ? 'radial-gradient(circle at center, rgba(53, 168, 207, 0.44) 0%, transparent 40%)'
                 : 'radial-gradient(circle at center, rgba(128, 82, 164, 0.44) 0%, transparent 40%)'
             }}
           />
         );
-        
+
         currentPosition += spacing;
       }
-      
+
       setElements(newElements);
     };
 
