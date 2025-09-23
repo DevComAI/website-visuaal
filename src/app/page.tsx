@@ -134,29 +134,6 @@ export default function Home() {
     )
   }
 
-  const MobileGradientLine = ({ width = "100%", padding = "py-4", className = "", vertical = false }: { width?: string | number; padding?: string; className?: string; vertical?: boolean }) => {
-    const widthStyle = typeof width === 'number' ? `${width}px` : width;
-
-    if (vertical) {
-      return (
-        <div className={`relative ${padding} ${className}`}>
-          <div
-            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px bg-gradient-to-b from-transparent via-white to-transparent"
-            style={{ height: widthStyle }}
-          ></div>
-        </div>
-      );
-    }
-
-    return (
-      <div className={`relative ${padding} ${className}`}>
-        <div
-          className="absolute top-0 left-1/2 transform -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-white to-transparent"
-          style={{ width: widthStyle }}
-        ></div>
-      </div>
-    );
-  };
 
   const MobileTitleHome = ({ topText, bottomText, backgroundImage, className = "" }: {
     topText?: string | React.ReactNode;
@@ -242,8 +219,12 @@ export default function Home() {
             </div>
           </div>
         </section>
+<div className='my-20'>
+
 
         <LogoCarousel />
+        </div>
+
 
         <MobileTitleHome
           topText={<><MobileGradientText>EXPERTS</MobileGradientText> IN IMMERSIVE EXPERIENCES</>}
@@ -311,7 +292,9 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="pb-12"></div>
+        <div className="pb-20"></div>
+
+
 
         <MobileTitleHome
           topText={<>THE BENEFITS OF USING OUR <MobileGradientText>DIGITAL SIGNAGE</MobileGradientText></>}

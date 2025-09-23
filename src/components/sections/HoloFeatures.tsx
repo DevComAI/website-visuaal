@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { ReactNode } from 'react'
-import AnimatedBorder from '@/components/ui/AnimatedBorder'
 
 interface FeatureItem {
   icon: string
