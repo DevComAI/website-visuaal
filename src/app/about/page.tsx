@@ -33,7 +33,7 @@ const AboutPage = () => {
           />
 
       <AboutContent />
-      <div className="pb-16 sm:pb-32 lg:pb-60"> </div>
+      <div className="pb-8 sm:pb-16 md:pb-32 lg:pb-60"> </div>
 
     </div>
   )

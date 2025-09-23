@@ -26,11 +26,30 @@ const HeroSpline = ({
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Spline Background - Interactive */}
+      {/* Mobile Spline */}
+      <div className="md:hidden absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden pointer-events-none">
+        <SplineViewer
+          scene={splineUrl}
+          style={{
+            width: '100%',
+            height: '100%',
+            minHeight: '100vh',
+            minWidth: '100vw',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            objectFit: 'cover'
+          }}
+          interactive={false}
+        />
+      </div>
+
+      {/* Desktop Spline */}
       <div
         className={
           splinePosition === 'right'
-            ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0 mix-blend-plus-lighter"
-            : "absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden spline-responsive-scale"
+            ? "hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0 mix-blend-plus-lighter"
+            : "hidden md:block absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden spline-responsive-scale"
         }
         style={{
           transformOrigin: 'center center'

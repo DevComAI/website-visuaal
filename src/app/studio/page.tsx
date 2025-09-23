@@ -28,14 +28,14 @@ const StudioPage = () => {
         splinePosition="right"
       />
 
-<TitlePage
-title={<>our <GradientText>tools</GradientText></>}
+  <TitlePage
+  title={<>our <GradientText>tools</GradientText></>}
 
-paragraphs={[
-  "At VISUAAL, we create much more than images. We create exceptional visual worlds, at the crossroads of art, technology and storytelling.",
-]}
-backgroundImage="studio.png"
-/>
+  paragraphs={[
+    "At VISUAAL, we create much more than images. We create exceptional visual worlds, at the crossroads of art, technology and storytelling.",
+  ]}
+  backgroundImage="studio.png"
+  />
 
 {/* Desktop Timeline */}
 <div className="hidden md:block">
@@ -115,20 +115,20 @@ backgroundImage="studio.png"
 
 
 
-<div className="pt-40 flex justify-center">
+<div className="py-10 md:pt-40 flex justify-center px-4">
   <div className="text-left max-w-[1500px] mx-auto">
     {/* Main Description */}
-    <p className="text-[32px] text-center leading-relaxed mb-12">
-      Every project is unique, that&apos;s why we adapt to your needs, ambitions, and challenges. 
+    <p className="text-lg md:text-2xl lg:text-[32px] text-center leading-relaxed mb-8 md:mb-12">
+      Every project is unique, that&apos;s why we adapt to your needs, ambitions, and challenges.
       Let&apos;s talk, and find the visual solution that truly fits you.
     </p>
 
     {/* CTA Button */}
-    <div className="flex justify-center pt-20">
-      <GradientButton 
+    <div className="flex justify-center pt-10 md:pt-20">
+      <GradientButton
         href="/contact"
         text="Talking about your project"
-        className="w-[350px] h-[50px]"
+        className="w-full max-w-[350px] h-[50px] mx-4"
       />
     </div>
   </div>
@@ -136,13 +136,13 @@ backgroundImage="studio.png"
    
 
    {/* Spline Component */}
-<div className='h-screen -mt-40 mix-blend-screen'>
-  <SplineViewer 
-    scene="https://prod.spline.design/VhnOlUUBXyLXytif/scene.splinecode"
-    style={{ width: '100%', height: '100%' }}
-    interactive={true}
-  />
-</div>
+      <div className='h-screen -mt-40 mix-blend-screen hidden md:block'>
+        <SplineViewer 
+          scene="https://prod.spline.design/VhnOlUUBXyLXytif/scene.splinecode"
+          style={{ width: '100%', height: '100%' }}
+          interactive={true}
+        />
+      </div>
     </div>
   )
 }

@@ -46,7 +46,7 @@ const AboutContent = () => {
           </div>
 
           {/* Spline */}
-          <div className="relative h-64 sm:h-80 lg:h-96 xl:h-[500px] mix-blend-lighten order-first lg:order-last">
+          <div className="relative h-64 sm:h-80 lg:h-96 xl:h-[500px] mix-blend-lighten order-first lg:order-last hidden md:block">
             <SplineViewer
               scene="https://prod.spline.design/b5QNjdMLUJW-blFk/scene.splinecode"
               style={{ width: '100%', height: '100%' }}
