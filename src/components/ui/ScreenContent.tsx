@@ -15,13 +15,13 @@ const ScreenContent = ({
   className = "" 
 }: ScreenContentProps) => {
   return (
-    <section className={`pb-20  flex justify-center ${className}`}>
-      <div className="w-[1650px] px-4">
-        <div className="text-left mb-18">
-          <h2 className="text-[40px] font-medium text-white mb-4 uppercase">
+    <section className={`pb-10 md:pb-20 flex justify-center ${className}`}>
+      <div className="w-full lg:w-[1650px] px-4 md:px-6 lg:px-4">
+        <div className="text-left mb-8 md:mb-18">
+          <h2 className="text-xl md:text-3xl lg:text-[40px] font-medium text-white mb-4 uppercase">
             {title}
           </h2>
-          <p className="text-[32px] text-white font-normal leading-relaxed max-w-6xl">
+          <p className="text-base md:text-xl lg:text-[32px] text-white font-normal leading-relaxed max-w-6xl">
             {paragraph}
           </p>
         </div>

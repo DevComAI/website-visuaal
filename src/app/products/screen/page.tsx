@@ -113,7 +113,7 @@ backgroundImage="SCREEN.png"
 
 
 
-      <div className="pb-60"> </div>
+      <div className="pb-20 md:pb-40 lg:pb-60"> </div>
 
 
 
@@ -137,7 +137,7 @@ backgroundImage="SCREEN.png"
       />
 
 
-<div className="pb-60"> </div>
+<div className="pb-20 md:pb-40 lg:pb-60"> </div>
 
 
       <ProductService 
@@ -151,41 +151,41 @@ backgroundImage="SCREEN.png"
       />
 
       {/* Custom LED Screens Section */}
-      <section className="py-20 flex justify-center">
-        <div className=" px-4">
+      <section className="py-10 md:py-20 flex justify-center">
+        <div className="px-4 md:px-6">
           <div className="text-left max-w-[1500px] mx-auto">
             {/* Title */}
-            <h2 className="text-[40px] font-medium text-white mb-12 uppercase text-center">
+            <h2 className="text-xl md:text-3xl lg:text-[40px] font-medium text-white mb-6 md:mb-8 lg:mb-12 uppercase text-center">
               <GradientText>CUSTOM</GradientText> LED SCREENS
             </h2>
 
             {/* Main Description */}
-            <p className="text-[32px] text-white font-medium leading-relaxed mb-12">
+            <p className="text-base md:text-xl lg:text-[32px] text-white font-medium leading-relaxed mb-6 md:mb-8 lg:mb-12">
               Because every project is unique, we design customized LED solutions that perfectly suit your needs. Whether you want a giant screen for a shopping mall, an LED column for a showroom, or original shapes for an architectural project, we bring your ideas to life.
             </p>
 
             {/* Bullet Points */}
-            <ul className="space-y-4 mb-12 font-regular ml-8">
-              <li className="text-[32px] text-white leading-relaxed flex items-start">
-                <span className="text-blue-400 mr-3 mt-1">•</span>
+            <ul className="space-y-2 md:space-y-3 lg:space-y-4 mb-6 md:mb-8 lg:mb-12 font-regular ml-4 md:ml-6 lg:ml-8">
+              <li className="text-base md:text-xl lg:text-[32px] text-white leading-relaxed flex items-start">
+                <span className="text-blue-400 mr-2 md:mr-3 mt-1">•</span>
                 100% customizable dimensions and formats
               </li>
-              <li className="text-[32px] text-white leading-relaxed flex items-start">
-                <span className="text-blue-400 mr-3 mt-1">•</span>
+              <li className="text-base md:text-xl lg:text-[32px] text-white leading-relaxed flex items-start">
+                <span className="text-blue-400 mr-2 md:mr-3 mt-1">•</span>
                 Special designs available (curved walls, columns, transparent screens, etc.)
               </li>
-              <li className="text-[32px] text-white leading-relaxed flex items-start">
-                <span className="text-blue-400 mr-3 mt-1">•</span>
+              <li className="text-base md:text-xl lg:text-[32px] text-white leading-relaxed flex items-start">
+                <span className="text-blue-400 mr-2 md:mr-3 mt-1">•</span>
                 Seamless integration into your indoor or outdoor spaces
               </li>
-              <li className="text-[32px] text-white leading-relaxed flex items-start">
-                <span className="text-blue-400 mr-3 mt-1">•</span>
+              <li className="text-base md:text-xl lg:text-[32px] text-white leading-relaxed flex items-start">
+                <span className="text-blue-400 mr-2 md:mr-3 mt-1">•</span>
                 Comprehensive support: design, manufacturing, installation, and commissioning
               </li>
             </ul>
 
             {/* Bottom Description */}
-            <p className="text-[32px] font-medium text-white leading-relaxed mb-16">
+            <p className="text-base md:text-xl lg:text-[32px] font-medium text-white leading-relaxed mb-8 md:mb-12 lg:mb-16">
               These custom LED screens are the ideal solution to stand out and offer your audience an unforgettable visual experience.
             </p>
 
@@ -200,7 +200,7 @@ backgroundImage="SCREEN.png"
           </div>
         </div>
       </section>
-      <div className="pb-60"> </div>
+      <div className="pb-20 md:pb-40 lg:pb-60"> </div>
       
     </div>
   )
