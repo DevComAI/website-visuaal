@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import AnimatedBorder from '@/components/ui/AnimatedBorder'
 
 export default function DoohContent() {
   const advantages = [
@@ -38,7 +39,7 @@ export default function DoohContent() {
 
         <div className="flex justify-center mb-8 lg:mb-12">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch w-full max-w-7xl">
-            <div className="w-full lg:flex-[1.5] max-w-md lg:max-w-none">
+            <AnimatedBorder className="w-full lg:flex-[1.5] max-w-md lg:max-w-none" borderRadius="0.5rem">
               <Image
                 src="/img/dooh/content1-1.png"
                 alt="DOOH Airport Display"
@@ -47,8 +48,8 @@ export default function DoohContent() {
                 className="w-full h-full object-cover rounded-lg"
                 style={{ minHeight: '300px' }}
               />
-            </div>
-            <div className="w-full lg:flex-1 max-w-md lg:max-w-none">
+            </AnimatedBorder>
+            <AnimatedBorder className="w-full lg:flex-1 max-w-md lg:max-w-none" borderRadius="0.5rem">
               <Image
                 src="/img/dooh/content1-2.png"
                 alt="DOOH Street Display"
@@ -57,7 +58,7 @@ export default function DoohContent() {
                 className="w-full h-full object-cover rounded-lg"
                 style={{ minHeight: '300px' }}
               />
-            </div>
+            </AnimatedBorder>
           </div>
         </div>
 
@@ -92,7 +93,7 @@ export default function DoohContent() {
 
         <div className="flex justify-center mb-8 lg:mb-12">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch w-full max-w-7xl">
-            <div className="w-full lg:flex-[1.5] max-w-md lg:max-w-none">
+            <AnimatedBorder className="w-full lg:flex-[1.5] max-w-md lg:max-w-none" borderRadius="0.5rem">
               <Image
                 src="/img/dooh/content2-1.png"
                 alt="DOOH Technology Display"
@@ -101,8 +102,8 @@ export default function DoohContent() {
                 className="w-full h-full object-cover rounded-lg"
                 style={{ minHeight: '300px' }}
               />
-            </div>
-            <div className="w-full lg:flex-1 max-w-md lg:max-w-none">
+            </AnimatedBorder>
+            <AnimatedBorder className="w-full lg:flex-1 max-w-md lg:max-w-none" borderRadius="0.5rem">
               <Image
                 src="/img/dooh/content2-2.png"
                 alt="DOOH Interactive Display"
@@ -111,7 +112,7 @@ export default function DoohContent() {
                 className="w-full h-full object-cover rounded-lg"
                 style={{ minHeight: '300px' }}
               />
-            </div>
+            </AnimatedBorder>
           </div>
         </div>
 
@@ -145,7 +146,7 @@ export default function DoohContent() {
 
         <div className="flex justify-center mb-8 lg:mb-12">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16   items-stretch w-full max-w-7xl">
-            <div className="w-full lg:flex-[1.5] max-w-md lg:max-w-none">
+            <AnimatedBorder className="w-full lg:flex-[1.5] max-w-md lg:max-w-none" borderRadius="0.5rem">
               <Image
                 src="/img/dooh/content3-1.png"
                 alt="Dubai DOOH Display"
@@ -154,8 +155,8 @@ export default function DoohContent() {
                 className="w-full h-full object-cover rounded-lg"
                 style={{ minHeight: '300px' }}
               />
-            </div>
-            <div className="w-full lg:flex-1 max-w-md lg:max-w-none">
+            </AnimatedBorder>
+            <AnimatedBorder className="w-full lg:flex-1 max-w-md lg:max-w-none" borderRadius="0.5rem">
               <Image
                 src="/img/dooh/content3-2.png"
                 alt="Dubai Street Display"
@@ -164,7 +165,7 @@ export default function DoohContent() {
                 className="w-full h-full object-cover rounded-lg"
                 style={{ minHeight: '300px' }}
               />
-            </div>
+            </AnimatedBorder>
           </div>
         </div>
 
