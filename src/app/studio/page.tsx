@@ -4,6 +4,7 @@ import GradientText from '@/components/ui/GradientText'
 import AnimatedVisionText from '@/components/ui/AnimatedVisionText'
 import TitlePage from '@/components/ui/TitlePageSection'
 import Timeline from '@/components/sections/Timeline'
+import TimelineMobile from '@/components/ui/TimelineMobile'
 import GradientButton from '@/components/ui/GradientButton'
 import SplineViewer from '@/components/ui/SplineViewer'
 
@@ -36,40 +37,81 @@ paragraphs={[
 backgroundImage="studio.png"
 />
 
-<Timeline 
-  items={[
-    {
-      title: "A full-stack visual studio",
-      description: "We bring all our expertise in-house: Art direction, concept design, storyboarding, modeling, rigging, animation, lighting, shooting, texturing, compositing, rendering, real-time integration. Each project is tailor-made to sublimate your vision.",
-      image: "/img/studio/content1.png"
-    },
-    {
-      title: "Real-time & pre-calculated 3D creation", 
-      description: "We work on the two main areas of visual creation: (Unreal Engine, Unity, WebGL) for interactive experiences, immersive web, holography, metavers, XR.",
-      image: "/img/studio/content2.png"
-    },
-    {
-      title: "Premium aesthetics, exacting technical standards",
-      description: "Our creations aim for immediate impact. We know how to combine artistic direction with cutting-edge technology in a fluid process that adapts to all formats: film, projection, giant screen, DOOH display, immersive experience, showroom, shop window, web.",
-      image: "/img/studio/content3.png"
-    },
-    {
-      title: "Technologies & pipelines",
-      description: "Unreal Engine / Unity / Blender / Houdini / Cinema 4D / Maya WebGL / Three.js / TouchDesigner Render engines: Octane, Redshift, V-Ray Generative AI for ideation, design and animation",
-      image: "/img/studio/content4.png"
-    },
-    {
-      title: "A studio for brands that want to go further",
-      description: "Designers, luxury homes, agencies, architects: let's work together to transform your ideas into unforgettable visual experiences. Our mission: to bring to life images that impress, surprise and captivate.",
-      image: "/img/studio/content5.png"
-    },
-    {
-      title: "Precalculated high-end",
-      description: "For luxury goods, advertising, animated films or event content.",
-      image: "/img/studio/content6.png"
-    }
-  ]} 
-/>
+{/* Desktop Timeline */}
+<div className="hidden md:block">
+  <Timeline
+    items={[
+      {
+        title: "A full-stack visual studio",
+        description: "We bring all our expertise in-house: Art direction, concept design, storyboarding, modeling, rigging, animation, lighting, shooting, texturing, compositing, rendering, real-time integration. Each project is tailor-made to sublimate your vision.",
+        image: "/img/studio/content1.png"
+      },
+      {
+        title: "Real-time & pre-calculated 3D creation",
+        description: "We work on the two main areas of visual creation: (Unreal Engine, Unity, WebGL) for interactive experiences, immersive web, holography, metavers, XR.",
+        image: "/img/studio/content2.png"
+      },
+      {
+        title: "Premium aesthetics, exacting technical standards",
+        description: "Our creations aim for immediate impact. We know how to combine artistic direction with cutting-edge technology in a fluid process that adapts to all formats: film, projection, giant screen, DOOH display, immersive experience, showroom, shop window, web.",
+        image: "/img/studio/content3.png"
+      },
+      {
+        title: "Technologies & pipelines",
+        description: "Unreal Engine / Unity / Blender / Houdini / Cinema 4D / Maya WebGL / Three.js / TouchDesigner Render engines: Octane, Redshift, V-Ray Generative AI for ideation, design and animation",
+        image: "/img/studio/content4.png"
+      },
+      {
+        title: "A studio for brands that want to go further",
+        description: "Designers, luxury homes, agencies, architects: let's work together to transform your ideas into unforgettable visual experiences. Our mission: to bring to life images that impress, surprise and captivate.",
+        image: "/img/studio/content5.png"
+      },
+      {
+        title: "Precalculated high-end",
+        description: "For luxury goods, advertising, animated films or event content.",
+        image: "/img/studio/content6.png"
+      }
+    ]}
+  />
+</div>
+
+{/* Mobile Timeline */}
+<div className="md:hidden">
+  <TimelineMobile
+    items={[
+      {
+        title: "A full-stack visual studio",
+        description: "We bring all our expertise in-house: Art direction, concept design, storyboarding, modeling, rigging, animation, lighting, shooting, texturing, compositing, rendering, real-time integration. Each project is tailor-made to sublimate your vision.",
+        image: "/img/studio/content1.png"
+      },
+      {
+        title: "Real-time & pre-calculated 3D creation",
+        description: "We work on the two main areas of visual creation: (Unreal Engine, Unity, WebGL) for interactive experiences, immersive web, holography, metavers, XR.",
+        image: "/img/studio/content2.png"
+      },
+      {
+        title: "Premium aesthetics, exacting technical standards",
+        description: "Our creations aim for immediate impact. We know how to combine artistic direction with cutting-edge technology in a fluid process that adapts to all formats: film, projection, giant screen, DOOH display, immersive experience, showroom, shop window, web.",
+        image: "/img/studio/content3.png"
+      },
+      {
+        title: "Technologies & pipelines",
+        description: "Unreal Engine / Unity / Blender / Houdini / Cinema 4D / Maya WebGL / Three.js / TouchDesigner Render engines: Octane, Redshift, V-Ray Generative AI for ideation, design and animation",
+        image: "/img/studio/content4.png"
+      },
+      {
+        title: "A studio for brands that want to go further",
+        description: "Designers, luxury homes, agencies, architects: let's work together to transform your ideas into unforgettable visual experiences. Our mission: to bring to life images that impress, surprise and captivate.",
+        image: "/img/studio/content5.png"
+      },
+      {
+        title: "Precalculated high-end",
+        description: "For luxury goods, advertising, animated films or event content.",
+        image: "/img/studio/content6.png"
+      }
+    ]}
+  />
+</div>
 
 
 
