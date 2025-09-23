@@ -243,14 +243,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Logo Carousel placeholder */}
-        <section className="py-8 bg-black/20">
-          <div className="container mx-auto px-4">
-            <div className="flex justify-center items-center space-x-8 overflow-x-auto">
-              <div className="text-white/60 text-sm whitespace-nowrap">Trusted by leading brands</div>
-            </div>
-          </div>
-        </section>
+        <LogoCarousel />
 
         <MobileTitleHome
           topText={<><MobileGradientText>EXPERTS</MobileGradientText> IN IMMERSIVE EXPERIENCES</>}
@@ -383,7 +376,6 @@ export default function Home() {
         <ProductsSection />
 
         <div className="pb-12"></div>
-        <MobileGradientLine width={"60px"} padding="pb-[1px]" vertical={true} />
       </>
     );
   }
