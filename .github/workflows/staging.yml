@@ -97,7 +97,7 @@ jobs:
             docker run -d \
               --name visuaal-staging \
               --restart unless-stopped \
-              -p 3000:3000 \
+              -p 2689:3000 \
               ${{ env.IMAGE_NAME }}:latest
 
             # Clean up old images
