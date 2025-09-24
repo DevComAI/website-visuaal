@@ -93,12 +93,19 @@ jobs:
             # Pull latest image
             docker pull ${{ env.IMAGE_NAME }}:latest
 
+            # Find available port
+            RANDOM_PORT=$(python3 -c "import socket; s=socket.socket(); s.bind(('', 0)); print(s.getsockname()[1]); s.close()")
+
             # Run new container
             docker run -d \
               --name visuaal-staging \
               --restart unless-stopped \
-              -p 2689:3000 \
+              -p $RANDOM_PORT:3000 \
               ${{ env.IMAGE_NAME }}:latest
+
+            # Display the port
+            echo "🚀 Application deployed on port: $RANDOM_PORT"
+            echo "📍 Access URL: http://${{ secrets.STAGING_HOST }}:$RANDOM_PORT"
 
             # Clean up old images
             docker image prune -f
