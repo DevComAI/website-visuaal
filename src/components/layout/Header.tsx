@@ -5,7 +5,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
 import GradientButton from '@/components/ui/GradientButton'
 
 const Header = () => {
@@ -34,15 +33,15 @@ const Header = () => {
         background: `radial-gradient(circle, rgba(33, 24, 36, 0.9) 0%, rgba(20, 15, 22, 0.9) 100%)`
       }}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           <Link href="/" className="block">
             <Image
               src="/logo/logo-v.svg"
               alt="Visuaal Logo"
               width={40}
               height={40}
-              className="h-10 w-auto"
+              className="h-8 sm:h-10 w-auto"
             />
           </Link>
           
@@ -125,24 +124,24 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/20">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden py-6 border-t border-white/20">
+            <nav className="flex flex-col space-y-6">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-white hover:text-gray-300 transition-colors duration-200 block"
+                    className="text-white hover:text-gray-300 transition-colors duration-200 block text-lg font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                   {item.subMenu && (
-                    <div className="ml-4 mt-2 space-y-2">
+                    <div className="ml-4 mt-3 space-y-3">
                       {item.subMenu.map((subItem) => (
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="text-gray-300 hover:text-gray-300 transition-colors text-sm block"
+                          className="text-gray-300 hover:text-white transition-colors text-base block"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {subItem.name}
@@ -152,11 +151,11 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                <Button variant="primary" size="sm" className="mt-4">
-                  Contact
-                </Button>
-              </Link>
+              <div className="pt-4 border-t border-white/10 flex justify-center">
+                <div onClick={() => setIsMenuOpen(false)}>
+                  <GradientButton href="/contact" text="Contact" className="w-[140px] h-[39px] text-[16px]" />
+                </div>
+              </div>
             </nav>
           </div>
         )}

@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import AnimatedBorder from '@/components/ui/AnimatedBorder'
 
 interface TimelineItem {
   title: string
@@ -47,15 +48,15 @@ const Timeline = ({ items }: TimelineProps) => {
                       </p>
                       
                       {/* Image */}
-                      <div className="relative">
-                        <Image 
-                          src={item.image} 
+                      <AnimatedBorder className="inline-block" borderRadius="0.5rem">
+                        <Image
+                          src={item.image}
                           alt={item.title}
                           width={600}
                           height={337}
                           className="w-[600px] h-[337px] object-cover rounded-lg"
                         />
-                      </div>
+                      </AnimatedBorder>
                     </div>
                   </div>
                   

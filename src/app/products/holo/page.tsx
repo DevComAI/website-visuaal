@@ -42,40 +42,42 @@ const HoloPage = () => {
 
 
 
-      <section className="py-20 relative">
+      <section className="py-10 md:py-20 relative hidden md:block">
         <div className="container">
           <div className="flex justify-center relative">
-          <div 
-            className="p-1 rounded-3xl relative z-10 w-full h-[1200px]"
+          <div
+            className="p-1 rounded-3xl relative z-10 w-full h-[600px] md:h-[800px] lg:h-[1200px]"
 
           >
               {/* PRE-RECORDED section - top right */}
-              <div className="absolute top-10 right-8 z-30 pointer-events-none" >
-                <h3 className="text-[40px] mb-4">
-                  
+              <div className="absolute top-5 md:top-10 right-4 md:right-8 z-30 pointer-events-none" >
+                <h3 className="text-xl md:text-3xl lg:text-[40px] mb-2 md:mb-4">
+
                   <><GradientText>PRE-RECORDED</GradientText> </>
                 </h3>
 
 
-                <p className="text-white text-[32px] font-regular leading-tight w-[730px] h-[370px] p-6 rounded-lg backdrop-blur-[20px]" style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}>
-                  Pre-recorded content lets you control your holographic message with precision. 
-                  Record in our studio or on location, with autocue support for smooth delivery. 
-                  Showcase people or products (3D or physical), and enhance the experience with text, 
-                  QR codes, or visuals, ideal for events and advertising.
+                <p className="text-white text-sm md:text-xl lg:text-[32px] font-regular leading-tight w-[280px] md:w-[500px] lg:w-[730px] h-auto md:h-[280px] lg:h-[370px] p-3 md:p-4 lg:p-6 rounded-lg backdrop-blur-[20px]" style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}>
+                  <span className="hidden md:inline">Pre-recorded content lets you control your holographic message with precision.
+                  Record in our studio or on location, with autocue support for smooth delivery.
+                  Showcase people or products (3D or physical), and enhance the experience with text,
+                  QR codes, or visuals, ideal for events and advertising.</span>
+                  <span className="md:hidden">Pre-recorded content for precise holographic messages. Studio or on-location recording with autocue support.</span>
                 </p>
               </div>
 
               {/* 4K LIVE section - bottom left */}
-              <div className="absolute bottom-10 left-8 z-30 pointer-events-none">
-                <h3 className="text-[40px] mb-4" >
+              <div className="absolute bottom-5 md:bottom-10 left-4 md:left-8 z-30 pointer-events-none">
+                <h3 className="text-xl md:text-3xl lg:text-[40px] mb-2 md:mb-4" >
                                    <><GradientText> 4K LIVE</GradientText> </>
 
                 </h3>
-                <p className="text-white text-[32px] font-regular leading-tight w-[730px] h-[370px] p-6 rounded-lg backdrop-blur-[20px]" style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}>
-                With our 4K live connection, stream directly to a local Holobox in real time, 
+                <p className="text-white text-sm md:text-xl lg:text-[32px] font-regular leading-tight w-[280px] md:w-[500px] lg:w-[730px] h-auto md:h-[280px] lg:h-[370px] p-3 md:p-4 lg:p-6 rounded-lg backdrop-blur-[20px]" style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}>
+                  <span className="hidden md:inline">With our 4K live connection, stream directly to a local Holobox in real time,
                   all you need is a stable internet connection. Recordings can be done in our studio or on-site.
                   <br /><br />
-                  Perfect for live performances, digital hosts, education, telehealth, keynote talks, and more.
+                  Perfect for live performances, digital hosts, education, telehealth, keynote talks, and more.</span>
+                  <span className="md:hidden">4K live streaming to Holobox. Perfect for performances, education, telehealth, and more.</span>
                 </p>
               </div>
             <div className="w-full h-full rounded-3xl overflow-hidden relative z-20 " >
@@ -125,7 +127,7 @@ Easily manage and customize your content — our technology is designed to meet 
           '/img/humanbox/carousel1/project3.png'
         ]}
       />
-      <div className="pb-60"> </div>
+      <div className="pb-20 md:pb-40 lg:pb-60"> </div>
 
    
       <HoloFeatures
@@ -179,62 +181,62 @@ Easily manage and customize your content — our technology is designed to meet 
 
       <section>
         <div className="container mx-auto px-4">
-          <div className="flex items-center gap-12">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             {/* Image à gauche - 1/3 */}
-            <div className="w-1/2">
+            <div className="w-full lg:w-1/2">
               <div className="flex justify-center">
-                <Image 
-                  src="/img/humanbox/humanbox1.png" 
-                  alt="Human Box device" 
+                <Image
+                  src="/img/humanbox/humanbox1.png"
+                  alt="Human Box device"
                   width={300}
                   height={400}
-                  className="w-full max-w-[400px] h-auto mix-blend-screen mt-20"
+                  className="w-full max-w-[250px] md:max-w-[350px] lg:max-w-[400px] h-auto mix-blend-screen mt-10 md:mt-16 lg:mt-20"
                 />
               </div>
             </div>
-            
+
             {/* Contenu à droite - 2/3 */}
-            <div className="w-1/2 -ml-40">
+            <div className="w-full lg:w-1/2 lg:-ml-40">
               {/* Titre */}
-              <h2 className="text-white text-[32px] font-semibold mb-20">
+              <h2 className="text-white text-lg md:text-2xl lg:text-[32px] font-semibold mb-8 md:mb-12 lg:mb-20 text-center lg:text-left">
                 We have several other box sizes available :
               </h2>
               
               {/* Grille des tailles - 2 lignes de 5 */}
               <div className="space-y-1 mb-8">
                 {/* Première ligne */}
-                <div className="flex ml-14">
+                <div className="flex justify-center lg:justify-start lg:ml-14">
                   {['21.5"', '32"', '43"', '49"', '55"'].map((size, index) => (
-                    <div 
+                    <div
                       key={index}
-                      className="w-[180px] -ml-6 h-[80px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
+                      className="w-[70px] md:w-[120px] lg:w-[180px] -ml-2 md:-ml-4 lg:-ml-6 h-[50px] md:h-[65px] lg:h-[80px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
                       style={{ backgroundImage: "url('/forme/para3.png')" }}
                     >
-                      <div className="text-[30px] font-semibold relative -ml-2 z-10 px-2 text-center leading-tight">
+                      <div className="text-xs md:text-xl lg:text-[30px] font-semibold relative -ml-1 lg:-ml-2 z-10 px-1 lg:px-2 text-center leading-tight">
                         {size}
                       </div>
                     </div>
                   ))}
                 </div>
-                
+
                 {/* Deuxième ligne */}
-                <div className="flex ">
+                <div className="flex justify-center lg:justify-start">
                   {['65"', '75"', '86"', '98"', '+'].map((size, index) => (
-                    <div 
+                    <div
                       key={index}
-                      className="w-[180px] -ml-6 h-[80px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
+                      className="w-[70px] md:w-[120px] lg:w-[180px] -ml-2 md:-ml-4 lg:-ml-6 h-[50px] md:h-[65px] lg:h-[80px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
                       style={{ backgroundImage: "url('/forme/para3.png')" }}
                     >
-                      <div className="text-[30px] font-semibold relative -ml-2 z-10 px-2 text-center leading-tight">
+                      <div className="text-xs md:text-xl lg:text-[30px] font-semibold relative -ml-1 lg:-ml-2 z-10 px-1 lg:px-2 text-center leading-tight">
                         {size}
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              
+
               {/* Phrase descriptive */}
-              <p className="text-white text-[32px]  mt-20">
+              <p className="text-white text-base md:text-xl lg:text-[32px] mt-8 md:mt-12 lg:mt-20 text-center lg:text-left">
                 Contact us for a quote for a custom size.
               </p>
               
@@ -253,7 +255,7 @@ Easily manage and customize your content — our technology is designed to meet 
               />
             </div>
       </section>
-      <div className="pb-60"> </div>
+      <div className="pb-20 md:pb-40 lg:pb-60"> </div>
 
     </div>
   )

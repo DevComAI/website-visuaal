@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import DecorativeElements from '@/components/ui/DecorativeElements';
+import ConditionalDecorativeElements from '@/components/ui/ConditionalDecorativeElements';
 
 
 export const metadata: Metadata = {
@@ -51,6 +51,11 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-site-verification',
   },
+  icons: {
+    icon: '/icon.ico',
+    shortcut: '/icon.ico',
+    apple: '/icon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -66,7 +71,7 @@ export default function RootLayout({
       <body
         className="antialiased font-sans relative"
       >
-        <DecorativeElements />
+        <ConditionalDecorativeElements />
         <Header />
         <main>{children}</main>
         <Footer />

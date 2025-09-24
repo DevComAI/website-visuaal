@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import AnimatedBorder from '@/components/ui/AnimatedBorder'
 
 interface ImageCarouselProps {
   images: string[]
@@ -10,13 +11,14 @@ interface ImageCarouselProps {
   interval?: number
 }
 
-const ImageCarousel = ({ 
-  images, 
-  autoPlay = true, 
-  interval = 4000 
+const ImageCarousel = ({
+  images,
+  autoPlay = true,
+  interval = 4000
 }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
 
   const goToPrevious = () => {
     if (isTransitioning) return
@@ -44,6 +46,24 @@ const ImageCarousel = ({
     
     setTimeout(() => setIsTransitioning(false), 800)
   }
+
+  // Detect screen size after mount
+  useEffect(() => {
+    const updateScreenSize = () => {
+      if (window.innerWidth < 768) {
+        setScreenSize('mobile')
+      } else if (window.innerWidth < 1024) {
+        setScreenSize('tablet')
+      } else {
+        setScreenSize('desktop')
+      }
+    }
+
+    updateScreenSize()
+    window.addEventListener('resize', updateScreenSize)
+
+    return () => window.removeEventListener('resize', updateScreenSize)
+  }, [])
 
   // Auto-play functionality
   useEffect(() => {
@@ -115,10 +135,10 @@ const ImageCarousel = ({
   }
 
   return (
-    <div className="relative w-full mx-auto overflow-hidden py-4">
-      {/* Bouton navigation gauche */}
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20">
-        <div 
+    <div className="relative w-full mx-auto overflow-hidden py-2 md:py-4">
+      {/* Bouton navigation gauche - caché sur mobile */}
+      <div className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20">
+        <div
           className="relative p-[1px] rounded-full w-12 h-12 transition-transform duration-300 ease-out hover:scale-110"
           style={{
             background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
@@ -141,41 +161,51 @@ const ImageCarousel = ({
       </div>
 
       {/* Container principal des images */}
-      <div className="relative h-[400px] flex items-center justify-center px-8">
+      <div className="relative h-[200px] md:h-[300px] lg:h-[400px] flex items-center justify-center px-4 md:px-6 lg:px-8">
         {images.map((image, index) => {
           const style = getImageStyle(index)
           if (style.display === 'none') return null
-          
+
+          // Responsive dimensions based on state
+          let width = 600
+          let height = 337
+
+          if (screenSize === 'mobile') {
+            width = 300
+            height = 169
+          } else if (screenSize === 'tablet') {
+            width = 450
+            height = 253
+          }
+
           return (
             <div
               key={index}
               className="absolute flex items-center justify-center"
               style={{
                 ...style,
-                width: '600px',
-                height: '337px',
+                width: `${width}px`,
+                height: `${height}px`,
                 left: '50%',
                 top: '50%',
-                marginLeft: '-300px',
-                marginTop: '-168.5px'
+                marginLeft: `-${width/2}px`,
+                marginTop: `-${height/2}px`
               }}
             >
             {/* Container pour l'image */}
-            <div 
-              className="relative rounded-lg overflow-hidden w-full h-full bg-black"
-            >
+            <AnimatedBorder className="w-full h-full" borderRadius="0.5rem">
                 <Image
                   src={image}
                   alt={`Support image ${index + 1}`}
-                  width={600}
-                  height={337}
-                  className="w-full h-full object-cover"
+                  width={width}
+                  height={height}
+                  className="w-full h-full object-cover rounded-lg"
                   style={{
                     transform: 'translateZ(0)',
                     backfaceVisibility: 'hidden'
                   }}
                   priority={index === currentIndex}
-                  sizes="600px"
+                  sizes="(max-width: 768px) 300px, (max-width: 1024px) 450px, 600px"
                 />
                 
                 {/* Overlay pour les images non centrales */}
@@ -226,15 +256,15 @@ const ImageCarousel = ({
                     />
                   </>
                 )}
-            </div>
+            </AnimatedBorder>
             </div>
           )
         })}
       </div>
 
-      {/* Bouton navigation droite */}
-      <div className="absolute right-4 top-1/2 -translate-y-1/2 z-20">
-        <div 
+      {/* Bouton navigation droite - caché sur mobile */}
+      <div className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20">
+        <div
           className="relative p-[1px] rounded-full w-12 h-12 transition-transform duration-300 ease-out hover:scale-110"
           style={{
             background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
@@ -257,15 +287,15 @@ const ImageCarousel = ({
       </div>
 
       {/* Indicateurs */}
-      <div className="flex justify-center mt-6 space-x-3">
+      <div className="flex justify-center mt-4 md:mt-6 space-x-2 md:space-x-3">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             disabled={isTransitioning}
-            className={`w-3 h-3 rounded-full transition-all duration-500 ease-out disabled:cursor-not-allowed ${
-              currentIndex === index 
-                ? 'bg-white scale-125 shadow-md' 
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-500 ease-out disabled:cursor-not-allowed ${
+              currentIndex === index
+                ? 'bg-white scale-125 shadow-md'
                 : 'bg-white/40 hover:bg-white/70 hover:scale-110'
             }`}
             style={{

@@ -10,19 +10,15 @@ interface HeroSplineProps {
   showScrollIndicator?: boolean
   textPosition?: 'center' | 'right' | 'left'
   splinePosition?: 'fullscreen' | 'right'
-  titleSize?: string
-  subtitleSize?: string
 }
 
-const HeroSpline = ({ 
+const HeroSpline = ({
   title,
   subtitle,
   splineUrl,
   showScrollIndicator = false,
   textPosition = 'center',
-  splinePosition = 'fullscreen',
-  titleSize = '48px',
-  subtitleSize = '32px'
+  splinePosition = 'fullscreen'
 }: HeroSplineProps) => {
   return (
     <section 
@@ -30,11 +26,30 @@ const HeroSpline = ({
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Spline Background - Interactive */}
+      {/* Mobile Spline */}
+      <div className="md:hidden absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden pointer-events-none">
+        <SplineViewer
+          scene={splineUrl}
+          style={{
+            width: '100%',
+            height: '100%',
+            minHeight: '100vh',
+            minWidth: '100vw',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            objectFit: 'cover'
+          }}
+          interactive={false}
+        />
+      </div>
+
+      {/* Desktop Spline */}
       <div
         className={
           splinePosition === 'right'
-            ? "absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0 mix-blend-plus-lighter"
-            : "absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden spline-responsive-scale"
+            ? "hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0 mix-blend-plus-lighter"
+            : "hidden md:block absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden spline-responsive-scale"
         }
         style={{
           transformOrigin: 'center center'
@@ -57,24 +72,24 @@ const HeroSpline = ({
       </div>
       
       {/* Content */}
-      <div className="container relative z-20 mx-auto px-4 pointer-events-none">
+      <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8 pointer-events-none">
         <div className={`flex flex-col h-full ${
           textPosition === 'right'
-            ? 'items-end justify-center text-right pr-16'
+            ? 'items-end justify-center text-right pr-4 sm:pr-8 lg:pr-16'
             : textPosition === 'left'
-            ? 'items-start justify-center text-left pl-16'
+            ? 'items-start justify-center text-left pl-4 sm:pl-8 lg:pl-16'
             : 'items-center justify-center text-center'
         }`}>
           {textPosition === 'center' ? (
             <>
               {/* Center Layout */}
-              <div className="flex flex-col items-center justify-center space-y-8 md:space-y-12 min-h-screen">
-                <h1 className="font-semibold text-white leading-tight max-w-4xl 2xl:max-w-6xl text-center" style={{fontSize: titleSize}}>
+              <div className="flex flex-col items-center justify-center space-y-6 sm:space-y-8 lg:space-y-12 min-h-screen px-4">
+                <h1 className="font-semibold text-white leading-tight max-w-4xl 2xl:max-w-6xl text-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">
                   {title}
                 </h1>
 
                 {subtitle && (
-                  <h2 className="font-semibold text-white leading-tight max-w-2xl 2xl:max-w-4xl text-center" style={{fontSize: subtitleSize}}>
+                  <h2 className="font-semibold text-white leading-tight max-w-2xl 2xl:max-w-4xl text-center text-lg sm:text-xl lg:text-2xl xl:text-3xl">
                     {subtitle}
                   </h2>
                 )}
@@ -83,13 +98,13 @@ const HeroSpline = ({
           ) : (
             <>
               {/* Right/Left Layout */}
-              <div className="space-y-8 max-w-6xl 2xl:max-w-8xl">
-                <h1 className="font-semibold text-white leading-tight" style={{fontSize: titleSize}}>
+              <div className="space-y-6 lg:space-y-8 max-w-6xl 2xl:max-w-8xl">
+                <h1 className="font-semibold text-white leading-tight text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">
                   {title}
                 </h1>
 
                 {subtitle && (
-                  <h2 className="font-semibold text-white leading-tight" style={{fontSize: subtitleSize}}>
+                  <h2 className="font-semibold text-white leading-tight text-lg sm:text-xl lg:text-2xl xl:text-3xl">
                     {subtitle}
                   </h2>
                 )}
