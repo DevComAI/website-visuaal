@@ -30,7 +30,7 @@ export default function OptimizedSplineViewer({
   placeholderVariant = 'gradient'
 }: OptimizedSplineViewerProps) {
   const [isInteractive, setIsInteractive] = useState(interactive)
-  const [shouldLoad, setShouldLoad] = useState(true) // DISABLED: Force show placeholder
+  const [shouldLoad, setShouldLoad] = useState(true)
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasError, setHasError] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -69,6 +69,9 @@ export default function OptimizedSplineViewer({
   useEffect(() => {
     if (!interactive || !isLoaded) return
 
+    // Enable interactions immediately when loaded
+    setIsInteractive(true)
+
     let scrollTimeout: NodeJS.Timeout
     let wheelTimeout: NodeJS.Timeout
 
@@ -81,7 +84,7 @@ export default function OptimizedSplineViewer({
       clearTimeout(wheelTimeout)
       scrollTimeout = setTimeout(() => {
         setIsInteractive(true)
-      }, 100)
+      }, 50)
     }
 
     const handleScroll = () => {
@@ -94,7 +97,7 @@ export default function OptimizedSplineViewer({
       clearTimeout(wheelTimeout)
       wheelTimeout = setTimeout(() => {
         setIsInteractive(true)
-      }, 50)
+      }, 30)
     }
 
     const handleTouchStart = () => {

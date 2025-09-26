@@ -34,7 +34,7 @@ export function SplinePreloadProvider({
   useEffect(() => {
     if (!preloadOnIdle) return
 
-    const additionalScenes = [
+    const additionalScenes: string[] = [
       // Add common Spline scene URLs here
       // These will be preloaded when the browser is idle
     ]
