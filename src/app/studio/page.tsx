@@ -6,7 +6,7 @@ import TitlePage from '@/components/ui/TitlePageSection'
 import Timeline from '@/components/sections/Timeline'
 import TimelineMobile from '@/components/ui/TimelineMobile'
 import GradientButton from '@/components/ui/GradientButton'
-import SplineViewer from '@/components/ui/SplineViewer'
+import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 
 export const metadata: Metadata = {
   title: 'Studio de Création | Visuaal',
@@ -26,6 +26,8 @@ const StudioPage = () => {
         splineUrl="https://prod.spline.design/XihlwxPitjwHnwb9/scene.splinecode"
         textPosition="left"
         splinePosition="right"
+        priority={true}
+        placeholder="/img/studio/studio-preview.jpg"
       />
 
   <TitlePage
@@ -137,10 +139,13 @@ const StudioPage = () => {
 
    {/* Spline Component */}
       <div className='h-screen -mt-40 mix-blend-screen hidden md:block'>
-        <SplineViewer 
+        <OptimizedSplineViewer
           scene="https://prod.spline.design/VhnOlUUBXyLXytif/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
           interactive={true}
+          priority={false}
+          loadingDelay={300}
+          placeholderVariant="gradient"
         />
       </div>
     </div>

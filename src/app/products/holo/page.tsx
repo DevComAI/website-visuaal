@@ -6,7 +6,7 @@ import GradientText from '@/components/ui/GradientText'
 import SupportCarousel from '@/components/sections/SupportCarousel'
 import HoloFeatures from '@/components/sections/HoloFeatures'
 import GradientButton from '@/components/ui/GradientButton'
-import SplineViewer from '@/components/ui/SplineViewer'
+import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 
 export const metadata: Metadata = {
   title: 'Hologrammes | Visuaal',
@@ -81,10 +81,13 @@ const HoloPage = () => {
                 </p>
               </div>
             <div className="w-full h-full rounded-3xl overflow-hidden relative z-20 " >
-              <SplineViewer 
+              <OptimizedSplineViewer
                 scene="https://prod.spline.design/63D-bD0D4e6xHPvT/scene.splinecode"
                 style={{ width: '100%', height: '100%' }}
                 interactive={true}
+                priority={false}
+                loadingDelay={200}
+                placeholderVariant="gradient"
               />
             </div>
           </div>

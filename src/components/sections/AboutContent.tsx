@@ -2,7 +2,7 @@
 
 import GradientButton from '@/components/ui/GradientButton'
 import GradientText from '@/components/ui/GradientText'
-import SplineViewer from '@/components/ui/SplineViewer'
+import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 
 const AboutContent = () => {
   return (
@@ -47,10 +47,13 @@ const AboutContent = () => {
 
           {/* Spline */}
           <div className="relative h-64 sm:h-80 lg:h-96 xl:h-[500px] mix-blend-lighten order-first lg:order-last hidden md:block">
-            <SplineViewer
+            <OptimizedSplineViewer
               scene="https://prod.spline.design/b5QNjdMLUJW-blFk/scene.splinecode"
               style={{ width: '100%', height: '100%' }}
               interactive={true}
+              priority={false}
+              loadingDelay={250}
+              placeholderVariant="gradient"
             />
 
             {/* Gradient overlays for smooth fade effect */}

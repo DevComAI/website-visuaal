@@ -36,7 +36,7 @@ export async function sendContactEmail(data: ContactFormData) {
     from: `"${process.env.SMTP_FROM_NAME}" <${process.env.SMTP_FROM_EMAIL}>`,
     to: process.env.CONTACT_TO_EMAIL || 'contact@glowsoft.fr',
     replyTo: `<${email}>`,
-    subject: `Nouvelle demande de contact de ${name}`,
+    subject: `New contact request from ${name}`,
     html: `
       <!DOCTYPE html>
       <html>
@@ -56,34 +56,34 @@ export async function sendContactEmail(data: ContactFormData) {
         <body>
           <div class="container">
             <div class="header">
-              <h1>Nouvelle demande de contact</h1>
+              <h1>New Contact Request</h1>
             </div>
             <div class="content">
               <div class="field">
-                <div class="label">Nom :</div>
+                <div class="label">Name:</div>
                 <div class="value">${name}</div>
               </div>
 
               <div class="field">
-                <div class="label">Email :</div>
+                <div class="label">Email:</div>
                 <div class="value">${email}</div>
               </div>
 
               ${phone ? `
               <div class="field">
-                <div class="label">Téléphone :</div>
+                <div class="label">Phone:</div>
                 <div class="value">${phone}</div>
               </div>
               ` : ''}
 
               <div class="field">
-                <div class="label">Message :</div>
+                <div class="label">Message:</div>
                 <div class="value message">${message}</div>
               </div>
 
               <div class="footer">
-                <p>Cet email a été envoyé depuis le formulaire de contact Visuaal.</p>
-                <p>Date : ${new Date().toLocaleString('fr-FR')}</p>
+                <p>This email was sent from the Visuaal contact form.</p>
+                <p>Date: ${new Date().toLocaleString('en-US')}</p>
               </div>
             </div>
           </div>
@@ -91,17 +91,17 @@ export async function sendContactEmail(data: ContactFormData) {
       </html>
     `,
     text: `
-      Nouvelle demande de contact
+      New Contact Request
 
-      Nom: ${name}
+      Name: ${name}
       Email: ${email}
-      ${phone ? `Téléphone: ${phone}` : ''}
+      ${phone ? `Phone: ${phone}` : ''}
 
       Message:
       ${message}
 
       ---
-      Envoyé depuis le formulaire de contact Visuaal le ${new Date().toLocaleString('fr-FR')}
+      Sent from Visuaal contact form on ${new Date().toLocaleString('en-US')}
     `,
   };
 
@@ -133,7 +133,7 @@ export async function sendNewsletterWelcomeEmail(data: NewsletterFormData) {
   const mailOptions = {
     from: `"${process.env.SMTP_FROM_NAME}" <${process.env.SMTP_FROM_EMAIL}>`,
     to: email,
-    subject: 'Bienvenue dans la newsletter Visuaal',
+    subject: 'Welcome to the Visuaal Newsletter',
     html: `
       <!DOCTYPE html>
       <html>
@@ -152,29 +152,29 @@ export async function sendNewsletterWelcomeEmail(data: NewsletterFormData) {
         <body>
           <div class="container">
             <div class="header">
-              <h1>Bienvenue dans la newsletter Visuaal !</h1>
+              <h1>Welcome to the Visuaal Newsletter!</h1>
             </div>
             <div class="content">
-              <h2>Merci pour votre inscription !</h2>
+              <h2>Thank you for subscribing!</h2>
 
-              <p>Nous sommes ravis de vous accueillir dans notre communauté. Vous serez les premiers informés de :</p>
+              <p>We're delighted to welcome you to our community. You'll be the first to know about:</p>
 
               <ul>
-                <li>Les dernières innovations en affichage dynamique</li>
-                <li>Les tendances et insights du secteur</li>
-                <li>Les mises à jour et lancements de produits</li>
-                <li>Les offres exclusives et événements</li>
+                <li>The latest innovations in digital signage</li>
+                <li>Industry trends and insights</li>
+                <li>Product updates and launches</li>
+                <li>Exclusive offers and events</li>
               </ul>
 
-              <p>Restez connectés pour nos prochaines newsletters remplies de contenu précieux pour transformer votre communication visuelle.</p>
+              <p>Stay connected for our upcoming newsletters filled with valuable content to transform your visual communication.</p>
 
               <div style="text-align: center;">
-                <a href="https://visuaal.com" class="button">Visiter notre site</a>
+                <a href="https://visuaal.com" class="button">Visit our website</a>
               </div>
 
               <div class="footer">
-                <p>Vous recevez cet email car vous vous êtes inscrit à la newsletter Visuaal.</p>
-                <p>© ${new Date().getFullYear()} Visuaal. Tous droits réservés.</p>
+                <p>You are receiving this email because you subscribed to the Visuaal newsletter.</p>
+                <p>© ${new Date().getFullYear()} Visuaal. All rights reserved.</p>
               </div>
             </div>
           </div>
@@ -182,22 +182,22 @@ export async function sendNewsletterWelcomeEmail(data: NewsletterFormData) {
       </html>
     `,
     text: `
-      Bienvenue dans la newsletter Visuaal !
+      Welcome to the Visuaal Newsletter!
 
-      Merci pour votre inscription !
+      Thank you for subscribing!
 
-      Nous sommes ravis de vous accueillir dans notre communauté. Vous serez les premiers informés de :
-      - Les dernières innovations en affichage dynamique
-      - Les tendances et insights du secteur
-      - Les mises à jour et lancements de produits
-      - Les offres exclusives et événements
+      We're delighted to welcome you to our community. You'll be the first to know about:
+      - The latest innovations in digital signage
+      - Industry trends and insights
+      - Product updates and launches
+      - Exclusive offers and events
 
-      Restez connectés pour nos prochaines newsletters remplies de contenu précieux.
+      Stay connected for our upcoming newsletters filled with valuable content.
 
-      Visitez notre site : https://visuaal.com
+      Visit our website: https://visuaal.com
 
       ---
-      © ${new Date().getFullYear()} Visuaal. Tous droits réservés.
+      © ${new Date().getFullYear()} Visuaal. All rights reserved.
     `,
   };
 
@@ -208,11 +208,11 @@ export async function sendNewsletterNotification(email: string) {
   const mailOptions = {
     from: `"${process.env.SMTP_FROM_NAME}" <${process.env.SMTP_FROM_EMAIL}>`,
     to: process.env.CONTACT_TO_EMAIL || 'contact@visuaal.ae',
-    subject: 'Nouvelle inscription à la newsletter',
+    subject: 'New newsletter subscription',
     html: `
-      <h3>Nouvelle inscription à la newsletter</h3>
+      <h3>New newsletter subscription</h3>
       <p>Email : ${email}</p>
-      <p>Date : ${new Date().toLocaleString('fr-FR')}</p>
+      <p>Date: ${new Date().toLocaleString('en-US')}</p>
     `,
   };
 

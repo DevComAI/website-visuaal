@@ -27,13 +27,13 @@ const CGVPage = () => {
             <section className="mb-6 lg:mb-8">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">1. Objet et champ d&apos;application</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Les présentes conditions générales de vente (CGV) s&apos;appliquent à toutes les prestations 
-                de services proposées par Visuaal, société spécialisée dans les solutions de communication 
+                Les présentes conditions générales de vente (CGV) s&apos;appliquent à toutes les prestations
+                de services proposées par Visuaal, société établie à Dubai spécialisée dans les solutions de communication
                 visuelle et technologies d&apos;affichage innovantes.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Ces CGV régissent l&apos;ensemble des relations commerciales entre Visuaal et ses clients professionnels 
-                et particuliers, qu&apos;il s&apos;agisse de vente de matériel, de location, de prestations de services 
+                Ces CGV régissent l&apos;ensemble des relations commerciales entre Visuaal et ses clients dans les
+                Émirats Arabes Unis et la région MENA, qu&apos;il s&apos;agisse de vente de matériel, de location, de prestations de services
                 ou de solutions sur mesure.
               </p>
               <p className="text-gray-300 leading-relaxed">
@@ -84,24 +84,64 @@ const CGVPage = () => {
                 <li>30% à la mise en service</li>
               </ul>
               <p className="text-gray-300 leading-relaxed mt-4">
-                Tout retard de paiement entraîne l&apos;application d&apos;intérêts de retard au taux légal.
+                Les prix sont exprimés en AED (Dirham des Émirats Arabes Unis). La TVA (5%) sera ajoutée
+                conformément à la réglementation fiscale des EAU.
+              </p>
+              <p className="text-gray-300 leading-relaxed mt-4">
+                Tout retard de paiement entraîne l&apos;application d&apos;intérêts de retard conformément
+                à la législation des Émirats Arabes Unis.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">5. Livraison et installation</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Les délais de livraison sont donnés à titre indicatif. Un retard de livraison ne peut 
-                donner lieu à annulation de commande ou indemnité, sauf accord contraire.
+                <strong>Zones de livraison :</strong> Nous livrons dans tous les Émirats (Dubai, Abu Dhabi, Sharjah, etc.)
+                avec des frais de livraison calculés selon la zone géographique.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                <strong>Délais :</strong> Les délais de livraison indiqués sont contractuels. En cas de retard,
+                le client est informé et peut demander l&apos;annulation conformément au droit des consommateurs des EAU.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                <strong>Coûts :</strong> Les frais de transport sont indiqués avant validation de la commande.
+                Livraison gratuite pour les commandes supérieures à 5000 AED dans l&apos;émirat de Dubai.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                L&apos;installation est réalisée par nos équipes techniques qualifiées selon les normes 
-                en vigueur.
+                <strong>Installation :</strong> Réalisée par nos équipes certifiées selon les normes techniques des EAU
+                et les standards internationaux de sécurité. Garantie d&apos;installation incluse.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">6. Garanties</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">6. Droit de retour et remboursement (Loi UAE 2023)</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                <strong>Droit de rétractation :</strong> Conformément au Décret-Loi Fédéral n° 14 de 2023,
+                vous disposez d&apos;un délai de 14 jours calendaires pour retourner vos achats,
+                sans avoir à justifier de motifs ni à payer de pénalités.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                <strong>Conditions de retour :</strong>
+              </p>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-4">
+                <li>Produits dans leur emballage d&apos;origine, en parfait état</li>
+                <li>Accompagnés de tous les accessoires et de la facture</li>
+                <li>Non utilisés et non installés (sauf défaut constaté)</li>
+                <li>Demande de retour via notre service client : returns@visuaal.ae</li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                <strong>Remboursement :</strong> Le remboursement s&apos;effectue dans un délai maximum de 14 jours
+                après réception du produit retourné, par le même moyen de paiement utilisé pour l&apos;achat.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                <strong>Produits non conformes :</strong> La loi fédérale n° 15 de 2020 garantit le droit de retourner
+                des produits ne correspondant pas à la description ou à la qualité attendue, avec prise en charge
+                des frais de retour par Visuaal.
+              </p>
+            </section>
+
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">7. Garanties</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Nos équipements bénéficient d&apos;une garantie constructeur standard de 24 mois. Les prestations de service 
                 sont garanties selon les termes du contrat de maintenance souscrit.
@@ -121,9 +161,26 @@ const CGVPage = () => {
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">7. Responsabilité</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">8. Sécurité des transactions électroniques</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Conformément au Décret-Loi de 2023 sur le commerce électronique, Visuaal garantit :
+              </p>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-4">
+                <li>Chiffrement SSL/TLS de toutes les données de paiement</li>
+                <li>Conformité aux standards PCI-DSS pour la sécurité des cartes bancaires</li>
+                <li>Authentification forte pour les paiements électroniques</li>
+                <li>Protection contre la fraude par des systèmes de détection avancés</li>
+                <li>Sauvegarde sécurisée des données de transaction</li>
+              </ul>
               <p className="text-gray-300 leading-relaxed">
-                La responsabilité de Visuaal ne peut excéder le montant de la prestation en cause. 
+                En cas de problème de paiement, contactez immédiatement notre service client au +971 4 XXX XXXX.
+              </p>
+            </section>
+
+            <section className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">9. Responsabilité</h2>
+              <p className="text-gray-300 leading-relaxed">
+                La responsabilité de Visuaal ne peut excéder le montant de la prestation en cause.
                 Visuaal ne saurait être tenue responsable des dommages indirects.
               </p>
             </section>
@@ -139,16 +196,16 @@ const CGVPage = () => {
             <section className="mb-6 lg:mb-8">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">9. Protection des données</h2>
               <p className="text-gray-300 leading-relaxed">
-                Visuaal s&apos;engage à respecter la réglementation en vigueur concernant la protection 
-                des données personnelles, notamment le RGPD.
+                Visuaal s&apos;engage à respecter la réglementation des Émirats Arabes Unis concernant la protection
+                des données personnelles, notamment la loi fédérale sur la protection des données des EAU.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">10. Droit applicable</h2>
               <p className="text-gray-300 leading-relaxed">
-                Les présentes CGV sont soumises au droit français. En cas de litige, les parties 
-                s&apos;efforcent de trouver une solution amiable. À défaut, les tribunaux français 
+                Les présentes CGV sont soumises au droit des Émirats Arabes Unis. En cas de litige, les parties
+                s&apos;efforcent de trouver une solution amiable par médiation. À défaut, les tribunaux de Dubai
                 seront seuls compétents.
               </p>
             </section>
@@ -162,13 +219,13 @@ const CGVPage = () => {
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }}>
-                <p className="font-semibold text-white">Visuaal SAS</p>
-                <p className="text-gray-300">[Adresse à compléter]</p>
-                <p className="text-gray-300">[Code postal] [Ville], France</p>
-                <p className="text-gray-300">Email : [email à compléter]</p>
-                <p className="text-gray-300">Téléphone : [téléphone à compléter]</p>
-                <p className="text-gray-300">SIRET : [numéro à compléter]</p>
-                <p className="text-gray-300">TVA : [numéro à compléter]</p>
+                <p className="font-semibold text-white">Visuaal LLC</p>
+                <p className="text-gray-300">Dubai Internet City</p>
+                <p className="text-gray-300">Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300">Email : contact@visuaal.ae</p>
+                <p className="text-gray-300">Téléphone : +971 4 XXX XXXX</p>
+                <p className="text-gray-300">License : [numéro de licence commerciale Dubai]</p>
+                <p className="text-gray-300">TRN : [numéro d&apos;enregistrement fiscal EAU]</p>
               </div>
             </section>
           </div>

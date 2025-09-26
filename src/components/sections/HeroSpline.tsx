@@ -1,7 +1,8 @@
 'use client'
 
 import { ReactNode } from 'react'
-import SplineViewer from '@/components/ui/SplineViewer'
+import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import { useSplinePreloader } from '@/lib/hooks/useSplinePreloader'
 
 interface HeroSplineProps {
   title: string | ReactNode
@@ -10,6 +11,8 @@ interface HeroSplineProps {
   showScrollIndicator?: boolean
   textPosition?: 'center' | 'right' | 'left'
   splinePosition?: 'fullscreen' | 'right'
+  priority?: boolean
+  placeholder?: string
 }
 
 const HeroSpline = ({
@@ -18,8 +21,11 @@ const HeroSpline = ({
   splineUrl,
   showScrollIndicator = false,
   textPosition = 'center',
-  splinePosition = 'fullscreen'
+  splinePosition = 'fullscreen',
+  priority = false,
+  placeholder
 }: HeroSplineProps) => {
+  const { progress } = useSplinePreloader(splineUrl, { priority: priority ? 'high' : 'normal' })
   return (
     <section 
       id="hero-spline" 
@@ -28,7 +34,7 @@ const HeroSpline = ({
       {/* Spline Background - Interactive */}
       {/* Mobile Spline */}
       <div className="md:hidden absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden pointer-events-none">
-        <SplineViewer
+        <OptimizedSplineViewer
           scene={splineUrl}
           style={{
             width: '100%',
@@ -41,6 +47,9 @@ const HeroSpline = ({
             objectFit: 'cover'
           }}
           interactive={false}
+          priority={priority}
+          placeholder={placeholder}
+          loadingDelay={200}
         />
       </div>
 
@@ -48,14 +57,14 @@ const HeroSpline = ({
       <div
         className={
           splinePosition === 'right'
-            ? "hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-2/3 z-0 mix-blend-plus-lighter"
+            ? "hidden md:block absolute left-100   z-0 mix-blend-plus-lighter"
             : "hidden md:block absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden spline-responsive-scale"
         }
         style={{
           transformOrigin: 'center center'
         }}
       >
-        <SplineViewer
+        <OptimizedSplineViewer
           scene={splineUrl}
           style={{
             width: '100%',
@@ -68,6 +77,9 @@ const HeroSpline = ({
             objectFit: 'cover'
           }}
           interactive={true}
+          priority={priority}
+          placeholder={placeholder}
+          loadingDelay={100}
         />
       </div>
       

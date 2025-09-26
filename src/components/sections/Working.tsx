@@ -1,6 +1,6 @@
 'use client'
 
-import Spline from '@splinetool/react-spline'
+import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 
 export default function Working() {
   return (
@@ -11,10 +11,14 @@ export default function Working() {
           <div className="flex flex-col items-center">
             <div className="h-[250px] lg:h-[350px] w-full relative overflow-visible flex items-center justify-center px-4 pb-8 lg:pb-25">
               <div className="transform scale-75 lg:scale-60 w-[600px] lg:w-[900px] h-[500px] lg:h-[700px]">
-                <Spline
+                <OptimizedSplineViewer
                   scene="https://prod.spline.design/1kfiH0yZ5dSGioTU/scene.splinecode"
                   className="w-full h-full"
                   style={{ pointerEvents: 'none' }}
+                  priority={false}
+                  loadingDelay={300}
+                  placeholderVariant="skeleton"
+                  interactive={false}
                 />
               </div>
             </div>
@@ -31,10 +35,14 @@ export default function Working() {
           <div className="flex flex-col items-center">
             <div className="h-[250px] lg:h-[350px] w-full relative overflow-visible flex items-center justify-center px-4 pb-8 lg:pb-25">
               <div className="transform scale-75 lg:scale-60 w-[600px] lg:w-[800px] h-[500px] lg:h-[700px]">
-                <Spline
+                <OptimizedSplineViewer
                   scene="https://prod.spline.design/YQnsevjGuljq6asJ/scene.splinecode"
                   className="w-full h-full"
                   style={{ pointerEvents: 'none' }}
+                  priority={false}
+                  loadingDelay={400}
+                  placeholderVariant="skeleton"
+                  interactive={false}
                 />
               </div>
             </div>
@@ -50,10 +58,14 @@ export default function Working() {
           <div className="flex flex-col items-center">
             <div className="h-[250px] lg:h-[350px] w-full relative overflow-visible flex items-center justify-center px-4 pb-8 lg:pb-34">
               <div className="transform scale-75 lg:scale-60 w-[600px] lg:w-[800px] h-[600px] lg:h-[800px]">
-                <Spline
+                <OptimizedSplineViewer
                   scene="https://prod.spline.design/SdbEwI9-LUOY0hlb/scene.splinecode"
                   className="w-full h-full"
                   style={{ pointerEvents: 'none' }}
+                  priority={false}
+                  loadingDelay={500}
+                  placeholderVariant="skeleton"
+                  interactive={false}
                 />
               </div>
             </div>

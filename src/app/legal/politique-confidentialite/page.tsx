@@ -42,11 +42,11 @@ const PolitiqueConfidentialitePage = () => {
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }} className=" p-6 rounded-lg">
-                <p className="text-gray-300 mb-2"><strong>Société :</strong> Visuaal SAS</p>
-                <p className="text-gray-300 mb-2"><strong>Adresse :</strong> [Adresse à compléter]</p>
-                <p className="text-gray-300 mb-2"><strong>Email :</strong> [email à compléter]</p>
-                <p className="text-gray-300"><strong>Téléphone :</strong> [téléphone à compléter]</p>
-                <p className="text-gray-300"><strong>DPO (Délégué à la Protection des Données) :</strong> [contact DPO à compléter]</p>
+                <p className="text-gray-300 mb-2"><strong>Société :</strong> Visuaal LLC</p>
+                <p className="text-gray-300 mb-2"><strong>Adresse :</strong> Dubai Internet City, Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300 mb-2"><strong>Email :</strong> contact@visuaal.ae</p>
+                <p className="text-gray-300"><strong>Téléphone :</strong> +971 4 XXX XXXX</p>
+                <p className="text-gray-300"><strong>Responsable de la protection des données :</strong> [contact DPO à compléter]</p>
               </div>
             </section>
 
@@ -142,7 +142,7 @@ const PolitiqueConfidentialitePage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">7. Vos droits</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Conformément au RGPD, vous disposez des droits suivants :
+                Conformément à la législation des Émirats Arabes Unis sur la protection des données, vous disposez des droits suivants :
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -191,23 +191,30 @@ const PolitiqueConfidentialitePage = () => {
               </div>
               
               <p className="text-gray-300 leading-relaxed mt-4">
-                Pour exercer ces droits, contactez-nous à : <strong>contact@visuaal.com</strong>
+                Pour exercer ces droits, contactez-nous à : <strong>contact@visuaal.ae</strong>
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">8. Sécurité des données</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">8. Sécurité des données (Standards UAE)</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Nous mettons en œuvre des mesures techniques et organisationnelles appropriées 
-                pour protéger vos données personnelles :
+                Conformément aux exigences de cybersécurité des Émirats Arabes Unis, nous mettons en œuvre
+                des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles :
               </p>
-              <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                <li>Chiffrement des données sensibles (SSL/TLS)</li>
-                <li>Contrôle d&apos;accès strict aux données</li>
-                <li>Sauvegarde régulière et sécurisée</li>
-                <li>Formation du personnel à la protection des données</li>
-                <li>Audit de sécurité régulier</li>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-4">
+                <li>Chiffrement des données sensibles selon les standards UAE (SSL/TLS, AES-256)</li>
+                <li>Contrôle d&apos;accès strict basé sur les rôles et authentification multi-facteurs</li>
+                <li>Sauvegarde régulière et sécurisée dans des centres de données certifiés UAE</li>
+                <li>Formation du personnel aux standards de protection des données des EAU</li>
+                <li>Audit de sécurité conforme aux directives TDRA (Telecom and Digital Government Authority)</li>
+                <li>Surveillance 24/7 des systèmes et détection d&apos;intrusion</li>
+                <li>Politique de rétention des données conforme à la législation locale</li>
               </ul>
+              <p className="text-gray-300 leading-relaxed">
+                <strong>Incident de sécurité :</strong> En cas de violation de données, nous nous engageons à
+                notifier les autorités compétentes des EAU dans les 72 heures et les personnes concernées
+                dans les plus brefs délais.
+              </p>
             </section>
 
             <section className="mb-8">
@@ -219,42 +226,50 @@ const PolitiqueConfidentialitePage = () => {
               <h3 className="text-xl font-semibold text-white mb-3">9.1 Cookies essentiels</h3>
               <p className="text-gray-300 mb-4">
                 Nécessaires au fonctionnement du site (navigation, sécurité, préférences de langue).
+                Conformément à la réglementation des EAU, ces cookies ne nécessitent pas votre consentement.
               </p>
 
               <h3 className="text-xl font-semibold text-white mb-3">9.2 Cookies analytiques</h3>
               <p className="text-gray-300 mb-4">
-                Nous aident à comprendre comment vous utilisez notre site (Google Analytics).
+                Nous aident à comprendre comment vous utilisez notre site. Nous utilisons des solutions
+                conformes aux exigences de localisation des données des EAU.
               </p>
 
               <h3 className="text-xl font-semibold text-white mb-3">9.3 Cookies marketing</h3>
+              <p className="text-gray-300 mb-4">
+                Utilisés pour personnaliser les publicités (nécessitent votre consentement explicite).
+              </p>
+
+              <h3 className="text-xl font-semibold text-white mb-3">9.4 Gestion des préférences</h3>
               <p className="text-gray-300">
-                Utilisés pour personnaliser les publicités (nécessitent votre consentement).
+                Vous pouvez gérer vos préférences de cookies via notre centre de préférences ou
+                les paramètres de votre navigateur. Contact pour questions : privacy@visuaal.ae
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">10. Transferts internationaux</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Certains de nos prestataires peuvent être situés en dehors de l&apos;Union européenne. 
-                Dans ce cas, nous nous assurons que des garanties appropriées sont mises en place 
-                (clauses contractuelles types, certifications).
+                Certains de nos prestataires peuvent être situés en dehors des Émirats Arabes Unis.
+                Dans ce cas, nous nous assurons que des garanties appropriées sont mises en place
+                conformément aux standards internationaux de protection des données.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">11. Réclamations</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Si vous estimez que le traitement de vos données personnelles ne respecte pas 
-                la réglementation, vous pouvez déposer une réclamation auprès de la CNIL :
+                Si vous estimez que le traitement de vos données personnelles ne respecte pas
+                la réglementation, vous pouvez déposer une réclamation auprès de l&apos;autorité compétente aux EAU :
               </p>
               <div style={{
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }} className=" p-4 rounded-lg">
-                <p className="text-gray-300">Commission Nationale de l&apos;Informatique et des Libertés (CNIL)</p>
-                <p className="text-gray-300">3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07</p>
-                <p className="text-gray-300">Téléphone : 01 53 73 22 22</p>
-                <p className="text-gray-300">Site web : https://www.cnil.fr</p>
+                <p className="text-gray-300">UAE Data Office</p>
+                <p className="text-gray-300">Telecommunications and Digital Government Regulatory Authority (TDRA)</p>
+                <p className="text-gray-300">Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300">Site web : https://www.tdra.gov.ae</p>
               </div>
             </section>
 
@@ -266,7 +281,7 @@ const PolitiqueConfidentialitePage = () => {
                 une notification sur notre site.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                <strong>Contact pour questions :</strong> contact@visuaal.com
+                <strong>Contact pour questions :</strong> contact@visuaal.ae
               </p>
             </section>
           </div>

@@ -12,9 +12,11 @@ import ProductsSection from '@/components/sections/ProductsSection'
 import { organizationSchema, websiteSchema } from '@/lib/schema'
 import GradientLine from '@/components/ui/GradientLine'
 import GradientText from '@/components/ui/GradientText'
+import PageLoader from '@/components/ui/PageLoader'
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -175,6 +177,8 @@ export default function Home() {
   if (isMobile) {
     return (
       <>
+        {isLoading && <PageLoader onComplete={() => setIsLoading(false)} />}
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -365,6 +369,8 @@ export default function Home() {
 
   return (
     <>
+      {isLoading && <PageLoader onComplete={() => setIsLoading(false)} />}
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

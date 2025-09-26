@@ -3,7 +3,7 @@ import Image from 'next/image'
 import GradientLine from '@/components/ui/GradientLine'
 import SocialIcons from '@/components/ui/SocialIcons'
 import GradientText from '@/components/ui/GradientText'
-import SplineViewer from '@/components/ui/SplineViewer'
+import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 import Newsletter from '@/components/ui/Newsletter'
 
 const Footer = () => {
@@ -11,9 +11,13 @@ const Footer = () => {
     <footer className="text-white relative overflow-hidden" style={{backgroundColor: '#140F16'}}>
       {/* Spline Animation Background */}
       <div className="absolute inset-0 w-full h-full z-0 flex items-center justify-center">
-        <SplineViewer 
+        <OptimizedSplineViewer
           scene="https://prod.spline.design/2pGj4e2pJIQVw8CK/scene.splinecode"
           className="w-full h-full opacity-30"
+          priority={false}
+          loadingDelay={800}
+          placeholderVariant="skeleton"
+          interactive={false}
         />
       </div>
       
