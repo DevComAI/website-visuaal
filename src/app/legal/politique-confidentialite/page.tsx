@@ -196,18 +196,25 @@ const PolitiqueConfidentialitePage = () => {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">8. Sécurité des données</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">8. Sécurité des données (Standards UAE)</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Nous mettons en œuvre des mesures techniques et organisationnelles appropriées 
-                pour protéger vos données personnelles :
+                Conformément aux exigences de cybersécurité des Émirats Arabes Unis, nous mettons en œuvre
+                des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles :
               </p>
-              <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                <li>Chiffrement des données sensibles (SSL/TLS)</li>
-                <li>Contrôle d&apos;accès strict aux données</li>
-                <li>Sauvegarde régulière et sécurisée</li>
-                <li>Formation du personnel à la protection des données</li>
-                <li>Audit de sécurité régulier</li>
+              <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-4">
+                <li>Chiffrement des données sensibles selon les standards UAE (SSL/TLS, AES-256)</li>
+                <li>Contrôle d&apos;accès strict basé sur les rôles et authentification multi-facteurs</li>
+                <li>Sauvegarde régulière et sécurisée dans des centres de données certifiés UAE</li>
+                <li>Formation du personnel aux standards de protection des données des EAU</li>
+                <li>Audit de sécurité conforme aux directives TDRA (Telecom and Digital Government Authority)</li>
+                <li>Surveillance 24/7 des systèmes et détection d&apos;intrusion</li>
+                <li>Politique de rétention des données conforme à la législation locale</li>
               </ul>
+              <p className="text-gray-300 leading-relaxed">
+                <strong>Incident de sécurité :</strong> En cas de violation de données, nous nous engageons à
+                notifier les autorités compétentes des EAU dans les 72 heures et les personnes concernées
+                dans les plus brefs délais.
+              </p>
             </section>
 
             <section className="mb-8">
@@ -219,16 +226,24 @@ const PolitiqueConfidentialitePage = () => {
               <h3 className="text-xl font-semibold text-white mb-3">9.1 Cookies essentiels</h3>
               <p className="text-gray-300 mb-4">
                 Nécessaires au fonctionnement du site (navigation, sécurité, préférences de langue).
+                Conformément à la réglementation des EAU, ces cookies ne nécessitent pas votre consentement.
               </p>
 
               <h3 className="text-xl font-semibold text-white mb-3">9.2 Cookies analytiques</h3>
               <p className="text-gray-300 mb-4">
-                Nous aident à comprendre comment vous utilisez notre site (Google Analytics).
+                Nous aident à comprendre comment vous utilisez notre site. Nous utilisons des solutions
+                conformes aux exigences de localisation des données des EAU.
               </p>
 
               <h3 className="text-xl font-semibold text-white mb-3">9.3 Cookies marketing</h3>
+              <p className="text-gray-300 mb-4">
+                Utilisés pour personnaliser les publicités (nécessitent votre consentement explicite).
+              </p>
+
+              <h3 className="text-xl font-semibold text-white mb-3">9.4 Gestion des préférences</h3>
               <p className="text-gray-300">
-                Utilisés pour personnaliser les publicités (nécessitent votre consentement).
+                Vous pouvez gérer vos préférences de cookies via notre centre de préférences ou
+                les paramètres de votre navigateur. Contact pour questions : privacy@visuaal.ae
               </p>
             </section>
 

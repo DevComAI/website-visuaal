@@ -30,16 +30,20 @@ const MentionsLegalesPage = () => {
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }}>
-                <p className="text-gray-300 mb-2"><strong>Raison sociale :</strong> Visuaal LLC</p>
-                <p className="text-gray-300 mb-2"><strong>Forme juridique :</strong> LLC (Établissement aux Émirats Arabes Unis)</p>
-                <p className="text-gray-300 mb-2"><strong>Capital social :</strong> [montant à compléter] AED</p>
-                <p className="text-gray-300 mb-2"><strong>License commerciale :</strong> [numéro de licence Dubai à compléter]</p>
-                <p className="text-gray-300 mb-2"><strong>Code d&apos;activité :</strong> [code activité Dubai à compléter]</p>
-                <p className="text-gray-300 mb-2"><strong>TRN (Tax Registration Number) :</strong> [numéro TRN à compléter]</p>
-                <p className="text-gray-300 mb-2"><strong>Adresse du siège social :</strong> Dubai Internet City, Dubai, Émirats Arabes Unis</p>
-                <p className="text-gray-300 mb-2"><strong>Téléphone :</strong> +971 4 XXX XXXX</p>
-                <p className="text-gray-300 mb-2"><strong>Email :</strong> contact@visuaal.ae</p>
-                <p className="text-gray-300"><strong>Directeur de la publication :</strong> [nom du directeur à compléter]</p>
+                <p className="text-gray-300 mb-2"><strong>Dénomination sociale complète :</strong> Visuaal Digital Solutions LLC</p>
+                <p className="text-gray-300 mb-2"><strong>Forme juridique :</strong> Limited Liability Company (LLC) - Zone franche de Dubai</p>
+                <p className="text-gray-300 mb-2"><strong>Zone d&apos;établissement :</strong> Dubai Internet City (TECOM Group)</p>
+                <p className="text-gray-300 mb-2"><strong>Numéro de licence commerciale :</strong> [Numéro licence DIC à compléter]</p>
+                <p className="text-gray-300 mb-2"><strong>Code d&apos;activité économique :</strong> Solutions de communication numérique</p>
+                <p className="text-gray-300 mb-2"><strong>TRN (Tax Registration Number) :</strong> [Numéro TRN EAU à compléter]</p>
+                <p className="text-gray-300 mb-2"><strong>Adresse physique complète :</strong></p>
+                <p className="text-gray-300 mb-2 ml-4">Building X, Office XXX</p>
+                <p className="text-gray-300 mb-2 ml-4">Dubai Internet City</p>
+                <p className="text-gray-300 mb-2 ml-4">Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300 mb-2"><strong>Téléphone fonctionnel :</strong> +971 4 XXX XXXX</p>
+                <p className="text-gray-300 mb-2"><strong>Adresse e-mail fonctionnelle :</strong> contact@visuaal.ae</p>
+                <p className="text-gray-300 mb-2"><strong>Directeur de la publication :</strong> [Nom du responsable légal]</p>
+                <p className="text-gray-300"><strong>Autorité de supervision :</strong> Dubai Internet City Authority</p>
               </div>
             </section>
 
