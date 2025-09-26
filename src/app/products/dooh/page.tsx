@@ -42,10 +42,14 @@ const DOOHPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center relative">
             <div className="w-full max-w-sm sm:max-w-lg lg:max-w-6xl xl:max-w-7xl rounded-2xl border-2 border-purple-500/30">
-              <div className="w-full rounded-xl" style={{ backgroundColor: '#211824', aspectRatio: '2/1' }}>
+              <div className="w-full rounded-xl overflow-hidden" style={{ backgroundColor: '#211824', aspectRatio: '2/1' }}>
                 <OptimizedSplineViewer
                   scene="https://prod.spline.design/K3MXxwuzrEPrTBi4/scene.splinecode"
-                  style={{ width: '100%', height: '100%' }}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '0.75rem' // rounded-xl équivalent
+                  }}
                   priority={false}
                   loadingDelay={200}
                   placeholderVariant="skeleton"
