@@ -42,11 +42,11 @@ const PolitiqueConfidentialitePage = () => {
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }} className=" p-6 rounded-lg">
-                <p className="text-gray-300 mb-2"><strong>Société :</strong> Visuaal SAS</p>
-                <p className="text-gray-300 mb-2"><strong>Adresse :</strong> [Adresse à compléter]</p>
-                <p className="text-gray-300 mb-2"><strong>Email :</strong> [email à compléter]</p>
-                <p className="text-gray-300"><strong>Téléphone :</strong> [téléphone à compléter]</p>
-                <p className="text-gray-300"><strong>DPO (Délégué à la Protection des Données) :</strong> [contact DPO à compléter]</p>
+                <p className="text-gray-300 mb-2"><strong>Société :</strong> Visuaal LLC</p>
+                <p className="text-gray-300 mb-2"><strong>Adresse :</strong> Dubai Internet City, Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300 mb-2"><strong>Email :</strong> contact@visuaal.ae</p>
+                <p className="text-gray-300"><strong>Téléphone :</strong> +971 4 XXX XXXX</p>
+                <p className="text-gray-300"><strong>Responsable de la protection des données :</strong> [contact DPO à compléter]</p>
               </div>
             </section>
 
@@ -142,7 +142,7 @@ const PolitiqueConfidentialitePage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">7. Vos droits</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Conformément au RGPD, vous disposez des droits suivants :
+                Conformément à la législation des Émirats Arabes Unis sur la protection des données, vous disposez des droits suivants :
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -191,7 +191,7 @@ const PolitiqueConfidentialitePage = () => {
               </div>
               
               <p className="text-gray-300 leading-relaxed mt-4">
-                Pour exercer ces droits, contactez-nous à : <strong>contact@visuaal.com</strong>
+                Pour exercer ces droits, contactez-nous à : <strong>contact@visuaal.ae</strong>
               </p>
             </section>
 
@@ -235,26 +235,26 @@ const PolitiqueConfidentialitePage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">10. Transferts internationaux</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Certains de nos prestataires peuvent être situés en dehors de l&apos;Union européenne. 
-                Dans ce cas, nous nous assurons que des garanties appropriées sont mises en place 
-                (clauses contractuelles types, certifications).
+                Certains de nos prestataires peuvent être situés en dehors des Émirats Arabes Unis.
+                Dans ce cas, nous nous assurons que des garanties appropriées sont mises en place
+                conformément aux standards internationaux de protection des données.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">11. Réclamations</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Si vous estimez que le traitement de vos données personnelles ne respecte pas 
-                la réglementation, vous pouvez déposer une réclamation auprès de la CNIL :
+                Si vous estimez que le traitement de vos données personnelles ne respecte pas
+                la réglementation, vous pouvez déposer une réclamation auprès de l&apos;autorité compétente aux EAU :
               </p>
               <div style={{
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }} className=" p-4 rounded-lg">
-                <p className="text-gray-300">Commission Nationale de l&apos;Informatique et des Libertés (CNIL)</p>
-                <p className="text-gray-300">3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07</p>
-                <p className="text-gray-300">Téléphone : 01 53 73 22 22</p>
-                <p className="text-gray-300">Site web : https://www.cnil.fr</p>
+                <p className="text-gray-300">UAE Data Office</p>
+                <p className="text-gray-300">Telecommunications and Digital Government Regulatory Authority (TDRA)</p>
+                <p className="text-gray-300">Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300">Site web : https://www.tdra.gov.ae</p>
               </div>
             </section>
 
@@ -266,7 +266,7 @@ const PolitiqueConfidentialitePage = () => {
                 une notification sur notre site.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                <strong>Contact pour questions :</strong> contact@visuaal.com
+                <strong>Contact pour questions :</strong> contact@visuaal.ae
               </p>
             </section>
           </div>

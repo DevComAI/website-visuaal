@@ -30,15 +30,15 @@ const MentionsLegalesPage = () => {
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }}>
-                <p className="text-gray-300 mb-2"><strong>Raison sociale :</strong> Visuaal SAS</p>
-                <p className="text-gray-300 mb-2"><strong>Forme juridique :</strong> SAS (Société par Actions Simplifiée)</p>
-                <p className="text-gray-300 mb-2"><strong>Capital social :</strong> [montant à compléter] €</p>
-                <p className="text-gray-300 mb-2"><strong>SIRET :</strong> [numéro SIRET à compléter]</p>
-                <p className="text-gray-300 mb-2"><strong>Code APE :</strong> [code APE à compléter]</p>
-                <p className="text-gray-300 mb-2"><strong>TVA Intracommunautaire :</strong> [numéro TVA à compléter]</p>
-                <p className="text-gray-300 mb-2"><strong>Adresse du siège social :</strong> [adresse à compléter]</p>
-                <p className="text-gray-300 mb-2"><strong>Téléphone :</strong> [téléphone à compléter]</p>
-                <p className="text-gray-300 mb-2"><strong>Email :</strong> [email à compléter]</p>
+                <p className="text-gray-300 mb-2"><strong>Raison sociale :</strong> Visuaal LLC</p>
+                <p className="text-gray-300 mb-2"><strong>Forme juridique :</strong> LLC (Établissement aux Émirats Arabes Unis)</p>
+                <p className="text-gray-300 mb-2"><strong>Capital social :</strong> [montant à compléter] AED</p>
+                <p className="text-gray-300 mb-2"><strong>License commerciale :</strong> [numéro de licence Dubai à compléter]</p>
+                <p className="text-gray-300 mb-2"><strong>Code d&apos;activité :</strong> [code activité Dubai à compléter]</p>
+                <p className="text-gray-300 mb-2"><strong>TRN (Tax Registration Number) :</strong> [numéro TRN à compléter]</p>
+                <p className="text-gray-300 mb-2"><strong>Adresse du siège social :</strong> Dubai Internet City, Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300 mb-2"><strong>Téléphone :</strong> +971 4 XXX XXXX</p>
+                <p className="text-gray-300 mb-2"><strong>Email :</strong> contact@visuaal.ae</p>
                 <p className="text-gray-300"><strong>Directeur de la publication :</strong> [nom du directeur à compléter]</p>
               </div>
             </section>
@@ -104,14 +104,14 @@ const MentionsLegalesPage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">6. Collecte et traitement des données</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Conformément à la loi n° 78-17 du 6 janvier 1978 relative à l&apos;informatique, 
-                aux fichiers et aux libertés modifiée et au Règlement européen n° 2016/679 (RGPD), 
-                vous bénéficiez d&apos;un droit d&apos;accès, de rectification, de portabilité et 
+                Conformément à la législation des Émirats Arabes Unis sur la protection des données,
+                notamment la loi fédérale sur la protection des données personnelles,
+                vous bénéficiez d&apos;un droit d&apos;accès, de rectification, de portabilité et
                 d&apos;effacement de vos données.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Pour exercer ces droits ou pour toute question sur le traitement de vos données, 
-                vous pouvez nous contacter à l&apos;adresse : contact@visuaal.com
+                Pour exercer ces droits ou pour toute question sur le traitement de vos données,
+                vous pouvez nous contacter à l&apos;adresse : contact@visuaal.ae
               </p>
             </section>
 
@@ -131,8 +131,8 @@ const MentionsLegalesPage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">8. Droit applicable</h2>
               <p className="text-gray-300 leading-relaxed">
-                Les présentes mentions légales sont soumises au droit français. En cas de litige, 
-                et après recherche d&apos;une solution amiable, les tribunaux français seront seuls 
+                Les présentes mentions légales sont soumises au droit des Émirats Arabes Unis. En cas de litige,
+                et après recherche d&apos;une solution amiable, les tribunaux de Dubai seront seuls
                 compétents pour connaître du litige.
               </p>
             </section>
@@ -140,21 +140,22 @@ const MentionsLegalesPage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">9. Médiation</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Conformément aux dispositions du Code de la consommation concernant le règlement 
-                amiable des litiges, Visuaal adhère au Service du Médiateur du e-commerce de la FEVAD 
-                (Fédération du e-commerce et de la vente à distance) dont les coordonnées sont les suivantes :
+                Conformément à la réglementation des Émirats Arabes Unis concernant le règlement
+                amiable des litiges commerciaux, Visuaal recourt à la médiation par le biais du
+                Dubai International Arbitration Centre (DIAC) pour la résolution des conflits.
               </p>
               <div className="p-4 rounded-lg mt-4" style={{
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }}>
-                <p className="text-gray-300">Médiateur de la consommation FEVAD</p>
-                <p className="text-gray-300">60 rue de la Boétie, 75008 Paris</p>
-                <p className="text-gray-300">https://www.mediateurfevad.fr</p>
+                <p className="text-gray-300">Dubai International Arbitration Centre (DIAC)</p>
+                <p className="text-gray-300">Dubai International Financial Centre</p>
+                <p className="text-gray-300">Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300">https://www.diac.ae</p>
               </div>
               <p className="text-gray-300 leading-relaxed mt-4">
-                Après démarche préalable écrite des consommateurs vis-à-vis de Visuaal, le Service du médiateur 
-                peut être saisi pour tout litige de consommation dont le règlement n&apos;aurait pas abouti.
+                Après démarche préalable écrite des clients vis-à-vis de Visuaal, le service de médiation du DIAC
+                peut être saisi pour tout litige commercial dont le règlement n&apos;aurait pas abouti.
               </p>
             </section>
 
@@ -167,11 +168,11 @@ const MentionsLegalesPage = () => {
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }}>
-                <p className="font-semibold text-white">Visuaal SAS</p>
-                <p className="text-gray-300">[Adresse à compléter]</p>
-                <p className="text-gray-300">[Code postal] [Ville], France</p>
-                <p className="text-gray-300">Email : [email à compléter]</p>
-                <p className="text-gray-300">Téléphone : [téléphone à compléter]</p>
+                <p className="font-semibold text-white">Visuaal LLC</p>
+                <p className="text-gray-300">Dubai Internet City</p>
+                <p className="text-gray-300">Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300">Email : contact@visuaal.ae</p>
+                <p className="text-gray-300">Téléphone : +971 4 XXX XXXX</p>
               </div>
             </section>
           </div>

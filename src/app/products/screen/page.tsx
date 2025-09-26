@@ -5,7 +5,7 @@ import ScreenContent from '@/components/ui/ScreenContent'
 import ProductService from '@/components/ui/ProductService'
 import GradientButton from '@/components/ui/GradientButton'
 import GradientText from '@/components/ui/GradientText'
-import SplineViewer from '@/components/ui/SplineViewer'
+import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 
 export const metadata: Metadata = {
   title: 'Écrans Interactifs | Visuaal',
@@ -101,9 +101,13 @@ backgroundImage="SCREEN.png"
 
 
             <div className="w-full h-full rounded-3xl overflow-hidden" style={{ backgroundColor: '#211824' }}>
-              <SplineViewer 
+              <OptimizedSplineViewer
                 scene="https://prod.spline.design/qDj32pWs0uTcm5kM/scene.splinecode"
                 style={{ width: '100%', height: '100%' }}
+                priority={false}
+                loadingDelay={200}
+                placeholderVariant="skeleton"
+                interactive={true}
               />
             </div>
           </div>

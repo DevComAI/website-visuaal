@@ -185,8 +185,8 @@ const ConditionsUtilisationPage = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">11. Loi applicable</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Ces conditions d&apos;utilisation sont régies et interprétées conformément 
-                aux lois françaises, sans égard aux dispositions de conflit de lois.
+                Ces conditions d&apos;utilisation sont régies et interprétées conformément
+                aux lois des Émirats Arabes Unis, sans égard aux dispositions de conflit de lois.
               </p>
               <p className="text-gray-300 leading-relaxed">
                 Notre défaut d&apos;application d&apos;un droit ou d&apos;une disposition de ces 
@@ -238,12 +238,12 @@ const ConditionsUtilisationPage = () => {
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }} className=" p-4 rounded-lg">
-                <p className="font-semibold text-gray-900">Visuaal SAS</p>
-                <p className="text-gray-300">[Adresse à compléter]</p>
-                <p className="text-gray-300">[Code postal] [Ville], France</p>
-                <p className="text-gray-300">Email : [email à compléter]</p>
-                <p className="text-gray-300">Téléphone : [téléphone à compléter]</p>
-                <p className="text-gray-300">Service juridique : [email juridique à compléter]</p>
+                <p className="font-semibold text-white">Visuaal LLC</p>
+                <p className="text-gray-300">Dubai Internet City</p>
+                <p className="text-gray-300">Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300">Email : contact@visuaal.ae</p>
+                <p className="text-gray-300">Téléphone : +971 4 XXX XXXX</p>
+                <p className="text-gray-300">Service juridique : legal@visuaal.ae</p>
               </div>
             </section>
           </div>

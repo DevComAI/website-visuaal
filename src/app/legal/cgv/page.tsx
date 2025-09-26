@@ -27,13 +27,13 @@ const CGVPage = () => {
             <section className="mb-6 lg:mb-8">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">1. Objet et champ d&apos;application</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Les présentes conditions générales de vente (CGV) s&apos;appliquent à toutes les prestations 
-                de services proposées par Visuaal, société spécialisée dans les solutions de communication 
+                Les présentes conditions générales de vente (CGV) s&apos;appliquent à toutes les prestations
+                de services proposées par Visuaal, société établie à Dubai spécialisée dans les solutions de communication
                 visuelle et technologies d&apos;affichage innovantes.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Ces CGV régissent l&apos;ensemble des relations commerciales entre Visuaal et ses clients professionnels 
-                et particuliers, qu&apos;il s&apos;agisse de vente de matériel, de location, de prestations de services 
+                Ces CGV régissent l&apos;ensemble des relations commerciales entre Visuaal et ses clients dans les
+                Émirats Arabes Unis et la région MENA, qu&apos;il s&apos;agisse de vente de matériel, de location, de prestations de services
                 ou de solutions sur mesure.
               </p>
               <p className="text-gray-300 leading-relaxed">
@@ -84,7 +84,12 @@ const CGVPage = () => {
                 <li>30% à la mise en service</li>
               </ul>
               <p className="text-gray-300 leading-relaxed mt-4">
-                Tout retard de paiement entraîne l&apos;application d&apos;intérêts de retard au taux légal.
+                Les prix sont exprimés en AED (Dirham des Émirats Arabes Unis). La TVA (5%) sera ajoutée
+                conformément à la réglementation fiscale des EAU.
+              </p>
+              <p className="text-gray-300 leading-relaxed mt-4">
+                Tout retard de paiement entraîne l&apos;application d&apos;intérêts de retard conformément
+                à la législation des Émirats Arabes Unis.
               </p>
             </section>
 
@@ -95,8 +100,8 @@ const CGVPage = () => {
                 donner lieu à annulation de commande ou indemnité, sauf accord contraire.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                L&apos;installation est réalisée par nos équipes techniques qualifiées selon les normes 
-                en vigueur.
+                L&apos;installation est réalisée par nos équipes techniques qualifiées selon les normes
+                en vigueur aux Émirats Arabes Unis et les standards internationaux.
               </p>
             </section>
 
@@ -139,16 +144,16 @@ const CGVPage = () => {
             <section className="mb-6 lg:mb-8">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">9. Protection des données</h2>
               <p className="text-gray-300 leading-relaxed">
-                Visuaal s&apos;engage à respecter la réglementation en vigueur concernant la protection 
-                des données personnelles, notamment le RGPD.
+                Visuaal s&apos;engage à respecter la réglementation des Émirats Arabes Unis concernant la protection
+                des données personnelles, notamment la loi fédérale sur la protection des données des EAU.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">10. Droit applicable</h2>
               <p className="text-gray-300 leading-relaxed">
-                Les présentes CGV sont soumises au droit français. En cas de litige, les parties 
-                s&apos;efforcent de trouver une solution amiable. À défaut, les tribunaux français 
+                Les présentes CGV sont soumises au droit des Émirats Arabes Unis. En cas de litige, les parties
+                s&apos;efforcent de trouver une solution amiable par médiation. À défaut, les tribunaux de Dubai
                 seront seuls compétents.
               </p>
             </section>
@@ -162,13 +167,13 @@ const CGVPage = () => {
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }}>
-                <p className="font-semibold text-white">Visuaal SAS</p>
-                <p className="text-gray-300">[Adresse à compléter]</p>
-                <p className="text-gray-300">[Code postal] [Ville], France</p>
-                <p className="text-gray-300">Email : [email à compléter]</p>
-                <p className="text-gray-300">Téléphone : [téléphone à compléter]</p>
-                <p className="text-gray-300">SIRET : [numéro à compléter]</p>
-                <p className="text-gray-300">TVA : [numéro à compléter]</p>
+                <p className="font-semibold text-white">Visuaal LLC</p>
+                <p className="text-gray-300">Dubai Internet City</p>
+                <p className="text-gray-300">Dubai, Émirats Arabes Unis</p>
+                <p className="text-gray-300">Email : contact@visuaal.ae</p>
+                <p className="text-gray-300">Téléphone : +971 4 XXX XXXX</p>
+                <p className="text-gray-300">License : [numéro de licence commerciale Dubai]</p>
+                <p className="text-gray-300">TRN : [numéro d&apos;enregistrement fiscal EAU]</p>
               </div>
             </section>
           </div>

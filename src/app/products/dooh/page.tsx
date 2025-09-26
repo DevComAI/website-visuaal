@@ -4,7 +4,7 @@ import TitlePage from '@/components/ui/TitlePageSection'
 import GradientText from '@/components/ui/GradientText'
 import DoohContent from '@/components/sections/DoohContent'
 import DoohTestimonial from '@/components/sections/DoohTestimonial'
-import SplineViewer from '@/components/ui/SplineViewer'
+import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 
 export const metadata: Metadata = {
   title: 'DOOH - Digital Out Of Home | Visuaal',
@@ -43,9 +43,13 @@ const DOOHPage = () => {
           <div className="flex justify-center relative">
             <div className="w-full max-w-sm sm:max-w-lg lg:max-w-6xl xl:max-w-7xl rounded-2xl border-2 border-purple-500/30">
               <div className="w-full rounded-xl" style={{ backgroundColor: '#211824', aspectRatio: '2/1' }}>
-                <SplineViewer
+                <OptimizedSplineViewer
                   scene="https://prod.spline.design/K3MXxwuzrEPrTBi4/scene.splinecode"
                   style={{ width: '100%', height: '100%' }}
+                  priority={false}
+                  loadingDelay={200}
+                  placeholderVariant="skeleton"
+                  interactive={true}
                 />
               </div>
             </div>

@@ -19,6 +19,8 @@ const AboutPage = () => {
         title={<>Our <GradientText>dedicated team</GradientText> of creatives is bursting with <GradientText>talent, experience</GradientText> and <GradientText>passion</GradientText> for what we do.</>}
         subtitle={<>Go behind the scenes of <GradientText>VISUAAL</GradientText></>}
         splineUrl="https://prod.spline.design/X07icIhhYxWFwhO1/scene.splinecode"
+        priority={true}
+        placeholder="/img/about/about-preview.jpg"
       />
 
           <TitlePage

@@ -1,6 +1,6 @@
 'use client'
 
-import SplineViewer from '@/components/ui/SplineViewer'
+import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 import GradientButton from '@/components/ui/GradientButton'
 import GradientLine from '@/components/ui/GradientLine'
 
@@ -26,10 +26,13 @@ const AboutUs = () => {
 
           {/* Right side - Spline Viewer */}
           <div className="h-[400px] sm:h-[500px] lg:h-[800px] mt-8 lg:-mt-20 relative z-50 order-first lg:order-last">
-            <SplineViewer
+            <OptimizedSplineViewer
               scene="https://prod.spline.design/Sj5w2qinD5unnyvb/scene.splinecode"
               style={{ width: '100%', height: '100%' }}
               interactive={true}
+              priority={false}
+              loadingDelay={150}
+              placeholderVariant="gradient"
             />
           </div>
         </div>
