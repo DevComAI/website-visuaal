@@ -74,14 +74,7 @@ const HeroContact = () => {
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background image with blend mode */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat sm:hidden"
-        style={{
-          backgroundImage: "url('/img/contact/heromobile.png')",
-          mixBlendMode: 'soft-light'
-        }}
-      ></div>
+      {/* Background image - Desktop only */}
       <div
         className="absolute inset-0 hidden sm:block"
         style={{
@@ -91,10 +84,23 @@ const HeroContact = () => {
           backgroundRepeat: 'no-repeat',
         }}
       ></div>
-      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="absolute inset-0 bg-black/30 hidden sm:block"></div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex flex-col lg:flex-row items-center lg:justify-between h-full py-8 sm:py-12 lg:py-0 gap-8 sm:gap-12 lg:gap-8">
+        {/* Mobile Image - Above content */}
+        <div className="block sm:hidden w-full mb-6 mt-20 overflow-hidden rounded-xl">
+          <img
+            src="/img/contact/hero.png"
+            alt="Contact"
+            className="w-full h-auto object-cover"
+            style={{
+              mixBlendMode: 'soft-light',
+              transform: 'scale(2) translateY(20%)'
+            }}
+          />
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-center lg:justify-between h-full -mt-9  md:mt-8 mb-8 sm:py-12 lg:py-0 gap-8 sm:gap-12 lg:gap-8">
 
          {/* Left side - Contact info */}
           <div className="w-full lg:w-1/2 text-center lg:text-left mt-0 lg:mt-20 xl:mt-80 ml-0 lg:ml-8 xl:ml-20">

@@ -80,7 +80,7 @@ const HoloPage = () => {
                   <span className="md:hidden">4K live streaming to Holobox. Perfect for performances, education, telehealth, and more.</span>
                 </p>
               </div>
-            <div className="w-full h-full rounded-3xl overflow-hidden relative z-20 " >
+            <div className="w-full h-full rounded-3xl overflow-hidden relative z-20  " >
               <OptimizedSplineViewer
                 scene="https://prod.spline.design/63D-bD0D4e6xHPvT/scene.splinecode"
                 style={{ width: '100%', height: '100%' }}
@@ -95,7 +95,52 @@ const HoloPage = () => {
         </div> 
       </section>
 
+      {/* Mobile Version */}
+      <section className="py-10 block md:hidden">
+        <div className="container px-4">
+          <div className="space-y-8">
+            {/* PRE-RECORDED Section */}
+            <div className="text-center">
+              <h3 className="text-2xl mb-4">
+                <GradientText>PRE-RECORDED</GradientText>
+              </h3>
+              <p className="text-white text-sm leading-relaxed">
+                Pre-recorded content lets you control your holographic message with precision.
+                Record in our studio or on location, with autocue support for smooth delivery.
+                Showcase people or products (3D or physical), and enhance the experience with text,
+                QR codes, or visuals, ideal for events and advertising.
+              </p>
+            </div>
 
+            {/* Spline Viewer */}
+            <div className="w-full h-[350px] rounded-2xl flex items-center justify-center">
+              <div style={{ zoom: '0.35', width: '1000px', height: '1000px' }}>
+                <OptimizedSplineViewer
+                  scene="https://prod.spline.design/63D-bD0D4e6xHPvT/scene.splinecode"
+                  style={{ width: '100%', height: '100%' }}
+                  interactive={true}
+                  priority={false}
+                  loadingDelay={200}
+                  placeholderVariant="gradient"
+                />
+              </div>
+            </div>
+
+            {/* 4K LIVE Section */}
+            <div className="text-center">
+              <h3 className="text-2xl mb-4">
+                <GradientText>4K LIVE</GradientText>
+              </h3>
+              <p className="text-white text-sm leading-relaxed">
+                With our 4K live connection, stream directly to a local Holobox in real time,
+                all you need is a stable internet connection. Recordings can be done in our studio or on-site.
+                <br /><br />
+                Perfect for live performances, digital hosts, education, telehealth, keynote talks, and more.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <HoloFeatures
         title={<><GradientText>Human Box</GradientText></>}

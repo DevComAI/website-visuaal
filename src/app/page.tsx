@@ -13,10 +13,12 @@ import { organizationSchema, websiteSchema } from '@/lib/schema'
 import GradientLine from '@/components/ui/GradientLine'
 import GradientText from '@/components/ui/GradientText'
 import PageLoader from '@/components/ui/PageLoader'
+import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -145,29 +147,31 @@ export default function Home() {
   }) => {
     return (
       <section className={`relative py-8 sm:py-12 ${className}`}>
-        {backgroundImage && (
-          <div className="absolute inset-0 flex items-center justify-center overflow-hidden px-1">
-            <div
-              className="w-full h-full bg-no-repeat bg-center opacity-10 pointer-events-none"
-              style={{
-                backgroundImage: `url('/title/${backgroundImage}')`,
-                backgroundSize: 'contain',
-                maxWidth: '100%'
-              }}
-            />
-          </div>
-        )}
+        <div className="container mx-auto px-4 sm:px-6">
+          {backgroundImage && (
+            <div className="flex items-center justify-center overflow-hidden">
+              <div
+                className="w-full h-[100px] sm:h-[200px] bg-no-repeat bg-center opacity-10"
+                style={{
+                  backgroundImage: `url('/title/${backgroundImage}')`,
+                  backgroundSize: 'contain',
+                  maxWidth: '100%'
+                }}
+              />
+            </div>
+          )}
 
-        <div className="container relative z-10 flex items-end min-h-[80px] sm:min-h-[120px] px-4 sm:px-6">
-          <div className="text-center w-full pb-4 sm:pb-6 text-sm sm:text-lg md:text-xl lg:text-2xl">
+          <div className="text-center w-full text-[24px] -mt-12">
             {topText && (
-              <div className="font-medium text-white leading-tight mb-2">
+              <div className="font-medium text-white leading-tight ">
                 {topText}
               </div>
             )}
-            <h2 className="font-medium text-white leading-tight">
-              {bottomText}
-            </h2>
+            {bottomText && (
+              <h2 className="font-medium text-white leading-7">
+                {bottomText}
+              </h2>
+            )}
           </div>
         </div>
       </section>
@@ -231,13 +235,13 @@ export default function Home() {
 
 
         <MobileTitleHome
-          topText={<><MobileGradientText>EXPERTS</MobileGradientText> IN IMMERSIVE EXPERIENCES</>}
-          bottomText="AND DIGITAL TRANSFORMATION"
+          topText={<><MobileGradientText>EXPERTS</MobileGradientText> IN IMMERSIVE </>}
+          bottomText="EXPERIENCES AND DIGITAL TRANSFORMATION"
           backgroundImage="aboutus.png"
         />
 
         {/* Mobile AboutUs Section */}
-        <section className="relative overflow-hidden py-8">
+        <section className="relative overflow-hidden pb-0 sm:py-8">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 gap-8 mb-12 relative z-10">
               <div className="text-white space-y-6 text-center relative z-10">
@@ -306,40 +310,116 @@ export default function Home() {
           backgroundImage="working.png"
         />
 
-        {/* Mobile Working Section */}
+        {/* Mobile Working Section - Carousel */}
         <section className="py-8">
-          <div className="container mx-auto px-4 sm:px-6 grid grid-cols-1 gap-12">
-            <div className="flex flex-col items-center text-center">
-           
+          <div className="relative">
+            {/* Previous Button */}
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev === 0 ? 2 : prev - 1))}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+              aria-label="Previous slide"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
 
-              <div className="max-w-lg space-y-4">
-                <h3 className="text-lg font-bold text-white">INFORM – We guide you</h3>
-                <p className="text-gray-300 leading-relaxed text-sm">
-                  At VISUAAL, we help businesses harness the power of Digital Signage to enhance sales and brand visibility. Whether in retail stores, banks, or restaurants, we create impactful visual communication that resonates with music in popular clothing stores—that captivates audiences and drive engagement.
-                </p>
+            {/* Next Button */}
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev === 2 ? 0 : prev + 1))}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+              aria-label="Next slide"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+
+            <div className="overflow-hidden">
+              <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                {/* Slide 1 - INFORM */}
+                <div className="min-w-full flex flex-col items-center px-4">
+                  <div className="h-[280px] w-full relative flex items-center justify-center mb-6">
+                    <div className="w-full h-full" style={{ zoom: '0.35' }}>
+                      <OptimizedSplineViewer
+                        scene="https://prod.spline.design/1kfiH0yZ5dSGioTU/scene.splinecode"
+                        className="w-full h-full"
+                        style={{ pointerEvents: 'none' }}
+                        priority={false}
+                        loadingDelay={300}
+                        placeholderVariant="skeleton"
+                        interactive={false}
+                      />
+                    </div>
+                  </div>
+                  <div className="max-w-lg space-y-4 text-center px-6">
+                    <h3 className="text-lg font-bold text-white">INFORM – We guide you</h3>
+                    <p className="text-gray-300 leading-relaxed text-sm">
+                      At VISUAAL, we help businesses harness the power of Digital Signage to enhance sales and brand visibility. Whether in retail stores, banks, or restaurants, we create impactful visual communication that resonates with music in popular clothing stores—that captivates audiences and drive engagement.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Slide 2 - SUPPORT */}
+                <div className="min-w-full flex flex-col items-center px-4">
+                  <div className="h-[280px] w-full relative flex items-center justify-center mb-6">
+                    <div className="w-full h-full" style={{ zoom: '0.35' }}>
+                      <OptimizedSplineViewer
+                        scene="https://prod.spline.design/YQnsevjGuljq6asJ/scene.splinecode"
+                        className="w-full h-full"
+                        style={{ pointerEvents: 'none' }}
+                        priority={false}
+                        loadingDelay={400}
+                        placeholderVariant="skeleton"
+                        interactive={false}
+                      />
+                    </div>
+                  </div>
+                  <div className="max-w-lg space-y-4 text-center px-6">
+                    <h3 className="text-lg font-bold text-white">SUPPORT – We advise you</h3>
+                    <p className="text-gray-300 leading-relaxed text-sm">
+                      Our experts work closely with brands to design and implement interactive Digital Signage solutions across transportation hubs, theaters, and high-traffic public spaces. By crafting compelling engaging content, we maximize advertising impact and boost revenue for multiple brands.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Slide 3 - MODERNIZE */}
+                <div className="min-w-full flex flex-col items-center px-4">
+                  <div className="h-[280px] w-full relative flex items-center justify-center mb-6">
+                    <div className="w-full h-full" style={{ zoom: '0.35' }}>
+                      <OptimizedSplineViewer
+                        scene="https://prod.spline.design/SdbEwI9-LUOY0hlb/scene.splinecode"
+                        className="w-full h-full"
+                        style={{ pointerEvents: 'none' }}
+                        priority={false}
+                        loadingDelay={500}
+                        placeholderVariant="skeleton"
+                        interactive={false}
+                      />
+                    </div>
+                  </div>
+                  <div className="max-w-lg space-y-4 text-center px-6">
+                    <h3 className="text-lg font-medium text-white">MODERNIZE – We transform experiences</h3>
+                    <p className="text-gray-300 leading-relaxed text-sm">
+                      From hospitality and healthcare to educational venues, our customized Digital Signage solutions elevate customer interactions. We craft immersive digital experiences that inform, entertain, and inspire—creating seamless and memorable experiences for every audience.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-col items-center text-center">
-          
-
-              <div className="max-w-lg space-y-4">
-                <h3 className="text-lg font-bold text-white">SUPPORT – We advise you</h3>
-                <p className="text-gray-300 leading-relaxed text-sm">
-                  Our experts work closely with brands to design and implement interactive Digital Signage solutions across transportation hubs, theaters, and high-traffic public spaces. By crafting compelling engaging content, we maximize advertising impact and boost revenue for multiple brands.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-        
-
-              <div className="max-w-lg space-y-4">
-                <h3 className="text-lg font-medium text-white">MODERNIZE – We transform experiences</h3>
-                <p className="text-gray-300 leading-relaxed text-sm">
-                  From hospitality and healthcare to educational venues, our customized Digital Signage solutions elevate customer interactions. We craft immersive digital experiences that inform, entertain, and inspire—creating seamless and memorable experiences for every audience.
-                </p>
-              </div>
+            {/* Navigation Dots */}
+            <div className="flex justify-center gap-2 mt-8">
+              {[0, 1, 2].map((index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    currentSlide === index ? 'bg-white w-8' : 'bg-white/30'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </section>

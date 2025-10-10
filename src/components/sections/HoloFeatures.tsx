@@ -38,8 +38,21 @@ export default function HoloFeatures({
         <div className="flex justify-center ">
           <div className={`flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 mx-0 md:mx-14 lg:mx-28 ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row lg:-mt-40'}`}>
 
+            {/* Image - shown first on mobile */}
+            <div className="w-full lg:w-2/5 flex justify-center lg:hidden order-1">
+                <div className="bg-transparent">
+                  <Image
+                    src={mainImage}
+                    alt="Holographic display"
+                    width={reverse ? 850 : 540}
+                    height={reverse ? 1350 : 960}
+                    className="h-full w-full object-contain mix-blend-screen"
+                  />
+                </div>
+            </div>
+
             {/* Text Content */}
-            <div className="w-full lg:w-2/3">
+            <div className="w-full lg:w-2/3 order-2 lg:order-none">
 
 
               {/* Features List */}
@@ -48,31 +61,31 @@ export default function HoloFeatures({
                 <div className={`hidden lg:block absolute ${reverse ? 'left-[105px]' : 'right-[105px]'} -top-10 -bottom-10 w-px bg-gradient-to-b from-transparent via-white to-transparent z-0`} />
 
                 {features.map((feature, index) => (
-                  <div key={index} className={`flex flex-col md:flex-row items-start gap-4 md:gap-8 lg:gap-16 max-w-5xl ${!reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
-                    <div className="text-center text-white relative z-20 mx-auto md:mx-0">
+                  <div key={index} className={`flex flex-row items-start gap-4 md:gap-8 lg:gap-16 max-w-5xl ${!reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+                    <div className="flex-1 order-1">
+                      <p className="text-sm md:text-xl lg:text-[30px] leading-relaxed text-left md:text-left">
+                        {feature.description}
+                      </p>
+                    </div>
+                    <div className="text-center text-white relative z-20 order-2 md:mx-0">
                       <div
-                        className="w-[150px] md:w-[180px] lg:w-[210px] h-[100px] md:h-[120px] lg:h-[140px] bg-no-repeat bg-center bg-contain flex items-center justify-center"
+                        className="w-[100px] md:w-[180px] lg:w-[210px] h-[70px] md:h-[120px] lg:h-[140px] bg-no-repeat bg-center bg-contain flex items-center justify-center flex-shrink-0"
                         style={{ backgroundImage: "url('/forme/para3.png')" }}
                       >
-                        <div className={`${feature.icon.split(' ').length === 1 ? 'text-lg md:text-2xl lg:text-[30px]' : 'text-sm md:text-base lg:text-[20px]'} font-semibold relative -ml-2 z-10 px-2 text-center leading-tight`}>
+                        <div className={`${feature.icon.split(' ').length === 1 ? 'text-xs md:text-2xl lg:text-[30px]' : 'text-[10px] md:text-base lg:text-[20px]'} font-semibold relative -ml-2 z-10 px-2 text-center leading-tight`}>
                           {feature.icon.split(' ').map((word, wordIndex) => (
                             <div key={wordIndex}>{word}</div>
                           ))}
                         </div>
                       </div>
                     </div>
-                    <div className="flex-1">
-                      <p className="text-base md:text-xl lg:text-[30px] leading-relaxed text-center md:text-left">
-                        {feature.description}
-                      </p>
-                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Image */}
-            <div className="w-full lg:w-2/5 flex justify-center ">
+            {/* Image - shown on desktop only */}
+            <div className="w-full lg:w-2/5 justify-center hidden lg:flex">
                 <div className="bg-transparent">
                   <Image
                     src={mainImage}

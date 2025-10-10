@@ -86,21 +86,26 @@ backgroundImage="SCREEN.png"
 />
 
 
-<section className="py-20 relative">
-        <div className="container">
+<section className="py-10 md:py-20 relative">
+        <div className="container px-4">
           <div className="flex justify-center relative">
-          <div 
-            className="p-1 rounded-3xl relative z-10"
-            style={{ 
+          <div
+            className="p-1 rounded-2xl md:rounded-3xl relative z-10 w-full max-w-[90vw] md:max-w-none"
+            style={{
               background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
-              width: '1441.43px', 
-              height: '709.46px' 
             }}
           >
-          <h2 className="text-[40px] font-medium text-white text-center uppercase absolute top-40 left-0 right-0 z-20">LED SCREEN BY <><GradientText>VISUAAL</GradientText> </></h2>
+          <h2 className="text-xl sm:text-2xl md:text-[40px] font-medium text-white text-center uppercase absolute top-8 sm:top-16 md:top-40 left-0 right-0 z-20 px-4">LED SCREEN BY <><GradientText>VISUAAL</GradientText> </></h2>
 
 
-            <div className="w-full h-full rounded-3xl overflow-hidden" style={{ backgroundColor: '#211824' }}>
+            <div
+              className="w-full rounded-2xl md:rounded-3xl overflow-hidden h-[200px] sm:h-[700px]"
+              style={{
+                backgroundColor: '#211824',
+         
+                maxWidth: '100%'
+              }}
+            >
               <OptimizedSplineViewer
                 scene="https://prod.spline.design/qDj32pWs0uTcm5kM/scene.splinecode"
                 style={{ width: '100%', height: '100%' }}
@@ -112,7 +117,7 @@ backgroundImage="SCREEN.png"
             </div>
           </div>
           </div>
-        </div> 
+        </div>
       </section>
 
 

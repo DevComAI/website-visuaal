@@ -27,7 +27,7 @@ const TimelineMobile = ({ items }: TimelineMobileProps) => {
               <div className="absolute left-4 top-6 w-4 h-4 bg-[#211824] rounded-full transform -translate-x-1/2 border-2 border-[#363986]"></div>
 
               {/* Content */}
-              <div className="bg-[#2A1F2E]/50 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+              <div className=" p-4">
                 <h3 className="text-lg font-bold mb-3 text-white">
                   {item.title}
                 </h3>
