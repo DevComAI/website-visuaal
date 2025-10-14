@@ -16,7 +16,7 @@ export default function Working() {
                   className="w-full h-full"
                   style={{ pointerEvents: 'none' }}
                   priority={false}
-                  loadingDelay={300}
+                  loadingDelay={100}
                   placeholderVariant="skeleton"
                   interactive={false}
                 />
@@ -40,7 +40,7 @@ export default function Working() {
                   className="w-full h-full"
                   style={{ pointerEvents: 'none' }}
                   priority={false}
-                  loadingDelay={400}
+                  loadingDelay={200}
                   placeholderVariant="skeleton"
                   interactive={false}
                 />
@@ -63,7 +63,7 @@ export default function Working() {
                   className="w-full h-full"
                   style={{ pointerEvents: 'none' }}
                   priority={false}
-                  loadingDelay={500}
+                  loadingDelay={300}
                   placeholderVariant="skeleton"
                   interactive={false}
                 />

@@ -30,16 +30,15 @@ export default function OptimizedSplineViewer({
   placeholderVariant = 'gradient'
 }: OptimizedSplineViewerProps) {
   const [isInteractive, setIsInteractive] = useState(interactive)
-  const [shouldLoad, setShouldLoad] = useState(true)
+  const [shouldLoad, setShouldLoad] = useState(priority)
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasError, setHasError] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Intersection Observer for lazy loading - TEMPORARILY DISABLED
+  // Intersection Observer for lazy loading
   useEffect(() => {
-
-
-    if (priority || shouldLoad) return
+    if (priority) return
+    if (shouldLoad) return
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -49,7 +48,7 @@ export default function OptimizedSplineViewer({
         }
       },
       {
-        rootMargin: '50px',
+        rootMargin: '400px',
         threshold: 0.01
       }
     )

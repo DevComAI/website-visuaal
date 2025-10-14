@@ -345,8 +345,8 @@ export default function Home() {
                         scene="https://prod.spline.design/1kfiH0yZ5dSGioTU/scene.splinecode"
                         className="w-full h-full"
                         style={{ pointerEvents: 'none' }}
-                        priority={false}
-                        loadingDelay={300}
+                        priority={currentSlide === 0 || currentSlide === 2}
+                        loadingDelay={0}
                         placeholderVariant="skeleton"
                         interactive={false}
                       />
@@ -368,8 +368,8 @@ export default function Home() {
                         scene="https://prod.spline.design/YQnsevjGuljq6asJ/scene.splinecode"
                         className="w-full h-full"
                         style={{ pointerEvents: 'none' }}
-                        priority={false}
-                        loadingDelay={400}
+                        priority={currentSlide === 1 || currentSlide === 0}
+                        loadingDelay={0}
                         placeholderVariant="skeleton"
                         interactive={false}
                       />
@@ -391,8 +391,8 @@ export default function Home() {
                         scene="https://prod.spline.design/SdbEwI9-LUOY0hlb/scene.splinecode"
                         className="w-full h-full"
                         style={{ pointerEvents: 'none' }}
-                        priority={false}
-                        loadingDelay={500}
+                        priority={currentSlide === 2 || currentSlide === 1}
+                        loadingDelay={0}
                         placeholderVariant="skeleton"
                         interactive={false}
                       />
