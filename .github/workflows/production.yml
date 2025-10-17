@@ -110,29 +110,49 @@ jobs:
               --restart unless-stopped \
               -p 80:3000 \
               --health-cmd="curl -f http://localhost:3000/api/health || exit 1" \
-              --health-interval=30s \
+              --health-interval=15s \
               --health-timeout=10s \
-              --health-retries=3 \
+              --health-retries=5 \
+              --health-start-period=60s \
               ${{ env.IMAGE_NAME }}:latest
 
             echo "🚀 Production application deployed on port 80"
 
-            # Wait for health check
-            sleep 30
+            # Wait for health check with status monitoring
+            echo "Waiting for health check..."
+            sleep 10
+            for i in {1..12}; do
+              HEALTH_STATUS=$(docker inspect --format='{{.State.Health.Status}}' visuaal-production 2>/dev/null || echo "unknown")
+              echo "Health check attempt $i/12: $HEALTH_STATUS"
+              if [ "$HEALTH_STATUS" = "healthy" ]; then
+                echo "✅ Container is healthy"
+                break
+              fi
+              sleep 10
+            done
 
-            # Check if container is healthy
-            if [ "$(docker inspect --format='{{.State.Health.Status}}' visuaal-production)" != "healthy" ]; then
-              echo "Deployment failed - rolling back"
+            # Final health check
+            FINAL_HEALTH=$(docker inspect --format='{{.State.Health.Status}}' visuaal-production 2>/dev/null || echo "unknown")
+            if [ "$FINAL_HEALTH" != "healthy" ]; then
+              echo "❌ Deployment failed - container is $FINAL_HEALTH"
+              echo "Container logs:"
+              docker logs --tail 50 visuaal-production
+
+              echo "Rolling back..."
               docker stop visuaal-production || true
               docker rm visuaal-production || true
+
               # Restore from backup if available
-              BACKUP_IMAGE=$(docker images visuaal-production-backup-* --format "table {{.Repository}}:{{.Tag}}" | tail -n 1)
+              BACKUP_IMAGE=$(docker images --format "{{.Repository}}:{{.Tag}}" | grep "visuaal-production-backup-" | head -n 1)
               if [ ! -z "$BACKUP_IMAGE" ]; then
+                echo "Restoring from backup: $BACKUP_IMAGE"
                 docker run -d \
                   --name visuaal-production \
                   --restart unless-stopped \
                   -p 80:3000 \
                   $BACKUP_IMAGE
+              else
+                echo "No backup available for rollback"
               fi
               exit 1
             fi
