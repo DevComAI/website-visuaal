@@ -84,10 +84,11 @@ export default function Newsletter({
               <button
                 type="submit"
                 disabled={isSubmitting}
+                aria-label={isSubmitting ? "Subscribing..." : "Subscribe to newsletter"}
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 p-1.5 bg-gradient-to-r from-[#473FB9] via-[#4DA8D7] to-[#9512B6] text-white rounded hover:from-[#3730A3] hover:via-[#0891B2] hover:to-[#7C2D92] transition-all duration-300 disabled:opacity-75 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 {isSubmitting ? (
-                  <div className="w-3 h-3 border border-white border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-3 h-3 border border-white border-t-transparent rounded-full animate-spin" role="status" aria-hidden="true"></div>
                 ) : (
                   <svg
                     className="w-3 h-3"
@@ -95,6 +96,7 @@ export default function Newsletter({
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -120,10 +122,11 @@ export default function Newsletter({
             <button
               type="submit"
               disabled={isSubmitting}
+              aria-label={isSubmitting ? "Subscribing..." : "Subscribe to newsletter"}
               className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-gradient-to-r from-[#473FB9] via-[#4DA8D7] to-[#9512B6] text-white rounded-md hover:from-[#3730A3] hover:via-[#0891B2] hover:to-[#7C2D92] transition-all duration-300 disabled:opacity-75 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {isSubmitting ? (
-                <div className="w-4 h-4 border border-white border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-4 h-4 border border-white border-t-transparent rounded-full animate-spin" role="status" aria-hidden="true"></div>
               ) : (
                 <svg
                   className="w-4 h-4"
@@ -131,6 +134,7 @@ export default function Newsletter({
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"

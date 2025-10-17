@@ -11,7 +11,30 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   experimental: {
-    optimizePackageImports: ['lucide-react'],
+    optimizePackageImports: ['lucide-react', '@splinetool/react-spline', '@splinetool/runtime'],
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            spline: {
+              test: /[\\/]node_modules[\\/](@splinetool)[\\/]/,
+              name: 'spline',
+              priority: 10,
+            },
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendor',
+              priority: 5,
+            },
+          },
+        },
+      };
+    }
+    return config;
   },
   async headers() {
     return [
@@ -34,6 +57,42 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/:all*(svg|jpg|jpeg|png|gif|ico|webp|avif)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/img/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/fonts/:path*',
         headers: [
           {
             key: 'Cache-Control',

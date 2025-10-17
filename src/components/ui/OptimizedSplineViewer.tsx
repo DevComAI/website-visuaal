@@ -185,6 +185,7 @@ export default function OptimizedSplineViewer({
                 setHasError(false)
                 setShouldLoad(true)
               }}
+              aria-label="Retry loading 3D content"
               className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
             >
               Retry

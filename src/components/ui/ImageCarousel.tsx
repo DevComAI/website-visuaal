@@ -293,6 +293,8 @@ const ImageCarousel = ({
             key={index}
             onClick={() => goToSlide(index)}
             disabled={isTransitioning}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={currentIndex === index ? 'true' : 'false'}
             className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-500 ease-out disabled:cursor-not-allowed ${
               currentIndex === index
                 ? 'bg-white scale-125 shadow-md'
@@ -302,7 +304,6 @@ const ImageCarousel = ({
               transform: 'translateZ(0)',
               backfaceVisibility: 'hidden'
             }}
-            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
