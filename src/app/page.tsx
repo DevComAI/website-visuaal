@@ -1,7 +1,4 @@
-'use client'
-
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { headers } from 'next/headers'
 import Hero from '@/components/sections/Hero'
 import AboutUs from '@/components/sections/AboutUs'
 import TitleHome from '@/components/ui/TitleSection'
@@ -12,24 +9,18 @@ import ProductsSection from '@/components/sections/ProductsSection'
 import { organizationSchema, websiteSchema } from '@/lib/schema'
 import GradientLine from '@/components/ui/GradientLine'
 import GradientText from '@/components/ui/GradientText'
-import PageLoader from '@/components/ui/PageLoader'
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import {
+  MobileGradientText,
+  MobileGradientButton,
+  MobileTitleHome,
+  WorkingCarousel
+} from '@/components/pages/HomePageClient'
 
-export default function Home() {
-  const [isMobile, setIsMobile] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
+export default async function Home() {
+  const headersList = await headers()
+  const userAgent = headersList.get('user-agent') || ''
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent) ||
+                   (headersList.get('sec-ch-ua-mobile') === '?1')
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -38,151 +29,27 @@ export default function Home() {
     ]
   }
 
-  // Mobile-optimized components inline
-  const MobileGradientText = ({ children, className = "" }: { children: string; className?: string }) => {
-    const [animationDelay, setAnimationDelay] = useState(0)
-
-    useEffect(() => {
-      setAnimationDelay(Math.random() * 12)
-    }, [])
-
-    return (
-      <>
-        <style jsx>{`
-          .gradient-text {
-            background: linear-gradient(
-              45deg,
-              #473FB9,
-              #4DA8D7,
-              #9512B6,
-              #473FB9,
-              #158BBD,
-              #C82EF0
-            );
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientFlow 12s ease-in-out infinite;
-            animation-delay: ${animationDelay}s;
-          }
-
-          @keyframes gradientFlow {
-            0%, 100% {
-              background-position: 0% 50%;
-            }
-            25% {
-              background-position: 100% 0%;
-            }
-            50% {
-              background-position: 100% 100%;
-            }
-            75% {
-              background-position: 0% 100%;
-            }
-          }
-        `}</style>
-        <span className={`gradient-text ${className}`}>
-          {children}
-        </span>
-      </>
-    );
-  };
-
-  const MobileGradientButton = ({ href, text, className = "" }: { href: string; text: string; className?: string }) => {
-    const [animationDelay, setAnimationDelay] = useState(0)
-
-    useEffect(() => {
-      setAnimationDelay(Math.random() * 12)
-    }, [])
-
-    return (
-      <>
-        <style jsx>{`
-          .gradient-button {
-            background: linear-gradient(
-              45deg,
-              #473FB9,
-              #4DA8D7,
-              #9512B6,
-              #473FB9,
-              #158BBD,
-              #C82EF0
-            );
-            background-size: 400% 400%;
-            animation: gradientFlow 12s ease-in-out infinite;
-            animation-delay: ${animationDelay}s;
-          }
-
-          @keyframes gradientFlow {
-            0%, 100% {
-              background-position: 0% 50%;
-            }
-            25% {
-              background-position: 100% 0%;
-            }
-            50% {
-              background-position: 100% 100%;
-            }
-            75% {
-              background-position: 0% 100%;
-            }
-          }
-        `}</style>
-        <div className={`gradient-button relative p-[1px] rounded-full ${className || 'w-[201px] h-[56px]'}`}>
-          <Link href={href} className="w-full h-full px-8 py-4 rounded-full text-white bg-black transition-colors duration-300 relative z-10 flex items-center justify-center">
-            {text}
-          </Link>
-        </div>
-      </>
-    )
-  }
-
-
-  const MobileTitleHome = ({ topText, bottomText, backgroundImage, className = "" }: {
-    topText?: string | React.ReactNode;
-    bottomText: string | React.ReactNode;
-    backgroundImage?: string;
-    className?: string;
-  }) => {
-    return (
-      <section className={`relative py-8 sm:py-12 ${className}`}>
-        <div className="container mx-auto px-4 sm:px-6">
-          {backgroundImage && (
-            <div className="flex items-center justify-center overflow-hidden">
-              <div
-                className="w-full h-[100px] sm:h-[200px] bg-no-repeat bg-center opacity-10"
-                style={{
-                  backgroundImage: `url('/title/${backgroundImage}')`,
-                  backgroundSize: 'contain',
-                  maxWidth: '100%'
-                }}
-              />
-            </div>
-          )}
-
-          <div className="text-center w-full text-[24px] -mt-12">
-            {topText && (
-              <div className="font-medium text-white leading-tight ">
-                {topText}
-              </div>
-            )}
-            {bottomText && (
-              <h2 className="font-medium text-white leading-7">
-                {bottomText}
-              </h2>
-            )}
-          </div>
-        </div>
-      </section>
-    );
-  };
+  const workingScenes = [
+    {
+      url: "https://prod.spline.design/1kfiH0yZ5dSGioTU/scene.splinecode",
+      title: "INFORM – We guide you",
+      description: "At VISUAAL, we help businesses harness the power of Digital Signage to enhance sales and brand visibility. Whether in retail stores, banks, or restaurants, we create impactful visual communication that resonates with music in popular clothing stores—that captivates audiences and drive engagement."
+    },
+    {
+      url: "https://prod.spline.design/YQnsevjGuljq6asJ/scene.splinecode",
+      title: "SUPPORT – We advise you",
+      description: "Our experts work closely with brands to design and implement interactive Digital Signage solutions across transportation hubs, theaters, and high-traffic public spaces. By crafting compelling engaging content, we maximize advertising impact and boost revenue for multiple brands."
+    },
+    {
+      url: "https://prod.spline.design/SdbEwI9-LUOY0hlb/scene.splinecode",
+      title: "MODERNIZE – We transform experiences",
+      description: "From hospitality and healthcare to educational venues, our customized Digital Signage solutions elevate customer interactions. We craft immersive digital experiences that inform, entertain, and inspire—creating seamless and memorable experiences for every audience."
+    }
+  ];
 
   if (isMobile) {
     return (
       <>
-        {isLoading && <PageLoader onComplete={() => setIsLoading(false)} />}
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -196,6 +63,8 @@ export default function Home() {
             loop
             muted
             playsInline
+            preload="none"
+            poster="/img/home/hero-poster.jpg"
           >
             <source src="/img/home/hero-home.mp4" type="video/mp4" />
           </video>
@@ -310,119 +179,7 @@ export default function Home() {
           backgroundImage="working.png"
         />
 
-        {/* Mobile Working Section - Carousel */}
-        <section className="py-8">
-          <div className="relative">
-            {/* Previous Button */}
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev === 0 ? 2 : prev - 1))}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
-              aria-label="Previous slide"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-
-            {/* Next Button */}
-            <button
-              onClick={() => setCurrentSlide((prev) => (prev === 2 ? 0 : prev + 1))}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
-              aria-label="Next slide"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
-
-            <div className="overflow-hidden">
-              <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-                {/* Slide 1 - INFORM */}
-                <div className="min-w-full flex flex-col items-center px-4">
-                  <div className="h-[280px] w-full relative flex items-center justify-center mb-6">
-                    <div className="w-full h-full" style={{ zoom: '0.35' }}>
-                      <OptimizedSplineViewer
-                        scene="https://prod.spline.design/1kfiH0yZ5dSGioTU/scene.splinecode"
-                        className="w-full h-full"
-                        style={{ pointerEvents: 'none' }}
-                        priority={currentSlide === 0 || currentSlide === 2}
-                        loadingDelay={0}
-                        placeholderVariant="skeleton"
-                        interactive={false}
-                      />
-                    </div>
-                  </div>
-                  <div className="max-w-lg space-y-4 text-center px-6">
-                    <h3 className="text-lg font-bold text-white">INFORM – We guide you</h3>
-                    <p className="text-gray-300 leading-relaxed text-sm">
-                      At VISUAAL, we help businesses harness the power of Digital Signage to enhance sales and brand visibility. Whether in retail stores, banks, or restaurants, we create impactful visual communication that resonates with music in popular clothing stores—that captivates audiences and drive engagement.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Slide 2 - SUPPORT */}
-                <div className="min-w-full flex flex-col items-center px-4">
-                  <div className="h-[280px] w-full relative flex items-center justify-center mb-6">
-                    <div className="w-full h-full" style={{ zoom: '0.35' }}>
-                      <OptimizedSplineViewer
-                        scene="https://prod.spline.design/YQnsevjGuljq6asJ/scene.splinecode"
-                        className="w-full h-full"
-                        style={{ pointerEvents: 'none' }}
-                        priority={currentSlide === 1 || currentSlide === 0}
-                        loadingDelay={0}
-                        placeholderVariant="skeleton"
-                        interactive={false}
-                      />
-                    </div>
-                  </div>
-                  <div className="max-w-lg space-y-4 text-center px-6">
-                    <h3 className="text-lg font-bold text-white">SUPPORT – We advise you</h3>
-                    <p className="text-gray-300 leading-relaxed text-sm">
-                      Our experts work closely with brands to design and implement interactive Digital Signage solutions across transportation hubs, theaters, and high-traffic public spaces. By crafting compelling engaging content, we maximize advertising impact and boost revenue for multiple brands.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Slide 3 - MODERNIZE */}
-                <div className="min-w-full flex flex-col items-center px-4">
-                  <div className="h-[280px] w-full relative flex items-center justify-center mb-6">
-                    <div className="w-full h-full" style={{ zoom: '0.35' }}>
-                      <OptimizedSplineViewer
-                        scene="https://prod.spline.design/SdbEwI9-LUOY0hlb/scene.splinecode"
-                        className="w-full h-full"
-                        style={{ pointerEvents: 'none' }}
-                        priority={currentSlide === 2 || currentSlide === 1}
-                        loadingDelay={0}
-                        placeholderVariant="skeleton"
-                        interactive={false}
-                      />
-                    </div>
-                  </div>
-                  <div className="max-w-lg space-y-4 text-center px-6">
-                    <h3 className="text-lg font-medium text-white">MODERNIZE – We transform experiences</h3>
-                    <p className="text-gray-300 leading-relaxed text-sm">
-                      From hospitality and healthcare to educational venues, our customized Digital Signage solutions elevate customer interactions. We craft immersive digital experiences that inform, entertain, and inspire—creating seamless and memorable experiences for every audience.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation Dots */}
-            <div className="flex justify-center gap-2 mt-8">
-              {[0, 1, 2].map((index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    currentSlide === index ? 'bg-white w-8' : 'bg-white/30'
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        <WorkingCarousel scenes={workingScenes} />
 
         <div className="pb-12"></div>
 
@@ -449,8 +206,6 @@ export default function Home() {
 
   return (
     <>
-      {isLoading && <PageLoader onComplete={() => setIsLoading(false)} />}
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
