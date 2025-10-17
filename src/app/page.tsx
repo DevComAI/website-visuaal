@@ -1,4 +1,5 @@
 import { headers } from 'next/headers'
+import Image from 'next/image'
 import Hero from '@/components/sections/Hero'
 import AboutUs from '@/components/sections/AboutUs'
 import TitleHome from '@/components/ui/TitleSection'
@@ -57,17 +58,15 @@ export default async function Home() {
 
         {/* Mobile Hero Section */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="none"
-            poster="/img/home/hero-poster.jpg"
-          >
-            <source src="/img/home/hero-home.mp4" type="video/mp4" />
-          </video>
+          <Image
+            src="/img/home/hero-home.png"
+            alt="Visuaal Hero Background"
+            fill
+            priority
+            quality={85}
+            sizes="100vw"
+            className="object-cover"
+          />
           <div className="absolute inset-0" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}></div>
           <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[black]/50 to-transparent"></div>
           <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#211824] to-transparent"></div>
