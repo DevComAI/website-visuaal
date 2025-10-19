@@ -103,7 +103,7 @@ const HeroContact = () => {
         <div className="flex flex-col lg:flex-row items-center lg:justify-between h-full -mt-9  md:mt-8 mb-8 sm:py-12 lg:py-0 gap-8 sm:gap-12 lg:gap-8">
 
          {/* Left side - Contact info */}
-          <div className="w-full lg:w-1/2 text-center lg:text-left mt-0 lg:mt-20 xl:mt-80 ml-0 lg:ml-8 xl:ml-20">
+          <div className="w-full lg:w-1/2 text-center lg:text-left mt-0 lg:mt-140  ml-0 lg:ml-8 ">
             <h1 className="font-semibold mb-6 sm:mb-8 lg:mb-12 leading-none text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white">
               <><GradientText>CONTACT US</GradientText> </>
             </h1>
@@ -137,13 +137,13 @@ const HeroContact = () => {
           
           {/* Right side - Contact form */}
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end pt-0 lg:pt-20">
-            <div className="w-full max-w-sm sm:max-w-md">
-              <div className="backdrop-blur-sm bg-white/10 p-4 sm:p-6 lg:p-8 rounded-lg border border-white/20">
-                <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 text-center">
+            <div className="w-full max-w-sm sm:max-w-md lg:max-w-2xl">
+              <div className="backdrop-blur-sm bg-white/10 p-4 sm:p-6 lg:p-12 rounded-lg border border-white/20">
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 text-center lg:pb-20">
                   <GradientText>GET IN TOUCH</GradientText>
                 </h2>
 
-                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 lg:space-y-12">
                   <div>
                     <input
                       type="text"
@@ -152,7 +152,7 @@ const HeroContact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full py-2 sm:py-3 bg-transparent border-b border-white/30 text-white placeholder-white/70 focus:border-white/70 focus:outline-none transition-colors text-sm lg:text-base"
+                      className="w-full py-2 sm:py-3 bg-transparent border-b border-white/30 text-white placeholder-white/70 focus:border-white/70 focus:outline-none transition-colors text-sm lg:text-xl"
                     />
                   </div>
 
@@ -164,7 +164,7 @@ const HeroContact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full py-2 sm:py-3 bg-transparent border-b border-white/30 text-white placeholder-white/70 focus:border-white/70 focus:outline-none transition-colors text-sm lg:text-base"
+                      className="w-full py-2 sm:py-3 bg-transparent border-b border-white/30 text-white placeholder-white/70 focus:border-white/70 focus:outline-none transition-colors text-sm lg:text-xl"
                     />
                   </div>
 
@@ -175,7 +175,7 @@ const HeroContact = () => {
                       placeholder="Phone number"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full py-2 sm:py-3 bg-transparent border-b border-white/30 text-white placeholder-white/70 focus:border-white/70 focus:outline-none transition-colors text-sm lg:text-base"
+                      className="w-full py-2 sm:py-3 bg-transparent border-b border-white/30 text-white placeholder-white/70 focus:border-white/70 focus:outline-none transition-colors text-sm lg:text-xl"
                     />
                   </div>
 
@@ -186,7 +186,7 @@ const HeroContact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={3}
-                      className="w-full py-2 sm:py-3 bg-transparent border-b border-white/30 text-white placeholder-white/70 focus:border-white/70 focus:outline-none transition-colors resize-none text-sm lg:text-base"
+                      className="w-full py-2 sm:py-3 lg:py-4 bg-transparent border-b border-white/30 text-white placeholder-white/70 focus:border-white/70 focus:outline-none transition-colors resize-none text-sm lg:text-xl min-h-[100px] lg:min-h-[150px]"
                     />
                   </div>
 
@@ -228,11 +228,11 @@ const HeroContact = () => {
               </div>
                {/* Social media icons at bottom */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 lg:gap-8 pt-3 sm:pt-4">
-        <p className="text-white/60 text-xs lg:text-sm text-center">Follow us on the networks</p>
+        <p className="text-white/60 text-xs lg:text-xl text-center">Follow us on the networks</p>
 
           <div className="flex items-center gap-2 sm:gap-4">
-          <GradientLine width={"30px"} padding="py-0" className='hidden md:block'/>
-          <SocialIcons iconSize={20} spacing="space-x-1 sm:space-x-2" />
+          <GradientLine width={"20px"} padding="py-0 pr-4" className='hidden md:block'/>
+          <SocialIcons iconSize={40} spacing="space-x-1 sm:space-x-2" />
           </div>
 
       </div>

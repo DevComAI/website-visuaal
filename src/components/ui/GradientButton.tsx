@@ -50,7 +50,7 @@ const GradientButton = ({ href, text, className = "" }: GradientButtonProps) => 
         }
       `}</style>
       <div className={`gradient-button relative p-[1px] rounded-full ${className || 'w-[201px] h-[56px]'}`}>
-        <Link href={href} className="w-full h-full px-8 py-4 rounded-full text-white bg-background transition-colors duration-300 relative z-10 flex items-center justify-center">
+        <Link href={href} className="w-full h-full px-8 py-4 rounded-full text-white bg-background hover:bg-transparent transition-colors duration-300 relative z-10 flex items-center justify-center">
           {text}
         </Link>
       </div>

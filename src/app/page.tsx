@@ -16,6 +16,7 @@ import {
   MobileTitleHome,
   WorkingCarousel
 } from '@/components/pages/HomePageClient'
+import ScrollIndicator from '@/components/ui/ScrollIndicator'
 
 export default async function Home() {
   const headersList = await headers()
@@ -170,7 +171,7 @@ export default async function Home() {
 
         <div className="pb-20"></div>
 
-
+        <ScrollIndicator variant="large" />
 
         <MobileTitleHome
           topText={<>THE BENEFITS OF USING OUR <MobileGradientText>DIGITAL SIGNAGE</MobileGradientText></>}
@@ -181,7 +182,7 @@ export default async function Home() {
         <WorkingCarousel scenes={workingScenes} />
 
         <div className="pb-12"></div>
-
+<ScrollIndicator/>
         <MobileTitleHome
           topText={<><MobileGradientText>END-TO-END</MobileGradientText> DIGITAL SIGNAGE SOLUTIONS</>}
           bottomText=""
@@ -189,7 +190,7 @@ export default async function Home() {
         />
 
         <SupportCarousel />
-
+<ScrollIndicator/>
         <MobileTitleHome
           topText={<><MobileGradientText>OUR</MobileGradientText> PRODUCTS PORTFOLIO</>}
           bottomText=""

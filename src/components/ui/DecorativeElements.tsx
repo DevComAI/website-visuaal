@@ -38,11 +38,11 @@ export default function DecorativeElements() {
         blurClass = 'blur-3xl';
       } else {
         baseSpacing = 800;
-        elementWidth = '1150px';
-        elementHeight = '560px';
-        leftOffset = '-left-120';
-        rightOffset = '-right-120';
-        blurClass = 'blur-3xl';
+        elementWidth = '1600px';
+        elementHeight = '1200px';
+        leftOffset = '-left-200';
+        rightOffset = '-right-160';
+        blurClass = 'blur-4xl';
       }
 
       const documentHeight = document.documentElement.scrollHeight;
@@ -64,8 +64,8 @@ export default function DecorativeElements() {
               width: elementWidth,
               height: elementHeight,
               background: isLeft
-                ? 'radial-gradient(circle at center, rgba(53, 168, 207, 0.44) 0%, transparent 40%)'
-                : 'radial-gradient(circle at center, rgba(128, 82, 164, 0.44) 0%, transparent 40%)'
+                ? 'radial-gradient(circle at center, rgba(53, 168, 207, 0.2) 0%, transparent 60%)'
+                : 'radial-gradient(circle at center, rgba(128, 82, 164, 0.2) 0%, transparent 60%)'
             }}
           />
         );
