@@ -21,7 +21,7 @@ const StudioPage = () => {
 
       {/* Hero Spline Section */}
       <HeroSpline
-        title={<>From <GradientText>bold concepts</GradientText> to unforgettable <GradientText>immersive visuals</GradientText>.</>}
+        title={<>From <GradientText>bold concepts</GradientText> to unforgettable<br />  <GradientText>immersive visuals</GradientText>.</>}
         subtitle={<AnimatedVisionText />}
         splineUrl="https://prod.spline.design/XihlwxPitjwHnwb9/scene.splinecode"
         textPosition="left"

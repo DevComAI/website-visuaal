@@ -2,6 +2,7 @@
 
 import { ReactNode } from 'react'
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import ScrollIndicator from '@/components/ui/ScrollIndicator'
 import { useSplinePreloader } from '@/lib/hooks/useSplinePreloader'
 
 interface HeroSplineProps {
@@ -116,7 +117,7 @@ const HeroSpline = ({
                 </h1>
 
                 {subtitle && (
-                  <h2 className="font-semibold text-white leading-tight text-lg sm:text-xl lg:text-2xl xl:text-3xl">
+                  <h2 className="font-semibold text-white leading-tight text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">
                     {subtitle}
                   </h2>
                 )}
@@ -127,13 +128,7 @@ const HeroSpline = ({
       </div>
 
       {/* Scroll Indicator */}
-      {showScrollIndicator && (
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
-      )}
+      {showScrollIndicator && <ScrollIndicator />}
     </section>
   )
 }

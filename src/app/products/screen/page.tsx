@@ -87,10 +87,10 @@ backgroundImage="SCREEN.png"
 
 
 <section className="py-10 md:py-20 relative">
-        <div className="container px-4">
+        <div className="">
           <div className="flex justify-center relative">
           <div
-            className="p-1 rounded-2xl md:rounded-3xl relative z-10 w-full max-w-[90vw] md:max-w-none"
+            className="p-1 rounded-2xl md:rounded-3xl relative z-10 w-full max-w-[90vw] lg:max-w-[1440px]"
             style={{
               background: 'linear-gradient(45deg, #473FB9, #4DA8D7, #9512B6)',
             }}
@@ -99,11 +99,9 @@ backgroundImage="SCREEN.png"
 
 
             <div
-              className="w-full rounded-2xl md:rounded-3xl overflow-hidden h-[200px] sm:h-[700px]"
+              className="w-full rounded-2xl md:rounded-3xl overflow-hidden h-[200px] sm:h-[700px] lg:h-[710px]"
               style={{
                 backgroundColor: '#211824',
-         
-                maxWidth: '100%'
               }}
             >
               <OptimizedSplineViewer

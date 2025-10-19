@@ -14,11 +14,11 @@ export default function Working() {
                 <OptimizedSplineViewer
                   scene="https://prod.spline.design/1kfiH0yZ5dSGioTU/scene.splinecode"
                   className="w-full h-full"
-                  style={{ pointerEvents: 'none' }}
+                  style={{ pointerEvents: 'auto' }}
                   priority={false}
                   loadingDelay={100}
                   placeholderVariant="skeleton"
-                  interactive={false}
+                  interactive={true}
                 />
               </div>
             </div>
@@ -38,11 +38,11 @@ export default function Working() {
                 <OptimizedSplineViewer
                   scene="https://prod.spline.design/YQnsevjGuljq6asJ/scene.splinecode"
                   className="w-full h-full"
-                  style={{ pointerEvents: 'none' }}
+                  style={{ pointerEvents: 'auto' }}
                   priority={false}
                   loadingDelay={200}
                   placeholderVariant="skeleton"
-                  interactive={false}
+                  interactive={true}
                 />
               </div>
             </div>
@@ -61,11 +61,11 @@ export default function Working() {
                 <OptimizedSplineViewer
                   scene="https://prod.spline.design/SdbEwI9-LUOY0hlb/scene.splinecode"
                   className="w-full h-full"
-                  style={{ pointerEvents: 'none' }}
+                  style={{ pointerEvents: 'auto' }}
                   priority={false}
                   loadingDelay={300}
                   placeholderVariant="skeleton"
-                  interactive={false}
+                  interactive={true}
                 />
               </div>
             </div>

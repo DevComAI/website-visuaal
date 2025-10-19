@@ -14,6 +14,7 @@ import GradientLine from '@/components/ui/GradientLine'
 import GradientText from '@/components/ui/GradientText'
 import PageLoader from '@/components/ui/PageLoader'
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import ScrollIndicator from '@/components/ui/ScrollIndicator'
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false)
@@ -302,7 +303,7 @@ export default function Home() {
 
         <div className="pb-20"></div>
 
-
+        <ScrollIndicator variant="large" />
 
         <MobileTitleHome
           topText={<>THE BENEFITS OF USING OUR <MobileGradientText>DIGITAL SIGNAGE</MobileGradientText></>}
@@ -425,7 +426,7 @@ export default function Home() {
         </section>
 
         <div className="pb-12"></div>
-
+<ScrollIndicator/>
         <MobileTitleHome
           topText={<><MobileGradientText>END-TO-END</MobileGradientText> DIGITAL SIGNAGE SOLUTIONS</>}
           bottomText=""
@@ -433,7 +434,7 @@ export default function Home() {
         />
 
         <SupportCarousel />
-
+<ScrollIndicator/>
         <MobileTitleHome
           topText={<><MobileGradientText>OUR</MobileGradientText> PRODUCTS PORTFOLIO</>}
           bottomText=""
