@@ -23,14 +23,14 @@ const products: ProductCard[] = [
     title: 'LED SCREEN',
     description: 'From immersive brand storytelling to high-visibility messaging, they deliver stunning visuals in any environment.',
     image: '/img/home/product-2.png',
-    href: '/products/led'
+    href: '/products/screen'
   },
   {
     id: 'hologram',
     title: 'HOLOGRAM',
     description: 'Perfect for retail, events, or product launches, they combine cutting-edge technology with immersive storytelling holographics.',
     image: '/img/home/product-3.png',
-    href: '/products/hologram'
+    href: '/products/holo'
   }
 ]
 

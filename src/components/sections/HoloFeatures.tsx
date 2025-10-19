@@ -26,7 +26,7 @@ export default function HoloFeatures({
     <section className="py-10 md:py-20">
       <div className="container mx-auto px-4 md:px-6">
       <div className="flex justify-start">
-        <div className="flex flex-col mx-0 md:mx-14 lg:mx-28">
+        <div className="flex flex-col mx-0 md:mx-14 lg:mx-28 ">
           <h1 className="text-white text-xl md:text-3xl lg:text-[40px] font-medium mb-4 md:mb-6 uppercase text-left">
             {title}
           </h1>
@@ -35,7 +35,7 @@ export default function HoloFeatures({
           </p>
         </div>
       </div>
-        <div className="flex justify-center ">
+        <div className="flex justify-center sm:pt-20 ">
           <div className={`flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 mx-0 md:mx-14 lg:mx-28 ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row lg:-mt-40'}`}>
 
             {/* Image - shown first on mobile */}
@@ -58,7 +58,8 @@ export default function HoloFeatures({
               {/* Features List */}
               <div className="space-y-4 md:space-y-6 relative">
                 {/* Trait vertical derrière les parallélépipèdes - hidden on mobile */}
-                <div className={`hidden lg:block absolute ${reverse ? 'left-[105px]' : 'right-[105px]'} -top-10 -bottom-10 w-px bg-gradient-to-b from-transparent via-white to-transparent z-0`} />
+                <div className={`hidden lg:block absolute ${reverse ? 'right-[115px]' : 'left-[115px]'} -top-10 -bottom-10 w-px bg-gradient-to-b
+                from-transparent via-white to-transparent -z-10`} />
 
                 {features.map((feature, index) => (
                   <div key={index} className={`flex flex-row items-start gap-4 md:gap-8 lg:gap-16 max-w-5xl ${!reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
