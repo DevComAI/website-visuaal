@@ -5,11 +5,11 @@ interface TitleHomeProps {
   className?: string;
 }
 
-const TitleHome = ({ 
-  topText, 
-  bottomText, 
+const TitleHome = ({
+  topText,
+  bottomText,
   backgroundImage,
-  className = "" 
+  className = ""
 }: TitleHomeProps) => {
   return (
     <section className={`relative py-12 sm:py-16 lg:py-20 ${className}`}>

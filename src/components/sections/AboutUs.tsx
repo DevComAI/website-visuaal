@@ -3,6 +3,7 @@
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 import GradientButton from '@/components/ui/GradientButton'
 import GradientLine from '@/components/ui/GradientLine'
+import AnimatedLine from '../ui/AnimatedLine'
 
 const AboutUs = () => {
   return (
@@ -16,6 +17,13 @@ const AboutUs = () => {
               <p>
               In a world where digital engagement defines brand success, VISUAAL offers a complete suite of high-impact solutions designed to captivate, connect, and convert. Based in Dubai, Paris and Shenzhen, VISUAAL brings together a team of experts who are reshaping the digital landscape.
               </p>
+
+      <div className="">
+        <div className="ml-0 sm:ml-6 lg:ml-18">
+          <AnimatedLine orientation="horizontal" size={400} thickness={3} />
+        </div>
+      </div>
+
 
               <p>
               VISUAAL is it the meeting of entrepreneurs from different backgrounds who bring their expertise in experience creation, advertising, and digital transformation to serve brands and publishers around immersive and innovative experiences.              </p>
@@ -49,6 +57,8 @@ const AboutUs = () => {
               <div className="text-sm lg:text-lg -ml-8 lg:-ml-16 font-medium relative z-10">Years of experience</div>
             </div>
           </div>
+
+
 
           <div className="text-center text-white relative z-20">
             <div

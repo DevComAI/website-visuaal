@@ -16,6 +16,7 @@ import {
   WorkingCarousel
 } from '@/components/pages/HomePageClient'
 import ScrollIndicator from '@/components/ui/ScrollIndicator'
+import AnimatedLine from '@/components/ui/AnimatedLine'
 
 export default async function Home() {
   const headersList = await headers()
@@ -139,7 +140,7 @@ export default async function Home() {
 
         <div className="pb-20"></div>
 
-        <ScrollIndicator variant="large" />
+       
 
         <MobileTitleHome
           topText={<>THE BENEFITS OF USING OUR <MobileGradientText>DIGITAL SIGNAGE</MobileGradientText></>}
@@ -150,6 +151,7 @@ export default async function Home() {
         <WorkingCarousel scenes={workingScenes} />
 
         <div className="pb-12"></div>
+        
 <ScrollIndicator/>
         <MobileTitleHome
           topText={<><MobileGradientText>END-TO-END</MobileGradientText> DIGITAL SIGNAGE SOLUTIONS</>}
@@ -158,6 +160,7 @@ export default async function Home() {
         />
 
         <SupportCarousel />
+
 <ScrollIndicator/>
         <MobileTitleHome
           topText={<><MobileGradientText>OUR</MobileGradientText> PRODUCTS PORTFOLIO</>}
@@ -187,17 +190,29 @@ export default async function Home() {
       />
 
       <LogoCarousel />
-      
+
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8 lg:pb-10">
+        <div className="flex justify-center">
+          <AnimatedLine orientation="vertical" size={100} thickness={3} />
+        </div>
+      </div>
+
       <TitleHome
         topText={<><GradientText>EXPERTS</GradientText> IN IMMERSIVE EXPERIENCES</>}
         bottomText="AND DIGITAL TRANSFORMATION"
         backgroundImage="aboutus.png"
       />
-      
+
 
 
       <AboutUs />
       <div className="pb-20 sm:pb-40 lg:pb-80"> </div>
+
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8 lg:pb-10">
+        <div className="flex justify-center">
+          <AnimatedLine orientation="vertical" size={100} thickness={3} />
+        </div>
+      </div>
 
       <TitleHome
         topText="THE BENEFITS OF USING OUR"
@@ -207,7 +222,14 @@ export default async function Home() {
 
       <Working />
       <div className="pb-16 sm:pb-32 lg:pb-60"> </div>
-      
+
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8 lg:pb-10">
+        <div className="flex justify-center">
+          <AnimatedLine orientation="vertical" size={100} thickness={3} />
+        </div>
+      </div>
+
+
       <TitleHome
         topText={<><GradientText>END-TO-END</GradientText> DIGITAL SIGNAGE</>}
         bottomText="SOLUTIONS"
@@ -215,9 +237,14 @@ export default async function Home() {
       />
 
       <SupportCarousel />
-      
 
-            
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8 lg:pb-10">
+        <div className="flex justify-center">
+          <AnimatedLine orientation="vertical" size={100} thickness={3} />
+        </div>
+      </div>
+
+
       <TitleHome
         topText={<><GradientText>END-TO-END</GradientText> DIGITAL SIGNAGE</>}
         bottomText="SOLUTIONS"
