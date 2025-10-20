@@ -171,14 +171,14 @@ export default function DoohContent() {
 
         <div className="mb-8 ml-0 lg:ml-16 xl:ml-30">
           <p className="text-gray-300 leading-relaxed mb-4 lg:mb-6 text-sm sm:text-base lg:text-lg xl:text-xl">
-            Based in the heart of the UAE, Visuaal Dubai brings together global know-how and local
-            insight. We support brands from initial design to DOOH strategy — from creative conception
-            to campaign analysis — ensuring maximum visibility in one of the world&apos;s most dynamic
+            Based in the heart of the UAE, Visuaal Dubai brings together global know-how and local insight. We support brands <br /> 
+            from initial design to DOOH strategy — from creative conception
+            to campaign analysis — ensuring maximum visibility in one  <br />  of the world&apos;s most dynamic
             markets.
           </p>
           <p className="text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg xl:text-xl">
             Our tailored approach respects both cultural nuances and audience expectations in Dubai,
-            while upholding the quality standards that define the Visuaal brand.
+            while upholding the quality <br />  standards that define the Visuaal brand.
           </p>
         </div>
 

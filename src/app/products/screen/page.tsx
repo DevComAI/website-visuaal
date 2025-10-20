@@ -131,10 +131,11 @@ backgroundImage="SCREEN.png"
         imageUrl="/img/screen/screencontent-1.png"
       />
 
-<ScreenContent 
+<ScreenContent
         title={<><GradientText>Quick and professional installation</GradientText> </>}
         paragraph="Our team of specialized technicians provides fast and secure turnkey installation. We take care of everything: site assessment, selection of suitable equipment, assembly, and commissioning, so that you can start using your screens right away."
         imageUrl="/img/screen/screencontent-2.png"
+        className="sm:pt-40"
       />
 
 <ScreenContent 

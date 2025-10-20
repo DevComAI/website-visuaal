@@ -10,6 +10,7 @@ interface HeroProps {
   subtitle?: string | React.ReactNode;
   description?: string;
   showScrollIndicator?: boolean;
+  backgroundPosition?: string;
 }
 
 const Hero = ({
@@ -18,7 +19,8 @@ const Hero = ({
   title,
   subtitle,
   description,
-  showScrollIndicator = true
+  showScrollIndicator = true,
+  backgroundPosition = 'center'
 }: HeroProps) => {
   const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -77,7 +79,7 @@ const Hero = ({
       style={backgroundImage ? {
         backgroundImage: `url('${backgroundImage}')`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: backgroundPosition,
         backgroundRepeat: 'no-repeat'
       } : {}}
     >

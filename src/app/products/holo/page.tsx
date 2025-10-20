@@ -19,11 +19,12 @@ const HoloPage = () => {
   return (
     <div className="min-h-screen">
 
-      <Hero 
+      <Hero
         backgroundImage="/img/humanbox/hero.png"
         title="HUMAN BOX"
         subtitle={<>An <GradientText>immersive cabin</GradientText> creating a <GradientText>3D holographic</GradientText> effect</>}
         showScrollIndicator={false}
+        backgroundPosition="65% center"
       />
 
 
@@ -180,10 +181,10 @@ Easily manage and customize your content — our technology is designed to meet 
    
       <HoloFeatures
         title={<><GradientText>Human Box</GradientText></>}
-        description={`The Holobox Mini is our compact tabletop model, ideal for product placement, feature highlights, 
+        description={`The Holobox Mini is our compact tabletop model, ideal for product placement, feature highlights,
         or adding a cutting-edge tech touch.
-         Affordable and versatile, it's a smart solution for businesses of all sizes looking to leverage high-quality holographic displays. 
-         
+         Affordable and versatile, it's a smart solution for businesses of all sizes looking to leverage high-quality holographic displays.
+
          Its vivid holograms enhance visibility, engagement, and memorability, offering a new level of interactivity.`}
         mainImage="/img/humanbox/humanbox2.png"
         features={[
@@ -203,7 +204,7 @@ Easily manage and customize your content — our technology is designed to meet 
             description: 'Enjoy the futuristic charm in any setting with this easily transportable and interconnected holographic solution.'
           }
         ]}
-
+        className="sm:pt-60"
       />
 
 <SupportCarousel 
