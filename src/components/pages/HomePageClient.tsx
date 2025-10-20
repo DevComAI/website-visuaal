@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import GradientButton from '@/components/ui/GradientButton'
 
 interface MobileGradientTextProps {
   children: string
@@ -59,59 +60,8 @@ export function MobileGradientText({ children, className = "" }: MobileGradientT
   )
 }
 
-interface MobileGradientButtonProps {
-  href: string
-  text: string
-  className?: string
-}
-
-export function MobileGradientButton({ href, text, className = "" }: MobileGradientButtonProps) {
-  const [animationDelay, setAnimationDelay] = useState(0)
-
-  useEffect(() => {
-    setAnimationDelay(Math.random() * 12)
-  }, [])
-
-  return (
-    <>
-      <style jsx>{`
-        .gradient-button {
-          background: linear-gradient(
-            45deg,
-            #473FB9,
-            #4DA8D7,
-            #9512B6,
-            #473FB9,
-            #158BBD,
-            #C82EF0
-          );
-          background-size: 400% 400%;
-          animation: gradientFlow 12s ease-in-out infinite;
-          animation-delay: ${animationDelay}s;
-        }
-
-        @keyframes gradientFlow {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          25% {
-            background-position: 100% 0%;
-          }
-          50% {
-            background-position: 100% 100%;
-          }
-          75% {
-            background-position: 0% 100%;
-          }
-        }
-      `}</style>
-      <div className={`gradient-button relative p-[1px] rounded-full ${className || 'w-[201px] h-[56px]'}`}>
-        <Link href={href} className="w-full h-full px-8 py-4 rounded-full text-white bg-black transition-colors duration-300 relative z-10 flex items-center justify-center">
-          {text}
-        </Link>
-      </div>
-    </>
-  )
+export function MobileGradientButton({ href, text, className = "" }: { href: string; text: string; className?: string }) {
+  return <GradientButton href={href} text={text} className={className} />
 }
 
 interface MobileTitleHomeProps {
