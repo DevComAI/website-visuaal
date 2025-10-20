@@ -16,7 +16,9 @@ interface TimelineProps {
 
 const Timeline = ({ items }: TimelineProps) => {
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [activeBars, setActiveBars] = useState<number[]>([])
   const timelineRef = useRef<HTMLDivElement>(null)
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +38,23 @@ const Timeline = ({ items }: TimelineProps) => {
       // Calculate progress
       const progress = ((scrollTop - scrollStart) / (scrollEnd - scrollStart)) * 100
       setScrollProgress(Math.max(0, Math.min(progress, 100)))
+
+      // Check which horizontal bars should be active
+      const newActiveBars: number[] = []
+      itemRefs.current.forEach((itemRef, index) => {
+        if (itemRef) {
+          const itemRect = itemRef.getBoundingClientRect()
+          const itemTop = itemRect.top + window.scrollY
+          const itemProgress = ((scrollTop - scrollStart) / (scrollEnd - scrollStart)) * 100
+          const itemPositionInTimeline = ((itemTop - timelineTop) / timelineHeight) * 100
+
+          // If scroll progress has reached this item's position
+          if (itemProgress >= itemPositionInTimeline) {
+            newActiveBars.push(index)
+          }
+        }
+      })
+      setActiveBars(newActiveBars)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -71,12 +90,44 @@ const Timeline = ({ items }: TimelineProps) => {
           }
         }
 
+        @keyframes expandBarLeft {
+          from {
+            transform: scaleX(0);
+            opacity: 0;
+          }
+          to {
+            transform: scaleX(1);
+            opacity: 1;
+          }
+        }
+
+        @keyframes expandBarRight {
+          from {
+            transform: scaleX(0);
+            opacity: 0;
+          }
+          to {
+            transform: scaleX(1);
+            opacity: 1;
+          }
+        }
+
         .progress-line {
           animation: pulse 3s ease-in-out infinite, glow 2s ease-in-out infinite;
         }
 
         .progress-orb {
           animation: glow 2s ease-in-out infinite;
+        }
+
+        .horizontal-bar-active-left {
+          animation: expandBarLeft 0.6s ease-out forwards, pulse 3s ease-in-out infinite 0.6s, glow 2s ease-in-out infinite 0.6s;
+          transform-origin: right;
+        }
+
+        .horizontal-bar-active-right {
+          animation: expandBarRight 0.6s ease-out forwards, pulse 3s ease-in-out infinite 0.6s, glow 2s ease-in-out infinite 0.6s;
+          transform-origin: left;
         }
       `}</style>
 
@@ -91,7 +142,7 @@ const Timeline = ({ items }: TimelineProps) => {
               className="progress-line absolute left-1/2 top-0 w-[5px] transform -translate-x-1/2 transition-all duration-300 ease-out"
               style={{
                 height: `${scrollProgress}%`,
-                background: 'linear-gradient(to bottom, transparent, rgba(77, 168, 215, 0.3), #4DA8D7, #4DA8D7, rgba(77, 168, 215, 0.5), transparent)',
+                background: 'linear-gradient(to bottom, transparent, rgba(77, 168, 215, 0.3), #363986, #363986, rgba(77, 168, 215, 0.5), transparent)',
               }}
             ></div>
 
@@ -99,10 +150,10 @@ const Timeline = ({ items }: TimelineProps) => {
           
           <div className="-space-y-32">
             {items.map((item, index) => (
-              <div key={index} className="relative flex justify-center">
+              <div key={index} ref={el => { itemRefs.current[index] = el }} className="relative flex justify-center">
                 {/* Content Container */}
                 <div className={`flex w-full max-w-[1600px] ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}>
-                  
+
                   {/* Content */}
                   <div className="flex-1 max-w-2xl">
                     <div className="text-left">
@@ -110,12 +161,21 @@ const Timeline = ({ items }: TimelineProps) => {
                         <h3 className="text-[24px] font-bold mb-4">
                           {item.title}
                         </h3>
-                        
+
                         {/* Timeline center elements at title level */}
                         <div className={`absolute top-2 flex flex-col items-center z-10 ${
                           index % 2 === 0 ? 'left-full ml-8' : 'right-full mr-8'
                         }`}>
-                          <div className="w-24 h-[5px] bg-[#363986]"></div>
+                          <div className="relative">
+                            <div className="w-24 h-[5px] bg-[#363986]"></div>
+                            {activeBars.includes(index) && (
+                              <div
+                                className={`absolute top-0 left-0 w-24 h-[5px] bg-[#363986] ${
+                                  index % 2 === 0 ? 'horizontal-bar-active-left' : 'horizontal-bar-active-right'
+                                }`}
+                              ></div>
+                            )}
+                          </div>
                         </div>
                       </div>
                       
