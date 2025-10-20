@@ -1,5 +1,4 @@
 import { headers } from 'next/headers'
-import Image from 'next/image'
 import Hero from '@/components/sections/Hero'
 import AboutUs from '@/components/sections/AboutUs'
 import TitleHome from '@/components/ui/TitleSection'
@@ -23,6 +22,7 @@ export default async function Home() {
   const userAgent = headersList.get('user-agent') || ''
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent) ||
                    (headersList.get('sec-ch-ua-mobile') === '?1')
+  const isIOS = /iPhone|iPad|iPod/i.test(userAgent)
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -58,44 +58,12 @@ export default async function Home() {
         />
 
         {/* Mobile Hero Section */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          <Image
-            src="/img/home/hero-home.png"
-            alt="Visuaal Hero Background"
-            fill
-            priority
-            quality={85}
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}></div>
-          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[black]/50 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#211824] to-transparent"></div>
-
-          <div className="container relative z-10 mx-auto px-4 sm:px-6">
-            <div className="flex items-start mt-20 sm:mt-32 h-full text-center">
-              <div className="w-full">
-                <h1 className="font-semibold text-white mb-4 leading-none text-3xl sm:text-5xl">
-                  VISUAAL
-                </h1>
-
-                <h2 className="font-semibold max-w-5xl text-white mb-4 sm:mb-6 leading-tight text-lg sm:text-xl mx-auto">
-                  <MobileGradientText>Innovative visual solutions</MobileGradientText> to capture attention and <MobileGradientText>elevate your brand</MobileGradientText>.
-                </h2>
-
-                <p className="text-white leading-tight max-w-2xl text-sm sm:text-base mx-auto">
-                  At VISUAAL, we design tailor-made visual experiences that combine creativity, technology, and performance.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-            </div>
-          </div>
-        </section>
+        <Hero
+          backgroundVideo="/img/home/hero-home.mp4"
+          title="VISUAAL"
+          subtitle={<><MobileGradientText>Innovative visual solutions</MobileGradientText> to capture attention and <MobileGradientText>elevate your brand</MobileGradientText>.</>}
+          description="At VISUAAL, we design tailor-made visual experiences that combine creativity, technology, and performance."
+        />
 <div className='my-20'>
 
 

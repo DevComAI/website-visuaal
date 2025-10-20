@@ -36,6 +36,11 @@ const Hero = ({
             loop
             muted
             playsInline
+            preload="auto"
+            webkit-playsinline="true"
+            x5-playsinline="true"
+            disablePictureInPicture
+            controlsList="nodownload nofullscreen noremoteplayback"
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>
@@ -45,8 +50,16 @@ const Hero = ({
 
         </>
       )}
-      
-      {!backgroundVideo && (
+
+      {!backgroundVideo && backgroundImage && (
+        <>
+          <div className="absolute inset-0" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}></div>
+          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[black]/50 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#211824] to-transparent"></div>
+        </>
+      )}
+
+      {!backgroundVideo && !backgroundImage && (
         <div className="absolute inset-0 bg-black/30"></div>
       )}
 
