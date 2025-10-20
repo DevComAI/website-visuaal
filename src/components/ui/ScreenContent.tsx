@@ -31,10 +31,10 @@ const ScreenContent = ({
             <Image
                 src={imageUrl}
                 alt={typeof title === 'string' ? title : 'Screen content'}
-                width={851}
-                height={600}
+                width={1200}
+                height={850}
                 className="w-full h-auto object-cover rounded-lg"
-                style={{ maxWidth: '851px' }}
+                style={{ maxWidth: '100%' }}
               />
           </AnimatedBorder>
         </div>

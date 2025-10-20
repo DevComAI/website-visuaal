@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
 import ScrollIndicator from '@/components/ui/ScrollIndicator'
 
 interface HeroProps {
@@ -9,17 +12,67 @@ interface HeroProps {
   showScrollIndicator?: boolean;
 }
 
-const Hero = ({ 
-  backgroundImage, 
+const Hero = ({
+  backgroundImage,
   backgroundVideo,
-  title, 
-  subtitle, 
-  description, 
-  showScrollIndicator = true 
+  title,
+  subtitle,
+  description,
+  showScrollIndicator = true
 }: HeroProps) => {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      const video = videoRef.current
+
+      // Ensure video is muted and has required attributes for iOS/Android
+      video.muted = true
+      video.defaultMuted = true
+      video.volume = 0
+      video.setAttribute('playsinline', 'true')
+      video.setAttribute('webkit-playsinline', 'true')
+
+      // Force play on mobile devices (Android & iOS)
+      const playVideo = () => {
+        const playPromise = video.play()
+
+        if (playPromise !== undefined) {
+          playPromise.catch((error) => {
+            console.log('Video autoplay failed:', error)
+            // Retry play after a short delay
+            setTimeout(() => {
+              video.play().catch(() => {
+                // Silent fail on second attempt
+              })
+            }, 300)
+          })
+        }
+      }
+
+      // Try to play immediately
+      playVideo()
+
+      // Also try to play on user interaction for iOS
+      const handleInteraction = () => {
+        playVideo()
+        document.removeEventListener('touchstart', handleInteraction)
+        document.removeEventListener('click', handleInteraction)
+      }
+
+      document.addEventListener('touchstart', handleInteraction, { once: true })
+      document.addEventListener('click', handleInteraction, { once: true })
+
+      return () => {
+        document.removeEventListener('touchstart', handleInteraction)
+        document.removeEventListener('click', handleInteraction)
+      }
+    }
+  }, [])
+
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       className="relative h-screen flex items-center justify-center overflow-hidden"
       style={backgroundImage ? {
         backgroundImage: `url('${backgroundImage}')`,
@@ -31,14 +84,13 @@ const Hero = ({
       {backgroundVideo && (
         <>
           <video
+            ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
-            webkit-playsinline="true"
-            x5-playsinline="true"
             disablePictureInPicture
             controlsList="nodownload nofullscreen noremoteplayback"
           >
