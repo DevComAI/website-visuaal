@@ -15,15 +15,15 @@ interface ProductServiceProps {
   className?: string;
 }
 
-const ProductService = ({ 
-  title, 
-  paragraphs, 
+const ProductService = ({
+  title,
+  paragraphs,
   services,
-  className = "" 
+  className = ""
 }: ProductServiceProps) => {
   return (
     <section className={`py-10 md:py-20 flex justify-center ${className}`}>
-      <div className="px-4 md:px-6">
+      <div className="w-full max-w-[1800px] px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-32 lg:mb-50">
           <h2 className="text-xl md:text-3xl lg:text-[40px] font-medium text-white mb-8 md:mb-16 lg:mb-32 uppercase">
@@ -39,24 +39,24 @@ const ProductService = ({
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 xl:gap-20">
           {services.map((service, index) => (
-            <div key={index} className="text-left pb-8 md:pb-16 lg:pb-30 max-w-[800px]">
+            <div key={index} className="text-left pb-8 md:pb-16 lg:pb-30 w-full">
               {/* Service Title */}
               <h3 className="text-lg md:text-2xl lg:text-[40px] font-medium text-white mb-4 md:mb-6 uppercase">
                 {service.title}
               </h3>
 
               {/* Service Image */}
-              <div className="mb-6 text-left">
-                <AnimatedBorder className="inline-block" borderRadius="0.5rem">
+              <div className="mb-6 w-full">
+                <AnimatedBorder className="w-full max-w-full" borderRadius="0.5rem">
                   <Image
                     src={service.image}
                     alt={typeof service.title === 'string' ? service.title : 'Service image'}
                     width={800}
                     height={400}
-                    className="h-auto object-contain rounded-lg"
-                    style={{ maxHeight: '400px', width: 'auto' }}
+                    className="w-full h-auto object-cover rounded-lg"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 45vw, 800px"
                   />
                 </AnimatedBorder>
               </div>

@@ -8,15 +8,15 @@ interface ScreenContentProps {
   className?: string;
 }
 
-const ScreenContent = ({ 
-  title, 
-  paragraph, 
+const ScreenContent = ({
+  title,
+  paragraph,
   imageUrl,
-  className = "" 
+  className = ""
 }: ScreenContentProps) => {
   return (
     <section className={`pb-10 md:pb-20 flex justify-center ${className}`}>
-      <div className="w-full lg:w-[1650px] px-4 md:px-6 lg:px-4">
+      <div className="w-full max-w-[1650px] px-4 md:px-6 lg:px-8 xl:px-4">
         <div className="text-left mb-8 md:mb-18">
           <h2 className="text-xl md:text-3xl lg:text-[40px] font-medium text-white mb-4 uppercase">
             {title}
@@ -25,16 +25,16 @@ const ScreenContent = ({
             {paragraph}
           </p>
         </div>
-        
-        <div className="flex justify-start">
-          <AnimatedBorder className="w-fit" borderRadius="0.5rem">
+
+        <div className="flex justify-start w-full">
+          <AnimatedBorder className="w-full max-w-[650px] md:max-w-[800px] lg:max-w-[900px]" borderRadius="0.5rem">
             <Image
                 src={imageUrl}
                 alt={typeof title === 'string' ? title : 'Screen content'}
-                width={1200}
-                height={850}
+                width={900}
+                height={637}
                 className="w-full h-auto object-cover rounded-lg"
-                style={{ maxWidth: '100%' }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 800px, 900px"
               />
           </AnimatedBorder>
         </div>
