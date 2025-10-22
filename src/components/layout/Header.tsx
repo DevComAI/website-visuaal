@@ -1,15 +1,31 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import GradientButton from '@/components/ui/GradientButton'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
+
+  // Prefetch toutes les routes principales après le chargement
+  useEffect(() => {
+    const prefetchTimer = setTimeout(() => {
+      // Prefetch toutes les routes principales
+      router.prefetch('/about')
+      router.prefetch('/studio')
+      router.prefetch('/contact')
+      router.prefetch('/products/dooh')
+      router.prefetch('/products/holo')
+      router.prefetch('/products/screen')
+    }, 3000) // 3 secondes après le chargement initial
+
+    return () => clearTimeout(prefetchTimer)
+  }, [router])
 
   const navigation = [
     { name: 'Home', href: '/' },

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import SplinePlaceholder from './SplinePlaceholder'
 
@@ -33,36 +33,17 @@ export default function OptimizedSplineViewer({
   const [shouldLoad, setShouldLoad] = useState(priority)
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasError, setHasError] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
 
-  // Intersection Observer for lazy loading
+  // Charger toutes les scènes immédiatement (pas de lazy loading)
+  // Le Service Worker + preloader gèrent déjà l'optimisation
   useEffect(() => {
-    if (priority) return
-    if (shouldLoad) return
+    // Charger immédiatement avec un petit délai pour ne pas bloquer le rendu initial
+    const timer = setTimeout(() => {
+      setShouldLoad(true)
+    }, loadingDelay)
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries
-        if (entry.isIntersecting) {
-          setTimeout(() => setShouldLoad(true), loadingDelay)
-        }
-      },
-      {
-        rootMargin: '400px',
-        threshold: 0.01
-      }
-    )
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current)
-      }
-    }
-  }, [priority, shouldLoad, loadingDelay])
+    return () => clearTimeout(timer)
+  }, [loadingDelay])
 
   // Interaction management
   useEffect(() => {
@@ -147,7 +128,6 @@ export default function OptimizedSplineViewer({
 
   return (
     <div
-      ref={containerRef}
       data-spline-container
       className={`w-full h-full flex items-center justify-center relative ${className || ''}`}
     >
