@@ -5,6 +5,7 @@
  * Usage: node scripts/audit-spline-scenes.js
  */
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const https = require('https');
 
 const SPLINE_SCENES = [
@@ -81,7 +82,7 @@ async function auditAllScenes() {
   console.log('│ Scène               │ Taille (MB) │ Durée (s)    │ Priorité Recommandée       │');
   console.log('├─────────────────────┼─────────────┼──────────────┼────────────────────────────┤');
 
-  results.forEach((r, idx) => {
+  results.forEach((r) => {
     if (r.error) {
       console.log(`│ ${r.name.padEnd(19)} │ ERROR       │ ERROR        │ N/A                        │`);
     } else {
