@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 import ScrollIndicator from '@/components/ui/ScrollIndicator'
 import { useSplinePreloader } from '@/lib/hooks/useSplinePreloader'
@@ -16,6 +16,11 @@ interface HeroSplineProps {
   placeholder?: string
 }
 
+const logHero = (message: string, data?: unknown) => {
+  const timestamp = new Date().toISOString().split('T')[1].slice(0, -1)
+  console.log(`[${timestamp}] [HeroSpline] ${message}`, data || '')
+}
+
 const HeroSpline = ({
   title,
   subtitle,
@@ -27,6 +32,24 @@ const HeroSpline = ({
   placeholder
 }: HeroSplineProps) => {
   const { progress } = useSplinePreloader(splineUrl, { priority: priority ? 'high' : 'normal' })
+
+  useEffect(() => {
+    logHero('🟢 HeroSpline monté', {
+      splineUrl,
+      priority,
+      textPosition,
+      splinePosition,
+    })
+
+    return () => {
+      logHero('🔴 HeroSpline démonté', { splineUrl })
+    }
+  }, [splineUrl, priority, textPosition, splinePosition])
+
+  useEffect(() => {
+    logHero(`📊 Progression du preloader: ${progress}%`, { splineUrl })
+  }, [progress, splineUrl])
+
   return (
     <section 
       id="hero-spline" 

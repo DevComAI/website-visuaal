@@ -62,6 +62,22 @@ class SplinePreloadManager {
   }
 
   /**
+   * Log la mémoire actuelle
+   */
+  private logMemory(context: string): void {
+    if ('memory' in performance) {
+      const memory = (performance as { memory?: { usedJSHeapSize: number; totalJSHeapSize: number; jsHeapSizeLimit: number } }).memory;
+      if (!memory) return;
+      console.log(`[Preloader] 💾 Mémoire (${context}):`, {
+        usedJSHeapSize: `${(memory.usedJSHeapSize / 1048576).toFixed(2)} MB`,
+        totalJSHeapSize: `${(memory.totalJSHeapSize / 1048576).toFixed(2)} MB`,
+        limit: `${(memory.jsHeapSizeLimit / 1048576).toFixed(2)} MB`,
+        usage: `${((memory.usedJSHeapSize / memory.jsHeapSizeLimit) * 100).toFixed(1)}%`,
+      });
+    }
+  }
+
+  /**
    * Précharge toutes les scènes par ordre de priorité
    */
   async preloadAll(startDelayMs = 2000): Promise<void> {
@@ -72,6 +88,7 @@ class SplinePreloadManager {
 
     this.isPreloading = true;
     console.log('[Preloader] Démarrage du préchargement dans', startDelayMs, 'ms');
+    this.logMemory('Avant démarrage');
 
     // Démarrer le tracking
     preloadAnalytics.startTracking();
@@ -87,11 +104,14 @@ class SplinePreloadManager {
     // Charger chaque groupe de priorité séquentiellement
     for (const [priority, scenes] of priorityGroups) {
       console.log(`[Preloader] Chargement groupe ${priority} (${scenes.length} scènes)...`);
+      this.logMemory(`Avant groupe ${priority}`);
 
       // Charger toutes les scènes du groupe en parallèle
       await Promise.allSettled(
         scenes.map((scene) => this.preloadScene(scene))
       );
+
+      this.logMemory(`Après groupe ${priority}`);
 
       // Petit délai entre les groupes pour éviter de saturer la bande passante
       if (priority !== 'very-low') {
@@ -100,6 +120,7 @@ class SplinePreloadManager {
     }
 
     console.log('[Preloader] Préchargement terminé!');
+    this.logMemory('Après terminaison');
     this.isPreloading = false;
 
     // Arrêter le tracking et générer le rapport
@@ -152,8 +173,12 @@ class SplinePreloadManager {
    * Fetch une scène avec retry
    */
   private async fetchScene(url: string, retries = 3): Promise<void> {
+    const sceneName = url.split('/').pop()?.split('.')[0] || 'unknown';
+
     for (let attempt = 1; attempt <= retries; attempt++) {
       try {
+        console.log(`[Preloader] 🌐 Fetch ${sceneName} (tentative ${attempt}/${retries})`);
+
         const response = await fetch(url, {
           mode: 'cors',
           cache: 'force-cache', // Utiliser le cache si disponible
@@ -164,14 +189,19 @@ class SplinePreloadManager {
         }
 
         // Consommer la réponse (le Service Worker la mettra en cache)
-        await response.blob();
+        const blob = await response.blob();
+        console.log(`[Preloader] ✅ Fetch ${sceneName} réussi (${(blob.size / 1048576).toFixed(2)} MB)`);
         return;
       } catch (error) {
+        console.error(`[Preloader] ❌ Erreur fetch ${sceneName} (tentative ${attempt}/${retries}):`, error);
+
         if (attempt === retries) {
           throw error;
         }
         // Attendre avant de réessayer (backoff exponentiel)
-        await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
+        const delayMs = attempt * 1000;
+        console.log(`[Preloader] ⏳ Retry dans ${delayMs}ms...`);
+        await new Promise((resolve) => setTimeout(resolve, delayMs));
       }
     }
   }

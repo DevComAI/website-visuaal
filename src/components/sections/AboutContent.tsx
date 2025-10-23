@@ -1,10 +1,24 @@
 'use client'
 
+import { useEffect } from 'react'
 import GradientButton from '@/components/ui/GradientButton'
 import GradientText from '@/components/ui/GradientText'
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 
+const logAboutContent = (message: string, data?: unknown) => {
+  const timestamp = new Date().toISOString().split('T')[1].slice(0, -1)
+  console.log(`[${timestamp}] [AboutContent] ${message}`, data || '')
+}
+
 const AboutContent = () => {
+  useEffect(() => {
+    logAboutContent('🟢 AboutContent monté')
+
+    return () => {
+      logAboutContent('🔴 AboutContent démonté')
+    }
+  }, [])
+
   return (
     <section className="py-12 lg:py-20 text-white mx-4 sm:mx-8 lg:mx-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,16 +1,67 @@
-import { Metadata } from 'next'
+'use client'
+
+import { useEffect } from 'react'
 import HeroSpline from '@/components/sections/HeroSpline'
 import GradientText from '@/components/ui/GradientText'
 import AboutContent from '@/components/sections/AboutContent'
 import TitlePage from '@/components/ui/TitlePageSection'
 
-export const metadata: Metadata = {
-  title: 'À Propos de Visuaal',
-  description: 'Découvrez l&apos;histoire de Visuaal, notre équipe passionnée et notre vision de l&apos;innovation technologique dans le domaine visuel.',
-  keywords: ['à propos', 'équipe', 'histoire', 'mission', 'vision', 'valeurs'],
+// Fonction pour logger avec horodatage
+const logDebug = (component: string, message: string, data?: unknown) => {
+  const timestamp = new Date().toISOString().split('T')[1].slice(0, -1)
+  console.log(`[${timestamp}] [About/${component}] ${message}`, data || '')
+}
+
+// Fonction pour surveiller la mémoire (si disponible)
+const logMemory = () => {
+  if ('memory' in performance) {
+    const memory = (performance as { memory?: { usedJSHeapSize: number; totalJSHeapSize: number; jsHeapSizeLimit: number } }).memory
+    if (!memory) return
+    logDebug('Memory', 'Usage', {
+      usedJSHeapSize: `${(memory.usedJSHeapSize / 1048576).toFixed(2)} MB`,
+      totalJSHeapSize: `${(memory.totalJSHeapSize / 1048576).toFixed(2)} MB`,
+      jsHeapSizeLimit: `${(memory.jsHeapSizeLimit / 1048576).toFixed(2)} MB`,
+    })
+  }
 }
 
 const AboutPage = () => {
+  useEffect(() => {
+    logDebug('Page', '🟢 Montage de la page About')
+    logMemory()
+
+    // Surveiller les erreurs globales
+    const handleError = (event: ErrorEvent) => {
+      logDebug('Page', '❌ ERREUR GLOBALE détectée', {
+        message: event.message,
+        filename: event.filename,
+        lineno: event.lineno,
+        colno: event.colno,
+      })
+    }
+
+    const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+      logDebug('Page', '❌ PROMISE REJECTION détectée', {
+        reason: event.reason,
+      })
+    }
+
+    window.addEventListener('error', handleError)
+    window.addEventListener('unhandledrejection', handleUnhandledRejection)
+
+    // Log périodique de la mémoire
+    const memoryInterval = setInterval(() => {
+      logMemory()
+    }, 5000) // Toutes les 5 secondes
+
+    return () => {
+      logDebug('Page', '🔴 Démontage de la page About')
+      logMemory()
+      window.removeEventListener('error', handleError)
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection)
+      clearInterval(memoryInterval)
+    }
+  }, [])
 
   return (
     <div className="min-h-screen">
