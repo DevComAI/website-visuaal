@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "^1.55.1",
     "@splinetool/react-spline": "^4.1.0",
     "@splinetool/runtime": "^1.10.57",
     "@types/nodemailer": "^7.0.1",
