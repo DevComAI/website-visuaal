@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Hero from '@/components/sections/Hero'
 import HeroSpline from '@/components/sections/HeroSpline'
 import GradientText from '@/components/ui/GradientText'
 import AnimatedVisionText from '@/components/ui/AnimatedVisionText'
@@ -45,16 +46,30 @@ const StudioPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Spline Section */}
-      <HeroSpline
-        title={<>From <GradientText>bold concepts</GradientText> to unforgettable<br />  <GradientText>immersive visuals</GradientText>.</>}
-        subtitle={<AnimatedVisionText />}
-        splineUrl="https://prod.spline.design/XihlwxPitjwHnwb9/scene.splinecode"
-        textPosition="left"
-        splinePosition="right"
-        priority={true}
-        placeholder="/img/studio/studio-preview.jpg"
-      />
+      {/* Hero Mobile - Static Image */}
+      <div className="md:hidden">
+        <Hero
+          backgroundImage="/points.png"
+          title=""
+          subtitle={<>From <GradientText>bold concepts</GradientText> to unforgettable <GradientText>immersive visuals</GradientText>.</>}
+          description=""
+          showScrollIndicator={false}
+          backgroundPosition="center"
+        />
+      </div>
+
+      {/* Hero Desktop - Spline */}
+      <div className="hidden md:block">
+        <HeroSpline
+          title={<>From <GradientText>bold concepts</GradientText> to unforgettable<br />  <GradientText>immersive visuals</GradientText>.</>}
+          subtitle={<AnimatedVisionText />}
+          splineUrl="https://prod.spline.design/XihlwxPitjwHnwb9/scene.splinecode"
+          textPosition="left"
+          splinePosition="right"
+          priority={true}
+          placeholder="/img/studio/studio-preview.jpg"
+        />
+      </div>
 
   <TitlePage
   title={<>our <GradientText>tools</GradientText></>}
