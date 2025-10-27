@@ -31,9 +31,9 @@ const DOOHPage = () => {
     '@graph': [
       doohProductSchema,
       breadcrumbSchema([
-        { name: 'Home', url: 'https://visuaal.com' },
-        { name: 'Products', url: 'https://visuaal.com/products/dooh' },
-        { name: 'DOOH', url: 'https://visuaal.com/products/dooh' }
+        { name: 'Home', url: 'https://visuaal.ai' },
+        { name: 'Products', url: 'https://visuaal.ai/products/dooh' },
+        { name: 'DOOH', url: 'https://visuaal.ai/products/dooh' }
       ])
     ]
   }

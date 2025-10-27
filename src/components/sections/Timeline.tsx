@@ -158,7 +158,7 @@ const Timeline = ({ items }: TimelineProps) => {
                   <div className="flex-1 max-w-2xl">
                     <div className="text-left">
                       <div className="relative">
-                        <h3 className="text-[24px] font-bold mb-4">
+                        <h3 className="text-white text-[24px] font-bold mb-4">
                           {item.title}
                         </h3>
 

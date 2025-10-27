@@ -32,7 +32,7 @@ export default function HoloFeatures({
           <h1 className="text-white text-xl md:text-3xl lg:text-[40px] font-medium mb-4 md:mb-6 uppercase text-left">
             {title}
           </h1>
-          <p className="text-base md:text-xl lg:text-[32px] font-regular leading-relaxed mb-4 md:mb-6 lg:mb-8 text-left whitespace-pre-line">
+          <p className="text-white text-base md:text-xl lg:text-[32px] font-regular leading-relaxed mb-4 md:mb-6 lg:mb-8 text-left whitespace-pre-line">
             {description}
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function HoloFeatures({
                 {features.map((feature, index) => (
                   <div key={index} className={`flex flex-row items-start gap-4 md:gap-8 lg:gap-16 max-w-5xl ${!reverse ? 'md:flex-row-reverse ' : 'md:flex-row'}`}>
                     <div className="flex-1 order-1">
-                      <p className="text-sm md:text-xl lg:text-[30px] leading-relaxed text-left md:text-left">
+                      <p className="text-white text-sm md:text-xl lg:text-[30px] leading-relaxed text-left md:text-left">
                         {feature.description}
                       </p>
                     </div>

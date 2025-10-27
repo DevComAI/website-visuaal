@@ -28,8 +28,8 @@ const AboutPage = () => {
     '@context': 'https://schema.org',
     '@graph': [
       breadcrumbSchema([
-        { name: 'Home', url: 'https://visuaal.com' },
-        { name: 'About', url: 'https://visuaal.com/about' }
+        { name: 'Home', url: 'https://visuaal.ai' },
+        { name: 'About', url: 'https://visuaal.ai/about' }
       ])
     ]
   }

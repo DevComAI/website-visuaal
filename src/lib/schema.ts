@@ -1,12 +1,12 @@
 export const organizationSchema = {
   "@type": "Organization",
-  "@id": "https://visuaal.com/#organization",
+  "@id": "https://visuaal.ai/#organization",
   "name": "Visuaal",
   "description": "Leading provider of innovative digital signage solutions including DOOH advertising, LED screens, and holographic displays",
-  "url": "https://visuaal.com",
+  "url": "https://visuaal.ai",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://visuaal.com/logo/logo-full.svg",
+    "url": "https://visuaal.ai/logo/logo-full.svg",
     "width": "314",
     "height": "268"
   },
@@ -31,12 +31,12 @@ export const organizationSchema = {
 
 export const websiteSchema = {
   "@type": "WebSite",
-  "@id": "https://visuaal.com/#website",
-  "url": "https://visuaal.com",
+  "@id": "https://visuaal.ai/#website",
+  "url": "https://visuaal.ai",
   "name": "Visuaal - Digital Signage & Visual Solutions",
   "description": "Leading provider of innovative digital signage solutions including DOOH advertising, LED screens, and holographic displays",
   "publisher": {
-    "@id": "https://visuaal.com/#organization"
+    "@id": "https://visuaal.ai/#organization"
   },
   "inLanguage": "en-US"
 }
@@ -66,7 +66,7 @@ export const doohProductSchema = {
     "priceCurrency": "USD",
     "price": "Contact for pricing"
   },
-  "image": "https://visuaal.com/img/home/product-dooh.png"
+  "image": "https://visuaal.ai/img/home/product-dooh.png"
 }
 
 export const ledScreenProductSchema = {
@@ -83,7 +83,7 @@ export const ledScreenProductSchema = {
     "priceCurrency": "USD",
     "price": "Contact for pricing"
   },
-  "image": "https://visuaal.com/img/home/product-led-screen.png"
+  "image": "https://visuaal.ai/img/home/product-led-screen.png"
 }
 
 export const humanBoxProductSchema = {
@@ -100,7 +100,7 @@ export const humanBoxProductSchema = {
     "priceCurrency": "USD",
     "price": "Contact for pricing"
   },
-  "image": "https://visuaal.com/img/humanbox/humanbox1.png",
+  "image": "https://visuaal.ai/img/humanbox/humanbox1.png",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
