@@ -7,17 +7,43 @@ import Timeline from '@/components/sections/Timeline'
 import TimelineMobile from '@/components/ui/TimelineMobile'
 import GradientButton from '@/components/ui/GradientButton'
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import { breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Studio de Création | Visuaal',
-  description: 'Service complet de création de contenu visuel. Production vidéo, animation 3D, design graphique et post-production professionnelle.',
-  keywords: ['studio création', 'production vidéo', 'animation 3D', 'design graphique', 'post-production'],
+  title: 'Creative Studio - Visual Content Production',
+  description: 'Full-service visual content creation studio. Video production, 3D animation, graphic design, and professional post-production for immersive experiences.',
+  keywords: ['creative studio', 'video production', '3D animation', 'graphic design', 'post-production', 'visual content', 'immersive experiences'],
+  openGraph: {
+    title: 'Creative Studio - Visual Content Production | Visuaal',
+    description: 'Full-service visual content creation studio specializing in 3D animation, real-time graphics, and immersive visual experiences.',
+    images: [
+      {
+        url: '/img/studio.png',
+        width: 1200,
+        height: 630,
+        alt: 'Visuaal Creative Studio - 3D Animation & Visual Content Production',
+      },
+    ],
+  },
 }
 
 const StudioPage = () => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      breadcrumbSchema([
+        { name: 'Home', url: 'https://visuaal.ai' },
+        { name: 'Studio', url: 'https://visuaal.ai/studio' }
+      ])
+    ]
+  }
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* Hero Spline Section */}
       <HeroSpline

@@ -32,9 +32,9 @@ const ScreenPage = () => {
     '@graph': [
       ledScreenProductSchema,
       breadcrumbSchema([
-        { name: 'Home', url: 'https://visuaal.com' },
-        { name: 'Products', url: 'https://visuaal.com/products/screen' },
-        { name: 'LED Screens', url: 'https://visuaal.com/products/screen' }
+        { name: 'Home', url: 'https://visuaal.ai' },
+        { name: 'Products', url: 'https://visuaal.ai/products/screen' },
+        { name: 'LED Screens', url: 'https://visuaal.ai/products/screen' }
       ])
     ]
   }

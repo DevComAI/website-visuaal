@@ -33,9 +33,9 @@ const HoloPage = () => {
     '@graph': [
       humanBoxProductSchema,
       breadcrumbSchema([
-        { name: 'Home', url: 'https://visuaal.com' },
-        { name: 'Products', url: 'https://visuaal.com/products/holo' },
-        { name: 'Human Box', url: 'https://visuaal.com/products/holo' }
+        { name: 'Home', url: 'https://visuaal.ai' },
+        { name: 'Products', url: 'https://visuaal.ai/products/holo' },
+        { name: 'Human Box', url: 'https://visuaal.ai/products/holo' }
       ])
     ]
   }
@@ -141,18 +141,7 @@ const HoloPage = () => {
               </p>
             </div>
 
-            {/* Video Viewer */}
-            <div className="w-full h-[350px] rounded-2xl overflow-hidden flex items-center justify-center">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src="/oeil.mp4" type="video/mp4" />
-              </video>
-            </div>
+           
 
             {/* 4K LIVE Section */}
             <div className="text-center">

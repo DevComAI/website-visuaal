@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://visuaal.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://visuaal.ai'),
   alternates: {
     canonical: '/',
   },
