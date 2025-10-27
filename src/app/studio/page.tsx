@@ -149,18 +149,7 @@ const StudioPage = () => {
         />
       </div>
 
-      {/* Video Component - Mobile */}
-      <div className='h-[400px] block md:hidden  flex items-center justify-center'>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/orb.mp4" type="video/mp4" />
-        </video>
-      </div>
+    
     </div>
   )
 }
