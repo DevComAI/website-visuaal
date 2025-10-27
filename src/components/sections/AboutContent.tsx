@@ -83,31 +83,6 @@ const AboutContent = () => {
             </div>
           </div>
 
-          {/* Spline - Mobile */}
-          <div className="relative h-[300px] mix-blend-lighten order-first block md:hidden ">
-            <div style={{ zoom: '0.35' }}>
-              <OptimizedSplineViewer
-                scene="https://prod.spline.design/b5QNjdMLUJW-blFk/scene.splinecode"
-                style={{ width: '100%', height: '600px' }}
-                interactive={true}
-                priority={false}
-                loadingDelay={250}
-                placeholderVariant="gradient"
-              />
-            </div>
-
-            {/* Gradient overlays for smooth fade effect */}
-            <div className="absolute inset-0 pointer-events-none">
-              {/* Top fade */}
-              <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-[#211824] to-transparent"></div>
-              {/* Bottom fade */}
-              <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#211824] to-transparent"></div>
-              {/* Left fade */}
-              <div className="absolute top-0 left-0 bottom-0 w-8 bg-gradient-to-r from-[#211824] to-transparent"></div>
-              {/* Right fade */}
-              <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-[#211824] to-transparent"></div>
-            </div>
-          </div>
         </div>
           {/* Get Started Button */}
           <div className="pt-12 lg:pt-20 flex justify-center">

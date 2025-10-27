@@ -14,6 +14,7 @@ interface HeroSplineProps {
   splinePosition?: 'fullscreen' | 'right'
   priority?: boolean
   placeholder?: string
+  mobileImage?: string
 }
 
 const logHero = (message: string, data?: unknown) => {
@@ -29,7 +30,8 @@ const HeroSpline = ({
   textPosition = 'center',
   splinePosition = 'fullscreen',
   priority = false,
-  placeholder
+  placeholder,
+  mobileImage
 }: HeroSplineProps) => {
   const { progress } = useSplinePreloader(splineUrl, { priority: priority ? 'high' : 'normal' })
 
@@ -56,25 +58,33 @@ const HeroSpline = ({
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Spline Background - Interactive */}
-      {/* Mobile Spline */}
+      {/* Mobile - Image or Spline */}
       <div className="md:hidden absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden pointer-events-none">
-        <OptimizedSplineViewer
-          scene={splineUrl}
-          style={{
-            width: '100%',
-            height: '100%',
-            minHeight: '100vh',
-            minWidth: '100vw',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            objectFit: 'cover'
-          }}
-          interactive={false}
-          priority={priority}
-          placeholder={placeholder}
-          loadingDelay={200}
-        />
+        {mobileImage ? (
+          <img
+            src={mobileImage}
+            alt="Hero background"
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <OptimizedSplineViewer
+            scene={splineUrl}
+            style={{
+              width: '100%',
+              height: '100%',
+              minHeight: '100vh',
+              minWidth: '100vw',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              objectFit: 'cover'
+            }}
+            interactive={false}
+            priority={priority}
+            placeholder={placeholder}
+            loadingDelay={200}
+          />
+        )}
       </div>
 
       {/* Desktop Spline */}
