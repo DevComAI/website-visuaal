@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://visuaal.ai'
+  const baseUrl = 'https://visuaal.ai'
 
   // Use fixed dates or implement real file modification dates
   const currentDate = new Date('2025-01-15')

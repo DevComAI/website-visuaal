@@ -115,7 +115,7 @@ const Footer = () => {
             <h3 className="font-chillax text-xl lg:text-2xl leading-none mb-6 lg:mb-[48px]">Contact</h3>
             <div className="space-y-4 lg:space-y-[48px] font-chillax text-base font-normal leading-none text-gray-300">
               <p><a href="mailto:contact@visuaal.ai" className="hover:text-white transition-colors">contact@visuaal.ai</a></p>
-              <p><a href="tel:+971501234567" className="hover:text-white transition-colors">+971 50 123 4567</a></p>
+              <p><a href="tel:+971588045993" className="hover:text-white transition-colors">+971 58 804 5993</a></p>
               <p className="leading-6">Blue Tower,  <br />
                 Block A&B Office number 110,<br />
               Sheikh Zayed Road, Dubai, UAE</p>

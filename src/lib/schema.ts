@@ -16,7 +16,7 @@ export const organizationSchema = {
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+971-50-123-4567",
+    "telephone": "+971-58-804-5993",
     "contactType": "customer service",
     "availableLanguage": ["English", "French"],
     "email": "contact@visuaal.ai"
