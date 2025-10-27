@@ -115,7 +115,7 @@ const HeroContact = () => {
                   Let&apos;s talk
                 </h3>
                 <div className="space-y-1 sm:space-y-2 text-white">
-                  <p className="text-xs sm:text-sm lg:text-base xl:text-lg">contact@visuaal.ae</p>
+                  <p className="text-xs sm:text-sm lg:text-base xl:text-lg">contact@visuaal.ai</p>
                   <p className="text-xs sm:text-sm lg:text-base xl:text-lg">+971246719991</p>
                 </div>
               </div>

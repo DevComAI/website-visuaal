@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
-  generateEtags: false,
+  generateEtags: true,
   experimental: {
     optimizePackageImports: ['lucide-react', '@splinetool/react-spline', '@splinetool/runtime'],
   },
@@ -52,6 +52,18 @@ const nextConfig: NextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+          },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
           },
           {
             key: 'Link',

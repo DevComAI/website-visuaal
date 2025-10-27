@@ -54,10 +54,11 @@ const Header = () => {
           <Link href="/" className="block">
             <Image
               src="/logo/logo-v.svg"
-              alt="Visuaal Logo"
+              alt="Visuaal - Digital Signage & Visual Solutions Logo"
               width={40}
               height={40}
               className="h-8 sm:h-10 w-auto"
+              priority
             />
           </Link>
           

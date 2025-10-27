@@ -41,7 +41,7 @@ const MentionsLegalesPage = () => {
                 <p className="text-gray-300 mb-2 ml-4">Dubai Internet City</p>
                 <p className="text-gray-300 mb-2 ml-4">Dubai, Émirats Arabes Unis</p>
                 <p className="text-gray-300 mb-2"><strong>Téléphone fonctionnel :</strong> +971 4 XXX XXXX</p>
-                <p className="text-gray-300 mb-2"><strong>Adresse e-mail fonctionnelle :</strong> contact@visuaal.ae</p>
+                <p className="text-gray-300 mb-2"><strong>Adresse e-mail fonctionnelle :</strong> contact@visuaal.ai</p>
                 <p className="text-gray-300 mb-2"><strong>Directeur de la publication :</strong> [Nom du responsable légal]</p>
                 <p className="text-gray-300"><strong>Autorité de supervision :</strong> Dubai Internet City Authority</p>
               </div>
@@ -115,7 +115,7 @@ const MentionsLegalesPage = () => {
               </p>
               <p className="text-gray-300 leading-relaxed">
                 Pour exercer ces droits ou pour toute question sur le traitement de vos données,
-                vous pouvez nous contacter à l&apos;adresse : contact@visuaal.ae
+                vous pouvez nous contacter à l&apos;adresse : contact@visuaal.ai
               </p>
             </section>
 
@@ -175,7 +175,7 @@ const MentionsLegalesPage = () => {
                 <p className="font-semibold text-white">Visuaal LLC</p>
                 <p className="text-gray-300">Dubai Internet City</p>
                 <p className="text-gray-300">Dubai, Émirats Arabes Unis</p>
-                <p className="text-gray-300">Email : contact@visuaal.ae</p>
+                <p className="text-gray-300">Email : contact@visuaal.ai</p>
                 <p className="text-gray-300">Téléphone : +971 4 XXX XXXX</p>
               </div>
             </section>

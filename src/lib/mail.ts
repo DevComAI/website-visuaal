@@ -207,7 +207,7 @@ export async function sendNewsletterWelcomeEmail(data: NewsletterFormData) {
 export async function sendNewsletterNotification(email: string) {
   const mailOptions = {
     from: `"${process.env.SMTP_FROM_NAME}" <${process.env.SMTP_FROM_EMAIL}>`,
-    to: process.env.CONTACT_TO_EMAIL || 'contact@visuaal.ae',
+    to: process.env.CONTACT_TO_EMAIL || 'contact@visuaal.ai',
     subject: 'New newsletter subscription',
     html: `
       <h3>New newsletter subscription</h3>

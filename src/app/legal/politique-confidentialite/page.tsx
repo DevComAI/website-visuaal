@@ -44,7 +44,7 @@ const PolitiqueConfidentialitePage = () => {
               }} className=" p-6 rounded-lg">
                 <p className="text-gray-300 mb-2"><strong>Société :</strong> Visuaal LLC</p>
                 <p className="text-gray-300 mb-2"><strong>Adresse :</strong> Dubai Internet City, Dubai, Émirats Arabes Unis</p>
-                <p className="text-gray-300 mb-2"><strong>Email :</strong> contact@visuaal.ae</p>
+                <p className="text-gray-300 mb-2"><strong>Email :</strong> contact@visuaal.ai</p>
                 <p className="text-gray-300"><strong>Téléphone :</strong> +971 4 XXX XXXX</p>
                 <p className="text-gray-300"><strong>Responsable de la protection des données :</strong> [contact DPO à compléter]</p>
               </div>
@@ -191,7 +191,7 @@ const PolitiqueConfidentialitePage = () => {
               </div>
               
               <p className="text-gray-300 leading-relaxed mt-4">
-                Pour exercer ces droits, contactez-nous à : <strong>contact@visuaal.ae</strong>
+                Pour exercer ces droits, contactez-nous à : <strong>contact@visuaal.ai</strong>
               </p>
             </section>
 
@@ -281,7 +281,7 @@ const PolitiqueConfidentialitePage = () => {
                 une notification sur notre site.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                <strong>Contact pour questions :</strong> contact@visuaal.ae
+                <strong>Contact pour questions :</strong> contact@visuaal.ai
               </p>
             </section>
           </div>

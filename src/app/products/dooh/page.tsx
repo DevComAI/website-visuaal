@@ -5,18 +5,45 @@ import GradientText from '@/components/ui/GradientText'
 import DoohContent from '@/components/sections/DoohContent'
 import DoohTestimonial from '@/components/sections/DoohTestimonial'
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import { doohProductSchema, breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'DOOH - Digital Out Of Home | Visuaal',
-  description: 'Solutions d&apos;affichage publicitaire numérique extérieur. Écrans haute luminosité, gestion de contenu et ciblage géolocalisé.',
-  keywords: ['DOOH', 'affichage extérieur', 'publicité numérique', 'écrans publicitaires', 'outdoor digital'],
+  title: 'DOOH - Digital Out Of Home Advertising',
+  description: 'DOOH (Digital Out Of Home) is the new generation of outdoor advertising. Dynamic, high-impact media channel for streets, malls, and high-traffic areas.',
+  keywords: ['DOOH', 'digital out of home', 'outdoor advertising', 'digital advertising', 'outdoor digital displays', 'programmatic DOOH'],
+  openGraph: {
+    title: 'DOOH - Digital Out Of Home Advertising | Visuaal',
+    description: 'Dynamic, high-impact outdoor advertising that grabs attention in high-traffic areas. Deliver the right message, at the right time, in the right place.',
+    images: [
+      {
+        url: '/img/home/product-dooh.png',
+        width: 1200,
+        height: 630,
+        alt: 'DOOH - Digital Out Of Home Advertising Solutions',
+      },
+    ],
+  },
 }
 
 const DOOHPage = () => {
-
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      doohProductSchema,
+      breadcrumbSchema([
+        { name: 'Home', url: 'https://visuaal.com' },
+        { name: 'Products', url: 'https://visuaal.com/products/dooh' },
+        { name: 'DOOH', url: 'https://visuaal.com/products/dooh' }
+      ])
+    ]
+  }
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <Hero 
         backgroundImage="/img/home/product-dooh.png"

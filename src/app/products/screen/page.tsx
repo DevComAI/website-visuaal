@@ -6,14 +6,38 @@ import ProductService from '@/components/ui/ProductService'
 import GradientButton from '@/components/ui/GradientButton'
 import GradientText from '@/components/ui/GradientText'
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import { ledScreenProductSchema, breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Écrans Interactifs | Visuaal',
-  description: 'Solutions d&apos;écrans tactiles interactifs pour engager vos clients. Multi-touch, haute résolution et applications personnalisées.',
-  keywords: ['écrans interactifs', 'écrans tactiles', 'multi-touch', 'interface tactile', 'digital signage'],
+  title: 'LED Screens - Indoor & Outdoor Solutions',
+  description: 'LED displays offering stunning, vibrant visuals. Available for indoor and outdoor use, retail, events, or corporate spaces with unmatched flexibility.',
+  keywords: ['LED screens', 'indoor LED displays', 'outdoor LED screens', 'LED walls', 'digital displays', 'LED advertising'],
+  openGraph: {
+    title: 'LED Screens - Indoor & Outdoor Solutions | Visuaal',
+    description: 'LED displays bringing content to life with bright, vibrant, impossible-to-ignore visuals. Unmatched flexibility in size, shape, and impact.',
+    images: [
+      {
+        url: '/img/screen/hero.png',
+        width: 1200,
+        height: 630,
+        alt: 'LED Screens - Indoor & Outdoor Display Solutions',
+      },
+    ],
+  },
 }
 
 const ScreenPage = () => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ledScreenProductSchema,
+      breadcrumbSchema([
+        { name: 'Home', url: 'https://visuaal.com' },
+        { name: 'Products', url: 'https://visuaal.com/products/screen' },
+        { name: 'LED Screens', url: 'https://visuaal.com/products/screen' }
+      ])
+    ]
+  }
   const services = [
     {
       title: <>INDOOR LED <GradientText>SCREENS</GradientText></>,
@@ -66,6 +90,10 @@ const ScreenPage = () => {
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <Hero 
         backgroundImage="/img/screen/hero.png"
