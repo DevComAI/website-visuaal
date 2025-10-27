@@ -30,7 +30,7 @@ const AboutContent = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium mb-3 lg:mb-4">
                 OUR <GradientText>MISSIONS</GradientText>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
+              <p className="text-white text-base sm:text-lg lg:text-xl leading-relaxed">
                 At VISUAAL, we bring LED screens to life! Our mission is to transform spaces into dynamic digital experiences, offering cutting-edge content, expert consulting, seamless installation, and smart monetisation strategies. From 3D and holographic storytelling to tailored solutions, we make digital signage more than just a screen—it&apos;s an immersive journey.
               </p>
             </div>
@@ -40,7 +40,7 @@ const AboutContent = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium mb-3 lg:mb-4">
             OUR <GradientText>GOALS</GradientText>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
+              <p className="text-white text-base sm:text-lg lg:text-xl leading-relaxed">
                 We transform digital experiences with impactful visuals and cutting-edge technology. Our goal is to help businesses harness LED solutions to boost engagement and drive revenue.
                 With end-to-end expertise, we make digital signage effortless—from concept to execution—delivering tailored, high-performance solutions that turn every project into a powerful communication tool.
               </p>
@@ -51,7 +51,7 @@ const AboutContent = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium mb-3 lg:mb-4">
             WHY <GradientText>US</GradientText>
               </h2>
-              <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
+              <p className="text-white text-base sm:text-lg lg:text-xl leading-relaxed">
                 Because we don&apos;t just sell screens—we create unforgettable experiences! With expertise at every step, next-gen content, and a commitment to innovation, we&apos;re your partners in transformative digital signage success. Plus, we make monetisation work for you. More impact, more engagement, more ROI. Let me know if you&apos;d like any tweaks!
               </p>
             </div>
