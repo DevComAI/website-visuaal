@@ -149,19 +149,7 @@ const StudioPage = () => {
         />
       </div>
 
-      {/* Spline Component - Mobile */}
-      <div className='h-[400px] mix-blend-screen block md:hidden flex items-center justify-center'>
-        <div style={{ zoom: '0.3', width: '100%', height: '100%' }}>
-          <OptimizedSplineViewer
-            scene="https://prod.spline.design/VhnOlUUBXyLXytif/scene.splinecode"
-            style={{ width: '100%', height: '100%' }}
-            interactive={true}
-            priority={false}
-            loadingDelay={300}
-            placeholderVariant="gradient"
-          />
-        </div>
-      </div>
+    
     </div>
   )
 }

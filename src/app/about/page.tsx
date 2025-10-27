@@ -72,6 +72,7 @@ const AboutPage = () => {
         splineUrl="https://prod.spline.design/X07icIhhYxWFwhO1/scene.splinecode"
         priority={true}
         placeholder="/img/about/about-preview.jpg"
+        mobileImage="/heromobileabout.png"
       />
 
           <TitlePage

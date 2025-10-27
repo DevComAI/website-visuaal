@@ -113,18 +113,17 @@ const HoloPage = () => {
               </p>
             </div>
 
-            {/* Spline Viewer */}
-            <div className="w-full h-[350px] rounded-2xl flex items-center justify-center">
-              <div style={{ zoom: '0.35', width: '1000px', height: '1000px' }}>
-                <OptimizedSplineViewer
-                  scene="https://prod.spline.design/63D-bD0D4e6xHPvT/scene.splinecode"
-                  style={{ width: '100%', height: '100%' }}
-                  interactive={true}
-                  priority={false}
-                  loadingDelay={200}
-                  placeholderVariant="gradient"
-                />
-              </div>
+            {/* Video Viewer */}
+            <div className="w-full h-[350px] rounded-2xl overflow-hidden flex items-center justify-center">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="/oeil.mp4" type="video/mp4" />
+              </video>
             </div>
 
             {/* 4K LIVE Section */}
