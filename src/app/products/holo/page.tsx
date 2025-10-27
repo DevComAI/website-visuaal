@@ -7,17 +7,45 @@ import SupportCarousel from '@/components/sections/SupportCarousel'
 import HoloFeatures from '@/components/sections/HoloFeatures'
 import GradientButton from '@/components/ui/GradientButton'
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import { humanBoxProductSchema, breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Hologrammes | Visuaal',
-  description: 'Technologie holographique révolutionnaire pour des présentations spectaculaires. Projections 3D et effets visuels saisissants.',
-  keywords: ['hologrammes', 'projection 3D', 'technologie holographique', 'effets visuels', 'présentation spectaculaire'],
+  title: 'Human Box - Holographic Displays',
+  description: 'Holographic boxes offering a spectacular way to showcase your content in 3D. Available in three sizes, from compact units to life-size formats.',
+  keywords: ['holographic display', 'hologram', '3D hologram', 'human box', 'holographic technology', 'visual display'],
+  openGraph: {
+    title: 'Human Box - Holographic Displays | Visuaal',
+    description: 'Holographic boxes offering a spectacular way to showcase your content in 3D. No headset or glasses required.',
+    images: [
+      {
+        url: '/img/humanbox/hero.png',
+        width: 1200,
+        height: 630,
+        alt: 'Human Box - Holographic Display Technology',
+      },
+    ],
+  },
 }
 
 const HoloPage = () => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      humanBoxProductSchema,
+      breadcrumbSchema([
+        { name: 'Home', url: 'https://visuaal.com' },
+        { name: 'Products', url: 'https://visuaal.com/products/holo' },
+        { name: 'Human Box', url: 'https://visuaal.com/products/holo' }
+      ])
+    ]
+  }
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <Hero
         backgroundImage="/img/humanbox/hero.png"
@@ -235,7 +263,7 @@ Easily manage and customize your content — our technology is designed to meet 
               <div className="flex justify-center">
                 <Image
                   src="/img/humanbox/humanbox1.png"
-                  alt="Human Box device"
+                  alt="Human Box 86-inch holographic display cabinet showing transparent LCD screen for life-size 3D holographic images"
                   width={300}
                   height={400}
                   className="w-full max-w-[250px] md:max-w-[350px] lg:max-w-[400px] h-auto mix-blend-screen mt-10 md:mt-16 lg:mt-20"

@@ -241,7 +241,7 @@ const ConditionsUtilisationPage = () => {
                 <p className="font-semibold text-white">Visuaal LLC</p>
                 <p className="text-gray-300">Dubai Internet City</p>
                 <p className="text-gray-300">Dubai, Émirats Arabes Unis</p>
-                <p className="text-gray-300">Email : contact@visuaal.ae</p>
+                <p className="text-gray-300">Email : contact@visuaal.ai</p>
                 <p className="text-gray-300">Téléphone : +971 4 XXX XXXX</p>
                 <p className="text-gray-300">Service juridique : legal@visuaal.ae</p>
               </div>

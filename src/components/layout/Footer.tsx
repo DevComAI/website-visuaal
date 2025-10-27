@@ -48,7 +48,7 @@ const Footer = () => {
             <Link href="/" className="block mb-6">
               <Image
                 src="/logo/logo-full.svg"
-                alt="Visuaal Logo"
+                alt="Visuaal - Digital Signage Solutions - Full Logo"
                 width={314}
                 height={268}
                 className="max-w-[200px] lg:max-w-full h-auto mx-auto"
@@ -114,11 +114,11 @@ const Footer = () => {
           <div className="text-center sm:text-left">
             <h3 className="font-chillax text-xl lg:text-2xl leading-none mb-6 lg:mb-[48px]">Contact</h3>
             <div className="space-y-4 lg:space-y-[48px] font-chillax text-base font-normal leading-none text-gray-300">
-              <p>contact@visual.ae</p>
-              <p>+0123456789</p>
+              <p><a href="mailto:contact@visuaal.ai" className="hover:text-white transition-colors">contact@visuaal.ai</a></p>
+              <p><a href="tel:+971501234567" className="hover:text-white transition-colors">+971 50 123 4567</a></p>
               <p className="leading-6">Blue Tower,  <br />
                 Block A&B Office number 110,<br />
-              Sheikh Zayed Road, Dubaï</p>
+              Sheikh Zayed Road, Dubai, UAE</p>
             </div>
           </div>
 

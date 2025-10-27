@@ -9,11 +9,11 @@ import { PageReadyProvider } from '@/components/providers/PageReadyProvider';
 
 export const metadata: Metadata = {
   title: {
-    default: "Visuaal - Agence Digitale Créative",
+    default: "Visuaal - Digital Signage & Visual Solutions",
     template: "%s | Visuaal"
   },
-  description: "Agence digitale spécialisée dans la création de sites web, le design UX/UI et le marketing digital. Transformez votre vision en réalité digitale avec Visuaal.",
-  keywords: ["agence digitale", "création site web", "design UX/UI", "marketing digital", "développement web", "identité visuelle"],
+  description: "Leading provider of innovative digital signage solutions including DOOH advertising, LED screens, and holographic displays. Transform your brand with cutting-edge visual technology.",
+  keywords: ["digital signage", "DOOH", "LED screens", "holographic displays", "visual solutions", "digital advertising", "interactive displays"],
   authors: [{ name: "Visuaal" }],
   creator: "Visuaal",
   publisher: "Visuaal",
@@ -28,16 +28,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'fr_FR',
+    locale: 'en_US',
     url: '/',
-    title: "Visuaal - Agence Digitale Créative",
-    description: "Agence digitale spécialisée dans la création de sites web, le design UX/UI et le marketing digital.",
+    title: "Visuaal - Digital Signage & Visual Solutions",
+    description: "Leading provider of innovative digital signage solutions including DOOH advertising, LED screens, and holographic displays.",
     siteName: 'Visuaal',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Visuaal - Digital Signage & Visual Solutions',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Visuaal - Agence Digitale Créative",
-    description: "Agence digitale spécialisée dans la création de sites web, le design UX/UI et le marketing digital.",
+    title: "Visuaal - Digital Signage & Visual Solutions",
+    description: "Leading provider of innovative digital signage solutions including DOOH advertising, LED screens, and holographic displays.",
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -49,9 +58,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-site-verification',
   },
   icons: {
     icon: '/icon.ico',
@@ -66,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <head>
         {/* Preconnect to Spline CDN for faster loading */}
         <link rel="preconnect" href="https://prod.spline.design" />
