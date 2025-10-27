@@ -187,7 +187,7 @@ class PreloadAnalytics {
 
     try {
       observer.observe({ type: 'largest-contentful-paint', buffered: true });
-    } catch (e) {
+    } catch {
       // LCP not supported
     }
   }

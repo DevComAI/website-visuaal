@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 import GradientButton from '@/components/ui/GradientButton'
 

@@ -70,8 +70,7 @@ export function useSplinePreloader(
         }
 
         // Cache the response
-        const blob = await response.blob()
-        const objectUrl = URL.createObjectURL(blob)
+        await response.blob()
 
         preloadedScenes.set(url, true)
         setStatus({

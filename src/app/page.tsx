@@ -23,7 +23,6 @@ export default async function Home() {
   const userAgent = headersList.get('user-agent') || ''
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent) ||
                    (headersList.get('sec-ch-ua-mobile') === '?1')
-  const isIOS = /iPhone|iPad|iPod/i.test(userAgent)
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
