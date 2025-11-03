@@ -15,8 +15,8 @@ interface PagePreloadState {
 }
 
 /**
- * Hook pour gérer le préchargement des scènes de la page courante
- * Attend que toutes les scènes nécessaires soient en cache avant d'afficher la page
+ * Hook to manage preloading of current page scenes
+ * Waits for all necessary scenes to be cached before displaying page
  */
 export function usePagePreload() {
   const pathname = usePathname();
@@ -30,8 +30,8 @@ export function usePagePreload() {
   });
 
   const checkScenesReady = useCallback((scenes: string[]) => {
-    // TOUJOURS afficher l'écran de chargement, même si pas de scènes
-    // Cela masque la réinitialisation des composants et donne une UX cohérente
+    // ALWAYS show loading screen, even if no scenes
+    // This hides component reset and provides consistent UX
     setState((prev) => ({
       ...prev,
       isLoading: true,
@@ -42,7 +42,7 @@ export function usePagePreload() {
     }));
 
     if (scenes.length === 0) {
-      // Pas de scènes Spline, mais on affiche quand même l'écran pendant 500ms
+      // No Spline scenes, but still show screen for 500ms
       const timer = setTimeout(() => {
         setState({
           isLoading: false,
@@ -56,7 +56,7 @@ export function usePagePreload() {
       return () => clearTimeout(timer);
     }
 
-    // Attendre que toutes les scènes soient prêtes
+    // Wait until all scenes are ready
     let loadedCount = 0;
     let lastLoadedCount = 0;
     let hasTimedOut = false;
@@ -68,7 +68,7 @@ export function usePagePreload() {
 
       loadedCount = scenes.filter((url) => globalPreloader.isSceneLoaded(url)).length;
 
-      // Ne mettre à jour que si le nombre de scènes chargées a changé
+      // Only update if the number of loaded scenes has changed
       if (loadedCount !== lastLoadedCount) {
         lastLoadedCount = loadedCount;
         const progress = (loadedCount / scenes.length) * 100;
@@ -77,15 +77,15 @@ export function usePagePreload() {
           ...prev,
           progress,
           scenesLoaded: loadedCount,
-          isReady: false, // Toujours false tant que le délai minimum n'est pas écoulé
+          isReady: false, // Always false until minimum delay has elapsed
         }));
       }
 
-      // Attendre que TOUTES les conditions soient remplies :
-      // 1. Toutes les scènes sont chargées (ou en cache)
-      // 2. Le délai minimum est écoulé (pour masquer la réinitialisation)
+      // Wait until ALL conditions are met:
+      // 1. All scenes are loaded (or cached)
+      // 2. Minimum delay has elapsed (to hide reset)
       if (loadedCount === scenes.length && minDelayReached) {
-        // Tout est prêt !
+        // Everything is ready!
         cleanupDone = true;
         unsubscribe();
         clearInterval(interval);
@@ -98,28 +98,28 @@ export function usePagePreload() {
             isLoading: false,
             isReady: true,
           }));
-        }, 300); // Petit délai supplémentaire pour la transition fade
+        }, 300); // Small additional delay for fade transition
       }
     };
 
-    // Délai minimum de 1 seconde pour TOUTES les navigations
-    // Cela masque complètement la réinitialisation des composants Spline
+    // Minimum 1 second delay for ALL navigations
+    // This completely hides the reset of Spline components
     const minDelay = setTimeout(() => {
       minDelayReached = true;
-      checkProgress(); // Re-vérifier après le délai minimum
-    }, 1000); // 1 seconde minimum pour une expérience cohérente
+      checkProgress(); // Re-check after minimum delay
+    }, 1000); // 1 second minimum for consistent experience
 
-    // S'abonner aux changements de progression
+    // Subscribe to progress changes
     const unsubscribe = globalPreloader.onProgress(() => {
       checkProgress();
     });
 
-    // Vérifier périodiquement au cas où
+    // Check periodically just in case
     const interval = setInterval(checkProgress, 200);
 
-    // Timeout de sécurité : si après 15 secondes les scènes ne sont pas chargées, afficher quand même
+    // Safety timeout: if after 15 seconds scenes aren't loaded, show anyway
     const timeout = setTimeout(() => {
-      console.warn('[PagePreload] Timeout atteint, affichage de la page...');
+      console.warn('[PagePreload] Timeout reached, displaying page...');
       hasTimedOut = true;
       cleanupDone = true;
       setState((prev) => ({
@@ -127,9 +127,9 @@ export function usePagePreload() {
         isLoading: false,
         isReady: true,
       }));
-    }, 15000); // 15 secondes
+    }, 15000); // 15 seconds
 
-    // Vérifier immédiatement
+    // Check immediately
     checkProgress();
 
     // Cleanup
@@ -142,23 +142,23 @@ export function usePagePreload() {
   }, []);
 
   useEffect(() => {
-    // Obtenir les scènes nécessaires pour cette route
+    // Get necessary scenes for this route
     const scenes = getScenesForRoute(pathname);
 
     console.log(`[PagePreload] Route: ${pathname}, Scènes: ${scenes.length}`);
 
-    // Vérifier si les scènes sont prêtes
+    // Check if scenes are ready
     const cleanup = checkScenesReady(scenes);
 
     return cleanup;
   }, [pathname, checkScenesReady]);
 
-  // Démarrer le préchargement global une seule fois au montage
+  // Start global preloading once on mount
   useEffect(() => {
     globalPreloader.preloadAll(500).catch((err) => {
-      console.error('[PagePreload] Erreur préchargement:', err);
+      console.error('[PagePreload] Preload error:', err);
     });
-  }, []); // Seulement au montage initial
+  }, []); // Only on initial mount
 
   return state;
 }

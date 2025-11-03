@@ -77,13 +77,13 @@ const Contact = () => {
               <Send size={32} className="text-green-600" />
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Message envoyé avec succès !
+              Message sent successfully!
             </h2>
             <p className="text-gray-600 mb-8">
-              Merci pour votre message. Notre équipe vous répondra dans les plus brefs délais.
+              Thank you for your message. Our team will respond to you as soon as possible.
             </p>
             <Button onClick={() => setIsSubmitted(false)}>
-              Envoyer un autre message
+              Send another message
             </Button>
           </div>
         </div>

@@ -4,17 +4,17 @@ import { useGlobalPreload } from '@/lib/hooks/useGlobalPreload';
 import { useState, useEffect } from 'react';
 
 interface PreloadIndicatorProps {
-  /** Afficher l'indicateur même quand terminé (pour debug) */
+  /** Show indicator even when complete (for debug) */
   persistWhenComplete?: boolean;
-  /** Position de l'indicateur */
+  /** Indicator position */
   position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
-  /** Délai avant de masquer l'indicateur une fois terminé (ms) */
+  /** Delay before hiding indicator once complete (ms) */
   hideDelay?: number;
 }
 
 /**
- * Indicateur visuel du préchargement des scènes Spline
- * Affiche une barre de progression discrète en bas à droite
+ * Visual indicator for Spline scene preloading
+ * Displays a discreet progress bar in the bottom right
  */
 export default function PreloadIndicator({
   persistWhenComplete = false,
@@ -24,7 +24,7 @@ export default function PreloadIndicator({
   const { progress, isComplete, isLoading } = useGlobalPreload();
   const [isVisible, setIsVisible] = useState(true);
 
-  // Masquer l'indicateur après un délai quand le préchargement est terminé
+  // Hide indicator after delay when preloading is complete
   useEffect(() => {
     if (isComplete && !persistWhenComplete) {
       const timer = setTimeout(() => {
@@ -35,7 +35,7 @@ export default function PreloadIndicator({
     }
   }, [isComplete, persistWhenComplete, hideDelay]);
 
-  // Ne pas afficher si pas de préchargement en cours et terminé
+  // Do not display if no preload in progress and completed
   if (!isVisible || (!isLoading && isComplete && !persistWhenComplete)) {
     return null;
   }
@@ -108,7 +108,7 @@ export default function PreloadIndicator({
 }
 
 /**
- * Version minimaliste de l'indicateur (juste une barre)
+ * Minimal version of the indicator (just a bar)
  */
 export function PreloadIndicatorMinimal() {
   const { progress, isComplete } = useGlobalPreload();

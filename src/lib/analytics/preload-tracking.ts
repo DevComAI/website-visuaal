@@ -1,5 +1,5 @@
 /**
- * Outils de tracking et monitoring pour le préchargement Spline
+ * Tracking and monitoring tools for Spline preloading
  */
 
 export interface PreloadMetrics {
@@ -30,18 +30,18 @@ class PreloadAnalytics {
   private isTracking = false;
 
   /**
-   * Démarre le tracking du préchargement
+   * Start preload tracking
    */
   startTracking(): void {
     this.startTime = performance.now();
     this.isTracking = true;
     this.sceneMetrics.clear();
 
-    console.log('[Analytics] Tracking démarré');
+    console.log('[Analytics] Tracking started');
   }
 
   /**
-   * Track le chargement d'une scène
+   * Track scene loading
    */
   trackSceneLoad(
     sceneUrl: string,
@@ -72,7 +72,7 @@ class PreloadAnalytics {
   }
 
   /**
-   * Termine le tracking et génère les métriques
+   * Stop tracking and generate metrics
    */
   async stopTracking(): Promise<PreloadMetrics> {
     if (!this.isTracking) {
@@ -109,28 +109,28 @@ class PreloadAnalytics {
 
     console.log('[Analytics] Tracking terminé:', preloadMetrics);
 
-    // Envoyer à Google Analytics si disponible
+    // Send to Google Analytics if available
     this.sendToAnalytics(preloadMetrics);
 
     return preloadMetrics;
   }
 
   /**
-   * Obtient les métriques d'une scène spécifique
+   * Get metrics for a specific scene
    */
   getSceneMetric(sceneUrl: string): SceneLoadMetric | undefined {
     return this.sceneMetrics.get(sceneUrl);
   }
 
   /**
-   * Obtient toutes les métriques de scènes
+   * Get all scene metrics
    */
   getAllSceneMetrics(): SceneLoadMetric[] {
     return Array.from(this.sceneMetrics.values());
   }
 
   /**
-   * Envoie les métriques à Google Analytics
+   * Send metrics to Google Analytics
    */
   private sendToAnalytics(metrics: PreloadMetrics): void {
     if (typeof window === 'undefined') return;
@@ -150,7 +150,7 @@ class PreloadAnalytics {
       });
     }
 
-    // Console log pour développement
+    // Console log for development
     console.table({
       'Total Scenes': metrics.totalScenes,
       'Loaded': metrics.loadedScenes,
@@ -193,7 +193,7 @@ class PreloadAnalytics {
   }
 
   /**
-   * Génère un rapport de performance
+   * Generate performance report
    */
   generateReport(): string {
     const metrics = this.getAllSceneMetrics();
@@ -228,7 +228,7 @@ class PreloadAnalytics {
 export const preloadAnalytics = new PreloadAnalytics();
 
 /**
- * Types pour Google Analytics
+ * Types for Google Analytics
  */
 declare global {
   interface Window {

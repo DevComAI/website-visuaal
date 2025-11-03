@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Conditions Générales de Vente | Visuaal',
-  description: 'Consultez les conditions générales de vente de Visuaal pour nos services de communication visuelle.',
+  title: 'Terms of Sale | Visuaal',
+  description: 'Review the terms of sale for Visuaal visual communication services.',
   robots: { index: false, follow: false },
 }
 
@@ -16,216 +16,216 @@ const CGVPage = () => {
           backdropFilter: 'blur(10px)'
         }}>
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 lg:mb-8">
-            Conditions Générales de Vente
+            Terms of Sale
           </h1>
-          
+
           <div className="prose prose-lg max-w-none">
             <p className="text-sm text-gray-400 mb-8">
-              Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
+              Last updated: {new Date().toLocaleDateString('en-US')}
             </p>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">1. Objet et champ d&apos;application</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">1. Purpose and Scope</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Les présentes conditions générales de vente (CGV) s&apos;appliquent à toutes les prestations
-                de services proposées par Visuaal, société établie à Dubai spécialisée dans les solutions de communication
-                visuelle et technologies d&apos;affichage innovantes.
+                These terms of sale (ToS) apply to all services offered by Visuaal, a company established
+                in Dubai specializing in visual communication solutions and innovative display technologies.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Ces CGV régissent l&apos;ensemble des relations commerciales entre Visuaal et ses clients dans les
-                Émirats Arabes Unis et la région MENA, qu&apos;il s&apos;agisse de vente de matériel, de location, de prestations de services
-                ou de solutions sur mesure.
+                These ToS govern all business relationships between Visuaal and its clients in the
+                United Arab Emirates and the MENA region, whether for equipment sales, rental, service
+                provision, or custom solutions.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Toute commande implique l&apos;acceptation sans réserve des présentes CGV par le client. Aucune condition 
-                particulière ne peut, sauf acceptation formelle et écrite de Visuaal, prévaloir contre les présentes CGV.
+                Any order implies unreserved acceptance of these ToS by the client. No particular condition
+                may, except formal written acceptance by Visuaal, prevail over these ToS.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">2. Services proposés</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">2. Services Offered</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Visuaal propose les services suivants :
+                Visuaal offers the following services:
               </p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                <li>Solutions DOOH (Digital Out Of Home)</li>
-                <li>Écrans interactifs et tactiles</li>
-                <li>Technologies holographiques</li>
-                <li>Services de studio de création</li>
-                <li>Conseil, installation et maintenance</li>
+                <li>DOOH (Digital Out Of Home) Solutions</li>
+                <li>Interactive and Touch Screens</li>
+                <li>Holographic Technologies</li>
+                <li>Creative Studio Services</li>
+                <li>Consulting, Installation and Maintenance</li>
               </ul>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">3. Commandes et devis</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">3. Orders and Quotes</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Toute commande fait l&apos;objet d&apos;un devis préalable détaillé gratuit. Le devis est valable 
-                30 jours à compter de sa date d&apos;émission. La commande n&apos;est ferme et définitive 
-                qu&apos;après acceptation écrite du devis par le client et versement de l&apos;acompte prévu.
+                All orders are subject to a detailed free quote. The quote is valid for 30 days from
+                its date of issue. The order is firm and final only after written acceptance of the quote
+                by the client and payment of the agreed deposit.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Les modifications de commande demandées par le client ne seront prises en compte que dans la limite 
-                de nos possibilités et feront l&apos;objet d&apos;un avenant au devis initial.
+                Order modifications requested by the client will only be taken into account within the
+                limits of our possibilities and will be subject to an amendment to the initial quote.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                En cas d&apos;annulation de commande par le client, l&apos;acompte versé restera acquis à Visuaal 
-                à titre d&apos;indemnité forfaitaire, sans préjudice de toute autre action.
+                In case of order cancellation by the client, the deposit paid will remain acquired by
+                Visuaal as a flat-rate compensation, without prejudice to any other action.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">4. Prix et modalités de paiement</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">4. Prices and Payment Terms</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Les prix sont indiqués hors taxes. Le paiement s&apos;effectue selon les modalités suivantes :
+                Prices are indicated excluding taxes. Payment is made according to the following terms:
               </p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                <li>30% à la commande</li>
-                <li>40% à la livraison</li>
-                <li>30% à la mise en service</li>
+                <li>30% on order</li>
+                <li>40% on delivery</li>
+                <li>30% on commissioning</li>
               </ul>
               <p className="text-gray-300 leading-relaxed mt-4">
-                Les prix sont exprimés en AED (Dirham des Émirats Arabes Unis). La TVA (5%) sera ajoutée
-                conformément à la réglementation fiscale des EAU.
+                Prices are expressed in AED (United Arab Emirates Dirham). VAT (5%) will be added
+                in accordance with UAE tax regulations.
               </p>
               <p className="text-gray-300 leading-relaxed mt-4">
-                Tout retard de paiement entraîne l&apos;application d&apos;intérêts de retard conformément
-                à la législation des Émirats Arabes Unis.
+                Any late payment will result in the application of late payment interest in accordance
+                with the laws of the United Arab Emirates.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">5. Livraison et installation</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">5. Delivery and Installation</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                <strong>Zones de livraison :</strong> Nous livrons dans tous les Émirats (Dubai, Abu Dhabi, Sharjah, etc.)
-                avec des frais de livraison calculés selon la zone géographique.
+                <strong>Delivery Zones:</strong> We deliver to all Emirates (Dubai, Abu Dhabi, Sharjah, etc.)
+                with delivery fees calculated according to geographic zone.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                <strong>Délais :</strong> Les délais de livraison indiqués sont contractuels. En cas de retard,
-                le client est informé et peut demander l&apos;annulation conformément au droit des consommateurs des EAU.
+                <strong>Timelines:</strong> The indicated delivery times are contractual. In case of delay,
+                the client is informed and may request cancellation in accordance with UAE consumer law.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                <strong>Coûts :</strong> Les frais de transport sont indiqués avant validation de la commande.
-                Livraison gratuite pour les commandes supérieures à 5000 AED dans l&apos;émirat de Dubai.
+                <strong>Costs:</strong> Shipping costs are indicated before order validation.
+                Free delivery for orders over 5000 AED in the Emirate of Dubai.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                <strong>Installation :</strong> Réalisée par nos équipes certifiées selon les normes techniques des EAU
-                et les standards internationaux de sécurité. Garantie d&apos;installation incluse.
+                <strong>Installation:</strong> Performed by our certified teams according to UAE technical
+                standards and international safety standards. Installation guarantee included.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">6. Droit de retour et remboursement (Loi UAE 2023)</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">6. Right of Return and Refund (UAE Law 2023)</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                <strong>Droit de rétractation :</strong> Conformément au Décret-Loi Fédéral n° 14 de 2023,
-                vous disposez d&apos;un délai de 14 jours calendaires pour retourner vos achats,
-                sans avoir à justifier de motifs ni à payer de pénalités.
+                <strong>Right of Withdrawal:</strong> In accordance with Federal Decree-Law No. 14 of 2023,
+                you have a 14 calendar day period to return your purchases without having to justify reasons
+                or pay penalties.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                <strong>Conditions de retour :</strong>
+                <strong>Return Conditions:</strong>
               </p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-4">
-                <li>Produits dans leur emballage d&apos;origine, en parfait état</li>
-                <li>Accompagnés de tous les accessoires et de la facture</li>
-                <li>Non utilisés et non installés (sauf défaut constaté)</li>
-                <li>Demande de retour via notre service client : returns@visuaal.ae</li>
+                <li>Products in their original packaging, in perfect condition</li>
+                <li>Accompanied by all accessories and invoice</li>
+                <li>Unused and not installed (except identified defect)</li>
+                <li>Return request via our customer service: returns@visuaal.ae</li>
               </ul>
               <p className="text-gray-300 leading-relaxed mb-4">
-                <strong>Remboursement :</strong> Le remboursement s&apos;effectue dans un délai maximum de 14 jours
-                après réception du produit retourné, par le même moyen de paiement utilisé pour l&apos;achat.
+                <strong>Refund:</strong> Refunds are processed within a maximum of 14 days after receiving
+                the returned product, using the same payment method used for purchase.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                <strong>Produits non conformes :</strong> La loi fédérale n° 15 de 2020 garantit le droit de retourner
-                des produits ne correspondant pas à la description ou à la qualité attendue, avec prise en charge
-                des frais de retour par Visuaal.
+                <strong>Non-Compliant Products:</strong> Federal Law No. 15 of 2020 guarantees the right to
+                return products that do not match the description or expected quality, with return costs
+                covered by Visuaal.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">7. Garanties</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">7. Warranties</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Nos équipements bénéficient d&apos;une garantie constructeur standard de 24 mois. Les prestations de service 
-                sont garanties selon les termes du contrat de maintenance souscrit.
+                Our equipment benefits from a standard manufacturer&apos;s warranty of 24 months. Service
+                provisions are guaranteed according to the terms of the subscribed maintenance contract.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                La garantie couvre les défauts de fabrication et les vices cachés. Elle ne couvre pas :
+                The warranty covers manufacturing defects and hidden defects. It does not cover:
               </p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-4">
-                <li>Les dommages résultant d&apos;un usage non conforme ou de négligence</li>
-                <li>L&apos;usure normale des équipements</li>
-                <li>Les dommages causés par des tiers ou cas de force majeure</li>
-                <li>Les modifications non autorisées du matériel</li>
+                <li>Damage resulting from non-compliant use or negligence</li>
+                <li>Normal wear and tear of equipment</li>
+                <li>Damage caused by third parties or force majeure</li>
+                <li>Unauthorized modifications to the equipment</li>
               </ul>
               <p className="text-gray-300 leading-relaxed">
-                Pour bénéficier de la garantie, le client doit notifier le défaut dans les 48 heures de sa découverte.
+                To benefit from the warranty, the client must notify the defect within 48 hours of its discovery.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">8. Sécurité des transactions électroniques</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">8. Electronic Transaction Security</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Conformément au Décret-Loi de 2023 sur le commerce électronique, Visuaal garantit :
+                In accordance with the 2023 Decree-Law on electronic commerce, Visuaal guarantees:
               </p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-4">
-                <li>Chiffrement SSL/TLS de toutes les données de paiement</li>
-                <li>Conformité aux standards PCI-DSS pour la sécurité des cartes bancaires</li>
-                <li>Authentification forte pour les paiements électroniques</li>
-                <li>Protection contre la fraude par des systèmes de détection avancés</li>
-                <li>Sauvegarde sécurisée des données de transaction</li>
+                <li>SSL/TLS encryption of all payment data</li>
+                <li>Compliance with PCI-DSS standards for credit card security</li>
+                <li>Strong authentication for electronic payments</li>
+                <li>Fraud protection through advanced detection systems</li>
+                <li>Secure backup of transaction data</li>
               </ul>
               <p className="text-gray-300 leading-relaxed">
-                En cas de problème de paiement, contactez immédiatement notre service client au +971 4 XXX XXXX.
+                In case of payment problems, immediately contact our customer service at +971 4 XXX XXXX.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">9. Responsabilité</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">9. Liability</h2>
               <p className="text-gray-300 leading-relaxed">
-                La responsabilité de Visuaal ne peut excéder le montant de la prestation en cause.
-                Visuaal ne saurait être tenue responsable des dommages indirects.
+                Visuaal&apos;s liability cannot exceed the amount of the service in question.
+                Visuaal cannot be held liable for indirect damages.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">8. Propriété intellectuelle</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">10. Intellectual Property</h2>
               <p className="text-gray-300 leading-relaxed">
-                Tous les contenus créés par Visuaal restent sa propriété intellectuelle sauf accord 
-                contraire. Le client s&apos;engage à respecter les droits de propriété intellectuelle.
+                All content created by Visuaal remains its intellectual property unless otherwise agreed.
+                The client undertakes to respect intellectual property rights.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">9. Protection des données</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">11. Data Protection</h2>
               <p className="text-gray-300 leading-relaxed">
-                Visuaal s&apos;engage à respecter la réglementation des Émirats Arabes Unis concernant la protection
-                des données personnelles, notamment la loi fédérale sur la protection des données des EAU.
+                Visuaal undertakes to comply with UAE regulations concerning the protection of personal data,
+                including the UAE Federal Data Protection Law.
               </p>
             </section>
 
             <section className="mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">10. Droit applicable</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">12. Applicable Law</h2>
               <p className="text-gray-300 leading-relaxed">
-                Les présentes CGV sont soumises au droit des Émirats Arabes Unis. En cas de litige, les parties
-                s&apos;efforcent de trouver une solution amiable par médiation. À défaut, les tribunaux de Dubai
-                seront seuls compétents.
+                These ToS are subject to the law of the United Arab Emirates. In case of dispute, the parties
+                will endeavor to find an amicable solution through mediation. Failing this, the courts of Dubai
+                will have sole jurisdiction.
               </p>
             </section>
 
             <section>
               <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">Contact</h2>
               <p className="text-gray-300 leading-relaxed">
-                Pour toute question concernant ces conditions générales de vente :
+                For any questions regarding these terms of sale:
               </p>
               <div className="p-4 rounded-lg mt-4" style={{
                 background: 'linear-gradient(135deg, rgba(71, 63, 185, 0.15) 0%, rgba(149, 18, 182, 0.15) 100%)',
                 border: '1px solid rgba(71, 63, 185, 0.3)'
               }}>
                 <p className="font-semibold text-white">Visuaal LLC</p>
-                <p className="text-gray-300">Dubai Internet City</p>
-                <p className="text-gray-300">Dubai, Émirats Arabes Unis</p>
-                <p className="text-gray-300">Email : contact@visuaal.ai</p>
-                <p className="text-gray-300">Téléphone : +971 4 XXX XXXX</p>
-                <p className="text-gray-300">License : [numéro de licence commerciale Dubai]</p>
-                <p className="text-gray-300">TRN : [numéro d&apos;enregistrement fiscal EAU]</p>
+                <p className="text-gray-300">Blue Tower,</p>
+                <p className="text-gray-300">Block A&B Office number 110,</p>
+                <p className="text-gray-300">Sheikh Zayed Road, Dubai, UAE</p>
+                <p className="text-gray-300">Email: contact@visuaal.ai</p>
+                <p className="text-gray-300">Phone: +971 58 804 5993</p>
+                <p className="text-gray-300">License: [Dubai commercial license number]</p>
+                <p className="text-gray-300">TRN: [UAE tax registration number]</p>
               </div>
             </section>
           </div>

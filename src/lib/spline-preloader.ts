@@ -1,6 +1,6 @@
 /**
- * Gestionnaire de préchargement global des scènes Spline
- * Charge toutes les scènes en arrière-plan avec priorisation
+ * Global preload manager for Spline scenes
+ * Loads all scenes in the background with prioritization
  */
 
 import { preloadAnalytics } from './analytics/preload-tracking';
@@ -25,7 +25,7 @@ export interface PreloadProgress {
 export type ProgressCallback = (progress: PreloadProgress) => void;
 
 class SplinePreloadManager {
-  // Toutes les scènes Spline du site (basées sur l'audit)
+  // All Spline scenes on the site (based on audit)
   private readonly scenes: SplineScene[] = [
     // Priority 1: Homepage critical (0.36 MB)
     { name: 'INFORM', url: 'https://prod.spline.design/1kfiH0yZ5dSGioTU/scene.splinecode', priority: 'high', sizeEstimateMB: 0.10 },
@@ -55,20 +55,20 @@ class SplinePreloadManager {
   private loadedCount = 0;
 
   constructor() {
-    // Initialiser tous les statuts à 'pending'
+    // Initialize all statuses to 'pending'
     this.scenes.forEach((scene) => {
       this.sceneStatuses.set(scene.url, 'pending');
     });
   }
 
   /**
-   * Log la mémoire actuelle
+   * Log current memory usage
    */
   private logMemory(context: string): void {
     if ('memory' in performance) {
       const memory = (performance as { memory?: { usedJSHeapSize: number; totalJSHeapSize: number; jsHeapSizeLimit: number } }).memory;
       if (!memory) return;
-      console.log(`[Preloader] 💾 Mémoire (${context}):`, {
+      console.log(`[Preloader] 💾 Memory (${context}):`, {
         usedJSHeapSize: `${(memory.usedJSHeapSize / 1048576).toFixed(2)} MB`,
         totalJSHeapSize: `${(memory.totalJSHeapSize / 1048576).toFixed(2)} MB`,
         limit: `${(memory.jsHeapSizeLimit / 1048576).toFixed(2)} MB`,
@@ -78,63 +78,63 @@ class SplinePreloadManager {
   }
 
   /**
-   * Précharge toutes les scènes par ordre de priorité
+   * Preload all scenes in priority order
    */
   async preloadAll(startDelayMs = 2000): Promise<void> {
     if (this.isPreloading) {
-      console.log('[Preloader] Préchargement déjà en cours');
+      console.log('[Preloader] Preloading already in progress');
       return;
     }
 
     this.isPreloading = true;
-    console.log('[Preloader] Démarrage du préchargement dans', startDelayMs, 'ms');
-    this.logMemory('Avant démarrage');
+    console.log('[Preloader] Starting preload in', startDelayMs, 'ms');
+    this.logMemory('Before start');
 
-    // Démarrer le tracking
+    // Start tracking
     preloadAnalytics.startTracking();
 
-    // Attendre le délai initial pour ne pas impacter le chargement de la page
+    // Wait for initial delay to avoid impacting page load
     await new Promise((resolve) => setTimeout(resolve, startDelayMs));
 
-    // Grouper les scènes par priorité
+    // Group scenes by priority
     const priorityGroups = this.groupByPriority();
 
-    console.log('[Preloader] Préchargement de', this.scenes.length, 'scènes...');
+    console.log('[Preloader] Preloading', this.scenes.length, 'scenes...');
 
-    // Charger chaque groupe de priorité séquentiellement
+    // Load each priority group sequentially
     for (const [priority, scenes] of priorityGroups) {
-      console.log(`[Preloader] Chargement groupe ${priority} (${scenes.length} scènes)...`);
-      this.logMemory(`Avant groupe ${priority}`);
+      console.log(`[Preloader] Loading group ${priority} (${scenes.length} scenes)...`);
+      this.logMemory(`Before group ${priority}`);
 
-      // Charger toutes les scènes du groupe en parallèle
+      // Load all scenes in the group in parallel
       await Promise.allSettled(
         scenes.map((scene) => this.preloadScene(scene))
       );
 
-      this.logMemory(`Après groupe ${priority}`);
+      this.logMemory(`After group ${priority}`);
 
-      // Petit délai entre les groupes pour éviter de saturer la bande passante
+      // Small delay between groups to avoid saturating bandwidth
       if (priority !== 'very-low') {
         await new Promise((resolve) => setTimeout(resolve, 500));
       }
     }
 
-    console.log('[Preloader] Préchargement terminé!');
-    this.logMemory('Après terminaison');
+    console.log('[Preloader] Preloading complete!');
+    this.logMemory('After completion');
     this.isPreloading = false;
 
-    // Arrêter le tracking et générer le rapport
+    // Stop tracking and generate report
     const metrics = await preloadAnalytics.stopTracking();
-    console.log('[Preloader] Métriques finales:', metrics);
+    console.log('[Preloader] Final metrics:', metrics);
   }
 
   /**
-   * Précharge une scène spécifique
+   * Preload a specific scene
    */
   async preloadScene(scene: SplineScene): Promise<void> {
     const url = scene.url;
 
-    // Si déjà en cours de chargement ou chargée, retourner la promesse existante
+    // If already loading or loaded, return existing promise
     if (this.scenePromises.has(url)) {
       return this.scenePromises.get(url)!;
     }
@@ -149,18 +149,18 @@ class SplinePreloadManager {
         const duration = performance.now() - startTime;
         this.sceneStatuses.set(url, 'loaded');
         this.loadedCount++;
-        console.log(`[Preloader] ✅ ${scene.name} chargée (${this.loadedCount}/${this.scenes.length})`);
+        console.log(`[Preloader] ✅ ${scene.name} loaded (${this.loadedCount}/${this.scenes.length})`);
 
-        // Track le succès
+        // Track success
         preloadAnalytics.trackSceneLoad(url, scene.name, true, duration, false);
         this.notifyProgress();
       })
       .catch((error) => {
         const duration = performance.now() - startTime;
         this.sceneStatuses.set(url, 'error');
-        console.error(`[Preloader] ❌ Erreur ${scene.name}:`, error);
+        console.error(`[Preloader] ❌ Error ${scene.name}:`, error);
 
-        // Track l'échec
+        // Track failure
         preloadAnalytics.trackSceneLoad(url, scene.name, false, duration, false, error.message);
         this.notifyProgress();
       });
@@ -170,84 +170,84 @@ class SplinePreloadManager {
   }
 
   /**
-   * Fetch une scène avec retry
+   * Fetch a scene with retry
    */
   private async fetchScene(url: string, retries = 3): Promise<void> {
     const sceneName = url.split('/').pop()?.split('.')[0] || 'unknown';
 
     for (let attempt = 1; attempt <= retries; attempt++) {
       try {
-        console.log(`[Preloader] 🌐 Fetch ${sceneName} (tentative ${attempt}/${retries})`);
+        console.log(`[Preloader] 🌐 Fetch ${sceneName} (attempt ${attempt}/${retries})`);
 
         const response = await fetch(url, {
           mode: 'cors',
-          cache: 'force-cache', // Utiliser le cache si disponible
+          cache: 'force-cache', // Use cache if available
         });
 
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
 
-        // Consommer la réponse (le Service Worker la mettra en cache)
+        // Consume response (Service Worker will cache it)
         const blob = await response.blob();
-        console.log(`[Preloader] ✅ Fetch ${sceneName} réussi (${(blob.size / 1048576).toFixed(2)} MB)`);
+        console.log(`[Preloader] ✅ Fetch ${sceneName} successful (${(blob.size / 1048576).toFixed(2)} MB)`);
         return;
       } catch (error) {
-        console.error(`[Preloader] ❌ Erreur fetch ${sceneName} (tentative ${attempt}/${retries}):`, error);
+        console.error(`[Preloader] ❌ Fetch error ${sceneName} (attempt ${attempt}/${retries}):`, error);
 
         if (attempt === retries) {
           throw error;
         }
-        // Attendre avant de réessayer (backoff exponentiel)
+        // Wait before retrying (exponential backoff)
         const delayMs = attempt * 1000;
-        console.log(`[Preloader] ⏳ Retry dans ${delayMs}ms...`);
+        console.log(`[Preloader] ⏳ Retry in ${delayMs}ms...`);
         await new Promise((resolve) => setTimeout(resolve, delayMs));
       }
     }
   }
 
   /**
-   * Attend qu'une scène spécifique soit chargée
+   * Wait for a specific scene to be loaded
    */
   async waitForScene(url: string): Promise<void> {
     const scene = this.scenes.find((s) => s.url === url);
     if (!scene) {
-      console.warn(`[Preloader] Scène inconnue: ${url}`);
+      console.warn(`[Preloader] Unknown scene: ${url}`);
       return;
     }
 
     const status = this.sceneStatuses.get(url);
 
-    // Si déjà chargée, retourner immédiatement
+    // If already loaded, return immediately
     if (status === 'loaded') {
       return Promise.resolve();
     }
 
-    // Si en cours de chargement, attendre la promesse existante
+    // If loading, wait for existing promise
     if (this.scenePromises.has(url)) {
       return this.scenePromises.get(url)!;
     }
 
-    // Sinon, lancer le préchargement de cette scène
+    // Otherwise, start preloading this scene
     return this.preloadScene(scene);
   }
 
   /**
-   * Vérifie si une scène est chargée
+   * Check if a scene is loaded
    */
   isSceneLoaded(url: string): boolean {
     return this.sceneStatuses.get(url) === 'loaded';
   }
 
   /**
-   * Obtient le statut d'une scène
+   * Get the status of a scene
    */
   getSceneStatus(url: string): 'pending' | 'loading' | 'loaded' | 'error' {
     return this.sceneStatuses.get(url) || 'pending';
   }
 
   /**
-   * Obtient le progrès global
+   * Get overall progress
    */
   getProgress(): PreloadProgress {
     return {
@@ -259,19 +259,19 @@ class SplinePreloadManager {
   }
 
   /**
-   * S'abonne aux changements de progrès
+   * Subscribe to progress changes
    */
   onProgress(callback: ProgressCallback): () => void {
     this.progressCallbacks.add(callback);
 
-    // Retourner une fonction de désabonnement
+    // Return unsubscribe function
     return () => {
       this.progressCallbacks.delete(callback);
     };
   }
 
   /**
-   * Notifie tous les callbacks de progrès
+   * Notify all progress callbacks
    */
   private notifyProgress(currentScene?: string): void {
     const progress: PreloadProgress = {
@@ -286,12 +286,12 @@ class SplinePreloadManager {
   }
 
   /**
-   * Groupe les scènes par priorité
+   * Group scenes by priority
    */
   private groupByPriority(): Map<PreloadPriority, SplineScene[]> {
     const groups = new Map<PreloadPriority, SplineScene[]>();
 
-    // Ordre de priorité
+    // Priority order
     const priorities: PreloadPriority[] = ['high', 'medium', 'low', 'very-low'];
 
     priorities.forEach((priority) => {
@@ -305,7 +305,7 @@ class SplinePreloadManager {
   }
 
   /**
-   * Réinitialise le préchargement
+   * Reset preloading
    */
   reset(): void {
     this.scenePromises.clear();
@@ -321,5 +321,5 @@ class SplinePreloadManager {
   }
 }
 
-// Instance singleton
+// Singleton instance
 export const globalPreloader = new SplinePreloadManager();

@@ -136,7 +136,7 @@ const ImageCarousel = ({
 
   return (
     <div className="relative w-full mx-auto overflow-hidden py-2 md:py-4">
-      {/* Bouton navigation gauche - caché sur mobile */}
+      {/* Left navigation button - hidden on mobile */}
       <div className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20">
         <div
           className="relative p-[1px] rounded-full w-12 h-12 transition-transform duration-300 ease-out hover:scale-110"
@@ -208,10 +208,10 @@ const ImageCarousel = ({
                   sizes="(max-width: 768px) 300px, (max-width: 1024px) 450px, 600px"
                 />
                 
-                {/* Overlay pour les images non centrales */}
+                {/* Overlay for non-centered images */}
                 {index !== currentIndex && (
                   <>
-                    {/* Calculer la position relative pour les dégradés */}
+                    {/* Calculate relative position for gradients */}
                     {(() => {
                       const distance = index - currentIndex
                       let adjustedDistance = distance
@@ -222,11 +222,11 @@ const ImageCarousel = ({
                       } else if (distance < -images.length / 2) {
                         adjustedDistance = distance + images.length
                       }
-                      
+
                       if (adjustedDistance === -1) {
-                        // Image de gauche : dégradé de gauche vers transparent
+                        // Left image: gradient from left to transparent
                         return (
-                          <div 
+                          <div
                             className="absolute inset-0 bg-gradient-to-r from-[#211824] to-transparent"
                             style={{
                               transition: 'opacity 800ms cubic-bezier(0.25, 0.8, 0.25, 1)'
@@ -234,7 +234,7 @@ const ImageCarousel = ({
                           />
                         )
                       } else if (adjustedDistance === 1) {
-                        // Image de droite : dégradé de droite vers transparent
+                        // Right image: gradient from right to transparent
                         return (
                           <div 
                             className="absolute inset-0 bg-gradient-to-l from-[#211824] to-transparent"
@@ -247,8 +247,8 @@ const ImageCarousel = ({
                       return null
                     })()}
                     
-                    {/* Overlay général pour assombrir légèrement */}
-                    <div 
+                    {/* General overlay to slightly darken */}
+                    <div
                       className="absolute inset-0 bg-[#211824]/20"
                       style={{
                         transition: 'opacity 800ms cubic-bezier(0.25, 0.8, 0.25, 1)'
@@ -262,7 +262,7 @@ const ImageCarousel = ({
         })}
       </div>
 
-      {/* Bouton navigation droite - caché sur mobile */}
+      {/* Right navigation button - hidden on mobile */}
       <div className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20">
         <div
           className="relative p-[1px] rounded-full w-12 h-12 transition-transform duration-300 ease-out hover:scale-110"

@@ -11,7 +11,7 @@ interface PageLoadingScreenProps {
 }
 
 /**
- * Écran de chargement élégant affiché pendant la préparation de la page
+ * Elegant loading screen displayed during page preparation
  */
 export function PageLoadingScreen({
   isLoading,
@@ -22,7 +22,7 @@ export function PageLoadingScreen({
     if (isLoading) {
       setShow(true);
     } else {
-      // Attendre la fin de l'animation avant de cacher
+      // Wait for animation to finish before hiding
       const timer = setTimeout(() => setShow(false), 500);
       return () => clearTimeout(timer);
     }
@@ -41,13 +41,13 @@ export function PageLoadingScreen({
       }}
     >
       <div className="flex flex-col items-center justify-center space-y-8 max-w-md w-full px-6">
-        {/* Logo ou titre */}
+        {/* Logo or title */}
         <div className="text-center">
           <h2 className="text-4xl font-bold text-white mb-3 tracking-tight">Visuaal</h2>
-          <p className="text-white/70 text-base">Préparation de votre expérience</p>
+          <p className="text-white/70 text-base">Preparing your experience</p>
         </div>
 
-        {/* Spinner élégant */}
+        {/* Elegant spinner */}
         <div className="relative w-24 h-24">
           <svg className="w-full h-full animate-spin" viewBox="0 0 100 100">
             <circle

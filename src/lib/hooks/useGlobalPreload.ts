@@ -4,27 +4,27 @@ import { useEffect, useState, useCallback } from 'react';
 import { globalPreloader, type PreloadProgress } from '../spline-preloader';
 
 interface UseGlobalPreloadOptions {
-  /** Délai avant de démarrer le préchargement (ms) */
+  /** Delay before starting preload (ms) */
   startDelay?: number;
-  /** Démarrer automatiquement le préchargement */
+  /** Start preload automatically */
   autoStart?: boolean;
 }
 
 interface UseGlobalPreloadReturn {
-  /** Progrès actuel du préchargement */
+  /** Current preload progress */
   progress: PreloadProgress;
-  /** Préchargement terminé (100%) */
+  /** Preload complete (100%) */
   isComplete: boolean;
-  /** Préchargement en cours */
+  /** Preload in progress */
   isLoading: boolean;
-  /** Démarre manuellement le préchargement */
+  /** Manually start preload */
   startPreload: () => Promise<void>;
-  /** Réinitialise le préchargement */
+  /** Reset preload */
   reset: () => void;
 }
 
 /**
- * Hook pour gérer le préchargement global des scènes Spline
+ * Hook to manage global preloading of Spline scenes
  *
  * @example
  * ```tsx
@@ -45,15 +45,15 @@ export function useGlobalPreload(options: UseGlobalPreloadOptions = {}): UseGlob
   const [progress, setProgress] = useState<PreloadProgress>(globalPreloader.getProgress());
   const [isLoading, setIsLoading] = useState(false);
 
-  // Calculer si le préchargement est terminé
+  // Calculate if preloading is complete
   const isComplete = progress.loaded === progress.total && progress.total > 0;
 
   /**
-   * Démarre le préchargement
+   * Start preloading
    */
   const startPreload = useCallback(async () => {
     if (isLoading) {
-      console.log('[useGlobalPreload] Préchargement déjà en cours');
+      console.log('[useGlobalPreload] Preloading already in progress');
       return;
     }
 
@@ -62,14 +62,14 @@ export function useGlobalPreload(options: UseGlobalPreloadOptions = {}): UseGlob
     try {
       await globalPreloader.preloadAll(startDelay);
     } catch (error) {
-      console.error('[useGlobalPreload] Erreur lors du préchargement:', error);
+      console.error('[useGlobalPreload] Error during preload:', error);
     } finally {
       setIsLoading(false);
     }
   }, [isLoading, startDelay]);
 
   /**
-   * Réinitialise le préchargement
+   * Reset preloading
    */
   const reset = useCallback(() => {
     globalPreloader.reset();
@@ -78,21 +78,21 @@ export function useGlobalPreload(options: UseGlobalPreloadOptions = {}): UseGlob
   }, []);
 
   /**
-   * S'abonner aux changements de progrès
+   * Subscribe to progress changes
    */
   useEffect(() => {
     const unsubscribe = globalPreloader.onProgress((newProgress) => {
       setProgress(newProgress);
     });
 
-    // Obtenir le progrès initial
+    // Get initial progress
     setProgress(globalPreloader.getProgress());
 
     return unsubscribe;
   }, []);
 
   /**
-   * Démarrer automatiquement si demandé
+   * Auto-start if requested
    */
   useEffect(() => {
     if (autoStart && !isLoading && !isComplete) {
@@ -110,7 +110,7 @@ export function useGlobalPreload(options: UseGlobalPreloadOptions = {}): UseGlob
 }
 
 /**
- * Hook pour attendre qu'une scène spécifique soit chargée
+ * Hook to wait for a specific scene to be loaded
  *
  * @example
  * ```tsx
@@ -123,18 +123,18 @@ export function useScenePreload(sceneUrl: string): boolean {
   const [isLoaded, setIsLoaded] = useState(globalPreloader.isSceneLoaded(sceneUrl));
 
   useEffect(() => {
-    // Vérifier immédiatement si déjà chargée
+    // Check immediately if already loaded
     if (globalPreloader.isSceneLoaded(sceneUrl)) {
       setIsLoaded(true);
       return;
     }
 
-    // Sinon, attendre le chargement
+    // Otherwise, wait for loading
     globalPreloader.waitForScene(sceneUrl).then(() => {
       setIsLoaded(true);
     });
 
-    // S'abonner aux changements de progrès pour détecter le chargement
+    // Subscribe to progress changes to detect loading
     const unsubscribe = globalPreloader.onProgress(() => {
       if (globalPreloader.isSceneLoaded(sceneUrl)) {
         setIsLoaded(true);

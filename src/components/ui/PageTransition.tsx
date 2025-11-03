@@ -22,20 +22,20 @@ export function PageTransition({ children }: PageTransitionProps) {
       return;
     }
 
-    // Démarrer la transition de sortie (fade out)
+    // Start exit transition (fade out)
     setIsTransitioning(true);
 
     const fadeOutTimer = setTimeout(() => {
-      // Changer le contenu pendant que l'opacité est à 0
+      // Change content while opacity is 0
       setDisplayChildren(children);
 
-      // Démarrer la transition d'entrée (fade in) après un court délai
+      // Start entry transition (fade in) after a short delay
       const fadeInTimer = setTimeout(() => {
         setIsTransitioning(false);
       }, 50);
 
       return () => clearTimeout(fadeInTimer);
-    }, 300); // Durée de la transition de sortie (doit matcher la durée CSS)
+    }, 300); // Exit transition duration (must match CSS duration)
 
     return () => clearTimeout(fadeOutTimer);
   }, [pathname, children, displayChildren]);

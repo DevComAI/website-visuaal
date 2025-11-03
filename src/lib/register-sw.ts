@@ -1,6 +1,6 @@
 /**
- * Système d'enregistrement du Service Worker
- * Gère l'installation, les mises à jour et le monitoring
+ * Service Worker registration system
+ * Handles installation, updates and monitoring
  */
 
 export interface ServiceWorkerStatus {
@@ -24,44 +24,44 @@ class ServiceWorkerManager {
   private cacheStatusCallbacks: Set<(status: CacheStatus) => void> = new Set();
 
   /**
-   * Enregistre le Service Worker
+   * Register Service Worker
    */
   async register(): Promise<boolean> {
-    // Vérifier le support du Service Worker
+    // Check Service Worker support
     if (!('serviceWorker' in navigator)) {
-      console.warn('[SW Manager] Service Worker non supporté par ce navigateur');
+      console.warn('[SW Manager] Service Worker not supported by this browser');
       this.notifyStatus({ registered: false, installing: false, waiting: false, active: false, error: 'Not supported' });
       return false;
     }
 
     try {
-      console.log('[SW Manager] Enregistrement du Service Worker...');
+      console.log('[SW Manager] Registering Service Worker...');
 
-      // Enregistrer le SW
+      // Register SW
       this.registration = await navigator.serviceWorker.register('/sw.js', {
         scope: '/',
       });
 
-      console.log('[SW Manager] Service Worker enregistré avec succès');
+      console.log('[SW Manager] Service Worker registered successfully');
       this.notifyStatus(this.getStatus());
 
-      // Écouter les changements d'état
+      // Listen to state changes
       this.setupListeners();
 
-      // Vérifier s'il y a une mise à jour
+      // Check if there's an update
       this.registration.addEventListener('updatefound', () => {
-        console.log('[SW Manager] Mise à jour du Service Worker détectée');
+        console.log('[SW Manager] Service Worker update detected');
         this.notifyStatus(this.getStatus());
       });
 
-      // Forcer la vérification des mises à jour toutes les 5 minutes
+      // Force update check every 5 minutes
       setInterval(() => {
         this.registration?.update();
       }, 5 * 60 * 1000);
 
       return true;
     } catch (error) {
-      console.error('[SW Manager] Erreur lors de l\'enregistrement:', error);
+      console.error('[SW Manager] Error during registration:', error);
       this.notifyStatus({
         registered: false,
         installing: false,
@@ -74,18 +74,18 @@ class ServiceWorkerManager {
   }
 
   /**
-   * Configure les listeners d'événements
+   * Set up event listeners
    */
   private setupListeners(): void {
     if (!this.registration) return;
 
-    // Listener pour les changements de contrôleur
+    // Listener for controller changes
     navigator.serviceWorker.addEventListener('controllerchange', () => {
       console.log('[SW Manager] Nouveau contrôleur Service Worker actif');
       this.notifyStatus(this.getStatus());
     });
 
-    // Listener pour les messages du SW
+    // Listener for SW messages
     navigator.serviceWorker.addEventListener('message', (event) => {
       if (event.data && event.data.type === 'CACHE_STATUS') {
         const cacheStatus: CacheStatus = {
@@ -100,7 +100,7 @@ class ServiceWorkerManager {
   }
 
   /**
-   * Obtient le statut actuel du Service Worker
+   * Get current Service Worker status
    */
   getStatus(): ServiceWorkerStatus {
     if (!this.registration) {
@@ -116,7 +116,7 @@ class ServiceWorkerManager {
   }
 
   /**
-   * Demande le statut du cache au Service Worker
+   * Request cache status from Service Worker
    */
   async getCacheStatus(): Promise<CacheStatus | null> {
     if (!navigator.serviceWorker.controller) {
@@ -138,7 +138,7 @@ class ServiceWorkerManager {
         }
       };
 
-      // Vérification supplémentaire pour TypeScript
+      // Additional check for TypeScript
       const controller = navigator.serviceWorker.controller;
       if (controller) {
         controller.postMessage(
@@ -149,13 +149,13 @@ class ServiceWorkerManager {
         resolve(null);
       }
 
-      // Timeout après 5 secondes
+      // Timeout after 5 seconds
       setTimeout(() => resolve(null), 5000);
     });
   }
 
   /**
-   * Force l'activation d'un Service Worker en attente
+   * Force activation of waiting Service Worker
    */
   async skipWaiting(): Promise<void> {
     if (this.registration?.waiting) {
@@ -165,56 +165,56 @@ class ServiceWorkerManager {
   }
 
   /**
-   * Désenregistre le Service Worker
+   * Unregister Service Worker
    */
   async unregister(): Promise<boolean> {
     if (!this.registration) return false;
 
     try {
       const success = await this.registration.unregister();
-      console.log('[SW Manager] Service Worker désenregistré:', success);
+      console.log('[SW Manager] Service Worker unregistered:', success);
       this.registration = null;
       this.notifyStatus(this.getStatus());
       return success;
     } catch (error) {
-      console.error('[SW Manager] Erreur lors du désenregistrement:', error);
+      console.error('[SW Manager] Error during unregistration:', error);
       return false;
     }
   }
 
   /**
-   * S'abonne aux changements de statut
+   * Subscribe to status changes
    */
   onStatusChange(callback: (status: ServiceWorkerStatus) => void): () => void {
     this.statusCallbacks.add(callback);
 
-    // Retourner une fonction de désabonnement
+    // Return unsubscribe function
     return () => {
       this.statusCallbacks.delete(callback);
     };
   }
 
   /**
-   * S'abonne aux changements de statut du cache
+   * Subscribe to cache status changes
    */
   onCacheStatusChange(callback: (status: CacheStatus) => void): () => void {
     this.cacheStatusCallbacks.add(callback);
 
-    // Retourner une fonction de désabonnement
+    // Return unsubscribe function
     return () => {
       this.cacheStatusCallbacks.delete(callback);
     };
   }
 
   /**
-   * Notifie tous les callbacks de changement de statut
+   * Notify all status change callbacks
    */
   private notifyStatus(status: ServiceWorkerStatus): void {
     this.statusCallbacks.forEach((callback) => callback(status));
   }
 
   /**
-   * Notifie tous les callbacks de changement de statut du cache
+   * Notify all cache status change callbacks
    */
   private notifyCacheStatus(status: CacheStatus): void {
     this.cacheStatusCallbacks.forEach((callback) => callback(status));
@@ -225,32 +225,32 @@ class ServiceWorkerManager {
 export const serviceWorkerManager = new ServiceWorkerManager();
 
 /**
- * Hook-like function pour enregistrer le Service Worker
- * À appeler dans un useEffect côté client
+ * Hook-like function to register Service Worker
+ * To be called in a client-side useEffect
  */
 export async function registerServiceWorker(): Promise<boolean> {
-  // Attendre que la fenêtre soit complètement chargée
+  // Wait for window to be completely loaded
   if (document.readyState !== 'complete') {
     await new Promise<void>((resolve) => {
       window.addEventListener('load', () => resolve());
     });
   }
 
-  // Délai de 1 seconde pour ne pas impacter le chargement initial
+  // 1 second delay to avoid impacting initial load
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   return serviceWorkerManager.register();
 }
 
 /**
- * Fonction utilitaire pour vérifier si le SW est supporté
+ * Utility function to check if SW is supported
  */
 export function isServiceWorkerSupported(): boolean {
   return 'serviceWorker' in navigator;
 }
 
 /**
- * Fonction utilitaire pour vérifier si le SW est actif
+ * Utility function to check if SW is active
  */
 export function isServiceWorkerActive(): boolean {
   return !!navigator.serviceWorker?.controller;

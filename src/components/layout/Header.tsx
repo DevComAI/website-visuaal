@@ -12,17 +12,17 @@ const Header = () => {
   const pathname = usePathname()
   const router = useRouter()
 
-  // Prefetch toutes les routes principales après le chargement
+  // Prefetch all main routes after loading
   useEffect(() => {
     const prefetchTimer = setTimeout(() => {
-      // Prefetch toutes les routes principales
+      // Prefetch all main routes
       router.prefetch('/about')
       router.prefetch('/studio')
       router.prefetch('/contact')
       router.prefetch('/products/dooh')
       router.prefetch('/products/holo')
       router.prefetch('/products/screen')
-    }, 3000) // 3 secondes après le chargement initial
+    }, 3000) // 3 seconds after initial load
 
     return () => clearTimeout(prefetchTimer)
   }, [router])

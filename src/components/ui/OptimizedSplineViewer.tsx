@@ -19,7 +19,7 @@ interface OptimizedSplineViewerProps {
   placeholderVariant?: 'gradient' | 'blur' | 'skeleton'
 }
 
-// Fonction utilitaire pour logger avec horodatage et nom de scène
+// Utility function to log with timestamp and scene name
 const logSplineDebug = (scene: string, stage: string, message: string, data?: unknown) => {
   const timestamp = new Date().toISOString().split('T')[1].slice(0, -1)
   const sceneName = scene.split('/').pop()?.split('.')[0] || 'unknown'
@@ -62,14 +62,14 @@ export default function OptimizedSplineViewer({
     }
   }, [scene, interactive, priority, loadingDelay, isLoaded, hasError])
 
-  // Charger toutes les scènes immédiatement (pas de lazy loading)
-  // Le Service Worker + preloader gèrent déjà l'optimisation
+  // Load all scenes immediately (no lazy loading)
+  // Service Worker + preloader already handle optimization
   useEffect(() => {
-    logSplineDebug(scene, 'Loading', `⏳ Chargement programmé dans ${loadingDelay}ms`)
+    logSplineDebug(scene, 'Loading', `⏳ Loading scheduled in ${loadingDelay}ms`)
 
-    // Charger immédiatement avec un petit délai pour ne pas bloquer le rendu initial
+    // Load immediately with a small delay to avoid blocking initial render
     const timer = setTimeout(() => {
-      logSplineDebug(scene, 'Loading', '▶️ Démarrage du chargement')
+      logSplineDebug(scene, 'Loading', '▶️ Starting load')
       loadStartTimeRef.current = Date.now()
       setShouldLoad(true)
     }, loadingDelay)
@@ -83,7 +83,7 @@ export default function OptimizedSplineViewer({
 
     // Enable interactions immediately when loaded
     setIsInteractive(true)
-    logSplineDebug(scene, 'Interaction', '🎮 Interactions activées')
+    logSplineDebug(scene, 'Interaction', '🎮 Interactions enabled')
 
     let scrollTimeout: NodeJS.Timeout
     let wheelTimeout: NodeJS.Timeout
@@ -132,7 +132,7 @@ export default function OptimizedSplineViewer({
     window.addEventListener('touchend', handleTouchEnd, { passive: true })
 
     return () => {
-      logSplineDebug(scene, 'Interaction', '🎮 Nettoyage des interactions', {
+      logSplineDebug(scene, 'Interaction', '🎮 Interaction cleanup', {
         totalEvents: eventCount,
       })
       window.removeEventListener('scroll', handleScroll)
@@ -148,7 +148,7 @@ export default function OptimizedSplineViewer({
     const loadDuration = loadStartTimeRef.current ? Date.now() - loadStartTimeRef.current : 0
     logSplineDebug(scene, 'Loading', `✅ Chargement réussi en ${loadDuration}ms`)
 
-    // Vérifier la mémoire après le chargement
+    // Check memory after loading
     if ('memory' in performance) {
       const memory = (performance as { memory?: { usedJSHeapSize: number } }).memory
       if (memory) {

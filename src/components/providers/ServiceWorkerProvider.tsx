@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { registerServiceWorker, serviceWorkerManager, type ServiceWorkerStatus } from '@/lib/register-sw';
 
 /**
- * Provider pour gérer le Service Worker
- * S'enregistre automatiquement au chargement de l'app
+ * Provider to manage Service Worker
+ * Registers automatically on app load
  */
 export default function ServiceWorkerProvider() {
   const [status, setStatus] = useState<ServiceWorkerStatus>({
@@ -16,36 +16,36 @@ export default function ServiceWorkerProvider() {
   });
 
   useEffect(() => {
-    // S'abonner aux changements de statut
+    // Subscribe to status changes
     const unsubscribe = serviceWorkerManager.onStatusChange(setStatus);
 
-    // Enregistrer le Service Worker
+    // Register Service Worker
     registerServiceWorker()
       .then((success) => {
         if (success) {
-          console.log('[App] Service Worker enregistré avec succès');
+          console.log('[App] Service Worker registered successfully');
         } else {
-          console.warn('[App] Service Worker non enregistré');
+          console.warn('[App] Service Worker not registered');
         }
       })
       .catch((error) => {
-        console.error('[App] Erreur lors de l\'enregistrement du SW:', error);
+        console.error('[App] Error registering SW:', error);
       });
 
-    // Nettoyer à la destruction
+    // Cleanup on unmount
     return unsubscribe;
   }, []);
 
-  // Afficher un message si une mise à jour est disponible
+  // Show message if update is available
   useEffect(() => {
     if (status.waiting) {
-      console.log('[App] Mise à jour du Service Worker disponible');
-      // Optionnel : Afficher une notification à l'utilisateur
-      // Pour l'instant, on active automatiquement la mise à jour
+      console.log('[App] Service Worker update available');
+      // Optional: Show notification to user
+      // For now, we automatically activate the update
       serviceWorkerManager.skipWaiting();
     }
   }, [status.waiting]);
 
-  // Ce composant ne rend rien visuellement
+  // This component renders nothing visually
   return null;
 }

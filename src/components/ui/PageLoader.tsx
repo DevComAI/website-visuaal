@@ -13,10 +13,10 @@ export default function PageLoader({ onComplete, duration = 2800 }: PageLoaderPr
   const [animationPhase, setAnimationPhase] = useState<'appear' | 'grow' | 'pulse' | 'exit'>('grow')
 
   useEffect(() => {
-    // Bloquer le scroll pendant le loader
+    // Block scroll during loader
     document.body.style.overflow = 'hidden'
 
-    // Phase 1: Logo grandit immédiatement (1.2s)
+    // Phase 1: Logo grows immediately (1.2s)
     const growTimer = setTimeout(() => {
       setAnimationPhase('pulse')
     }, duration * 0.6)
@@ -26,16 +26,16 @@ export default function PageLoader({ onComplete, duration = 2800 }: PageLoaderPr
       setAnimationPhase('exit')
     }, duration * 0.75)
 
-    // Phase 3: Explosion et sortie (700ms)
+    // Phase 3: Explosion and exit (700ms)
     const exitTimer = setTimeout(() => {
       setIsVisible(false)
-      // Réactiver le scroll
+      // Re-enable scroll
       document.body.style.overflow = 'auto'
       onComplete?.()
     }, duration)
 
     return () => {
-      // Cleanup: réactiver le scroll si le composant se démonte
+      // Cleanup: re-enable scroll if component unmounts
       document.body.style.overflow = 'auto'
       clearTimeout(growTimer)
       clearTimeout(pulseTimer)
@@ -48,8 +48,8 @@ export default function PageLoader({ onComplete, duration = 2800 }: PageLoaderPr
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
          style={{ backgroundColor: '#211824' }}
-         onTouchMove={(e) => e.preventDefault()} // Empêche le scroll tactile sur mobile
-         onWheel={(e) => e.preventDefault()} // Empêche le scroll à la molette
+         onTouchMove={(e) => e.preventDefault()} // Prevent touch scroll on mobile
+         onWheel={(e) => e.preventDefault()} // Prevent mouse wheel scroll
     >
 
       {/* Background avec effet subtle */}
