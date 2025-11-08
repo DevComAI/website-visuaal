@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import GradientText from '@/components/ui/GradientText'
 import SocialIcons from '@/components/ui/SocialIcons'
 import GradientLine from '@/components/ui/GradientLine'
@@ -88,11 +89,12 @@ const HeroContact = () => {
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Mobile Image - Above content */}
-        <div className="block sm:hidden w-full mb-6 mt-20 overflow-hidden rounded-xl">
-          <img
+        <div className="block sm:hidden w-full mb-6 mt-20 overflow-hidden rounded-xl relative h-[300px]">
+          <Image
             src="/img/contact/hero.png"
             alt="Contact"
-            className="w-full h-auto object-cover"
+            fill
+            className="object-cover"
             style={{
               mixBlendMode: 'soft-light',
               transform: 'scale(2) translateY(20%)'

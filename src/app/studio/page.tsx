@@ -6,7 +6,6 @@ import TitlePage from '@/components/ui/TitlePageSection'
 import Timeline from '@/components/sections/Timeline'
 import TimelineMobile from '@/components/ui/TimelineMobile'
 import GradientButton from '@/components/ui/GradientButton'
-import Image from 'next/image'
 import { breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
