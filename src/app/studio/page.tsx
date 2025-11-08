@@ -43,13 +43,13 @@ const StudioPage = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
+ 
       {/* Hero Image Section */}
       <HeroSpline
         title={<>From <GradientText>bold concepts</GradientText> to unforgettable<br />  <GradientText>immersive visuals</GradientText>.</>}
         subtitle={<AnimatedVisionText />}
         image="/temp-opti-img/experience-1.2.png"
-        mobileImage="/temp-opti-img/experience-1-mobile3.png"
+        mobileImage="/temp-opti-img/studiomobile.png"
         textPosition="left"
         priority={true}
         alt="VISUAAL Creative Studio"
