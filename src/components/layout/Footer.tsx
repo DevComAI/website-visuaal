@@ -54,8 +54,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="font-chillax text-base font-normal leading-none text-gray-300 hover:text-white transition-colors">
-                  Products
+                <Link href="/products/dooh" className="font-chillax text-base font-normal leading-none text-gray-300 hover:text-white transition-colors">
+                  DOOH
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/holo" className="font-chillax text-base font-normal leading-none text-gray-300 hover:text-white transition-colors">
+                  Hologram
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/screen" className="font-chillax text-base font-normal leading-none text-gray-300 hover:text-white transition-colors">
+                  LED Screen
                 </Link>
               </li>
               <li>
