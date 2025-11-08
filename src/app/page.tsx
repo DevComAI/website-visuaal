@@ -1,7 +1,11 @@
 import { headers } from 'next/headers'
-import dynamic from 'next/dynamic'
 import Hero from '@/components/sections/Hero'
+import AboutUs from '@/components/sections/AboutUs'
 import TitleHome from '@/components/ui/TitleSection'
+import Working from '@/components/sections/Working'
+import SupportCarousel from '@/components/sections/SupportCarousel'
+import LogoCarousel from '@/components/sections/LogoCarousel'
+import ProductsSection from '@/components/sections/ProductsSection'
 import { organizationSchema, websiteSchema } from '@/lib/schema'
 import GradientLine from '@/components/ui/GradientLine'
 import GradientText from '@/components/ui/GradientText'
@@ -9,17 +13,10 @@ import {
   MobileGradientText,
   MobileGradientButton,
   MobileTitleHome,
+  WorkingCarousel
 } from '@/components/pages/HomePageClient'
 import ScrollIndicator from '@/components/ui/ScrollIndicator'
 import AnimatedLine from '@/components/ui/AnimatedLine'
-
-// Lazy load heavy components
-const AboutUs = dynamic(() => import('@/components/sections/AboutUs'))
-const Working = dynamic(() => import('@/components/sections/Working'))
-const SupportCarousel = dynamic(() => import('@/components/sections/SupportCarousel'))
-const LogoCarousel = dynamic(() => import('@/components/sections/LogoCarousel'))
-const ProductsSection = dynamic(() => import('@/components/sections/ProductsSection'))
-const WorkingCarousel = dynamic(() => import('@/components/pages/HomePageClient').then(mod => ({ default: mod.WorkingCarousel })))
 
 export default async function Home() {
   const headersList = await headers()

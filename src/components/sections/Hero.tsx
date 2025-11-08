@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import ScrollIndicator from '@/components/ui/ScrollIndicator'
 
 interface HeroProps {
@@ -23,7 +23,6 @@ const Hero = ({
   backgroundPosition = 'center'
 }: HeroProps) => {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false)
 
   useEffect(() => {
     if (videoRef.current) {
@@ -53,13 +52,8 @@ const Hero = ({
         }
       }
 
-      // Mark video as loaded
-      const handleCanPlay = () => {
-        setIsVideoLoaded(true)
-        playVideo()
-      }
-
-      video.addEventListener('canplay', handleCanPlay)
+      // Try to play immediately
+      playVideo()
 
       // Also try to play on user interaction for iOS
       const handleInteraction = () => {
@@ -72,7 +66,6 @@ const Hero = ({
       document.addEventListener('click', handleInteraction, { once: true })
 
       return () => {
-        video.removeEventListener('canplay', handleCanPlay)
         document.removeEventListener('touchstart', handleInteraction)
         document.removeEventListener('click', handleInteraction)
       }
@@ -99,20 +92,12 @@ const Hero = ({
             loop
             muted
             playsInline
-            preload="metadata"
-            poster="/img/home/hero-home.png"
+            preload="auto"
             disablePictureInPicture
             controlsList="nodownload nofullscreen noremoteplayback"
-            style={{ opacity: isVideoLoaded ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>
-          {!isVideoLoaded && (
-            <div
-              className="absolute inset-0 w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: `url('/img/home/hero-home.png')` }}
-            />
-          )}
           <div className="absolute inset-0" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}></div>
           <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[black]/50 to-transparent"></div>
           <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#211824] to-transparent"></div>
