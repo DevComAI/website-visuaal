@@ -150,7 +150,7 @@ export function WorkingCarousel({ scenes }: WorkingCarouselProps) {
                     src={scene.image}
                     alt={scene.alt}
                     fill
-                    className="object-contain"
+                    className="object-contain mix-blend-plus-lighter"
                     sizes="100vw"
                     priority={currentSlide === index}
                   />
