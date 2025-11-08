@@ -73,6 +73,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preconnect to external domains for faster resource loading */}
+        <link rel="preconnect" href="https://prod.spline.design" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://prod.spline.design" />
+
+        {/* Preload critical hero image for faster LCP */}
+        <link rel="preload" as="image" href="/img/home/hero-home.png" />
+
+        {/* Preload critical font */}
+        <link rel="preload" href="/fonts/Chillax-Variable.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+      </head>
       <body
         className="antialiased font-sans relative"
       >
