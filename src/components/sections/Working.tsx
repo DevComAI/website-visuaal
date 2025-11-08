@@ -11,10 +11,10 @@ export default function Working() {
           <div className="flex flex-col items-center">
             <div className="h-[250px] lg:h-[350px] w-full relative flex items-center justify-center mb-4 ">
               <Image
-                src="/temp-opti-img/home-2.png"
+                src="/temp-opti-img/home-2.1.png"
                 alt="INFORM - Digital Signage Solutions"
                 fill
-                className="object-contain mix-blend-plus-lighter"
+                className="object-contain "
                 sizes="(max-width: 1024px) 100vw, 33vw"
               />
             </div>
@@ -31,10 +31,10 @@ export default function Working() {
           <div className="flex flex-col items-center">
             <div className="h-[250px] lg:h-[350px] w-full relative flex items-center justify-center mb-4">
               <Image
-                src="/temp-opti-img/home-3.png"
+                src="/temp-opti-img/home-3.1.png"
                 alt="SUPPORT - Digital Signage Consulting"
                 fill
-                className="object-contain mix-blend-plus-lighter"
+                className="object-contain "
                 sizes="(max-width: 1024px) 100vw, 33vw"
               />
             </div>
@@ -50,10 +50,10 @@ export default function Working() {
           <div className="flex flex-col items-center">
             <div className="h-[250px] lg:h-[350px] w-full relative flex items-center justify-center mb-4">
               <Image
-                src="/temp-opti-img/home-4.png"
+                src="/temp-opti-img/home-4.1.png"
                 alt="MODERNIZE - Digital Experience Transformation"
                 fill
-                className="object-contain mix-blend-plus-lighter"
+                className="object-contain "
                 sizes="(max-width: 1024px) 100vw, 33vw"
               />
             </div>

@@ -141,8 +141,8 @@ export function WorkingCarousel({ scenes }: WorkingCarouselProps) {
           </svg>
         </button>
 
-        <div className="overflow-hidden">
-          <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+        <div className="overflow-hidden" style={{ isolation: 'auto' }}>
+          <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)`, isolation: 'auto' }}>
             {scenes.map((scene, index) => (
               <div key={index} className="min-w-full flex flex-col items-center px-4">
                 <div className="h-[280px] w-full relative flex items-center justify-center mb-6">
@@ -150,7 +150,7 @@ export function WorkingCarousel({ scenes }: WorkingCarouselProps) {
                     src={scene.image}
                     alt={scene.alt}
                     fill
-                    className="object-contain mix-blend-plus-lighter"
+                    className="object-contain "
                     sizes="100vw"
                     priority={currentSlide === index}
                   />
