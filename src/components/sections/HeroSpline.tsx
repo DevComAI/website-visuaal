@@ -1,119 +1,56 @@
 'use client'
 
-import { ReactNode, useEffect } from 'react'
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import { ReactNode } from 'react'
+import Image from 'next/image'
 import ScrollIndicator from '@/components/ui/ScrollIndicator'
-import { useSplinePreloader } from '@/lib/hooks/useSplinePreloader'
 
 interface HeroSplineProps {
   title: string | ReactNode
   subtitle?: string | ReactNode
-  splineUrl: string
+  image: string
   showScrollIndicator?: boolean
   textPosition?: 'center' | 'right' | 'left'
-  splinePosition?: 'fullscreen' | 'right'
   priority?: boolean
-  placeholder?: string
   mobileImage?: string
-}
-
-const logHero = (message: string, data?: unknown) => {
-  const timestamp = new Date().toISOString().split('T')[1].slice(0, -1)
-  console.log(`[${timestamp}] [HeroSpline] ${message}`, data || '')
+  alt?: string
 }
 
 const HeroSpline = ({
   title,
   subtitle,
-  splineUrl,
+  image,
   showScrollIndicator = false,
   textPosition = 'center',
-  splinePosition = 'fullscreen',
-  priority = false,
-  placeholder,
-  mobileImage
+  priority = true,
+  mobileImage,
+  alt = "Hero background"
 }: HeroSplineProps) => {
-  const { progress } = useSplinePreloader(splineUrl, { priority: priority ? 'high' : 'normal' })
-
-  useEffect(() => {
-    logHero('🟢 HeroSpline monté', {
-      splineUrl,
-      priority,
-      textPosition,
-      splinePosition,
-    })
-
-    return () => {
-      logHero('🔴 HeroSpline démonté', { splineUrl })
-    }
-  }, [splineUrl, priority, textPosition, splinePosition])
-
-  useEffect(() => {
-    logHero(`📊 Progression du preloader: ${progress}%`, { splineUrl })
-  }, [progress, splineUrl])
-
   return (
-    <section 
-      id="hero-spline" 
+    <section
+      id="hero-spline"
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Spline Background - Interactive */}
-      {/* Mobile - Image or Spline */}
-      <div className="md:hidden absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden pointer-events-none">
-        {mobileImage ? (
-          <img
-            src={mobileImage}
-            alt="Hero background"
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <OptimizedSplineViewer
-            scene={splineUrl}
-            style={{
-              width: '100%',
-              height: '100%',
-              minHeight: '100vh',
-              minWidth: '100vw',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              objectFit: 'cover'
-            }}
-            interactive={false}
-            priority={priority}
-            placeholder={placeholder}
-            loadingDelay={200}
-          />
-        )}
+      {/* Mobile Image */}
+      <div className="md:hidden absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter">
+        <Image
+          src={mobileImage || image}
+          alt={alt}
+          fill
+          priority={priority}
+          className="object-cover"
+          sizes="100vw"
+        />
       </div>
 
-      {/* Desktop Spline */}
-      <div
-        className={
-          splinePosition === 'right'
-            ? "hidden md:block absolute left-100   z-0 mix-blend-plus-lighter"
-            : "hidden md:block absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter overflow-hidden spline-responsive-scale"
-        }
-        style={{
-          transformOrigin: 'center center'
-        }}
-      >
-        <OptimizedSplineViewer
-          scene={splineUrl}
-          style={{
-            width: '100%',
-            height: '100%',
-            minHeight: '100vh',
-            minWidth: '100vw',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            objectFit: 'cover'
-          }}
-          interactive={true}
+      {/* Desktop Image */}
+      <div className="hidden md:block absolute inset-0 w-full h-full z-0 mix-blend-plus-lighter">
+        <Image
+          src={image}
+          alt={alt}
+          fill
           priority={priority}
-          placeholder={placeholder}
-          loadingDelay={100}
+          className="object-cover"
+          sizes="100vw"
         />
       </div>
       

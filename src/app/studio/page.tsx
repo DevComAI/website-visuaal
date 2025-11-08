@@ -6,7 +6,7 @@ import TitlePage from '@/components/ui/TitlePageSection'
 import Timeline from '@/components/sections/Timeline'
 import TimelineMobile from '@/components/ui/TimelineMobile'
 import GradientButton from '@/components/ui/GradientButton'
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import Image from 'next/image'
 import { breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -45,15 +45,14 @@ const StudioPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero Spline Section */}
+      {/* Hero Image Section */}
       <HeroSpline
         title={<>From <GradientText>bold concepts</GradientText> to unforgettable<br />  <GradientText>immersive visuals</GradientText>.</>}
         subtitle={<AnimatedVisionText />}
-        splineUrl="https://prod.spline.design/XihlwxPitjwHnwb9/scene.splinecode"
+        image="/temp-opti-img/experience-1.2.png"
         textPosition="left"
-        splinePosition="right"
         priority={true}
-        placeholder="/img/studio/studio-preview.jpg"
+        alt="VISUAAL Creative Studio"
       />
 
   <TitlePage
@@ -163,17 +162,7 @@ const StudioPage = () => {
 </div>
    
 
-   {/* Spline Component - Desktop */}
-      <div className='h-screen -mt-40 mix-blend-screen hidden md:block'>
-        <OptimizedSplineViewer
-          scene="https://prod.spline.design/VhnOlUUBXyLXytif/scene.splinecode"
-          style={{ width: '100%', height: '100%' }}
-          interactive={true}
-          priority={false}
-          loadingDelay={300}
-          placeholderVariant="gradient"
-        />
-      </div>
+
 
     
     </div>

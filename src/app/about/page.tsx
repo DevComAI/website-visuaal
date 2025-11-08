@@ -40,14 +40,14 @@ const AboutPage = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Hero Spline Section */}
+      {/* Hero Image Section */}
       <HeroSpline
         title={<>Our <GradientText>dedicated team</GradientText> of creatives is bursting with <GradientText>talent, experience</GradientText> and <GradientText>passion</GradientText> for what we do.</>}
         subtitle={<>Go behind the scenes of <GradientText>VISUAAL</GradientText></>}
-        splineUrl="https://prod.spline.design/X07icIhhYxWFwhO1/scene.splinecode"
+        image="/temp-opti-img/about-1.png"
         priority={true}
-        placeholder="/img/about/about-preview.jpg"
         mobileImage="/heromobileabout.png"
+        alt="VISUAAL team workspace"
       />
 
       <TitlePage

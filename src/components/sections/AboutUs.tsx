@@ -1,6 +1,6 @@
 'use client'
 
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import Image from 'next/image'
 import GradientButton from '@/components/ui/GradientButton'
 import GradientLine from '@/components/ui/GradientLine'
 import AnimatedLine from '../ui/AnimatedLine'
@@ -32,16 +32,16 @@ const AboutUs = () => {
             <GradientButton href="/about" text="Read more" className="text-sm lg:text-[16px] h-[40px] lg:h-[49px] w-[160px] lg:w-[194px]"/>
           </div>
 
-          {/* Right side - Spline Viewer */}
-          <div className="h-[400px] sm:h-[500px] lg:h-[800px] mt-8 lg:-mt-20 relative z-50 order-first lg:order-last">
-            <OptimizedSplineViewer
-              scene="https://prod.spline.design/Sj5w2qinD5unnyvb/scene.splinecode"
-              style={{ width: '100%', height: '100%' }}
-              interactive={true}
-              priority={false}
-              loadingDelay={150}
-              placeholderVariant="gradient"
+          {/* Right side - Image */}
+          <div className="h-[400px] sm:h-[500px] lg:h-[800px] mt-8 lg:-mt-20 relative opacity-50">
+            <Image
+          src="/temp-opti-img/home-1.3.png"
+              alt="VISUAAL team and expertise"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
+
           </div>
         </div>
 

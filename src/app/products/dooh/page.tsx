@@ -4,7 +4,7 @@ import TitlePage from '@/components/ui/TitlePageSection'
 import GradientText from '@/components/ui/GradientText'
 import DoohContent from '@/components/sections/DoohContent'
 import DoohTestimonial from '@/components/sections/DoohTestimonial'
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import Image from 'next/image'
 import { doohProductSchema, breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -69,18 +69,13 @@ const DOOHPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center relative">
             <div className="w-full max-w-sm sm:max-w-lg lg:max-w-6xl xl:max-w-7xl rounded-2xl border-2 border-purple-500/30">
-              <div className="w-full rounded-xl overflow-hidden" style={{ backgroundColor: '#211824', aspectRatio: '2/1' }}>
-                <OptimizedSplineViewer
-                  scene="https://prod.spline.design/K3MXxwuzrEPrTBi4/scene.splinecode"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '0.75rem' // rounded-xl équivalent
-                  }}
-                  priority={false}
-                  loadingDelay={200}
-                  placeholderVariant="skeleton"
-                  interactive={true}
+              <div className="w-full rounded-xl overflow-hidden relative" style={{ backgroundColor: '#211824', aspectRatio: '2/1' }}>
+                <Image
+                  src="/temp-opti-img/dooh-1.png"
+                  alt="DOOH Digital Out Of Home display"
+                  fill
+                  className="object-cover rounded-xl"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
                 />
               </div>
             </div>

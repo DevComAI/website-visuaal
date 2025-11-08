@@ -5,7 +5,6 @@ import ScreenContent from '@/components/ui/ScreenContent'
 import ProductService from '@/components/ui/ProductService'
 import GradientButton from '@/components/ui/GradientButton'
 import GradientText from '@/components/ui/GradientText'
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 import { ledScreenProductSchema, breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -127,19 +126,23 @@ backgroundImage="SCREEN.png"
 
 
             <div
-              className="w-full rounded-2xl md:rounded-3xl overflow-hidden h-[200px] sm:h-[700px] lg:h-[710px]"
+              className="w-full rounded-2xl md:rounded-3xl overflow-hidden h-[200px] sm:h-[700px] lg:h-[710px] relative"
               style={{
                 backgroundColor: '#211824',
               }}
             >
-              <OptimizedSplineViewer
-                scene="https://prod.spline.design/qDj32pWs0uTcm5kM/scene.splinecode"
-                style={{ width: '100%', height: '100%' }}
-                priority={false}
-                loadingDelay={200}
-                placeholderVariant="skeleton"
-                interactive={true}
-              />
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover"
+              >
+                <source src="/screen.webm" type="video/webm" />
+                <source src="/screen.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la lecture de vidéos.
+              </video>
             </div>
           </div>
           </div>

@@ -1,8 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import Image from 'next/image'
 import GradientButton from '@/components/ui/GradientButton'
 
 interface MobileGradientTextProps {
@@ -107,7 +106,8 @@ export function MobileTitleHome({ topText, bottomText, backgroundImage, classNam
 
 interface WorkingCarouselProps {
   scenes: Array<{
-    url: string
+    image: string
+    alt: string
     title: string
     description: string
   }>
@@ -146,20 +146,14 @@ export function WorkingCarousel({ scenes }: WorkingCarouselProps) {
             {scenes.map((scene, index) => (
               <div key={index} className="min-w-full flex flex-col items-center px-4">
                 <div className="h-[280px] w-full relative flex items-center justify-center mb-6">
-                  <div className="w-full h-full" style={{ zoom: '0.35' }}>
-                    {/* Only load the current slide and adjacent ones */}
-                    {Math.abs(currentSlide - index) <= 1 && (
-                      <OptimizedSplineViewer
-                        scene={scene.url}
-                        className="w-full h-full"
-                        style={{ pointerEvents: 'none' }}
-                        priority={currentSlide === index}
-                        loadingDelay={currentSlide === index ? 0 : 500}
-                        placeholderVariant="skeleton"
-                        interactive={false}
-                      />
-                    )}
-                  </div>
+                  <Image
+                    src={scene.image}
+                    alt={scene.alt}
+                    fill
+                    className="object-contain"
+                    sizes="100vw"
+                    priority={currentSlide === index}
+                  />
                 </div>
                 <div className="max-w-lg space-y-4 text-center px-6">
                   <h3 className="text-lg font-bold text-white">{scene.title}</h3>

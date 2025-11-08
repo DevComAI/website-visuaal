@@ -23,7 +23,6 @@ export default async function Home() {
   const userAgent = headersList.get('user-agent') || ''
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent) ||
                    (headersList.get('sec-ch-ua-mobile') === '?1')
-  const isIOS = /iPhone|iPad|iPod/i.test(userAgent)
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -34,17 +33,20 @@ export default async function Home() {
 
   const workingScenes = [
     {
-      url: "https://prod.spline.design/1kfiH0yZ5dSGioTU/scene.splinecode",
+      image: "/temp-opti-img/home-1.png",
+      alt: "INFORM - Digital Signage Solutions",
       title: "INFORM – We guide you",
       description: "At VISUAAL, we help businesses harness the power of Digital Signage to enhance sales and brand visibility. Whether in retail stores, banks, or restaurants, we create impactful visual communication that resonates with music in popular clothing stores—that captivates audiences and drive engagement."
     },
     {
-      url: "https://prod.spline.design/YQnsevjGuljq6asJ/scene.splinecode",
+      image: "/temp-opti-img/about-2.png",
+      alt: "SUPPORT - Digital Signage Consulting",
       title: "SUPPORT – We advise you",
       description: "Our experts work closely with brands to design and implement interactive Digital Signage solutions across transportation hubs, theaters, and high-traffic public spaces. By crafting compelling engaging content, we maximize advertising impact and boost revenue for multiple brands."
     },
     {
-      url: "https://prod.spline.design/SdbEwI9-LUOY0hlb/scene.splinecode",
+      image: "/temp-opti-img/about-3.png",
+      alt: "MODERNIZE - Digital Experience Transformation",
       title: "MODERNIZE – We transform experiences",
       description: "From hospitality and healthcare to educational venues, our customized Digital Signage solutions elevate customer interactions. We craft immersive digital experiences that inform, entertain, and inspire—creating seamless and memorable experiences for every audience."
     }
