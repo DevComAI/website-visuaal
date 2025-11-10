@@ -1,6 +1,7 @@
 // Script to optimize Open Graph image
 // Run with: node scripts/optimize-og-image.js
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const sharp = require('sharp');
 const path = require('path');
 const fs = require('fs');

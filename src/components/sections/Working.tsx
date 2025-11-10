@@ -1,6 +1,6 @@
 'use client'
 
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
+import Image from 'next/image'
 
 export default function Working() {
   return (
@@ -9,18 +9,14 @@ export default function Working() {
 
           {/* INFORM Column */}
           <div className="flex flex-col items-center">
-            <div className="h-[250px] lg:h-[350px] w-full relative overflow-visible flex items-center justify-center px-4 pb-8 lg:pb-25">
-              <div className="transform scale-75 lg:scale-60 w-[600px] lg:w-[900px] h-[500px] lg:h-[700px]">
-                <OptimizedSplineViewer
-                  scene="https://prod.spline.design/1kfiH0yZ5dSGioTU/scene.splinecode"
-                  className="w-full h-full"
-                  style={{ pointerEvents: 'auto' }}
-                  priority={false}
-                  loadingDelay={100}
-                  placeholderVariant="skeleton"
-                  interactive={true}
-                />
-              </div>
+            <div className="h-[250px] lg:h-[350px] w-full relative flex items-center justify-center mb-4 ">
+              <Image
+                src="/temp-opti-img/home-2.1.png"
+                alt="INFORM - Digital Signage Solutions"
+                fill
+                className="object-contain "
+                sizes="(max-width: 1024px) 100vw, 33vw"
+              />
             </div>
             <div className="max-w-full lg:w-[570px] my-8 lg:my-20 text-center lg:text-left">
             <h3 className="text-lg lg:text-xl font-bold mb-4 text-white">INFORM – We guide you</h3>
@@ -33,18 +29,14 @@ export default function Working() {
 
           {/* SUPPORT Column */}
           <div className="flex flex-col items-center">
-            <div className="h-[250px] lg:h-[350px] w-full relative overflow-visible flex items-center justify-center px-4 pb-8 lg:pb-25">
-              <div className="transform scale-75 lg:scale-60 w-[600px] lg:w-[800px] h-[500px] lg:h-[700px]">
-                <OptimizedSplineViewer
-                  scene="https://prod.spline.design/YQnsevjGuljq6asJ/scene.splinecode"
-                  className="w-full h-full"
-                  style={{ pointerEvents: 'auto' }}
-                  priority={false}
-                  loadingDelay={200}
-                  placeholderVariant="skeleton"
-                  interactive={true}
-                />
-              </div>
+            <div className="h-[250px] lg:h-[350px] w-full relative flex items-center justify-center mb-4">
+              <Image
+                src="/temp-opti-img/home-3.1.png"
+                alt="SUPPORT - Digital Signage Consulting"
+                fill
+                className="object-contain "
+                sizes="(max-width: 1024px) 100vw, 33vw"
+              />
             </div>
             <div className="max-w-full lg:w-[570px] my-8 lg:my-20 text-center lg:text-left">
             <h3 className="text-lg lg:text-xl font-bold mb-4 text-white">SUPPORT – We advise you</h3>
@@ -56,18 +48,14 @@ export default function Working() {
 
           {/* MODERNIZE Column */}
           <div className="flex flex-col items-center">
-            <div className="h-[250px] lg:h-[350px] w-full relative overflow-visible flex items-center justify-center px-4 pb-8 lg:pb-34">
-              <div className="transform scale-75 lg:scale-60 w-[600px] lg:w-[800px] h-[600px] lg:h-[800px]">
-                <OptimizedSplineViewer
-                  scene="https://prod.spline.design/SdbEwI9-LUOY0hlb/scene.splinecode"
-                  className="w-full h-full"
-                  style={{ pointerEvents: 'auto' }}
-                  priority={false}
-                  loadingDelay={300}
-                  placeholderVariant="skeleton"
-                  interactive={true}
-                />
-              </div>
+            <div className="h-[250px] lg:h-[350px] w-full relative flex items-center justify-center mb-4">
+              <Image
+                src="/temp-opti-img/home-4.1.png"
+                alt="MODERNIZE - Digital Experience Transformation"
+                fill
+                className="object-contain "
+                sizes="(max-width: 1024px) 100vw, 33vw"
+              />
             </div>
             <div className="max-w-full lg:w-[570px] my-8 lg:my-20 text-center lg:text-left">
               <h3 className="text-lg lg:text-xl font-medium mb-4 text-white">MODERNIZE – We transform experiences</h3>

@@ -3,23 +3,11 @@ import Image from 'next/image'
 import GradientLine from '@/components/ui/GradientLine'
 import SocialIcons from '@/components/ui/SocialIcons'
 import GradientText from '@/components/ui/GradientText'
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 import Newsletter from '@/components/ui/Newsletter'
 
 const Footer = () => {
   return (
     <footer className="text-white relative overflow-hidden" style={{backgroundColor: '#140F16'}}>
-      {/* Spline Animation Background */}
-      <div className="absolute inset-0 w-full h-full z-0 flex items-center justify-center">
-        <OptimizedSplineViewer
-          scene="https://prod.spline.design/2pGj4e2pJIQVw8CK/scene.splinecode"
-          className="w-full h-full opacity-30"
-          priority={false}
-          loadingDelay={800}
-          placeholderVariant="skeleton"
-          interactive={false}
-        />
-      </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 relative z-10">
         {/* Newsletter Section */}
@@ -66,8 +54,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="font-chillax text-base font-normal leading-none text-gray-300 hover:text-white transition-colors">
-                  Products
+                <Link href="/products/dooh" className="font-chillax text-base font-normal leading-none text-gray-300 hover:text-white transition-colors">
+                  DOOH
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/holo" className="font-chillax text-base font-normal leading-none text-gray-300 hover:text-white transition-colors">
+                  Hologram
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/screen" className="font-chillax text-base font-normal leading-none text-gray-300 hover:text-white transition-colors">
+                  LED Screen
                 </Link>
               </li>
               <li>

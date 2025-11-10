@@ -73,11 +73,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Preconnect to Spline CDN for faster loading */}
-        <link rel="preconnect" href="https://prod.spline.design" />
-        <link rel="dns-prefetch" href="https://prod.spline.design" />
-      </head>
       <body
         className="antialiased font-sans relative"
       >

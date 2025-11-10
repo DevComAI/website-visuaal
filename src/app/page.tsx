@@ -33,17 +33,20 @@ export default async function Home() {
 
   const workingScenes = [
     {
-      url: "https://prod.spline.design/1kfiH0yZ5dSGioTU/scene.splinecode",
+      image: "/temp-opti-img/home-2.1.png",
+      alt: "INFORM - Digital Signage Solutions",
       title: "INFORM – We guide you",
       description: "At VISUAAL, we help businesses harness the power of Digital Signage to enhance sales and brand visibility. Whether in retail stores, banks, or restaurants, we create impactful visual communication that resonates with music in popular clothing stores—that captivates audiences and drive engagement."
     },
     {
-      url: "https://prod.spline.design/YQnsevjGuljq6asJ/scene.splinecode",
+      image: "/temp-opti-img/home-3.1.png",
+      alt: "SUPPORT - Digital Signage Consulting",
       title: "SUPPORT – We advise you",
       description: "Our experts work closely with brands to design and implement interactive Digital Signage solutions across transportation hubs, theaters, and high-traffic public spaces. By crafting compelling engaging content, we maximize advertising impact and boost revenue for multiple brands."
     },
     {
-      url: "https://prod.spline.design/SdbEwI9-LUOY0hlb/scene.splinecode",
+      image: "/temp-opti-img/home-4.1.png",
+      alt: "MODERNIZE - Digital Experience Transformation",
       title: "MODERNIZE – We transform experiences",
       description: "From hospitality and healthcare to educational venues, our customized Digital Signage solutions elevate customer interactions. We craft immersive digital experiences that inform, entertain, and inspire—creating seamless and memorable experiences for every audience."
     }

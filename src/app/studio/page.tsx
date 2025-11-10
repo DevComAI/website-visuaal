@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Hero from '@/components/sections/Hero'
 import HeroSpline from '@/components/sections/HeroSpline'
 import GradientText from '@/components/ui/GradientText'
 import AnimatedVisionText from '@/components/ui/AnimatedVisionText'
@@ -7,7 +6,6 @@ import TitlePage from '@/components/ui/TitlePageSection'
 import Timeline from '@/components/sections/Timeline'
 import TimelineMobile from '@/components/ui/TimelineMobile'
 import GradientButton from '@/components/ui/GradientButton'
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
 import { breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
@@ -45,31 +43,17 @@ const StudioPage = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      {/* Hero Mobile - Static Image */}
-      <div className="md:hidden">
-        <Hero
-          backgroundImage="/points.png"
-          title=""
-          subtitle={<>From <GradientText>bold concepts</GradientText> to unforgettable <GradientText>immersive visuals</GradientText>.</>}
-          description=""
-          showScrollIndicator={false}
-          backgroundPosition="center"
-        />
-      </div>
-
-      {/* Hero Desktop - Spline */}
-      <div className="hidden md:block">
-        <HeroSpline
-          title={<>From <GradientText>bold concepts</GradientText> to unforgettable<br />  <GradientText>immersive visuals</GradientText>.</>}
-          subtitle={<AnimatedVisionText />}
-          splineUrl="https://prod.spline.design/XihlwxPitjwHnwb9/scene.splinecode"
-          textPosition="left"
-          splinePosition="right"
-          priority={true}
-          placeholder="/img/studio/studio-preview.jpg"
-        />
-      </div>
+ 
+      {/* Hero Image Section */}
+      <HeroSpline
+        title={<>From <GradientText>bold concepts</GradientText> to unforgettable<br />  <GradientText>immersive visuals</GradientText>.</>}
+        subtitle={<AnimatedVisionText />}
+        image="/temp-opti-img/experience-1.2.png"
+        mobileImage="/temp-opti-img/studiomobile.png"
+        textPosition="left"
+        priority={true}
+        alt="VISUAAL Creative Studio"
+      />
 
   <TitlePage
   title={<>our <GradientText>tools</GradientText></>}
@@ -178,17 +162,7 @@ const StudioPage = () => {
 </div>
    
 
-   {/* Spline Component - Desktop */}
-      <div className='h-screen -mt-40 mix-blend-screen hidden md:block'>
-        <OptimizedSplineViewer
-          scene="https://prod.spline.design/VhnOlUUBXyLXytif/scene.splinecode"
-          style={{ width: '100%', height: '100%' }}
-          interactive={true}
-          priority={false}
-          loadingDelay={300}
-          placeholderVariant="gradient"
-        />
-      </div>
+
 
     
     </div>

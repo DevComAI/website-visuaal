@@ -1,24 +1,10 @@
 'use client'
 
-import { useEffect } from 'react'
+import Image from 'next/image'
 import GradientButton from '@/components/ui/GradientButton'
 import GradientText from '@/components/ui/GradientText'
-import OptimizedSplineViewer from '@/components/ui/OptimizedSplineViewer'
-
-const logAboutContent = (message: string, data?: unknown) => {
-  const timestamp = new Date().toISOString().split('T')[1].slice(0, -1)
-  console.log(`[${timestamp}] [AboutContent] ${message}`, data || '')
-}
 
 const AboutContent = () => {
-  useEffect(() => {
-    logAboutContent('🟢 AboutContent monté')
-
-    return () => {
-      logAboutContent('🔴 AboutContent démonté')
-    }
-  }, [])
-
   return (
     <section className="py-12 lg:py-20 text-white mx-4 sm:mx-8 lg:mx-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,15 +45,14 @@ const AboutContent = () => {
 
           </div>
 
-          {/* Spline - Desktop */}
+          {/* Image - Desktop */}
           <div className="relative h-64 sm:h-80 lg:h-96 xl:h-[500px] mix-blend-lighten order-first lg:order-last hidden md:block">
-            <OptimizedSplineViewer
-              scene="https://prod.spline.design/b5QNjdMLUJW-blFk/scene.splinecode"
-              style={{ width: '100%', height: '100%' }}
-              interactive={true}
-              priority={false}
-              loadingDelay={250}
-              placeholderVariant="gradient"
+            <Image
+              src="/temp-opti-img/about-2.png"
+              alt="About VISUAAL content"
+              fill
+              className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
 
             {/* Gradient overlays for smooth fade effect */}
