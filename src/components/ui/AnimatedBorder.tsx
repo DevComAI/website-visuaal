@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, ReactNode } from 'react'
+import { useState, ReactNode } from 'react'
 
 interface AnimatedBorderProps {
   children: ReactNode;
@@ -15,11 +15,7 @@ const AnimatedBorder = ({
   borderWidth = "3px",
   borderRadius = "0.5rem"
 }: AnimatedBorderProps) => {
-  const [animationDelay, setAnimationDelay] = useState(0)
-
-  useEffect(() => {
-    setAnimationDelay(Math.random() * 12)
-  }, [])
+  const [animationDelay] = useState(() => Math.random() * 12)
 
   return (
     <div className={`relative ${className}`}>
