@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 
 interface GradientButtonProps {
@@ -10,11 +10,7 @@ interface GradientButtonProps {
 }
 
 const GradientButton = ({ href, text, className = "" }: GradientButtonProps) => {
-  const [animationDelay, setAnimationDelay] = useState(0)
-  
-  useEffect(() => {
-    setAnimationDelay(Math.random() * 12)
-  }, [])
+  const [animationDelay] = useState(() => Math.random() * 12)
 
   return (
     <>
