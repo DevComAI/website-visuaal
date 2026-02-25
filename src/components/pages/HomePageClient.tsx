@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import GradientButton from '@/components/ui/GradientButton'
 
@@ -10,11 +10,7 @@ interface MobileGradientTextProps {
 }
 
 export function MobileGradientText({ children, className = "" }: MobileGradientTextProps) {
-  const [animationDelay, setAnimationDelay] = useState(0)
-
-  useEffect(() => {
-    setAnimationDelay(Math.random() * 12)
-  }, [])
+  const [animationDelay] = useState(() => Math.random() * 12)
 
   return (
     <>
