@@ -5,36 +5,13 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    imageSizes: [32, 48, 64, 96, 128, 256, 384],
   },
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
   experimental: {
     optimizePackageImports: ['lucide-react', '@splinetool/react-spline', '@splinetool/runtime'],
-  },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.optimization = {
-        ...config.optimization,
-        splitChunks: {
-          chunks: 'all',
-          cacheGroups: {
-            spline: {
-              test: /[\\/]node_modules[\\/](@splinetool)[\\/]/,
-              name: 'spline',
-              priority: 10,
-            },
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendor',
-              priority: 5,
-            },
-          },
-        },
-      };
-    }
-    return config;
   },
   async headers() {
     return [
